@@ -1,0 +1,80 @@
+
+import { Button } from '@/components/ui/button';
+import { Calendar, TrendingUp, Users } from 'lucide-react';
+
+const HeroSection = () => {
+  return (
+    <section className="pt-24 pb-16 bg-gradient-to-br from-orange-50 via-purple-50 to-blue-50 min-h-screen flex items-center relative overflow-hidden">
+      {/* Floating Icons */}
+      <div className="absolute top-20 left-10 animate-float">
+        <div className="w-16 h-16 bg-orange-100 rounded-xl flex items-center justify-center shadow-lg">
+          <Calendar className="w-8 h-8 text-orange-600" />
+        </div>
+      </div>
+      
+      <div className="absolute top-32 right-20 animate-float" style={{ animationDelay: '1s' }}>
+        <div className="w-16 h-16 bg-purple-100 rounded-xl flex items-center justify-center shadow-lg">
+          <TrendingUp className="w-8 h-8 text-purple-600" />
+        </div>
+      </div>
+      
+      <div className="absolute bottom-32 right-10 animate-float" style={{ animationDelay: '2s' }}>
+        <div className="w-16 h-16 bg-blue-100 rounded-xl flex items-center justify-center shadow-lg">
+          <Users className="w-8 h-8 text-blue-600" />
+        </div>
+      </div>
+
+      <div className="container mx-auto px-6 text-center">
+        <h1 className="text-5xl md:text-7xl font-bold text-gray-900 mb-6 leading-tight">
+          Automate Your Clinic<br />
+          <span className="bg-gradient-to-r from-purple-600 to-blue-600 bg-clip-text text-transparent">
+            Maximize Your Booking
+          </span>
+        </h1>
+        
+        <p className="text-xl md:text-2xl text-gray-600 mb-8 max-w-3xl mx-auto leading-relaxed">
+          We Help To Streamline Your Entire Journey From<br />
+          <span className="font-semibold text-gray-900">Lead Generation To Loyal Customers</span>
+        </p>
+        
+        <Button 
+          size="lg" 
+          className="bg-black hover:bg-gray-800 text-white px-8 py-4 text-lg rounded-full shadow-xl transform hover:scale-105 transition-all duration-200"
+        >
+          SCHEDULE FREE MEETING
+        </Button>
+        
+        <div className="flex items-center justify-center space-x-12 mt-16">
+          <div className="flex items-center space-x-3">
+            <div className="w-8 h-8 bg-black rounded-full flex items-center justify-center">
+              <svg className="w-4 h-4 text-white" fill="currentColor" viewBox="0 0 20 20">
+                <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+              </svg>
+            </div>
+            <span className="text-gray-700 font-medium">Save Time</span>
+          </div>
+          
+          <div className="flex items-center space-x-3">
+            <div className="w-8 h-8 bg-black rounded-full flex items-center justify-center">
+              <svg className="w-4 h-4 text-white" fill="currentColor" viewBox="0 0 20 20">
+                <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+              </svg>
+            </div>
+            <span className="text-gray-700 font-medium">Seamless Process</span>
+          </div>
+          
+          <div className="flex items-center space-x-3">
+            <div className="w-8 h-8 bg-black rounded-full flex items-center justify-center">
+              <svg className="w-4 h-4 text-white" fill="currentColor" viewBox="0 0 20 20">
+                <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+              </svg>
+            </div>
+            <span className="text-gray-700 font-medium">More Appointment</span>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+};
+
+export default HeroSection;
