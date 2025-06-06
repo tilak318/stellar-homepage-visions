@@ -4,7 +4,7 @@ import { useRef } from 'react';
 
 const ResultsSection = () => {
   const ref = useRef(null);
-  const inView = useInView(ref, { once: false, amount: 0.3 });
+  const inView = useInView(ref, { once: true, amount: 0.3 });
 
   const results = [
     {
@@ -39,50 +39,36 @@ const ResultsSection = () => {
     }
   ];
 
-  const leftPaneVariants = {
-    hidden: { x: 0 },
-    visible: { x: '-100%' },
-  };
-
-  const rightPaneVariants = {
-    hidden: { x: 0 },
-    visible: { x: '100%' },
-  };
-
   return (
-    <section ref={ref} className="py-20 bg-white relative overflow-hidden">
-      <motion.div
-        variants={leftPaneVariants}
-        initial="hidden"
-        animate={inView ? 'visible' : 'hidden'}
-        transition={{ duration: 1, ease: 'easeInOut' }}
-        className="absolute top-0 left-0 w-1/2 h-full bg-gradient-to-r from-white to-black z-20"
+    <section ref={ref} className="py-20 bg-white relative">
+      <motion.div 
+        className="absolute inset-0 bg-gradient-to-b from-blue-200 to-white"
+        initial={{ opacity: 0 }}
+        animate={{ opacity: inView ? 1 : 0 }}
+        transition={{ duration: 1.5, ease: 'easeOut' }}
       />
-      <motion.div
-        variants={rightPaneVariants}
-        initial="hidden"
-        animate={inView ? 'visible' : 'hidden'}
-        transition={{ duration: 1, ease: 'easeInOut' }}
-        className="absolute top-0 right-0 w-1/2 h-full bg-gradient-to-r from-black to-white z-20"
-      />
-
       <div className="container mx-auto max-w-7xl px-8 relative">
-        <div className="text-center mb-16">
+        <motion.div 
+          className="text-center mb-16"
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: inView ? 1 : 0, y: inView ? 0 : 20 }}
+          transition={{ duration: 0.8, ease: 'easeOut', delay: 0.2 }}
+        >
           <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
             Proven Results That <span className="text-blue-600">Speak For Themselves</span>
           </h2>
           <p className="text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed">
             See the transformative impact our clinic automation brings to healthcare practices worldwide
           </p>
-        </div>
+        </motion.div>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {results.map((result, index) => (
             <motion.div
               key={index}
               initial={{ opacity: 0, y: 20 }}
-              animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
-              transition={{ duration: 0.6, ease: 'easeOut', delay: 0.8 + index * 0.2 }}
+              animate={{ opacity: inView ? 1 : 0, y: inView ? 0 : 20 }}
+              transition={{ duration: 0.6, ease: 'easeOut', delay: 0.4 + index * 0.2 }}
             >
               <div
                 className={`${result.bgColor} p-8 rounded-3xl hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 h-full flex flex-col`}
