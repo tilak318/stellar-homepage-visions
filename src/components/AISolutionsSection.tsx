@@ -3,26 +3,26 @@ import TagCloud from 'TagCloud';
 
 const AISolutionsSection = () => {
   useEffect(() => {
-    const container = '.tagcloud';
+    const container = document.querySelector('.tagcloud');
+    if (!container) {
+      return;
+    }
+
     const texts = [
       'AI Automation',
       'AI Outreach Clients',
-      'Send Automate Reminders',
-      'Intelligent Workflows',
-      'Lead Generation',
-      'Smart Follow-ups',
-      'Client Engagement',
-      'Appointment Reminders',
+      'Send Automate Reminders'
+      
     ];
 
     const options = {
       radius: 250,
-      maxSpeed: 'normal',
-      initSpeed: 'normal',
+      maxSpeed: 'fast' as 'fast',
+      initSpeed: 'fast' as 'fast',
       keep: true,
     };
 
-    const tagCloudInstance = TagCloud(container, texts, options);
+    const tagCloudInstance = TagCloud([container], texts, options);
 
     return () => {
       // To destroy the instance on component unmount
