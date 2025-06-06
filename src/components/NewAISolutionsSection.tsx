@@ -29,12 +29,12 @@ const NewAISolutionsSection = () => {
     <section id="new-ai-solutions" className="py-20 bg-white">
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-serif font-bold text-gray-800">
-            Our Automated Process
-          </h2>
-          <p className="mt-4 text-lg text-gray-500 max-w-2xl mx-auto">
-            A simple, three-step funnel to grow your client base and streamline communication.
-          </p>
+        <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
+          Our <span className="text-blue-600">AI Solutions</span>
+        </h2>
+        <p className="text-xl text-gray-800 mb-8 max-w-2xl mx-auto">
+           powerful services to transform your clinic
+        </p>
         </div>
 
         <div className="flex flex-col items-center space-y-4">
