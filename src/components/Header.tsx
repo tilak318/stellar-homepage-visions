@@ -15,7 +15,7 @@ const Header = () => {
             <img 
               src="/lovable-uploads/cb926fe6-418f-46ac-b33c-3175bab09138.png" 
               alt="TryZeniq Logo" 
-              className="w-12 h-12 object-contain filter invert"
+              className="w-20 h-20 object-contain filter invert"
             />
           </div>
           

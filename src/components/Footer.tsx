@@ -1,4 +1,3 @@
-
 import { Mail, Phone, MapPin, Facebook, Twitter, Linkedin, Instagram } from 'lucide-react';
 
 const Footer = () => {
@@ -8,13 +7,12 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
           {/* Company Info */}
           <div className="col-span-1 md:col-span-2">
-            <div className="flex items-center space-x-3 mb-4">
+            <div className="flex items-center mb-4">
               <img 
                 src="/lovable-uploads/cb926fe6-418f-46ac-b33c-3175bab09138.png" 
                 alt="TryZeniq Logo" 
                 className="w-10 h-10 object-contain"
               />
-              <span className="text-2xl font-bold">TryZeniq</span>
             </div>
             <p className="text-gray-300 mb-6 max-w-md">
               Automate your clinic and maximize your bookings with our cutting-edge AI solutions. 
