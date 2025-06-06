@@ -1,6 +1,7 @@
 import Header from '@/components/Header';
 import HeroSection from '@/components/HeroSection';
 import AISolutionsSection from '@/components/AISolutionsSection';
+import NewAISolutionsSection from '@/components/NewAISolutionsSection';
 import ResultsSection from '@/components/ResultsSection';
 import DashboardSection from '@/components/DashboardSection';
 import NicheSection from '@/components/NicheSection';
@@ -14,7 +15,8 @@ const Index = () => {
     <div className="min-h-screen">
       <Header />
       <HeroSection />
-      <AISolutionsSection />
+      {/* <AISolutionsSection /> */}
+      <NewAISolutionsSection />
       <ResultsSection />
       <DashboardSection />
       <NicheSection />
