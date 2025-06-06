@@ -60,7 +60,7 @@ const ResultsSection = () => {
             transition={{ duration: 1, ease: 'easeInOut', delay: 0.2 }}
             className="text-4xl md:text-5xl font-bold mb-4"
           >
-            Proven Results That <motion.span animate={{ color: inView ? '#60a5fa' : '#2563eb' }} transition={{ duration: 1, ease: 'easeInOut', delay: 0.2 }}>Speak For Themselves</motion.span>
+            Proven Results That <span className="text-blue-600">Speak For Themselves</span>
           </motion.h2>
           <motion.p
             animate={{ color: inView ? '#d1d5db' : '#4b5563' }}

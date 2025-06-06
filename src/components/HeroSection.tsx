@@ -31,7 +31,8 @@ const HeroSection = () => {
 
       <div className="container mx-auto max-w-7xl px-8 text-center">
         <h1 className="text-5xl md:text-7xl font-bold text-gray-900 mb-6 leading-tight">
-          Automate <span className="text-blue-600">Your Clinic</span>
+          Automate Your Clinic<br />
+          <span className="text-blue-600"> Maximize Your Booking</span>
         </h1>
         
         <p className="text-xl md:text-2xl text-gray-600 mb-8 max-w-3xl mx-auto leading-relaxed">
