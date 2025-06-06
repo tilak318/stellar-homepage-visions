@@ -1,6 +1,11 @@
 import { TrendingUp, Phone, Users } from 'lucide-react';
+import { motion, useInView } from 'framer-motion';
+import { useRef } from 'react';
 
 const ResultsSection = () => {
+  const ref = useRef(null);
+  const inView = useInView(ref, { once: true, amount: 0.5 });
+
   const results = [
     {
       icon: Users,
@@ -34,16 +39,36 @@ const ResultsSection = () => {
     }
   ];
 
+  const variants = {
+    hidden: { opacity: 0 },
+    visible: { opacity: 1 },
+  };
+
   return (
-    <section className="py-20 bg-white">
-      <div className="container mx-auto max-w-7xl px-8">
+    <section ref={ref} className="py-20 bg-white relative">
+      <motion.div
+        variants={variants}
+        initial="hidden"
+        animate={inView ? 'visible' : 'hidden'}
+        transition={{ duration: 1, ease: 'easeInOut' }}
+        className="absolute inset-0 bg-gradient-to-b from-gray-900 to-white"
+      />
+      <div className="container mx-auto max-w-7xl px-8 relative">
         <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
-            Proven Results That <span className="text-blue-600">Speak For Themselves</span>
-          </h2>
-          <p className="text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed">
+          <motion.h2
+            animate={{ color: inView ? '#ffffff' : '#111827' }}
+            transition={{ duration: 1, ease: 'easeInOut', delay: 0.2 }}
+            className="text-4xl md:text-5xl font-bold mb-4"
+          >
+            Proven Results That <motion.span animate={{ color: inView ? '#60a5fa' : '#2563eb' }} transition={{ duration: 1, ease: 'easeInOut', delay: 0.2 }}>Speak For Themselves</motion.span>
+          </motion.h2>
+          <motion.p
+            animate={{ color: inView ? '#d1d5db' : '#4b5563' }}
+            transition={{ duration: 1, ease: 'easeInOut', delay: 0.2 }}
+            className="text-xl max-w-4xl mx-auto leading-relaxed"
+          >
             See the transformative impact our clinic automation brings to healthcare practices worldwide
-          </p>
+          </motion.p>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
