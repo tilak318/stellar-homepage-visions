@@ -1,26 +1,31 @@
 
 import { Button } from '@/components/ui/button';
-import { Calendar, TrendingUp, Users } from 'lucide-react';
 
 const HeroSection = () => {
   return (
     <section className="pt-24 pb-16 bg-gradient-to-br from-orange-50 via-purple-50 to-blue-50 min-h-screen flex items-center relative overflow-hidden">
-      {/* Floating Icons */}
+      {/* Floating SVG Icons */}
       <div className="absolute top-20 left-10 animate-float">
         <div className="w-16 h-16 bg-orange-100 rounded-xl flex items-center justify-center shadow-lg">
-          <Calendar className="w-8 h-8 text-orange-600" />
+          <svg className="w-8 h-8 text-orange-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+          </svg>
         </div>
       </div>
       
       <div className="absolute top-32 right-20 animate-float" style={{ animationDelay: '1s' }}>
         <div className="w-16 h-16 bg-purple-100 rounded-xl flex items-center justify-center shadow-lg">
-          <TrendingUp className="w-8 h-8 text-purple-600" />
+          <svg className="w-8 h-8 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" />
+          </svg>
         </div>
       </div>
       
       <div className="absolute bottom-32 right-10 animate-float" style={{ animationDelay: '2s' }}>
         <div className="w-16 h-16 bg-blue-100 rounded-xl flex items-center justify-center shadow-lg">
-          <Users className="w-8 h-8 text-blue-600" />
+          <svg className="w-8 h-8 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197m13.5-9a2.5 2.5 0 11-5 0 2.5 2.5 0 015 0z" />
+          </svg>
         </div>
       </div>
 

@@ -1,5 +1,6 @@
 
 import Header from '@/components/Header';
+import Footer from '@/components/Footer';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
@@ -46,7 +47,7 @@ const Contact = () => {
                       </div>
                       <div>
                         <p className="font-semibold text-gray-900">Email</p>
-                        <p className="text-gray-600">hello@clinicai.com</p>
+                        <p className="text-gray-600">hello@tryzeniq.com</p>
                       </div>
                     </div>
 
@@ -86,6 +87,7 @@ const Contact = () => {
           </div>
         </section>
       </div>
+      <Footer />
     </div>
   );
 };

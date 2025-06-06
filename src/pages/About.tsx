@@ -1,5 +1,6 @@
 
 import Header from '@/components/Header';
+import Footer from '@/components/Footer';
 import { Users, Target, Award } from 'lucide-react';
 
 const About = () => {
@@ -10,7 +11,7 @@ const About = () => {
         <section className="py-20 bg-gradient-to-br from-purple-50 to-blue-50">
           <div className="container mx-auto px-6">
             <div className="text-center mb-16">
-              <h1 className="text-5xl font-bold text-gray-900 mb-6">About ClinicAI</h1>
+              <h1 className="text-5xl font-bold text-gray-900 mb-6">About TryZeniq</h1>
               <p className="text-xl text-gray-600 max-w-3xl mx-auto">
                 We're revolutionizing healthcare automation with cutting-edge AI solutions 
                 that help clinics grow, operate efficiently, and provide better patient care.
@@ -51,6 +52,7 @@ const About = () => {
           </div>
         </section>
       </div>
+      <Footer />
     </div>
   );
 };
