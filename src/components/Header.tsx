@@ -14,7 +14,7 @@ const Header = () => {
             <img 
               src="/lovable-uploads/cb926fe6-418f-46ac-b33c-3175bab09138.png" 
               alt="TryZeniq Logo" 
-              className="w-32 object-contain filter invert"
+              className="w-40 object-contain filter invert"
             />
           </div>
           
@@ -38,7 +38,7 @@ const Header = () => {
           </nav>
           
           <Button className="bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700 text-white">
-            Book Demo
+            SCHEDULE FREE MEETING
           </Button>
         </div>
       </div>

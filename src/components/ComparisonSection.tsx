@@ -1,4 +1,3 @@
-
 import { Check, X } from 'lucide-react';
 
 const ComparisonSection = () => {
@@ -69,7 +68,7 @@ const ComparisonSection = () => {
 
   return (
     <section className="py-20 bg-gray-50">
-      <div className="container mx-auto px-6">
+      <div className="container mx-auto max-w-7xl px-8">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
             Compare Our <span className="text-blue-600">AI Platform</span>

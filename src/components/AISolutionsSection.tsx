@@ -1,4 +1,3 @@
-
 import { useState, useEffect } from 'react';
 import { Bot, CheckCircle, Calendar } from 'lucide-react';
 
@@ -35,7 +34,7 @@ const AISolutionsSection = () => {
 
   return (
     <section className="py-20 bg-white relative overflow-hidden">
-      <div className="container mx-auto px-6 text-center">
+      <div className="container mx-auto max-w-7xl px-8 text-center">
         <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
           Our AI Solutions
         </h2>

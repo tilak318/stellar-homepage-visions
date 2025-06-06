@@ -1,4 +1,3 @@
-
 import { TrendingUp, Phone, Users } from 'lucide-react';
 
 const ResultsSection = () => {
@@ -37,7 +36,7 @@ const ResultsSection = () => {
 
   return (
     <section className="py-20 bg-gradient-to-br from-gray-50 to-white">
-      <div className="container mx-auto px-6">
+      <div className="container mx-auto max-w-7xl px-8">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
             Proven Results That Speak For Themselves

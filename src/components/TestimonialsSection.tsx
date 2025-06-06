@@ -1,4 +1,3 @@
-
 import { Star } from 'lucide-react';
 
 const TestimonialsSection = () => {
@@ -43,7 +42,7 @@ const TestimonialsSection = () => {
 
   return (
     <section className="py-20 bg-gradient-to-br from-gray-50 to-white">
-      <div className="container mx-auto px-6">
+      <div className="container mx-auto max-w-7xl px-8">
         <div className="text-center mb-16">
           <div className="text-sm text-gray-600 mb-4">700k+ Designers & developers trust Relume</div>
           <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
