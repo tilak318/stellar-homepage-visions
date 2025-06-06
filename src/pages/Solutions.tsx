@@ -1,27 +1,67 @@
-
 import Header from '@/components/Header';
-import AISolutionsSection from '@/components/AISolutionsSection';
-import DashboardSection from '@/components/DashboardSection';
 import Footer from '@/components/Footer';
+import { CheckCircle } from 'lucide-react';
+
+const solutions = [
+  {
+    title: 'AI-Powered Diagnostics',
+    description: 'Leverage our advanced AI to analyze medical images and data with incredible accuracy, providing faster and more reliable diagnostics.',
+    features: ['Real-time analysis', '99% accuracy rate', 'Supports various imaging formats', 'Integrates with existing systems'],
+    image: 'https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'
+  },
+  {
+    title: 'Automated Patient Communication',
+    description: 'Our system automates appointment reminders, follow-ups, and patient queries, freeing up your staff to focus on providing care.',
+    features: ['24/7 AI chatbot', 'Personalized messaging', 'Multi-channel support (SMS, email)', 'Reduces no-shows by 40%'],
+    image: 'https://images.unsplash.com/photo-1584515933487-779824d27bfb?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'
+  },
+  {
+    title: 'Intelligent Clinic Management',
+    description: 'Streamline your daily operations, from staff scheduling to inventory management, with our all-in-one AI-powered platform.',
+    features: ['Optimized scheduling', 'Automated inventory tracking', 'Performance analytics', 'HIPAA compliant'],
+    image: 'https://images.unsplash.com/photo-1551884856-0c933999965b?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'
+  },
+  {
+    title: 'Personalized Treatment Plans',
+    description: 'Our AI analyzes patient data to help you create personalized and more effective treatment plans, improving patient outcomes.',
+    features: ['Data-driven recommendations', 'Tracks patient progress', 'Predictive modeling', 'Enhances patient satisfaction'],
+    image: 'https://images.unsplash.com/photo-1532938911079-1b06ac7ceec7?q=80&w=1932&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'
+  }
+];
 
 const Solutions = () => {
   return (
-    <div className="min-h-screen">
+    <div className="bg-white">
       <Header />
-      <div className="pt-20">
-        <section className="py-16 bg-gradient-to-br from-purple-50 to-blue-50">
-          <div className="container mx-auto px-6">
-            <div className="text-center mb-16">
-              <h1 className="text-5xl font-bold text-gray-900 mb-6">Our Solutions</h1>
-              <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-                Discover how our AI-powered solutions can transform your clinic operations and boost your success.
-              </p>
-            </div>
+      <main className="py-24">
+        <div className="container mx-auto px-6">
+          <h1 className="text-5xl font-bold text-center text-gray-900 mb-8">
+            Our Solutions
+          </h1>
+          <p className="text-xl text-center text-gray-600 mb-16 max-w-3xl mx-auto">
+            We offer a suite of AI-powered tools designed to revolutionize your clinic's efficiency and patient care.
+          </p>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
+            {solutions.map((solution, index) => (
+              <div key={index} className="bg-gray-50 rounded-2xl shadow-lg overflow-hidden transform hover:scale-105 transition-transform duration-300">
+                <img src={solution.image} alt={solution.title} className="w-full h-64 object-cover"/>
+                <div className="p-8">
+                  <h2 className="text-3xl font-bold text-gray-900 mb-4">{solution.title}</h2>
+                  <p className="text-gray-700 mb-6">{solution.description}</p>
+                  <ul className="space-y-3">
+                    {solution.features.map((feature, i) => (
+                      <li key={i} className="flex items-center space-x-3">
+                        <CheckCircle className="w-6 h-6 text-purple-600" />
+                        <span className="text-gray-800">{feature}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              </div>
+            ))}
           </div>
-        </section>
-        <AISolutionsSection />
-        <DashboardSection />
-      </div>
+        </div>
+      </main>
       <Footer />
     </div>
   );
