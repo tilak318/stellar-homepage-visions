@@ -2,9 +2,9 @@ import { Button } from '@/components/ui/button';
 
 const HeroSection = () => {
   return (
-    <section className="pt-24 pb-16 bg-gradient-to-br from-orange-50 via-purple-50 to-blue-50 min-h-screen flex items-center relative overflow-hidden">
+    <section className="pt-24 pb-16 bg-gradient-to-r from-purple-100 to-blue-100 min-h-screen flex items-center relative overflow-hidden">
       {/* Floating SVG Icons */}
-      <div className="absolute top-20 left-10 animate-float">
+      <div className="absolute top-40 left-10 animate-float">
         <div className="w-16 h-16 bg-orange-100 rounded-xl flex items-center justify-center shadow-lg">
           <svg className="w-8 h-8 text-orange-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
@@ -27,6 +27,7 @@ const HeroSection = () => {
           </svg>
         </div>
       </div>
+      
 
       <div className="container mx-auto max-w-7xl px-8 text-center">
         <h1 className="text-5xl md:text-7xl font-bold text-gray-900 mb-6 leading-tight">

@@ -8,7 +8,7 @@ const Header = () => {
 
   return (
     <header className="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-md border-b border-gray-100">
-      <div className="container mx-auto px-6 py-2">
+      <div className="container mx-auto max-w-6xl px-6 py-4">
         <div className="flex items-center justify-between">
           <div className="flex items-center">
             <img 
@@ -18,7 +18,7 @@ const Header = () => {
             />
           </div>
           
-          <nav className="hidden md:flex items-center space-x-8">
+          <nav className="hidden md:flex items-center space-x-6">
             {navLinks.map((link) => (
               <button
                 key={link}
