@@ -46,7 +46,7 @@ const PricingSection = () => {
       <div className="container mx-auto max-w-7xl px-8">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
-            Our Price
+            Our <span className="text-blue-600">Price</span>
           </h2>
           <p className="text-xl text-gray-600">
             We Provide Full Customisation

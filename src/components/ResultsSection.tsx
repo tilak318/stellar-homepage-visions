@@ -35,11 +35,11 @@ const ResultsSection = () => {
   ];
 
   return (
-    <section className="py-20 bg-gradient-to-b from-purple-100 to-white">
+    <section className="py-20 bg-white">
       <div className="container mx-auto max-w-7xl px-8">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
-            Proven Results That Speak For Themselves
+            Proven Results That <span className="text-blue-600">Speak For Themselves</span>
           </h2>
           <p className="text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed">
             See the transformative impact our clinic automation brings to healthcare practices worldwide

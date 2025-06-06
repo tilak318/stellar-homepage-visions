@@ -9,7 +9,7 @@ const About = () => {
       <main className="py-24">
         <div className="container mx-auto px-6">
           <div className="text-center">
-            <h1 className="text-5xl font-bold text-gray-900 mb-6">About TryZeniq</h1>
+            <h1 className="text-5xl font-bold text-gray-900 mb-6">About <span className="text-blue-600">TryZeniq</span></h1>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
               We are a team of innovators dedicated to revolutionizing the healthcare industry with cutting-edge AI solutions.
             </p>

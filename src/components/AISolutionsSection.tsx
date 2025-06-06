@@ -36,7 +36,7 @@ const AISolutionsSection = () => {
     <section className="py-8 bg-white relative overflow-hidden">
       <div className="container mx-auto max-w-7xl px-8 text-center relative">
         <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
-          Our AI Solutions
+          Our <span className="text-blue-600">AI Solutions</span>
         </h2>
         <p className="text-xl text-gray-800 mb-8 max-w-2xl mx-auto">
           Three powerful services to transform your clinic

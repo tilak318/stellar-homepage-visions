@@ -36,7 +36,7 @@ const Solutions = () => {
       <main className="py-24">
         <div className="container mx-auto px-6">
           <h1 className="text-5xl font-bold text-center text-gray-900 mb-8">
-            Our Solutions
+            Our <span className="text-blue-600">Solutions</span>
           </h1>
           <p className="text-xl text-center text-gray-600 mb-16 max-w-3xl mx-auto">
             We offer a suite of AI-powered tools designed to revolutionize your clinic's efficiency and patient care.
