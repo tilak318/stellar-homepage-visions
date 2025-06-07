@@ -26,7 +26,7 @@ const HeroSection = () => {
         <h1 className="text-5xl md:text-7xl font-bold text-gray-900 mb-6 leading-tight">
           Automate Your Booking
           <br />
-          And Maximize Your Booking
+          And Maximize Your Profit
         </h1>
         <p className="text-lg max-w-3xl mx-auto text-gray-600 leading-relaxed">
           We automate the entire business journey from <span className="font-bold text-gray-800">lead generation</span> to <span className="font-bold text-gray-800">reminders</span> saving your clinic time, boosting revenue.

@@ -18,7 +18,7 @@ const funnelData = [
   {
     title: 'Send Automated Reminders',
     icon: <Send size={20} className="text-white" />,
-    bgColor: 'bg-blue-600',
+    bgColor: 'bg-purple-200',
     width: 'w-full md:w-6/12',
     height: 'h-16',
   },
