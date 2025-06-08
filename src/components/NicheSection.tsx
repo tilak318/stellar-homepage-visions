@@ -45,11 +45,11 @@ const niches = [
 
 const NicheSection = () => {
   return (
-    <section className="py-20 bg-gray-50">
+    <section className="py-20 bg-gradient-to-br from-purple-50 via-fuchsia-50 to-blue-50">
       <div className="container mx-auto px-6">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
-            All In <span className="text-blue-600">One Platform</span>
+            All In <span className="text-purple-600">One Platform</span>
           </h2>
           <p className="text-xl text-gray-600">
             Where We Help To Automate This Business
@@ -62,7 +62,7 @@ const NicheSection = () => {
               <div className="space-y-3 mb-6">
                 {niche.features.map((feature, i) => (
                   <div key={i} className="flex items-center space-x-3">
-                    <Check className="w-5 h-5 text-green-500" />
+                    <Check className="w-5 h-5 text-purple-500" />
                     <span className="text-gray-700 text-sm">{feature}</span>
                   </div>
                 ))}

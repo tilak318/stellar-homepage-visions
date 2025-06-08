@@ -41,13 +41,13 @@ const TestimonialsSection = () => {
   ];
 
   return (
-    <section className="py-20 bg-gradient-to-br from-gray-50 to-white">
+    <section className="py-20 bg-gradient-to-br from-purple-50 via-fuchsia-50 to-blue-50">
       <div className="container mx-auto max-w-7xl px-8">
         <div className="text-center mb-16">
           <div className="text-sm text-gray-600 mb-4">700k+ Designers & developers trust Relume</div>
           <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
             Helping Lumers streamline their<br />
-            workflow and <span className="text-blue-600">deliver faster</span>
+            workflow and <span className="text-purple-600">deliver faster</span>
           </h2>
           <div className="flex justify-center space-x-4 mt-8">
             <button className="flex items-center space-x-2 px-6 py-3 border border-gray-300 rounded-lg hover:bg-gray-50 transition-colors">
@@ -76,7 +76,7 @@ const TestimonialsSection = () => {
               </p>
               
               <div className="flex items-center space-x-3">
-                <div className="w-10 h-10 bg-gradient-to-r from-purple-400 to-blue-400 rounded-full flex items-center justify-center">
+                <div className="w-10 h-10 bg-gradient-to-r from-purple-400 to-fuchsia-400 rounded-full flex items-center justify-center">
                   <span className="text-white font-bold text-sm">
                     {testimonial.author.charAt(1).toUpperCase()}
                   </span>

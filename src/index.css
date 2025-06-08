@@ -87,15 +87,16 @@
     --sidebar-accent-foreground: 240 4.8% 95.9%;
     --sidebar-border: 240 3.7% 15.9%;
     --sidebar-ring: 217.2 91.2% 59.8%;
-}
+  }
 
   * {
     @apply border-border;
   }
 
   body {
-    @apply bg-background text-foreground font-serif;
-    @apply text-gray-800;
+    @apply font-serif text-gray-800;
+    @apply bg-gradient-to-br from-purple-100 via-fuchsia-50 to-blue-50;
+    min-height: 100vh;
   }
 }
 

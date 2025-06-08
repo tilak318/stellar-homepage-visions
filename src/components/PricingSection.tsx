@@ -42,11 +42,11 @@ const PricingSection = () => {
   ];
 
   return (
-    <section className="py-20 bg-white">
+    <section className="py-20 bg-gradient-to-br from-purple-50 via-fuchsia-50 to-blue-50">
       <div className="container mx-auto max-w-7xl px-8">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
-            Our <span className="text-blue-600">Price</span>
+            Our <span className="text-purple-600">Price</span>
           </h2>
           <p className="text-xl text-gray-600">
             We Provide Full Customisation
@@ -59,7 +59,7 @@ const PricingSection = () => {
               key={index}
               className={`rounded-3xl p-8 transition-all duration-300 hover:scale-105 ${
                 plan.highlighted
-                  ? 'bg-gradient-to-br from-purple-600 to-blue-600 text-white shadow-2xl transform scale-105'
+                  ? 'bg-gradient-to-br from-purple-600 to-fuchsia-600 text-white shadow-2xl transform scale-105'
                   : 'bg-gray-50 hover:shadow-xl'
               }`}
             >
@@ -78,9 +78,9 @@ const PricingSection = () => {
                 {plan.features.map((feature, featureIndex) => (
                   <div key={featureIndex} className="flex items-center space-x-3">
                     <div className={`w-5 h-5 rounded-full flex items-center justify-center ${
-                      plan.highlighted ? 'bg-white/20' : 'bg-green-100'
+                      plan.highlighted ? 'bg-white/20' : 'bg-purple-100'
                     }`}>
-                      <Check className={`w-3 h-3 ${plan.highlighted ? 'text-white' : 'text-green-600'}`} />
+                      <Check className={`w-3 h-3 ${plan.highlighted ? 'text-white' : 'text-purple-600'}`} />
                     </div>
                     <span className={`text-sm ${plan.highlighted ? 'text-white/90' : 'text-gray-700'}`}>
                       {feature}

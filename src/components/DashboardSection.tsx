@@ -42,11 +42,11 @@ const DashboardSection = () => {
   };
 
   return (
-    <section className="py-20 bg-white">
+    <section className="py-20 bg-gradient-to-br from-purple-50 via-fuchsia-50 to-blue-50">
       <div className="container mx-auto max-w-7xl px-8">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
-            All In <span className="text-blue-600">One Platform</span>
+            All In <span className="text-purple-600">One Platform</span>
           </h2>
           <p className="text-xl text-gray-600 mb-8">
             Where We Help To Automate This Business
@@ -73,7 +73,7 @@ const DashboardSection = () => {
             </Button>
             
             <div className="flex-1 mx-8">
-              <div className="bg-gradient-to-br from-purple-50 to-blue-50 rounded-3xl p-8 shadow-xl">
+              <div className="bg-gradient-to-br from-purple-100 to-blue-50 rounded-3xl p-8 shadow-xl">
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
                   <div className="space-y-6">
                     <h3 className="text-3xl font-bold text-gray-900">
@@ -82,7 +82,7 @@ const DashboardSection = () => {
                     <div className="space-y-3">
                       {dashboards[currentDashboard].features.map((feature, index) => (
                         <div key={index} className="flex items-center space-x-3">
-                          <div className="w-5 h-5 bg-green-500 rounded-full flex items-center justify-center">
+                          <div className="w-5 h-5 bg-fuchsia-500 rounded-full flex items-center justify-center">
                             <svg className="w-3 h-3 text-white" fill="currentColor" viewBox="0 0 20 20">
                               <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
                             </svg>

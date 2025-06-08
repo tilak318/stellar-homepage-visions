@@ -14,8 +14,8 @@ const ResultsSection = () => {
       description: "Send Auto Reminders To Your Customers At Right Time",
       increase: "+42% increase",
       subtext: "More engaged potential patients today",
-      color: "from-orange-400 to-orange-600",
-      bgColor: "bg-orange-50"
+      color: "from-purple-400 to-fuchsia-500",
+      bgColor: "bg-purple-50"
     },
     {
       icon: Phone,
@@ -24,7 +24,7 @@ const ResultsSection = () => {
       description: "Send Auto Reminders To Your Customers At Right Time",
       increase: "+42% increase",
       subtext: "Higher consultation booking rate today",
-      color: "from-blue-400 to-blue-600",
+      color: "from-blue-500 to-purple-500",
       bgColor: "bg-blue-50"
     },
     {
@@ -34,15 +34,15 @@ const ResultsSection = () => {
       description: "Send Auto Reminders To Your Customers At Right Time",
       increase: "+30% increase",
       subtext: "More patients showing up to clinic today",
-      color: "from-green-400 to-green-600",
-      bgColor: "bg-green-50"
+      color: "from-fuchsia-500 to-purple-400",
+      bgColor: "bg-fuchsia-50"
     }
   ];
 
   return (
     <section ref={ref} className="py-20 bg-white relative">
       <motion.div 
-        className="absolute inset-0 bg-gradient-to-b from-blue-200 to-white"
+        className="absolute inset-0 bg-gradient-to-b from-purple-100 via-fuchsia-50 to-white"
         initial={{ opacity: 0 }}
         animate={{ opacity: inView ? 1 : 0 }}
         transition={{ duration: 1.5, ease: 'easeOut' }}
@@ -55,7 +55,7 @@ const ResultsSection = () => {
           transition={{ duration: 0.8, ease: 'easeOut', delay: 0.2 }}
         >
           <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
-            Proven Results That <span className="text-blue-600">Speak For Themselves</span>
+            Proven Results That <span className="text-purple-600">Speak For Themselves</span>
           </h2>
           <p className="text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed">
             See the transformative impact our clinic automation brings to healthcare practices worldwide
@@ -86,7 +86,7 @@ const ResultsSection = () => {
                 <p className="text-gray-600 mb-6 leading-relaxed flex-grow">{result.description}</p>
                 
                 <div className="border-t border-gray-200 pt-4">
-                  <div className="text-sm font-semibold text-green-600 mb-1">{result.increase}</div>
+                  <div className="text-sm font-semibold text-fuchsia-600 mb-1">{result.increase}</div>
                   <div className="text-sm text-gray-500">{result.subtext}</div>
                 </div>
               </div>

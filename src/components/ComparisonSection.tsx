@@ -55,7 +55,7 @@ const ComparisonSection = () => {
   const getStatusIcon = (status: string) => {
     switch (status) {
       case "included":
-        return <Check className="w-5 h-5 text-green-600" />;
+        return <Check className="w-5 h-5 text-purple-600" />;
       case "limited":
         return <div className="w-5 h-5 bg-yellow-400 rounded-full" />;
       case "manual":
@@ -67,11 +67,11 @@ const ComparisonSection = () => {
   };
 
   return (
-    <section className="py-20 bg-gray-50">
+    <section className="py-20 bg-gradient-to-br from-purple-50 via-fuchsia-50 to-blue-50">
       <div className="container mx-auto max-w-7xl px-8">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
-            Compare Our <span className="text-blue-600">AI Platform</span>
+            Compare Our <span className="text-purple-600">AI Platform</span>
           </h2>
           <p className="text-xl text-gray-600 max-w-4xl mx-auto">
             See how TRYZENIQ stacks up against traditional automation methods and agencies. 
@@ -83,7 +83,7 @@ const ComparisonSection = () => {
           <div className="overflow-x-auto">
             <table className="w-full">
               <thead>
-                <tr className="bg-gradient-to-r from-purple-600 to-blue-600 text-white">
+                <tr className="bg-gradient-to-r from-purple-600 to-fuchsia-600 text-white">
                   <th className="text-left p-6 font-semibold">Features</th>
                   <th className="text-center p-6 font-semibold bg-white/10 backdrop-blur-sm">
                     <div className="bg-gray-200 rounded-lg p-4 text-gray-800">

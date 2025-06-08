@@ -11,7 +11,7 @@ const FloatingIcon = ({ imgSrc, className, delay = 0, alt }) => (
 
 const HeroSection = () => {
   return (
-    <section className="relative bg-gradient-to-br from-yellow-100 via-purple-100 to-purple-200 min-h-screen flex items-center justify-center overflow-hidden">
+    <section className="relative bg-gradient-to-br from-purple-100 via-fuchsia-50 to-blue-100 min-h-screen flex items-center justify-center overflow-hidden">
       <FloatingIcon imgSrc="/homeicons/1.png" alt="Followup" className="top-1/2 left-[10%]" />
       <FloatingIcon imgSrc="/homeicons/2.png" alt="Website" className="bottom-16 left-[30%]" delay={1} />
       <FloatingIcon imgSrc="/homeicons/3.png" alt="Lead Gen" className="top-1/2 right-[10%]" delay={0.5} />
