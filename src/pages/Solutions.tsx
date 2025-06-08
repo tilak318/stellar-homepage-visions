@@ -31,7 +31,7 @@ const solutions = [
 
 const Solutions = () => {
   return (
-    <div className="bg-gradient-to-br from-purple-50 via-fuchsia-50 to-blue-50 min-h-screen">
+    <div className="min-h-screen">
       <Header />
       <main className="py-24">
         <div className="container mx-auto px-6">

@@ -4,7 +4,7 @@ import PricingSection from '@/components/PricingSection';
 
 const Pricing = () => {
   return (
-    <div className="bg-white">
+    <div className="min-h-screen">
       <Header />
       <main className="py-24">
         <PricingSection />

@@ -67,7 +67,7 @@ const ComparisonSection = () => {
   };
 
   return (
-    <section className="py-20 bg-gradient-to-br from-purple-50 via-fuchsia-50 to-blue-50">
+    <section className="py-20">
       <div className="container mx-auto max-w-7xl px-8">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">

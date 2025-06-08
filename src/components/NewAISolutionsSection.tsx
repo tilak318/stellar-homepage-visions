@@ -26,7 +26,7 @@ const stepOffsets = [
 
 const NewAISolutionsSection = () => {
   return (
-    <section id="new-ai-solutions" className="py-16 bg-gradient-to-br from-slate-100 via-purple-50 to-fuchsia-50">
+    <section id="new-ai-solutions" className="py-16">
       <div className="container mx-auto px-4 flex flex-col items-center">
         <div className="text-center mb-8">
           <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-2">
@@ -36,7 +36,7 @@ const NewAISolutionsSection = () => {
             Powerful services to transform your clinic
           </p>
         </div>
-        {/* Mac App Window - Wider, with staircase steps */}
+        {/* Mac App Window - Wider, with grid layout */}
         <div className="w-full max-w-3xl rounded-2xl shadow-2xl border border-slate-200 bg-white overflow-hidden">
           {/* Top bar with tagline */}
           <div className="flex items-center justify-between px-5 py-2.5 bg-slate-900 rounded-t-2xl border-b border-slate-200">
@@ -50,24 +50,26 @@ const NewAISolutionsSection = () => {
             </div>
             <div className="w-12" /> {/* Spacer for symmetry */}
           </div>
-          {/* Dashboard content - Reverse staircase */}
-          <div className="p-8 flex flex-col gap-0 bg-white min-h-[360px] justify-center">
-            {solutions.map((sol, idx) => (
-              <div key={sol.title} className={`relative flex items-center gap-5 py-5 transition-all duration-300 ${stepOffsets[idx]}`}>
-                {/* Step number */}
-                <div className="flex flex-col items-center">
-                  <div className={`w-9 h-9 rounded-full flex items-center justify-center font-bold text-base ${idx === 0 ? 'bg-purple-200 text-purple-700' : idx === 1 ? 'bg-blue-200 text-blue-700' : 'bg-fuchsia-200 text-fuchsia-700'}`}>{idx + 1}</div>
-                  {idx < solutions.length - 1 && (
-                    <div className="w-1 h-10 bg-gradient-to-b from-gray-300 to-gray-100" />
-                  )}
-                </div>
-                {/* Card */}
-                <div className={`flex items-center gap-4 ${sol.color} rounded-xl px-6 py-4 shadow-sm w-full`}> 
-                  <div className="flex-shrink-0">{sol.icon}</div>
-                  <div className="text-lg md:text-xl font-semibold text-gray-800">{sol.title}</div>
-                </div>
-              </div>
-            ))}
+          {/* Dashboard content - Diagonal staggered grid */}
+          <div className="p-8 bg-white grid grid-rows-3 grid-cols-2 gap-6 min-h-[420px]">
+            {/* Row 1 */}
+            <div className="flex flex-col items-center justify-center rounded-xl shadow-md hover:shadow-xl transition-all duration-300 bg-purple-50 p-6">
+              <div className="mb-3">{solutions[0].icon}</div>
+              <div className="text-lg md:text-xl font-bold text-gray-800 text-center">{solutions[0].title}</div>
+            </div>
+            <div />
+            {/* Row 2 */}
+            <div />
+            <div className="flex flex-col items-center justify-center rounded-xl shadow-md hover:shadow-xl transition-all duration-300 bg-blue-50 p-6">
+              <div className="mb-3">{solutions[1].icon}</div>
+              <div className="text-lg md:text-xl font-bold text-gray-800 text-center">{solutions[1].title}</div>
+            </div>
+            {/* Row 3 */}
+            <div className="flex flex-col items-center justify-center rounded-xl shadow-md hover:shadow-xl transition-all duration-300 bg-fuchsia-50 p-6">
+              <div className="mb-3">{solutions[2].icon}</div>
+              <div className="text-lg md:text-xl font-bold text-gray-800 text-center">{solutions[2].title}</div>
+            </div>
+            <div />
           </div>
         </div>
       </div>

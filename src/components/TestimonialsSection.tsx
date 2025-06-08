@@ -41,7 +41,7 @@ const TestimonialsSection = () => {
   ];
 
   return (
-    <section className="py-20 bg-gradient-to-br from-purple-50 via-fuchsia-50 to-blue-50">
+    <section className="py-20">
       <div className="container mx-auto max-w-7xl px-8">
         <div className="text-center mb-16">
           <div className="text-sm text-gray-600 mb-4">700k+ Designers & developers trust Relume</div>
