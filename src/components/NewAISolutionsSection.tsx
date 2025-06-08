@@ -57,9 +57,11 @@ const NewAISolutionsSection = () => {
               <div className="mb-3">{solutions[0].icon}</div>
               <div className="text-lg md:text-xl font-bold text-gray-800 text-center">{solutions[0].title}</div>
             </div>
-            <div />
+            {/* 2.png in top-right */}
+            <div className="flex items-center justify-center"><img src="/homeicons/2.png" alt="2" className="w-20 h-20 object-contain" /></div>
             {/* Row 2 */}
-            <div />
+            {/* 4.png in middle-left */}
+            <div className="flex items-center justify-center"><img src="/homeicons/4.png" alt="4" className="w-20 h-20 object-contain" /></div>
             <div className="flex flex-col items-center justify-center rounded-xl shadow-md hover:shadow-xl transition-all duration-300 bg-blue-50 p-6">
               <div className="mb-3">{solutions[1].icon}</div>
               <div className="text-lg md:text-xl font-bold text-gray-800 text-center">{solutions[1].title}</div>
@@ -69,7 +71,8 @@ const NewAISolutionsSection = () => {
               <div className="mb-3">{solutions[2].icon}</div>
               <div className="text-lg md:text-xl font-bold text-gray-800 text-center">{solutions[2].title}</div>
             </div>
-            <div />
+            {/* 3.png in bottom-right */}
+            <div className="flex items-center justify-center"><img src="/homeicons/3.png" alt="3" className="w-20 h-20 object-contain" /></div>
           </div>
         </div>
       </div>
