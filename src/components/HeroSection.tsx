@@ -1,35 +1,30 @@
 import { Button } from "@/components/ui/button";
-import { Calendar, Clock, MessageSquare, Users } from 'lucide-react';
 
-const FloatingIcon = ({ icon: Icon, className, delay = 0 }) => (
-  <div 
+const FloatingIcon = ({ imgSrc, className, delay = 0, alt }) => (
+  <div
     className={`absolute hidden md:block animate-float ${className}`}
     style={{ animationDelay: `${delay}s` }}
   >
-    <div className="w-16 h-16 bg-white/50 backdrop-blur-sm rounded-2xl flex items-center justify-center shadow-lg">
-      <Icon className="w-8 h-8 text-blue-600" />
-    </div>
+    <img src={imgSrc} alt={alt} className="w-32 h-32 object-contain" />
   </div>
 );
 
 const HeroSection = () => {
   return (
     <section className="relative bg-gradient-to-br from-yellow-100 via-purple-100 to-purple-200 min-h-screen flex items-center justify-center overflow-hidden">
-      
-      <FloatingIcon icon={Calendar} className="top-2/3 left-[15%]" />
-      <FloatingIcon icon={MessageSquare} className="bottom-16 left-[30%]" delay={1} />
-      <FloatingIcon icon={Clock} className="top-2/3 right-[15%]" delay={0.5} />
-      <FloatingIcon icon={Users} className="bottom-16 right-[30%]" delay={1.5} />
+      <FloatingIcon imgSrc="/homeicons/1.png" alt="Followup" className="top-1/2 left-[10%]" />
+      <FloatingIcon imgSrc="/homeicons/2.png" alt="Website" className="bottom-16 left-[30%]" delay={1} />
+      <FloatingIcon imgSrc="/homeicons/3.png" alt="Lead Gen" className="top-1/2 right-[10%]" delay={0.5} />
+      <FloatingIcon imgSrc="/homeicons/4.png" alt="Outreach" className="bottom-16 right-[30%]" delay={1.5} />
 
       <div className="container mx-auto max-w-7xl px-8 text-center relative">
-        <p className="text-lg font-semibold text-gray-700 mb-2">Get 24/7 Smart Website To</p>
-        <h1 className="text-5xl md:text-7xl font-bold text-gray-900 mb-6 leading-tight">
-          Automate Your Booking
-          <br />
-          And Maximize Your Profit
+        <p className="text-xl font-semibold text-gray-700 mb-2">Get 24/7 Smart Website To</p>
+        <h1 className="text-5xl md:text-7xl font-bold text-gray-900 mb-6">
+          <span className="block mb-4">Automate Your Booking</span>
+          <span>And Maximize Your Profit</span>
         </h1>
-        <p className="text-lg max-w-3xl mx-auto text-gray-600 leading-relaxed">
-          We automate the entire business journey from <span className="font-bold text-gray-800">lead generation</span> to <span className="font-bold text-gray-800">reminders</span> saving your clinic time, boosting revenue.
+        <p className="text-xl max-w-3xl mx-auto text-gray-600 leading-relaxed">
+          We automate the entire business journey from <span className="font-bold text-gray-800">lead generation</span> <br /> to <span className="font-bold text-gray-800">reminders</span> saving your clinic time, boosting revenue.
         </p>
         <div className="mt-8">
           <Button size="lg" className="text-lg px-8 py-6">Start Your Free Trial</Button>

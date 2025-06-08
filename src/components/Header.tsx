@@ -1,9 +1,10 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { Link, useLocation } from 'react-router-dom';
 
 const Header = () => {
   const location = useLocation();
+  const [scrolled, setScrolled] = useState(false);
   const navLinks = [
     { name: 'Home', path: '/' },
     { name: 'Pricing', path: '/pricing' },
@@ -12,39 +13,43 @@ const Header = () => {
     { name: 'Contact', path: '/contact' },
   ];
 
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrolled(window.scrollY > 10);
+    };
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-md border-b border-gray-100">
-      <div className="container mx-auto max-w-6xl px-6 py-4">
+    <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${scrolled ? 'bg-white/80 backdrop-blur shadow' : ''}`}>
+      <div className="container mx-auto max-w-7xl px-6 py-3">
         <div className="flex items-center justify-between">
-          <Link to="/" className="flex items-center">
-            <img 
-              src="/lovable-uploads/cb926fe6-418f-46ac-b33c-3175bab09138.png" 
-              alt="TryZeniq Logo" 
-              className="w-40 object-contain filter invert"
-            />
+          <Link to="/" className="text-2xl font-bold font-serif text-gray-900 tracking-wider">
+            TRYZENIQ
           </Link>
-          
-          <nav className="hidden md:flex items-center space-x-6">
-            {navLinks.map((link) => (
-              <Link
-                key={link.name}
-                to={link.path}
-                className={`relative px-3 py-2 text-sm font-medium transition-colors duration-200 ${
-                  location.pathname === link.path
-                    ? 'text-purple-600' 
-                    : 'text-gray-600 hover:text-gray-900'
-                }`}
-              >
-                {link.name}
-                {location.pathname === link.path && (
-                  <div className="absolute bottom-0 left-0 right-0 h-0.5 bg-gradient-to-r from-purple-600 to-blue-600 rounded-full" />
-                )}
-              </Link>
-            ))}
-          </nav>
-          
-          <Button className="bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700 text-white">
-            SCHEDULE FREE MEETING
+          <div className="flex-1 flex justify-center">
+            <nav className="hidden md:flex items-center space-x-8">
+              {navLinks.map((link) => (
+                <Link
+                  key={link.name}
+                  to={link.path}
+                  className={`relative text-base font-medium transition-colors duration-200 ${
+                    location.pathname === link.path
+                      ? 'text-gray-900' 
+                      : 'text-gray-600 hover:text-gray-900'
+                  }`}
+                >
+                  {link.name}
+                  {location.pathname === link.path && (
+                    <div className="absolute -bottom-2 left-1/2 -translate-x-1/2 w-8 h-0.5 bg-purple-600 rounded-full" />
+                  )}
+                </Link>
+              ))}
+            </nav>
+          </div>
+          <Button className="bg-gradient-to-r from-purple-500 to-blue-600 hover:shadow-lg text-white font-bold py-3 px-6 rounded-lg">
+            BOOK DEMO
           </Button>
         </div>
       </div>
