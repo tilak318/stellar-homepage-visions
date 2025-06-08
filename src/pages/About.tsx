@@ -4,12 +4,12 @@ import { Users, Target, Eye } from 'lucide-react';
 
 const About = () => {
   return (
-    <div className="bg-white">
+    <div className="bg-gradient-to-br from-purple-50 via-fuchsia-50 to-blue-50 min-h-screen">
       <Header />
       <main className="py-24">
         <div className="container mx-auto px-6">
           <div className="text-center">
-            <h1 className="text-5xl font-bold text-gray-900 mb-6">About <span className="text-blue-600">TryZeniq</span></h1>
+            <h1 className="text-5xl font-bold text-gray-900 mb-6">About <span className="text-purple-600">TryZeniq</span></h1>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
               We are a team of innovators dedicated to revolutionizing the healthcare industry with cutting-edge AI solutions.
             </p>
@@ -28,12 +28,12 @@ const About = () => {
               <p className="text-gray-700">To empower clinics with intelligent automation, freeing up professionals to focus on what matters most: patient care.</p>
             </div>
             <div className="p-8">
-              <Target className="w-12 h-12 mx-auto text-purple-600 mb-4" />
+              <Target className="w-12 h-12 mx-auto text-fuchsia-600 mb-4" />
               <h2 className="text-2xl font-bold text-gray-900 mb-2">Our Vision</h2>
               <p className="text-gray-700">To be the leading provider of AI-driven solutions that transform the healthcare landscape for the better.</p>
             </div>
             <div className="p-8">
-              <Eye className="w-12 h-12 mx-auto text-purple-600 mb-4" />
+              <Eye className="w-12 h-12 mx-auto text-blue-600 mb-4" />
               <h2 className="text-2xl font-bold text-gray-900 mb-2">Our Values</h2>
               <p className="text-gray-700">Innovation, integrity, and a deep commitment to our clients' success are at the core of everything we do.</p>
             </div>

@@ -7,12 +7,12 @@ import { Mail, Phone, MapPin } from 'lucide-react';
 
 const Contact = () => {
   return (
-    <div className="bg-white">
+    <div className="bg-gradient-to-br from-purple-50 via-fuchsia-50 to-blue-50 min-h-screen">
       <Header />
       <main className="py-24">
         <div className="container mx-auto px-6">
           <div className="text-center">
-            <h1 className="text-5xl font-bold text-gray-900 mb-6">Contact <span className="text-blue-600">Us</span></h1>
+            <h1 className="text-5xl font-bold text-gray-900 mb-6">Contact <span className="text-purple-600">Us</span></h1>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
               Have questions or want to schedule a demo? We'd love to hear from you.
             </p>
@@ -36,7 +36,7 @@ const Contact = () => {
                 <Button type="submit" className="w-full bg-purple-600 hover:bg-purple-700 text-white">Send Message</Button>
               </form>
             </div>
-            <div className="bg-gray-50 p-8 rounded-2xl">
+            <div className="bg-white p-8 rounded-2xl shadow-lg shadow-purple-100">
               <h3 className="text-2xl font-bold text-gray-900 mb-6">Our Information</h3>
               <div className="space-y-4">
                 <div className="flex items-center space-x-4">

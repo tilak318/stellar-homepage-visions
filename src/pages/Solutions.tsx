@@ -31,19 +31,19 @@ const solutions = [
 
 const Solutions = () => {
   return (
-    <div className="bg-white">
+    <div className="bg-gradient-to-br from-purple-50 via-fuchsia-50 to-blue-50 min-h-screen">
       <Header />
       <main className="py-24">
         <div className="container mx-auto px-6">
           <h1 className="text-5xl font-bold text-center text-gray-900 mb-8">
-            Our <span className="text-blue-600">Solutions</span>
+            Our <span className="text-purple-600">Solutions</span>
           </h1>
           <p className="text-xl text-center text-gray-600 mb-16 max-w-3xl mx-auto">
             We offer a suite of AI-powered tools designed to revolutionize your clinic's efficiency and patient care.
           </p>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
             {solutions.map((solution, index) => (
-              <div key={index} className="bg-gray-50 rounded-2xl shadow-lg overflow-hidden transform hover:scale-105 transition-transform duration-300">
+              <div key={index} className="bg-white rounded-2xl shadow-lg shadow-purple-100 overflow-hidden transform hover:scale-105 transition-transform duration-300">
                 <img src={solution.image} alt={solution.title} className="w-full h-64 object-cover"/>
                 <div className="p-8">
                   <h2 className="text-3xl font-bold text-gray-900 mb-4">{solution.title}</h2>
@@ -51,7 +51,7 @@ const Solutions = () => {
                   <ul className="space-y-3">
                     {solution.features.map((feature, i) => (
                       <li key={i} className="flex items-center space-x-3">
-                        <CheckCircle className="w-6 h-6 text-purple-600" />
+                        <CheckCircle className="w-6 h-6 text-fuchsia-500" />
                         <span className="text-gray-800">{feature}</span>
                       </li>
                     ))}
