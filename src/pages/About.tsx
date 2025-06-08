@@ -6,7 +6,7 @@ const About = () => {
   return (
     <div className="min-h-screen">
       <Header />
-      <main className="py-24">
+      <main className="pt-32 pb-16">
         <div className="container mx-auto px-6">
           <div className="text-center">
             <h1 className="text-5xl font-bold text-gray-900 mb-6">About <span className="text-purple-600">TryZeniq</span></h1>

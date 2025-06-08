@@ -33,7 +33,7 @@ const Solutions = () => {
   return (
     <div className="min-h-screen">
       <Header />
-      <main className="py-24">
+      <main className="pt-32 pb-16">
         <div className="container mx-auto px-6">
           <h1 className="text-5xl font-bold text-center text-gray-900 mb-8">
             Our <span className="text-purple-600">Solutions</span>

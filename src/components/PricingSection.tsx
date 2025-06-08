@@ -42,9 +42,9 @@ const PricingSection = () => {
   ];
 
   return (
-    <section className="py-20">
+    <section>
       <div className="container mx-auto max-w-7xl px-8">
-        <div className="text-center mb-16">
+        <div className="text-center mt-12 mb-8">
           <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
             Our <span className="text-purple-600">Price</span>
           </h2>
