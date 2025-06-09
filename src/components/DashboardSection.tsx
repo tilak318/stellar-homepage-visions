@@ -101,13 +101,16 @@ const DashboardSection = () => {
                     </Button>
                   </div>
                 </div>
-                <div className="order-1 lg:order-2 mb-4 lg:mb-0 flex justify-center items-center">
-                  <div className="bg-white rounded-xl sm:rounded-2xl p-2 sm:p-4 shadow-lg flex items-center justify-center w-[320px] h-[200px] mx-auto">
-                    <img
-                      src={dashboards[currentDashboard].image}
-                      alt={dashboards[currentDashboard].title}
-                      className="w-full h-full object-cover object-center rounded-lg"
-                    />
+                <div className="order-1 lg:order-2 mb-4 lg:mb-0">
+                  <div className="bg-white rounded-xl sm:rounded-2xl p-2 sm:p-4 shadow-lg flex items-center justify-center">
+                    <div className="flex items-center justify-center w-64 h-40 sm:w-80 sm:h-64">
+                      <img
+                        src={dashboards[currentDashboard].image}
+                        alt={dashboards[currentDashboard].title}
+                        className="object-contain w-full h-full max-w-full max-h-full rounded-lg"
+                        style={{ display: 'block' }}
+                      />
+                    </div>
                   </div>
                 </div>
               </div>
