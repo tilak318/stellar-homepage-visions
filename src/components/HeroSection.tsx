@@ -19,13 +19,9 @@ const HeroSection = () => {
 
       <div className="container mx-auto max-w-7xl px-8 text-center relative">
         <p className="text-xl font-semibold text-gray-700 mb-2">Get 24/7 Smart Website To</p>
-        <h1 className="text-5xl md:text-7xl font-bold text-gray-900 mb-6">
-          <span className="block mb-4">
-            Automate Your Booking
-          </span>
-          <span>
-            And <span className="bg-gradient-to-br from-blue-600 via-fuchsia-500 to-purple-600 bg-clip-text text-transparent">Maximize</span> Your Profit
-          </span>
+        <h1 className="text-3xl sm:text-4xl md:text-7xl font-bold text-gray-900 mb-6 leading-tight md:leading-[1.1]">
+          Automate Your Booking<br />
+          And <span className="bg-gradient-to-br from-blue-600 via-fuchsia-500 to-purple-600 bg-clip-text text-transparent">Maximize</span> Your Profit
         </h1>
         <p className="text-xl max-w-3xl mx-auto text-gray-600 leading-relaxed">
           We automate the entire business journey from <span className="font-bold text-gray-800">lead generation</span> <br /> to <span className="font-bold text-gray-800">reminders</span> saving your clinic time, boosting revenue.

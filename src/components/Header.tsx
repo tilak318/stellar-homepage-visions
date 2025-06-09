@@ -1,6 +1,8 @@
 import { useEffect, useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { Link, useLocation } from 'react-router-dom';
+import { Sheet, SheetTrigger, SheetContent } from '@/components/ui/sheet';
+import { Menu } from 'lucide-react';
 
 const Header = () => {
   const location = useLocation();
@@ -48,7 +50,32 @@ const Header = () => {
               ))}
             </nav>
           </div>
-          <Button className="bg-gradient-to-r from-purple-500 to-blue-600 hover:shadow-lg text-white font-bold py-3 px-6 rounded-lg">
+          <div className="md:hidden flex items-center">
+            <Sheet>
+              <SheetTrigger asChild>
+                <button className="p-2 rounded-md focus:outline-none focus:ring-2 focus:ring-purple-500">
+                  <Menu className="w-7 h-7 text-gray-900" />
+                </button>
+              </SheetTrigger>
+              <SheetContent side="right">
+                <nav className="flex flex-col gap-6 mt-8">
+                  {navLinks.map((link) => (
+                    <Link
+                      key={link.name}
+                      to={link.path}
+                      className={`text-lg font-medium ${location.pathname === link.path ? 'text-purple-600' : 'text-gray-900'}`}
+                    >
+                      {link.name}
+                    </Link>
+                  ))}
+                </nav>
+                <Button className="mt-8 w-full bg-gradient-to-r from-purple-500 to-blue-600 hover:shadow-lg text-white font-bold py-3 px-6 rounded-lg">
+                  BOOK DEMO
+                </Button>
+              </SheetContent>
+            </Sheet>
+          </div>
+          <Button className="bg-gradient-to-r from-purple-500 to-blue-600 hover:shadow-lg text-white font-bold py-3 px-6 rounded-lg hidden sm:inline-block">
             BOOK DEMO
           </Button>
         </div>
