@@ -60,19 +60,21 @@ const DashboardSection = () => {
           </div>
         </div>
 
-        <div className="relative">
-          <div className="flex flex-col lg:flex-row items-center justify-between mb-8 gap-4">
-            <Button
-              variant="outline"
-              size="icon"
-              onClick={prevDashboard}
-              className="rounded-full w-10 h-10 sm:w-12 sm:h-12 shadow-lg hover:shadow-xl transition-all order-2 lg:order-1"
-            >
-              <ChevronLeft className="w-5 h-5 sm:w-6 sm:h-6" />
-            </Button>
-            <div className="flex-1 w-full mx-0 sm:mx-8 order-1 lg:order-2">
-              <div className="bg-gradient-to-br from-purple-100 to-blue-50 rounded-2xl sm:rounded-3xl p-4 sm:p-8 shadow-xl">
-                <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8 items-center">
+        <div className="relative flex items-center justify-center mb-8">
+          {/* Left Arrow */}
+          <Button
+            variant="outline"
+            size="icon"
+            onClick={prevDashboard}
+            className="rounded-full w-10 h-10 sm:w-12 sm:h-12 shadow-lg hover:shadow-xl transition-all absolute left-0 top-[35%] lg:top-1/2 -translate-y-1/2 z-10"
+          >
+            <ChevronLeft className="w-5 h-5 sm:w-6 sm:h-6" />
+          </Button>
+          {/* Card Content */}
+          <div className="flex-1 w-full mx-0 sm:mx-8">
+            <div className="bg-gradient-to-br from-purple-100 to-blue-50 rounded-2xl sm:rounded-3xl p-4 sm:p-8 shadow-xl">
+              <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8 items-center">
+                <div className="order-2 lg:order-1">
                   <div className="space-y-4 sm:space-y-6">
                     <h3 className="text-2xl sm:text-3xl font-bold text-gray-900">
                       {dashboards[currentDashboard].title}
@@ -89,41 +91,44 @@ const DashboardSection = () => {
                         </div>
                       ))}
                     </div>
-                    <Button className="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 sm:px-6 sm:py-3 rounded-xl text-sm sm:text-base">
+                    <Button className="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 sm:px-6 sm:py-3 rounded-xl text-sm sm:text-base w-full sm:w-auto">
                       View Demo
                     </Button>
                   </div>
-                  <div className="bg-white rounded-xl sm:rounded-2xl p-2 sm:p-4 shadow-lg">
-                    <div className="bg-gray-900 rounded-lg sm:rounded-xl h-40 sm:h-64 flex items-center justify-center">
-                      <div className="text-white text-center">
-                        <div className="w-10 h-10 sm:w-16 sm:h-16 bg-gray-700 rounded-lg mx-auto mb-2 sm:mb-4"></div>
-                        <p className="text-xs sm:text-sm opacity-75">Dashboard Preview</p>
-                      </div>
-                    </div>
+                </div>
+                <div className="order-1 lg:order-2 mb-4 lg:mb-0">
+                  <div className="bg-white rounded-xl sm:rounded-2xl p-2 sm:p-4 shadow-lg flex items-center justify-center">
+                    <img
+                      src={dashboards[currentDashboard].image}
+                      alt={dashboards[currentDashboard].title}
+                      className="w-full h-40 sm:h-64 object-contain rounded-lg"
+                      style={{ maxWidth: '350px' }}
+                    />
                   </div>
                 </div>
               </div>
             </div>
-            <Button
-              variant="outline"
-              size="icon"
-              onClick={nextDashboard}
-              className="rounded-full w-10 h-10 sm:w-12 sm:h-12 shadow-lg hover:shadow-xl transition-all order-3"
-            >
-              <ChevronRight className="w-5 h-5 sm:w-6 sm:h-6" />
-            </Button>
           </div>
-          <div className="flex justify-center space-x-2 mt-4">
-            {dashboards.map((_, index) => (
-              <button
-                key={index}
-                onClick={() => setCurrentDashboard(index)}
-                className={`w-2.5 h-2.5 sm:w-3 sm:h-3 rounded-full transition-all ${
-                  index === currentDashboard ? 'bg-purple-600' : 'bg-gray-300'
-                }`}
-              />
-            ))}
-          </div>
+          {/* Right Arrow */}
+          <Button
+            variant="outline"
+            size="icon"
+            onClick={nextDashboard}
+            className="rounded-full w-10 h-10 sm:w-12 sm:h-12 shadow-lg hover:shadow-xl transition-all absolute right-0 top-[35%] lg:top-1/2 -translate-y-1/2 z-10"
+          >
+            <ChevronRight className="w-5 h-5 sm:w-6 sm:h-6" />
+          </Button>
+        </div>
+        <div className="flex justify-center space-x-2 mt-4">
+          {dashboards.map((_, index) => (
+            <button
+              key={index}
+              onClick={() => setCurrentDashboard(index)}
+              className={`w-2.5 h-2.5 sm:w-3 sm:h-3 rounded-full transition-all ${
+                index === currentDashboard ? 'bg-purple-600' : 'bg-gray-300'
+              }`}
+            />
+          ))}
         </div>
       </div>
     </section>
