@@ -67,54 +67,54 @@ const ComparisonSection = () => {
   };
 
   return (
-    <section className="py-20">
-      <div className="container mx-auto max-w-7xl px-8">
-        <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
+    <section className="py-8">
+      <div className="container mx-auto max-w-7xl px-2">
+        <div className="text-center mb-6">
+          <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-2">
             Compare Our <span className="text-purple-600">AI Platform</span>
           </h2>
-          <p className="text-xl text-gray-600 max-w-4xl mx-auto">
+          <p className="text-base md:text-lg text-gray-600 max-w-3xl mx-auto">
             See how TRYZENIQ stacks up against traditional automation methods and agencies. 
             Get more power, flexibility, and support.
           </p>
         </div>
 
-        <div className="bg-white rounded-3xl shadow-xl overflow-hidden">
+        <div className="bg-white rounded-2xl shadow-xl overflow-hidden">
           <div className="overflow-x-auto">
-            <table className="w-full">
+            <table className="w-full text-base">
               <thead>
                 <tr className="bg-gradient-to-r from-purple-600 to-fuchsia-600 text-white">
-                  <th className="text-left p-6 font-semibold">Features</th>
-                  <th className="text-center p-6 font-semibold bg-white/10 backdrop-blur-sm">
-                    <div className="bg-gray-200 rounded-lg p-4 text-gray-800">
-                      Our AI Platform
+                  <th className="text-left p-4 font-semibold text-sm md:text-lg">Features</th>
+                  <th className="text-center p-4 font-semibold text-sm md:text-lg bg-white/10 backdrop-blur-sm border-l-2 border-r-2 border-t-2 border-black">
+                    <div className="bg-gray-200 rounded-lg p-2 text-gray-800 text-sm md:text-lg font-bold">
+                      TRYZENIQ
                     </div>
                   </th>
-                  <th className="text-center p-6 font-semibold">HubSpot, Apollo.io, Zapier, Reply</th>
-                  <th className="text-center p-6 font-semibold">Hiring InHouse, Agency</th>
+                  <th className="text-center p-4 font-semibold text-sm md:text-lg">HubSpot, Apollo.io, Zapier, Reply</th>
+                  <th className="text-center p-4 font-semibold text-sm md:text-lg">Hiring InHouse, Agency</th>
                 </tr>
               </thead>
               <tbody>
                 {features.map((feature, index) => (
                   <tr key={index} className={`border-b border-gray-100 ${index % 2 === 0 ? 'bg-gray-50' : 'bg-white'}`}>
-                    <td className="p-6 font-medium text-gray-900">{feature.name}</td>
-                    <td className="p-6 text-center bg-green-50">
-                      <div className="flex items-center justify-center mb-2">
+                    <td className="p-4 font-medium text-gray-900">{feature.name}</td>
+                    <td className={`p-4 text-center bg-green-50 border-l-2 border-r-2 border-black ${index === 0 ? 'border-t-2' : ''} ${index === features.length - 1 ? 'border-b-2' : ''}` }>
+                      <div className="flex items-center justify-center mb-1">
                         {getStatusIcon(feature.ourPlatform.status)}
                       </div>
-                      <p className="text-sm text-gray-700">{feature.ourPlatform.text}</p>
+                      <p className="hidden md:block text-base text-gray-700">{feature.ourPlatform.text}</p>
                     </td>
-                    <td className="p-6 text-center">
-                      <div className="flex items-center justify-center mb-2">
+                    <td className="p-4 text-center">
+                      <div className="flex items-center justify-center mb-1">
                         {getStatusIcon(feature.competitors.status)}
                       </div>
-                      <p className="text-sm text-gray-700">{feature.competitors.text}</p>
+                      <p className="hidden md:block text-base text-gray-700">{feature.competitors.text}</p>
                     </td>
-                    <td className="p-6 text-center">
-                      <div className="flex items-center justify-center mb-2">
+                    <td className="p-4 text-center">
+                      <div className="flex items-center justify-center mb-1">
                         {getStatusIcon(feature.agencies.status)}
                       </div>
-                      <p className="text-sm text-gray-700">{feature.agencies.text}</p>
+                      <p className="hidden md:block text-base text-gray-700">{feature.agencies.text}</p>
                     </td>
                   </tr>
                 ))}

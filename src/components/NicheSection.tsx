@@ -46,7 +46,7 @@ const niches = [
 const NicheSection = () => {
   return (
     <section className="py-20">
-      <div className="container mx-auto px-6 max-w-screen-xl xl:max-w-[1600px]">
+      <div className="container mx-auto px-6 max-w-screen-xl">
         <div className="text-center mb-16 md:mb-10 xl:mb-12">
           <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
             All In <span className="text-purple-600">One Platform</span>
@@ -55,14 +55,14 @@ const NicheSection = () => {
             Where We Help To Automate This Business
           </p>
         </div>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-4 xl:gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6 lg:gap-8 justify-center">
           {niches.map((niche, index) => (
             <div
               key={index}
-              className="bg-white rounded-2xl p-6 shadow-lg transform hover:-translate-y-2 transition-transform duration-300 md:static sticky top-24 z-[${10 + index * 10}]"
+              className="bg-white rounded-2xl p-6 shadow-lg transform hover:-translate-y-2 transition-transform duration-300 md:static sticky top-24 z-[${10 + index * 10}] mx-auto lg:max-w-xs xl:max-w-sm w-full"
             >
-              <h3 className="text-xl font-bold text-gray-900 mb-4">{niche.title}</h3>
-              <div className="space-y-3 mb-6">
+              <h3 className="text-xl md:text-lg font-bold text-gray-900 mb-4 md:mb-2">{niche.title}</h3>
+              <div className="space-y-3 md:space-y-2 mb-6 md:mb-3">
                 {niche.features.map((feature, i) => (
                   <div key={i} className="flex items-center space-x-2 md:space-x-3 xl:space-x-4">
                     <Check className="w-4 h-4 md:w-5 md:h-5 xl:w-6 xl:h-6 text-purple-500" />
@@ -70,7 +70,7 @@ const NicheSection = () => {
                   </div>
                 ))}
               </div>
-              <div className="h-40 bg-gray-200 rounded-lg">
+              <div className="h-40 md:h-28 bg-gray-200 rounded-lg">
                 <img src={niche.image} alt={niche.title} className="w-full h-full object-cover rounded-lg" />
               </div>
             </div>
