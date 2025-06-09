@@ -52,11 +52,16 @@ const DashboardSection = () => {
             Where We Help To Automate This Business
           </p>
           <div className="flex flex-wrap justify-center gap-2 sm:gap-4 mb-6 sm:mb-8">
-            <span className="px-3 py-1.5 sm:px-4 sm:py-2 bg-gray-100 rounded-full text-xs sm:text-sm font-medium text-gray-700">Documents</span>
-            <span className="px-3 py-1.5 sm:px-4 sm:py-2 bg-gray-100 rounded-full text-xs sm:text-sm font-medium text-gray-700">Telehealth</span>
-            <span className="px-3 py-1.5 sm:px-4 sm:py-2 bg-purple-100 text-purple-700 rounded-full text-xs sm:text-sm font-medium">Lead Generation</span>
-            <span className="px-3 py-1.5 sm:px-4 sm:py-2 bg-gray-100 rounded-full text-xs sm:text-sm font-medium text-gray-700">Chat</span>
-            <span className="px-3 py-1.5 sm:px-4 sm:py-2 bg-gray-100 rounded-full text-xs sm:text-sm font-medium text-gray-700">Automations</span>
+            {dashboards.map((dashboard, index) => (
+              <button
+                key={dashboard.title}
+                onClick={() => setCurrentDashboard(index)}
+                className={`px-3 py-1.5 sm:px-4 sm:py-2 rounded-full text-xs sm:text-sm font-medium transition-colors duration-200
+                  ${index === currentDashboard ? 'bg-purple-100 text-purple-700' : 'bg-gray-100 text-gray-700 hover:bg-purple-50'}`}
+              >
+                {dashboard.title}
+              </button>
+            ))}
           </div>
         </div>
 
@@ -96,13 +101,12 @@ const DashboardSection = () => {
                     </Button>
                   </div>
                 </div>
-                <div className="order-1 lg:order-2 mb-4 lg:mb-0">
-                  <div className="bg-white rounded-xl sm:rounded-2xl p-2 sm:p-4 shadow-lg flex items-center justify-center">
+                <div className="order-1 lg:order-2 mb-4 lg:mb-0 flex justify-center items-center">
+                  <div className="bg-white rounded-xl sm:rounded-2xl p-2 sm:p-4 shadow-lg flex items-center justify-center w-[320px] h-[200px] mx-auto">
                     <img
                       src={dashboards[currentDashboard].image}
                       alt={dashboards[currentDashboard].title}
-                      className="w-full h-40 sm:h-64 object-contain rounded-lg"
-                      style={{ maxWidth: '350px' }}
+                      className="w-full h-full object-cover object-center rounded-lg"
                     />
                   </div>
                 </div>
@@ -118,17 +122,6 @@ const DashboardSection = () => {
           >
             <ChevronRight className="w-5 h-5 sm:w-6 sm:h-6" />
           </Button>
-        </div>
-        <div className="flex justify-center space-x-2 mt-4">
-          {dashboards.map((_, index) => (
-            <button
-              key={index}
-              onClick={() => setCurrentDashboard(index)}
-              className={`w-2.5 h-2.5 sm:w-3 sm:h-3 rounded-full transition-all ${
-                index === currentDashboard ? 'bg-purple-600' : 'bg-gray-300'
-              }`}
-            />
-          ))}
         </div>
       </div>
     </section>
