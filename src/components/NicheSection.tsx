@@ -46,8 +46,8 @@ const niches = [
 const NicheSection = () => {
   return (
     <section className="py-20">
-      <div className="container mx-auto px-6">
-        <div className="text-center mb-16">
+      <div className="container mx-auto px-6 max-w-screen-xl xl:max-w-[1600px]">
+        <div className="text-center mb-16 md:mb-10 xl:mb-12">
           <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
             All In <span className="text-purple-600">One Platform</span>
           </h2>
@@ -55,22 +55,22 @@ const NicheSection = () => {
             Where We Help To Automate This Business
           </p>
         </div>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-4 xl:gap-6">
           {niches.map((niche, index) => (
             <div
               key={index}
-              className={`bg-white rounded-2xl p-4 md:p-6 shadow-lg transform hover:-translate-y-2 transition-transform duration-300 md:static sticky top-24 z-[${10 + index * 10}]`}
+              className="bg-white rounded-2xl p-6 shadow-lg transform hover:-translate-y-2 transition-transform duration-300 md:static sticky top-24 z-[${10 + index * 10}]"
             >
-              <h3 className="text-lg md:text-xl font-bold text-gray-900 mb-3 md:mb-4">{niche.title}</h3>
-              <div className="space-y-2 md:space-y-3 mb-4 md:mb-6">
+              <h3 className="text-xl font-bold text-gray-900 mb-4">{niche.title}</h3>
+              <div className="space-y-3 mb-6">
                 {niche.features.map((feature, i) => (
-                  <div key={i} className="flex items-center space-x-2 md:space-x-3">
-                    <Check className="w-4 h-4 md:w-5 md:h-5 text-purple-500" />
-                    <span className="text-gray-700 text-xs md:text-sm">{feature}</span>
+                  <div key={i} className="flex items-center space-x-2 md:space-x-3 xl:space-x-4">
+                    <Check className="w-4 h-4 md:w-5 md:h-5 xl:w-6 xl:h-6 text-purple-500" />
+                    <span className="text-gray-700 text-xs md:text-sm xl:text-base">{feature}</span>
                   </div>
                 ))}
               </div>
-              <div className="h-32 md:h-40 bg-gray-200 rounded-lg">
+              <div className="h-40 bg-gray-200 rounded-lg">
                 <img src={niche.image} alt={niche.title} className="w-full h-full object-cover rounded-lg" />
               </div>
             </div>
