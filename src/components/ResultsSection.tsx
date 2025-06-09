@@ -62,32 +62,40 @@ const ResultsSection = () => {
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
           {results.map((result, index) => (
             <motion.div
               key={index}
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: inView ? 1 : 0, y: inView ? 0 : 20 }}
               transition={{ duration: 0.6, ease: 'easeOut', delay: 0.4 + index * 0.2 }}
+              className={
+                // Stacked sticky effect for mobile only, last card has highest z-index
+                index === 0
+                  ? 'md:static sticky top-24 z-10'
+                  : index === 1
+                  ? 'md:static sticky top-24 z-20'
+                  : 'md:static sticky top-24 z-30'
+              }
             >
               <div
-                className={`${result.bgColor} p-8 rounded-3xl hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 h-full flex flex-col`}
+                className={`${result.bgColor} p-4 md:p-8 rounded-2xl md:rounded-3xl hover:shadow-xl shadow-lg border border-gray-200 transition-all duration-300 transform hover:-translate-y-2 h-full flex flex-col`}
               >
-                <div className={`w-16 h-16 bg-gradient-to-r ${result.color} rounded-2xl flex items-center justify-center mb-6 shadow-lg flex-shrink-0`}>
-                  <result.icon className="w-8 h-8 text-white" />
+                <div className={`w-12 h-12 md:w-16 md:h-16 bg-gradient-to-r ${result.color} rounded-xl md:rounded-2xl flex items-center justify-center mb-4 md:mb-6 shadow-lg flex-shrink-0`}>
+                  <result.icon className="w-6 h-6 md:w-8 md:h-8 text-white" />
                 </div>
                 
-                <h3 className="text-xl font-bold text-gray-800 mb-4">{result.title}</h3>
+                <h3 className="text-lg md:text-xl font-bold text-gray-800 mb-2 md:mb-4">{result.title}</h3>
                 
-                <div className={`text-5xl font-bold bg-gradient-to-r ${result.color} bg-clip-text text-transparent mb-4`}>
+                <div className={`text-3xl md:text-5xl font-bold bg-gradient-to-r ${result.color} bg-clip-text text-transparent mb-2 md:mb-4`}>
                   {result.number}
                 </div>
                 
-                <p className="text-gray-600 mb-6 leading-relaxed flex-grow">{result.description}</p>
+                <p className="text-gray-600 mb-4 md:mb-6 leading-relaxed flex-grow text-sm md:text-base">{result.description}</p>
                 
-                <div className="border-t border-gray-200 pt-4">
-                  <div className="text-sm font-semibold text-fuchsia-600 mb-1">{result.increase}</div>
-                  <div className="text-sm text-gray-500">{result.subtext}</div>
+                <div className="border-t border-gray-200 pt-3 md:pt-4">
+                  <div className="text-xs md:text-sm font-semibold text-fuchsia-600 mb-1">{result.increase}</div>
+                  <div className="text-xs md:text-sm text-gray-500">{result.subtext}</div>
                 </div>
               </div>
             </motion.div>

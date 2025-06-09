@@ -56,19 +56,19 @@ const NewAISolutionsSection = () => {
             <div className="flex flex-col items-center justify-center rounded-xl shadow-md hover:shadow-xl transition-all duration-300 bg-purple-50 p-6">
               <div className="mb-3">{solutions[0].icon}</div>
               <div className="text-lg md:text-xl font-bold text-gray-800 text-center">{solutions[0].title}</div>
-            </div>
+                </div>
             <div />
             {/* Row 2 */}
             <div />
             <div className="flex flex-col items-center justify-center rounded-xl shadow-md hover:shadow-xl transition-all duration-300 bg-blue-50 p-6">
               <div className="mb-3">{solutions[1].icon}</div>
               <div className="text-lg md:text-xl font-bold text-gray-800 text-center">{solutions[1].title}</div>
-            </div>
+                </div>
             {/* Row 3 */}
             <div className="flex flex-col items-center justify-center rounded-xl shadow-md hover:shadow-xl transition-all duration-300 bg-fuchsia-50 p-6">
               <div className="mb-3">{solutions[2].icon}</div>
               <div className="text-lg md:text-xl font-bold text-gray-800 text-center">{solutions[2].title}</div>
-            </div>
+              </div>
             <div />
           </div>
         </div>
