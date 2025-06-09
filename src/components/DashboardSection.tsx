@@ -72,7 +72,7 @@ const DashboardSection = () => {
           </Button>
           {/* Card Content */}
           <div className="flex-1 w-full mx-0 sm:mx-8">
-            <div className="bg-gradient-to-br from-purple-100 to-blue-50 rounded-2xl sm:rounded-3xl p-4 sm:p-8 shadow-xl">
+            <div className="bg-gradient-to-br from-purple-100 to-blue-50 rounded-2xl sm:rounded-3xl p-4 sm:p-8 shadow-xl lg:max-w-4xl lg:min-h-[420px] lg:py-12 mx-auto flex items-center">
               <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8 items-center">
                 <div className="order-2 lg:order-1">
                   <div className="space-y-4 sm:space-y-6">
