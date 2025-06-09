@@ -43,7 +43,29 @@ const niches = [
   }
 ];
 
+const cardColors = [
+  'bg-teal-100',
+  'bg-blue-100',
+  'bg-emerald-200',
+  'bg-orange-200',
+  'bg-cyan-200',
+  'bg-rose-200',
+];
+
+// Function to shuffle array
+const shuffleArray = (array: string[]) => {
+  const newArray = [...array];
+  for (let i = newArray.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [newArray[i], newArray[j]] = [newArray[j], newArray[i]];
+  }
+  return newArray;
+};
+
 const NicheSection = () => {
+  // Shuffle colors when component renders
+  const shuffledColors = shuffleArray(cardColors);
+
   return (
     <section className="py-20">
       <div className="container mx-auto px-6 max-w-screen-xl">
@@ -56,10 +78,10 @@ const NicheSection = () => {
           </p>
         </div>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6 lg:gap-8 justify-center">
-          {niches.map((niche, index) => (
+          {niches.slice(0, 6).map((niche, index) => (
             <div
               key={index}
-              className="bg-white rounded-2xl p-6 shadow-lg transform hover:-translate-y-2 transition-transform duration-300 md:static sticky top-24 z-[${10 + index * 10}] mx-auto lg:max-w-xs xl:max-w-sm w-full"
+              className={`${shuffledColors[index]} text-gray-900 rounded-2xl p-6 md:p-4 shadow-lg transform hover:-translate-y-2 transition-transform duration-300 md:static sticky top-24 z-[${10 + index * 10}] mx-auto lg:max-w-xs xl:max-w-sm w-full`}
             >
               <h3 className="text-xl md:text-lg font-bold text-gray-900 mb-4 md:mb-2">{niche.title}</h3>
               <div className="space-y-3 md:space-y-2 mb-6 md:mb-3">
