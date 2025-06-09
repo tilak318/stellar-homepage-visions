@@ -85,7 +85,7 @@ const ComparisonSection = () => {
               <thead>
                 <tr className="bg-gradient-to-r from-purple-600 to-fuchsia-600 text-white">
                   <th className="text-left p-4 font-semibold text-sm md:text-lg">Features</th>
-                  <th className="text-center p-4 font-semibold text-sm md:text-lg bg-white/10 backdrop-blur-sm border-l-2 border-r-2 border-t-2 border-black">
+                  <th className="text-center p-4 font-semibold text-sm md:text-lg bg-white/10 backdrop-blur-sm border-l-2 border-r-2 border-t-2 border-purple-600">
                     <div className="bg-gray-200 rounded-lg p-2 text-gray-800 text-sm md:text-lg font-bold">
                       TRYZENIQ
                     </div>
@@ -98,7 +98,7 @@ const ComparisonSection = () => {
                 {features.map((feature, index) => (
                   <tr key={index} className={`border-b border-gray-100 ${index % 2 === 0 ? 'bg-gray-50' : 'bg-white'}`}>
                     <td className="p-4 font-medium text-gray-900">{feature.name}</td>
-                    <td className={`p-4 text-center bg-green-50 border-l-2 border-r-2 border-black ${index === 0 ? 'border-t-2' : ''} ${index === features.length - 1 ? 'border-b-2' : ''}` }>
+                    <td className={`p-4 text-center bg-green-50 border-l-2 border-r-2 border-purple-600 ${index === 0 ? 'border-t-2' : ''} ${index === features.length - 1 ? 'border-b-2' : ''}` }>
                       <div className="flex items-center justify-center mb-1">
                         {getStatusIcon(feature.ourPlatform.status)}
                       </div>
