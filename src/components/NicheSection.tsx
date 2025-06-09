@@ -44,12 +44,12 @@ const niches = [
 ];
 
 const cardColors = [
-  'bg-teal-100',
-  'bg-blue-100',
-  'bg-emerald-200',
-  'bg-orange-200',
-  'bg-cyan-200',
-  'bg-rose-200',
+  'bg-purple-100',
+  'bg-purple-200',
+  'bg-purple-100',
+  'bg-purple-200',
+  'bg-purple-100',
+  'bg-purple-200',
 ];
 
 // Fixed random arrangement of colors
@@ -78,7 +78,7 @@ const NicheSection = () => {
           {niches.slice(0, 6).map((niche, index) => (
             <div
               key={index}
-              className={`${randomColors[index]} text-gray-900 rounded-2xl p-6 md:p-4 shadow-lg transform hover:-translate-y-2 transition-transform duration-300 md:static sticky top-24 z-[${10 + index * 10}] mx-auto lg:max-w-xs xl:max-w-sm w-full`}
+              className={`${cardColors[index]} text-gray-900 rounded-2xl p-6 md:p-4 shadow-lg transform hover:-translate-y-2 transition-transform duration-300 md:static sticky top-24 z-[${10 + index * 10}] mx-auto lg:max-w-xs xl:max-w-sm w-full`}
             >
               <h3 className="text-xl md:text-lg font-bold text-gray-900 mb-4 md:mb-2">{niche.title}</h3>
               <div className="space-y-3 md:space-y-2 mb-6 md:mb-3">
