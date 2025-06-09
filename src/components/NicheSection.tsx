@@ -9,7 +9,7 @@ const niches = [
   {
     title: "Clinics and Detist",
     features: ["Smart Website + Auto Lead Gens", "Automated Survey & Feedback", "Google/Yelp Review Requests", "Referrals Tracking", "AI Chatbot"],
-    image: "https://images.unsplash.com/photo-1629424536968-965d4153316b?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+    image: "https://images.unsplash.com/photo-1516321497487-e288fb19713f?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
   },
   {
     title: "Gym & Health Couch",
@@ -29,7 +29,7 @@ const niches = [
   {
     title: "Salons and Spa",
     features: ["Smart Website + Auto Lead Gen", "Smart follow-ups & reminders", "Appointment scheduling", "Referral Tracking", "Client Loyalty"],
-    image: "https://images.unsplash.com/photo-1600334089648-b0d9d3028269?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+    image: "https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
   },
   {
     title: "Real estate agents",
@@ -52,20 +52,17 @@ const cardColors = [
   'bg-rose-200',
 ];
 
-// Function to shuffle array
-const shuffleArray = (array: string[]) => {
-  const newArray = [...array];
-  for (let i = newArray.length - 1; i > 0; i--) {
-    const j = Math.floor(Math.random() * (i + 1));
-    [newArray[i], newArray[j]] = [newArray[j], newArray[i]];
-  }
-  return newArray;
-};
+// Fixed random arrangement of colors
+const randomColors = [
+  'bg-cyan-200',
+  'bg-emerald-200',
+  'bg-rose-200',
+  'bg-teal-100',
+  'bg-orange-200',
+  'bg-blue-100',
+];
 
 const NicheSection = () => {
-  // Shuffle colors when component renders
-  const shuffledColors = shuffleArray(cardColors);
-
   return (
     <section className="py-20">
       <div className="container mx-auto px-6 max-w-screen-xl">
@@ -81,7 +78,7 @@ const NicheSection = () => {
           {niches.slice(0, 6).map((niche, index) => (
             <div
               key={index}
-              className={`${shuffledColors[index]} text-gray-900 rounded-2xl p-6 md:p-4 shadow-lg transform hover:-translate-y-2 transition-transform duration-300 md:static sticky top-24 z-[${10 + index * 10}] mx-auto lg:max-w-xs xl:max-w-sm w-full`}
+              className={`${randomColors[index]} text-gray-900 rounded-2xl p-6 md:p-4 shadow-lg transform hover:-translate-y-2 transition-transform duration-300 md:static sticky top-24 z-[${10 + index * 10}] mx-auto lg:max-w-xs xl:max-w-sm w-full`}
             >
               <h3 className="text-xl md:text-lg font-bold text-gray-900 mb-4 md:mb-2">{niche.title}</h3>
               <div className="space-y-3 md:space-y-2 mb-6 md:mb-3">
