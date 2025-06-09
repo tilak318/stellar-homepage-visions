@@ -8,27 +8,27 @@ const DashboardSection = () => {
   const dashboards = [
     {
       title: "Botox & Skin Care",
-      image: "/lovable-uploads/646df6b8-ae48-46b4-a265-ab8491737013.png",
+      image: "https://plus.unsplash.com/premium_photo-1680371834671-26c3d8f0e0d8?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8bWFjJTIwc29mdHdhcmUlMjBkYXNoYm9hcmR8ZW58MHx8MHx8fDA%3D",
       features: ["Smart Website + Auto Lead Gen", "Smart follow-ups & reminders", "Appointment scheduling", "Before/After Tracking", "Client Loyalty"]
     },
     {
       title: "Clinics and Detist",
-      image: "/lovable-uploads/649a19e7-2cbc-4fed-9908-2053a363be90.png",
+      image: "https://images.unsplash.com/photo-1691480195680-144318cfa695?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTN8fG1hYyUyMHNvZnR3YXJlJTIwZGFzaGJvYXJkfGVufDB8fDB8fHww",
       features: ["Smart Website + Auto Lead Gen", "Automated Survey & Feedback", "Google/Yelp Review requests", "Referrals Tracking", "AI Chatbot"]
     },
     {
       title: "Gym & Health Coach",
-      image: "/lovable-uploads/5cd9d473-ebf1-4658-9ac6-429b86c8213b.png",
+      image: "https://images.unsplash.com/photo-1634544333207-7c5e5fc748d9?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTh8fG1hYyUyMHNvZnR3YXJlJTIwZGFzaGJvYXJkfGVufDB8fDB8fHww",
       features: ["Smart Website + Auto Lead Gen", "Smart follow-ups & reminders", "Appointment scheduling", "Referral Tracking", "Client Loyalty"]
     },
     {
       title: "Business Consultation",
-      image: "/lovable-uploads/540af2f8-1ab8-4bec-86d0-c94e9823d227.png",
+      image: "https://images.unsplash.com/photo-1677022725616-91e41d36db21?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjB8fG1hYyUyMHNvZnR3YXJlJTIwZGFzaGJvYXJkfGVufDB8fDB8fHww",
       features: ["Smart Website + Auto Lead Gen", "Smart follow-ups & reminders", "Appointment scheduling", "Referral Tracking", "Client Loyalty"]
     },
     {
       title: "IT & SAAS Services",
-      image: "/lovable-uploads/83ff062d-8064-41d9-a52a-da032dcca867.png",
+      image: "https://plus.unsplash.com/premium_photo-1685086785230-2233cf5d8f28?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTl8fG1hYyUyMHNvZnR3YXJlJTIwZGFzaGJvYXJkfGVufDB8fDB8fHww",
       features: ["Smart Website + Auto Lead Gen", "Smart follow-ups & reminders", "Appointment scheduling", "Referral Tracking", "Client Loyalty"]
     }
   ];
