@@ -66,9 +66,9 @@ const ResultsSection = () => {
           {results.map((result, index) => (
             <motion.div
               key={index}
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: inView ? 1 : 0, y: inView ? 0 : 20 }}
-              transition={{ duration: 0.6, ease: 'easeOut', delay: 0.4 + index * 0.2 }}
+              initial={typeof window !== 'undefined' && window.innerWidth < 768 ? false : { opacity: 0, y: 20 }}
+              animate={typeof window !== 'undefined' && window.innerWidth < 768 ? false : { opacity: inView ? 1 : 0, y: inView ? 0 : 20 }}
+              transition={typeof window !== 'undefined' && window.innerWidth < 768 ? undefined : { duration: 0.6, ease: 'easeOut', delay: 0.4 + index * 0.2 }}
               className={
                 // Stacked sticky effect for mobile only, last card has highest z-index
                 index === 0
