@@ -33,9 +33,30 @@ const HeroSection = () => {
         </div>
       </section>
       
-      {/* Empty window section */}
-      <section className="h-screen w-full bg-white">
-        {/* Empty window that covers the full height */}
+      {/* Empty window section with funnel blocks */}
+      <section className="h-screen w-full bg-white flex items-center justify-center">
+        <div className="flex flex-col items-center gap-8">
+          {/* First funnel block - Big */}
+          <div className="w-[500px] h-20 rounded-xl bg-gradient-to-r from-blue-500 to-purple-600 shadow-xl">
+            <div className="h-full w-full flex items-center justify-center text-white text-lg font-medium">
+              Lead Generation
+            </div>
+          </div>
+          
+          {/* Second funnel block - Medium */}
+          <div className="w-[400px] h-20 rounded-xl bg-gradient-to-r from-purple-500 to-fuchsia-600 shadow-xl">
+            <div className="h-full w-full flex items-center justify-center text-white text-lg font-medium">
+              Appointment Booking
+            </div>
+          </div>
+          
+          {/* Third funnel block - Small */}
+          <div className="w-[300px] h-20 rounded-xl bg-gradient-to-r from-fuchsia-500 to-pink-600 shadow-xl">
+            <div className="h-full w-full flex items-center justify-center text-white text-lg font-medium">
+              Follow-up
+            </div>
+          </div>
+        </div>
       </section>
     </div>
   );
