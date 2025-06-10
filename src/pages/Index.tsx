@@ -16,7 +16,7 @@ const Index = () => {
       <Header />
       <HeroSection />
       {/* <AISolutionsSection /> */}
-      <NewAISolutionsSection />
+      {/* <NewAISolutionsSection /> */}
       <ResultsSection />
       <DashboardSection />
       <NicheSection />
