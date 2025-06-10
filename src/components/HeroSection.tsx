@@ -33,37 +33,37 @@ const HeroSection = () => {
           </div>
         </div>
       </section>
-      {/* Improved Funnel Section */}
+      {/* Reduced Size Funnel Section */}
       <section className="h-screen w-full bg-white flex items-center justify-center">
-        <div className="flex flex-col items-center w-[420px]">
+        <div className="flex flex-col items-center w-[280px]">
           {/* Funnel Mouth (Ellipse) with Icon */}
-          <div className="relative w-[340px] h-[80px] z-10">
-            <div className="absolute left-0 top-0 w-full h-full rounded-full bg-gradient-to-b from-blue-500 to-purple-500 shadow-2xl" style={{boxShadow:'0 12px 32px 0 #7c3aed55'}}></div>
-            <div className="absolute left-0 top-0 w-full h-full rounded-full" style={{boxShadow:'inset 0 18px 40px 0 #fff8, inset 0 -12px 24px 0 #0002'}}></div>
-            <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 bg-gradient-to-b from-white to-purple-200 rounded-xl w-16 h-16 flex items-center justify-center shadow-lg border-4 border-white">
-              <FaGlobe className="text-blue-500 text-3xl" />
+          <div className="relative w-[220px] h-[50px] z-10">
+            <div className="absolute left-0 top-0 w-full h-full rounded-full bg-gradient-to-b from-blue-500 to-purple-500 shadow-2xl" style={{boxShadow:'0 8px 20px 0 #7c3aed55'}}></div>
+            <div className="absolute left-0 top-0 w-full h-full rounded-full" style={{boxShadow:'inset 0 10px 24px 0 #fff8, inset 0 -8px 16px 0 #0002'}}></div>
+            <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 bg-gradient-to-b from-white to-purple-200 rounded-xl w-10 h-10 flex items-center justify-center shadow-lg border-4 border-white">
+              <FaGlobe className="text-blue-500 text-xl" />
             </div>
           </div>
           {/* Top Funnel Section */}
-          <div className="w-[400px] h-[90px] -mt-6 relative z-0" style={{clipPath:'polygon(7% 0, 93% 0, 100% 100%, 0% 100%)', background:'linear-gradient(180deg, #6D28D9 0%, #7C3AED 100%)', boxShadow:'0 12px 32px 0 #7c3aed33'}}>
-            <div className="flex flex-col items-center justify-center h-full text-white font-bold text-2xl drop-shadow-md">
+          <div className="w-[260px] h-[55px] -mt-4 relative z-0" style={{clipPath:'polygon(7% 0, 93% 0, 100% 100%, 0% 100%)', background:'linear-gradient(180deg, #6D28D9 0%, #7C3AED 100%)', boxShadow:'0 8px 20px 0 #7c3aed33'}}>
+            <div className="flex flex-col items-center justify-center h-full text-white font-bold text-lg drop-shadow-md">
               Visitors Land<br/>on Website
             </div>
           </div>
           {/* Middle Funnel Section */}
-          <div className="w-[320px] h-[70px] -mt-4 relative z-0" style={{clipPath:'polygon(10% 0, 90% 0, 100% 100%, 0% 100%)', background:'linear-gradient(180deg, #8B5CF6 0%, #A78BFA 100%)', boxShadow:'0 8px 24px 0 #a78bfa33'}}>
-            <div className="flex flex-col items-center justify-center h-full text-white font-bold text-xl drop-shadow-md">
-              <span className="flex items-center gap-2"><FaBullseye className="text-2xl" /> Leads Captured</span>
+          <div className="w-[200px] h-[40px] -mt-3 relative z-0" style={{clipPath:'polygon(10% 0, 90% 0, 100% 100%, 0% 100%)', background:'linear-gradient(180deg, #8B5CF6 0%, #A78BFA 100%)', boxShadow:'0 6px 16px 0 #a78bfa33'}}>
+            <div className="flex flex-col items-center justify-center h-full text-white font-bold text-base drop-shadow-md">
+              <span className="flex items-center gap-2"><FaBullseye className="text-lg" /> Leads Captured</span>
             </div>
           </div>
           {/* Lower Funnel Section */}
-          <div className="w-[220px] h-[55px] -mt-3 relative z-0" style={{clipPath:'polygon(13% 0, 87% 0, 100% 100%, 0% 100%)', background:'linear-gradient(180deg, #C4B5FD 0%, #DDD6FE 100%)', boxShadow:'0 8px 24px 0 #c4b5fd33'}}>
-            <div className="flex flex-col items-center justify-center h-full text-white font-bold text-lg drop-shadow-md">
-              <span className="flex items-center gap-2"><FaRobot className="text-xl" /> Auto Outreach</span>
+          <div className="w-[140px] h-[30px] -mt-2 relative z-0" style={{clipPath:'polygon(13% 0, 87% 0, 100% 100%, 0% 100%)', background:'linear-gradient(180deg, #C4B5FD 0%, #DDD6FE 100%)', boxShadow:'0 4px 12px 0 #c4b5fd33'}}>
+            <div className="flex flex-col items-center justify-center h-full text-white font-bold text-sm drop-shadow-md">
+              <span className="flex items-center gap-2"><FaRobot className="text-base" /> Auto Outreach</span>
             </div>
           </div>
           {/* Confirmed Rectangle */}
-          <div className="w-[120px] h-12 bg-gray-100 rounded-b-xl flex items-center justify-center font-semibold text-gray-700 text-lg -mt-2 shadow-lg">
+          <div className="w-[80px] h-8 bg-gray-100 rounded-b-xl flex items-center justify-center font-semibold text-gray-700 text-sm -mt-1 shadow-lg">
             Confirmed
           </div>
         </div>
