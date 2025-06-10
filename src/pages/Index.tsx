@@ -1,5 +1,6 @@
 import Header from '@/components/Header';
 import HeroSection from '@/components/HeroSection';
+import FunnelAnimation from '@/components/FunnelAnimation';
 import AISolutionsSection from '@/components/AISolutionsSection';
 import NewAISolutionsSection from '@/components/NewAISolutionsSection';
 import ResultsSection from '@/components/ResultsSection';
@@ -15,6 +16,7 @@ const Index = () => {
     <div className="min-h-screen">
       <Header />
       <HeroSection />
+      <FunnelAnimation />
       {/* <AISolutionsSection /> */}
       {/* <NewAISolutionsSection /> */}
       <ResultsSection />
