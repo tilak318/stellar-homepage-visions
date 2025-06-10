@@ -67,14 +67,14 @@ const DashboardSection = () => {
 
         <div className="relative flex items-center justify-center mb-8">
           {/* Left Arrow */}
-          <Button
-            variant="outline"
-            size="icon"
-            onClick={prevDashboard}
+            <Button
+              variant="outline"
+              size="icon"
+              onClick={prevDashboard}
             className="rounded-full w-10 h-10 sm:w-12 sm:h-12 shadow-lg hover:shadow-xl transition-all absolute left-0 top-[35%] lg:top-1/2 -translate-y-1/2 z-10"
-          >
+            >
             <ChevronLeft className="w-5 h-5 sm:w-6 sm:h-6" />
-          </Button>
+            </Button>
           {/* Card Content */}
           <div className="flex-1 w-full mx-0 sm:mx-8">
             <div className="bg-gradient-to-br from-purple-100 to-blue-50 rounded-2xl sm:rounded-3xl p-4 sm:p-8 shadow-xl lg:max-w-4xl lg:min-h-[420px] lg:py-12 mx-auto flex items-center">
@@ -100,7 +100,7 @@ const DashboardSection = () => {
                       View Demo
                     </Button>
                   </div>
-                </div>
+                      </div>
                 <div className="order-1 lg:order-2 mb-4 lg:mb-0">
                   <div className="bg-white rounded-xl sm:rounded-2xl p-2 sm:p-4 shadow-lg flex items-center justify-center">
                     <div className="flex items-center justify-center w-64 h-40 sm:w-80 sm:h-64">
@@ -117,14 +117,14 @@ const DashboardSection = () => {
             </div>
           </div>
           {/* Right Arrow */}
-          <Button
-            variant="outline"
-            size="icon"
-            onClick={nextDashboard}
+            <Button
+              variant="outline"
+              size="icon"
+              onClick={nextDashboard}
             className="rounded-full w-10 h-10 sm:w-12 sm:h-12 shadow-lg hover:shadow-xl transition-all absolute right-0 top-[35%] lg:top-1/2 -translate-y-1/2 z-10"
-          >
+            >
             <ChevronRight className="w-5 h-5 sm:w-6 sm:h-6" />
-          </Button>
+            </Button>
         </div>
       </div>
     </section>
