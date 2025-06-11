@@ -1,5 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { FaGlobe, FaBullseye, FaRobot } from "react-icons/fa";
+import ThreeLevelPyramid from "./ThreeLevelPyramid";
 
 const FloatingIcon = ({ imgSrc, className, delay = 0, alt }) => (
   <div
@@ -45,10 +46,7 @@ const HeroSection = () => {
       {/* Empty Screen Section */}
       <section className="h-screen w-full bg-white flex items-center justify-center">
         <div className="w-[280px] h-[400px] bg-gray-50 rounded-2xl shadow-xl flex items-center justify-center">
-          <div className="text-center">
-            <FaGlobe className="text-blue-500 text-4xl mx-auto mb-4" />
-            <p className="text-gray-600 font-medium">Smart Website</p>
-          </div>
+          <ThreeLevelPyramid />
         </div>
       </section>
     </div>
