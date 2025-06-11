@@ -26,7 +26,7 @@ const HeroSection = () => {
               <span className="bg-gradient-to-br from-blue-600 via-fuchsia-500 to-purple-600 bg-clip-text text-transparent">Maximize Growth</span>
             </span>
           </h1>
-          <p className="text-xl max-w-3xl mx-auto text-gray-600 leading-relaxed">
+          <p className="hidden md:block text-xl max-w-3xl mx-auto text-gray-600 leading-relaxed">
             We automate the entire business journey from <span className="font-bold text-gray-800">lead generation</span> <br /> to <span className="font-bold text-gray-800">reminders</span> saving your clinic time, boosting revenue.
           </p>
           <div className="mt-8">
