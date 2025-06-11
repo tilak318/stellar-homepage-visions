@@ -77,8 +77,22 @@ const DashboardSection = () => {
             </Button>
           {/* Card Content */}
           <div className="flex-1 w-full mx-0 sm:mx-8">
-            <div className="bg-gradient-to-br from-purple-100 to-blue-50 rounded-2xl sm:rounded-3xl p-4 sm:p-8 shadow-xl lg:max-w-4xl lg:min-h-[420px] lg:py-12 mx-auto flex items-center">
+            <div className="bg-gradient-to-br from-purple-100 to-blue-50 rounded-2xl sm:rounded-3xl p-4 sm:p-8 shadow-xl lg:max-w-4xl lg:min-h-[420px] lg:py-12 mx-auto">
               <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8 items-center">
+                {/* Image Section - Now centered in mobile */}
+                <div className="flex justify-center lg:justify-end order-1 lg:order-2 mb-6 lg:mb-0">
+                  <div className="bg-white rounded-xl sm:rounded-2xl p-2 sm:p-4 shadow-lg w-full max-w-[320px] sm:max-w-[400px]">
+                    <div className="aspect-[4/3] w-full">
+                      <img
+                        src={dashboards[currentDashboard].image}
+                        alt={dashboards[currentDashboard].title}
+                        className="object-contain w-full h-full rounded-lg"
+                        style={{ display: 'block' }}
+                      />
+                    </div>
+                  </div>
+                </div>
+                {/* Content Section */}
                 <div className="order-2 lg:order-1">
                   <div className="space-y-4 sm:space-y-6">
                     <h3 className="text-2xl sm:text-3xl font-bold text-gray-900">
@@ -99,18 +113,6 @@ const DashboardSection = () => {
                     <Button className="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 sm:px-6 sm:py-3 rounded-xl text-sm sm:text-base w-full sm:w-auto">
                       View Demo
                     </Button>
-                  </div>
-                      </div>
-                <div className="order-1 lg:order-2 mb-4 lg:mb-0">
-                  <div className="bg-white rounded-xl sm:rounded-2xl p-2 sm:p-4 shadow-lg flex items-center justify-center">
-                    <div className="flex items-center justify-center w-64 h-40 sm:w-80 sm:h-64">
-                      <img
-                        src={dashboards[currentDashboard].image}
-                        alt={dashboards[currentDashboard].title}
-                        className="object-contain w-full h-full max-w-full max-h-full rounded-lg"
-                        style={{ display: 'block' }}
-                      />
-                    </div>
                   </div>
                 </div>
               </div>
