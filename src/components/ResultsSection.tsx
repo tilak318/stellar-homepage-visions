@@ -5,6 +5,7 @@ import { useRef } from 'react';
 const ResultsSection = () => {
   const ref = useRef(null);
   const inView = useInView(ref, { once: true, amount: 0.3 });
+  const isMobile = typeof window !== 'undefined' && window.innerWidth < 768;
 
   const results = [
     {
@@ -43,16 +44,16 @@ const ResultsSection = () => {
     <section ref={ref} className="py-20 bg-white relative">
       <motion.div 
         className="absolute inset-0 bg-gradient-to-b from-purple-100 via-fuchsia-50 to-white"
-        initial={{ opacity: 0 }}
-        animate={{ opacity: inView ? 1 : 0 }}
-        transition={{ duration: 1.5, ease: 'easeOut' }}
+        initial={isMobile ? false : { opacity: 0 }}
+        animate={isMobile ? false : { opacity: inView ? 1 : 0 }}
+        transition={isMobile ? undefined : { duration: 1.5, ease: 'easeOut' }}
       />
       <div className="container mx-auto max-w-7xl px-8 relative">
         <motion.div 
           className="text-center mb-16"
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: inView ? 1 : 0, y: inView ? 0 : 20 }}
-          transition={{ duration: 0.8, ease: 'easeOut', delay: 0.2 }}
+          initial={isMobile ? false : { opacity: 0, y: 20 }}
+          animate={isMobile ? false : { opacity: inView ? 1 : 0, y: inView ? 0 : 20 }}
+          transition={isMobile ? undefined : { duration: 0.8, ease: 'easeOut', delay: 0.2 }}
         >
           <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
             Proven Results That <span className="text-purple-600">Speak For Themselves</span>
@@ -66,11 +67,10 @@ const ResultsSection = () => {
           {results.map((result, index) => (
             <motion.div
               key={index}
-              initial={typeof window !== 'undefined' && window.innerWidth < 768 ? false : { opacity: 0, y: 20 }}
-              animate={typeof window !== 'undefined' && window.innerWidth < 768 ? false : { opacity: inView ? 1 : 0, y: inView ? 0 : 20 }}
-              transition={typeof window !== 'undefined' && window.innerWidth < 768 ? undefined : { duration: 0.6, ease: 'easeOut', delay: 0.4 + index * 0.2 }}
+              initial={isMobile ? false : (typeof window !== 'undefined' && window.innerWidth < 768 ? false : { opacity: 0, y: 20 })}
+              animate={isMobile ? false : (typeof window !== 'undefined' && window.innerWidth < 768 ? false : { opacity: inView ? 1 : 0, y: inView ? 0 : 20 })}
+              transition={isMobile ? undefined : (typeof window !== 'undefined' && window.innerWidth < 768 ? undefined : { duration: 0.6, ease: 'easeOut', delay: 0.4 + index * 0.2 })}
               className={
-                // Stacked sticky effect for mobile only, last card has highest z-index
                 index === 0
                   ? 'md:static sticky top-24 z-10'
                   : index === 1
