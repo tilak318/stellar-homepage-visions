@@ -54,7 +54,7 @@ const HeroSection = () => {
       opacity: localProgress,
       transform: `scaleX(${localProgress})`,
       transition: 'opacity 0.3s, transform 0.3s',
-      transformOrigin: 'left',
+      transformOrigin: 'center',
     };
   };
 
@@ -96,16 +96,16 @@ const HeroSection = () => {
           className={`sticky top-0 flex flex-col items-center justify-center w-full h-screen pointer-events-none`}
           style={{ zIndex: 30 }}
         >
-          <div className="w-full max-w-md flex flex-col gap-4 pointer-events-auto">
-            <div className="h-14 flex items-center justify-center rounded-xl text-white text-lg font-bold shadow-lg bg-gradient-to-r from-blue-600 via-fuchsia-500 to-purple-600"
+          <div className="w-full max-w-md flex flex-col gap-4 pointer-events-auto items-center">
+            <div className="h-14 flex items-center justify-center rounded-xl text-white text-lg font-bold shadow-lg bg-gradient-to-r from-blue-600 via-fuchsia-500 to-purple-600 w-[420px] md:w-[420px] sm:w-[320px] xs:w-[220px] max-w-full"
               style={getBarStyle(0)}>
               AI Automation
             </div>
-            <div className="h-14 flex items-center justify-center rounded-xl text-white text-lg font-bold shadow-lg bg-gradient-to-r from-fuchsia-500 via-purple-500 to-blue-600"
+            <div className="h-14 flex items-center justify-center rounded-xl text-white text-lg font-bold shadow-lg bg-gradient-to-r from-fuchsia-500 via-purple-500 to-blue-600 w-[320px] md:w-[320px] sm:w-[220px] xs:w-[160px] max-w-full"
               style={getBarStyle(1)}>
               AI Outreach Clients
             </div>
-            <div className="h-14 flex items-center justify-center rounded-xl text-white text-lg font-bold shadow-lg bg-gradient-to-r from-purple-600 via-blue-500 to-fuchsia-500"
+            <div className="h-14 flex items-center justify-center rounded-xl text-white text-lg font-bold shadow-lg bg-gradient-to-r from-purple-600 via-blue-500 to-fuchsia-500 w-[220px] md:w-[220px] sm:w-[140px] xs:w-[100px] max-w-full"
               style={getBarStyle(2)}>
               Send Automated Reminders
             </div>
