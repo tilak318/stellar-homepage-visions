@@ -226,3 +226,10 @@
 .animate-spin-slow {
   animation: spin-slow 20s linear infinite;
 }
+
+.scale-x-0 {
+  transform: scaleX(0);
+}
+.scale-x-100 {
+  transform: scaleX(1);
+}

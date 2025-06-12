@@ -1,6 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { FaGlobe, FaBullseye, FaRobot } from "react-icons/fa";
 import ThreeLevelPyramid from "./ThreeLevelPyramid";
+import React, { useRef, useEffect, useState } from "react";
 
 const FloatingIcon = ({ imgSrc, className, delay = 0, alt }) => (
   <div
@@ -12,8 +13,53 @@ const FloatingIcon = ({ imgSrc, className, delay = 0, alt }) => (
 );
 
 const HeroSection = () => {
+  const sectionRef = useRef(null);
+  const [scrollProgress, setScrollProgress] = useState(0);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (!sectionRef.current) return;
+      const section = sectionRef.current;
+      const rect = section.getBoundingClientRect();
+      const sectionTop = section.offsetTop;
+      const sectionHeight = section.offsetHeight;
+      const scrollY = window.scrollY || window.pageYOffset;
+      const windowHeight = window.innerHeight;
+      // Calculate progress through the section
+      const start = sectionTop - windowHeight;
+      const end = sectionTop + sectionHeight;
+      let progress = (scrollY - start) / (end - start);
+      progress = Math.max(0, Math.min(1, progress));
+      setScrollProgress(progress);
+    };
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    handleScroll();
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
+  // Calculate animation for each bar based on scroll progress
+  const getBarStyle = (index) => {
+    const shift = 0.08; // 8% earlier for first two bars
+    let start, end;
+    if (index === 2) {
+      // Make the third bar animate even faster
+      start = 0.65;
+      end = 0.75;
+    } else {
+      start = Math.max(0, index * (1 / 3) - shift);
+      end = Math.min(1, (index + 1) * (1 / 3) + shift);
+    }
+    const localProgress = Math.max(0, Math.min(1, (scrollProgress - start) / (end - start)));
+    return {
+      opacity: localProgress,
+      transform: `scaleX(${localProgress})`,
+      transition: 'opacity 0.3s, transform 0.3s',
+      transformOrigin: 'left',
+    };
+  };
+
   return (
-    <div className="relative">
+    <div className="relative bg-gradient-to-br from-purple-100 via-fuchsia-50 to-blue-50">
       <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
         <div className="container mx-auto max-w-7xl px-8 text-center relative z-10">
           <p className="text-xl font-semibold text-gray-700 mb-2">Get 24/7 Smart Website To</p>
@@ -44,18 +90,29 @@ const HeroSection = () => {
         </div>
       </section>
       {/* Empty Screen Section */}
-      <section className="h-screen w-full bg-white flex flex-col items-center justify-center gap-6">
-        <div className="w-full max-w-md flex flex-col gap-4">
-          <div className="h-14 flex items-center justify-center rounded-xl text-white text-lg font-bold shadow-lg bg-gradient-to-r from-blue-600 via-fuchsia-500 to-purple-600">
-            AI Automation
-          </div>
-          <div className="h-14 flex items-center justify-center rounded-xl text-white text-lg font-bold shadow-lg bg-gradient-to-r from-fuchsia-500 via-purple-500 to-blue-600">
-            AI Outreach Clients
-          </div>
-          <div className="h-14 flex items-center justify-center rounded-xl text-white text-lg font-bold shadow-lg bg-gradient-to-r from-purple-600 via-blue-500 to-fuchsia-500">
-            Send Automated Reminders
+      <section ref={sectionRef} className="relative w-full min-h-[400vh] flex flex-col items-center justify-start">
+        {/* Sticky bar container for animation */}
+        <div
+          className={`sticky top-0 flex flex-col items-center justify-center w-full h-screen pointer-events-none`}
+          style={{ zIndex: 30 }}
+        >
+          <div className="w-full max-w-md flex flex-col gap-4 pointer-events-auto">
+            <div className="h-14 flex items-center justify-center rounded-xl text-white text-lg font-bold shadow-lg bg-gradient-to-r from-blue-600 via-fuchsia-500 to-purple-600"
+              style={getBarStyle(0)}>
+              AI Automation
+            </div>
+            <div className="h-14 flex items-center justify-center rounded-xl text-white text-lg font-bold shadow-lg bg-gradient-to-r from-fuchsia-500 via-purple-500 to-blue-600"
+              style={getBarStyle(1)}>
+              AI Outreach Clients
+            </div>
+            <div className="h-14 flex items-center justify-center rounded-xl text-white text-lg font-bold shadow-lg bg-gradient-to-r from-purple-600 via-blue-500 to-fuchsia-500"
+              style={getBarStyle(2)}>
+              Send Automated Reminders
+            </div>
           </div>
         </div>
+        {/* Spacer to ensure sticky stays until third bar is fully visible */}
+        <div style={{ height: '100vh' }} />
       </section>
     </div>
   );
