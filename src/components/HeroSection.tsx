@@ -44,9 +44,17 @@ const HeroSection = () => {
         </div>
       </section>
       {/* Empty Screen Section */}
-      <section className="h-screen w-full bg-white flex items-center justify-center">
-        <div className="w-[280px] h-[400px] bg-gray-50 rounded-2xl shadow-xl flex items-center justify-center">
-          <ThreeLevelPyramid />
+      <section className="h-screen w-full bg-white flex flex-col items-center justify-center gap-6">
+        <div className="w-full max-w-md flex flex-col gap-4">
+          <div className="h-14 flex items-center justify-center rounded-xl text-white text-lg font-bold shadow-lg bg-gradient-to-r from-blue-600 via-fuchsia-500 to-purple-600">
+            AI Automation
+          </div>
+          <div className="h-14 flex items-center justify-center rounded-xl text-white text-lg font-bold shadow-lg bg-gradient-to-r from-fuchsia-500 via-purple-500 to-blue-600">
+            AI Outreach Clients
+          </div>
+          <div className="h-14 flex items-center justify-center rounded-xl text-white text-lg font-bold shadow-lg bg-gradient-to-r from-purple-600 via-blue-500 to-fuchsia-500">
+            Send Automated Reminders
+          </div>
         </div>
       </section>
     </div>
