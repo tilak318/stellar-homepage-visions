@@ -111,16 +111,10 @@ const HeroSection = () => {
         <div className="container mx-auto max-w-7xl px-8 text-center relative z-10">
           <p className="text-xl font-semibold text-gray-700 mb-2">Get 24/7 Smart Website To</p>
           <h1 className="text-3xl sm:text-4xl md:text-7xl font-bold text-gray-900 mb-6 leading-tight md:leading-[1.1]">
-            <span className="hidden md:inline">
-              Automate Your Booking<br />
-              And <span className="bg-gradient-to-br from-blue-600 via-fuchsia-500 to-purple-600 bg-clip-text text-transparent">Maximize</span> Your Profit
-            </span>
-            <span className="md:hidden">
-              Automate Your Business<br />
-              <span className="bg-gradient-to-br from-blue-600 via-fuchsia-500 to-purple-600 bg-clip-text text-transparent">Maximize Growth</span>
-            </span>
+            Automate Your Booking<br />
+            And <span className="bg-gradient-to-br from-blue-600 via-fuchsia-500 to-purple-600 bg-clip-text text-transparent">Maximize</span> Your Profit
           </h1>
-          <p className="hidden md:block text-xl max-w-3xl mx-auto text-gray-600 leading-relaxed">
+          <p className="text-xl max-w-3xl mx-auto text-gray-600 leading-relaxed">
             We automate the entire business journey from <span className="font-bold text-gray-800">lead generation</span> <br /> to <span className="font-bold text-gray-800">reminders</span> saving your clinic time, boosting revenue.
           </p>
           <div className="mt-8">
@@ -145,7 +139,7 @@ const HeroSection = () => {
         >
           <div className="w-full h-full flex flex-col justify-center items-center gap-8 pointer-events-auto">
             {/* First step: full width, bold gradient, huge text */}
-            <div className="w-[90vw] max-w-4xl h-[20vh] min-h-[100px] flex items-center justify-center rounded-3xl shadow-2xl bg-gradient-to-r from-blue-700 via-cyan-400 to-blue-700 text-white text-4xl md:text-5xl font-extrabold text-center transition-all duration-500"
+            <div className="w-full max-w-md sm:max-w-lg md:max-w-2xl lg:max-w-4xl h-[16vh] min-h-[72px] sm:h-[18vh] sm:min-h-[90px] md:h-[20vh] md:min-h-[100px] flex items-center justify-center rounded-3xl shadow-2xl bg-gradient-to-r from-blue-700 via-cyan-400 to-blue-700 text-white text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-extrabold text-center px-2 sm:px-6 md:px-8 transition-all duration-500"
               style={{
                 opacity: getStepAnim(0).opacity,
                 transform: `translateY(${getStepAnim(0).translateY}px) scale(${getStepAnim(0).scale}) rotate(${getStepAnim(0).rotate}deg)`,
@@ -154,7 +148,7 @@ const HeroSection = () => {
               AI Automation
             </div>
             {/* Second step: full width, bold gradient, huge text */}
-            <div className="w-[90vw] max-w-4xl h-[20vh] min-h-[100px] flex items-center justify-center rounded-3xl shadow-2xl bg-gradient-to-r from-fuchsia-600 via-purple-400 to-fuchsia-600 text-white text-4xl md:text-5xl font-extrabold text-center transition-all duration-500"
+            <div className="w-full max-w-md sm:max-w-lg md:max-w-2xl lg:max-w-4xl h-[16vh] min-h-[72px] sm:h-[18vh] sm:min-h-[90px] md:h-[20vh] md:min-h-[100px] flex items-center justify-center rounded-3xl shadow-2xl bg-gradient-to-r from-fuchsia-600 via-purple-400 to-fuchsia-600 text-white text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-extrabold text-center px-2 sm:px-6 md:px-8 transition-all duration-500"
               style={{
                 opacity: getStepAnim(1).opacity,
                 transform: `translateY(${getStepAnim(1).translateY}px) scale(${getStepAnim(1).scale}) rotate(${getStepAnim(1).rotate}deg)`,
@@ -163,7 +157,7 @@ const HeroSection = () => {
               AI Outreach Clients
             </div>
             {/* Third step: full width, bold gradient, huge text */}
-            <div className="w-[90vw] max-w-4xl h-[20vh] min-h-[100px] flex items-center justify-center rounded-3xl shadow-2xl bg-gradient-to-r from-yellow-400 via-orange-500 to-pink-500 text-white text-4xl md:text-5xl font-extrabold text-center transition-all duration-500"
+            <div className="w-full max-w-md sm:max-w-lg md:max-w-2xl lg:max-w-4xl h-[16vh] min-h-[72px] sm:h-[18vh] sm:min-h-[90px] md:h-[20vh] md:min-h-[100px] flex items-center justify-center rounded-3xl shadow-2xl bg-gradient-to-r from-yellow-400 via-orange-500 to-pink-500 text-white text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-extrabold text-center px-2 sm:px-6 md:px-8 transition-all duration-500"
               style={{
                 opacity: getStepAnim(2).opacity,
                 transform: `translateY(${getStepAnim(2).translateY}px) scale(${getStepAnim(2).scale}) rotate(${getStepAnim(2).rotate}deg)`,
