@@ -58,6 +58,53 @@ const HeroSection = () => {
     };
   };
 
+  const getCardAnim = (index) => {
+    // Use the same scroll progress mapping as before, but animate with fade and slide up
+    const shift = 0.08;
+    let start, end;
+    if (index === 2) {
+      start = 0.65;
+      end = 0.75;
+    } else {
+      start = Math.max(0, index * (1 / 3) - shift);
+      end = Math.min(1, (index + 1) * (1 / 3) + shift);
+    }
+    const localProgress = Math.max(0, Math.min(1, (scrollProgress - start) / (end - start)));
+    return {
+      opacity: localProgress,
+      translateY: 40 * (1 - localProgress), // Slide up from 40px below
+    };
+  };
+
+  const getStepAnim = (index) => {
+    // Dramatic, springy, and cascading animation
+    const shift = 0.08;
+    let start, end;
+    if (index === 2) {
+      start = 0.65;
+      end = 0.75;
+    } else {
+      start = Math.max(0, index * (1 / 3) - shift);
+      end = Math.min(1, (index + 1) * (1 / 3) + shift);
+    }
+    let localProgress = Math.max(0, Math.min(1, (scrollProgress - start) / (end - start)));
+    // Add a bounce effect at the end
+    let scale = 0.8 + 0.4 * localProgress; // from 0.8 to 1.2
+    if (localProgress > 0.85) {
+      // Bounce down to 1.05, then settle at 1
+      scale = 1.05 - 0.05 * ((localProgress - 0.85) / 0.15);
+      if (localProgress >= 1) scale = 1;
+    }
+    let rotate = -8 * (1 - localProgress); // from -8deg to 0deg
+    let translateY = 120 * (1 - localProgress); // from 120px below to 0
+    return {
+      opacity: localProgress,
+      translateY,
+      scale,
+      rotate,
+    };
+  };
+
   return (
     <div className="relative bg-gradient-to-br from-purple-100 via-fuchsia-50 to-blue-50">
       <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
@@ -96,17 +143,32 @@ const HeroSection = () => {
           className={`sticky top-0 flex flex-col items-center justify-center w-full h-screen pointer-events-none`}
           style={{ zIndex: 30 }}
         >
-          <div className="w-full max-w-md flex flex-col gap-4 pointer-events-auto items-center">
-            <div className="h-14 flex items-center justify-center rounded-xl text-white text-lg font-bold shadow-lg bg-gradient-to-r from-blue-600 via-fuchsia-500 to-purple-600 w-[420px] md:w-[420px] sm:w-[320px] xs:w-[220px] max-w-full"
-              style={getBarStyle(0)}>
+          <div className="w-full h-full flex flex-col justify-center items-center gap-8 pointer-events-auto">
+            {/* First step: full width, bold gradient, huge text */}
+            <div className="w-[90vw] max-w-4xl h-[20vh] min-h-[100px] flex items-center justify-center rounded-3xl shadow-2xl bg-gradient-to-r from-blue-700 via-cyan-400 to-blue-700 text-white text-4xl md:text-5xl font-extrabold text-center transition-all duration-500"
+              style={{
+                opacity: getStepAnim(0).opacity,
+                transform: `translateY(${getStepAnim(0).translateY}px) scale(${getStepAnim(0).scale}) rotate(${getStepAnim(0).rotate}deg)`,
+                filter: 'drop-shadow(0 8px 32px rgba(0,0,0,0.18))',
+              }}>
               AI Automation
             </div>
-            <div className="h-14 flex items-center justify-center rounded-xl text-white text-lg font-bold shadow-lg bg-gradient-to-r from-fuchsia-500 via-purple-500 to-blue-600 w-[320px] md:w-[320px] sm:w-[220px] xs:w-[160px] max-w-full"
-              style={getBarStyle(1)}>
+            {/* Second step: full width, bold gradient, huge text */}
+            <div className="w-[90vw] max-w-4xl h-[20vh] min-h-[100px] flex items-center justify-center rounded-3xl shadow-2xl bg-gradient-to-r from-fuchsia-600 via-purple-400 to-fuchsia-600 text-white text-4xl md:text-5xl font-extrabold text-center transition-all duration-500"
+              style={{
+                opacity: getStepAnim(1).opacity,
+                transform: `translateY(${getStepAnim(1).translateY}px) scale(${getStepAnim(1).scale}) rotate(${getStepAnim(1).rotate}deg)`,
+                filter: 'drop-shadow(0 8px 32px rgba(0,0,0,0.18))',
+              }}>
               AI Outreach Clients
             </div>
-            <div className="h-14 flex items-center justify-center rounded-xl text-white text-lg font-bold shadow-lg bg-gradient-to-r from-purple-600 via-blue-500 to-fuchsia-500 w-[220px] md:w-[220px] sm:w-[140px] xs:w-[100px] max-w-full"
-              style={getBarStyle(2)}>
+            {/* Third step: full width, bold gradient, huge text */}
+            <div className="w-[90vw] max-w-4xl h-[20vh] min-h-[100px] flex items-center justify-center rounded-3xl shadow-2xl bg-gradient-to-r from-yellow-400 via-orange-500 to-pink-500 text-white text-4xl md:text-5xl font-extrabold text-center transition-all duration-500"
+              style={{
+                opacity: getStepAnim(2).opacity,
+                transform: `translateY(${getStepAnim(2).translateY}px) scale(${getStepAnim(2).scale}) rotate(${getStepAnim(2).rotate}deg)`,
+                filter: 'drop-shadow(0 8px 32px rgba(0,0,0,0.18))',
+              }}>
               Send Automated Reminders
             </div>
           </div>
