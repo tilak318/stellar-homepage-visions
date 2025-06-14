@@ -34,29 +34,29 @@ const Solutions = () => {
     <div className="min-h-screen">
       <Header />
       <main className="pt-32 pb-16">
-        <div className="container mx-auto px-6">
+        <div className="container mx-auto px-6 sm:px-12 md:px-20">
           <h1 className="text-5xl font-bold text-center text-gray-900 mb-8">
             Our <span className="text-purple-600">Solutions</span>
           </h1>
           <p className="text-xl text-center text-gray-600 mb-16 max-w-3xl mx-auto">
             We offer a suite of AI-powered tools designed to revolutionize your clinic's efficiency and patient care.
           </p>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 justify-center">
             {solutions.map((solution, index) => (
-              <div key={index} className="bg-white rounded-2xl shadow-lg shadow-purple-100 overflow-hidden transform hover:scale-105 transition-transform duration-300">
-                <img src={solution.image} alt={solution.title} className="w-full h-64 object-cover"/>
-                <div className="p-8">
-                  <h2 className="text-3xl font-bold text-gray-900 mb-4">{solution.title}</h2>
-                  <p className="text-gray-700 mb-6">{solution.description}</p>
-                  <ul className="space-y-3">
-                    {solution.features.map((feature, i) => (
-                      <li key={i} className="flex items-center space-x-3">
-                        <CheckCircle className="w-6 h-6 text-fuchsia-500" />
-                        <span className="text-gray-800">{feature}</span>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
+              <div
+                key={index}
+                className={`flex flex-col items-center rounded-2xl shadow-lg border border-gray-200 p-6 ${index % 2 === 0 ? 'bg-purple-100' : 'bg-purple-600'}`}
+              >
+                <h2 className={`text-2xl font-bold mb-2 text-center ${index % 2 === 0 ? 'text-gray-900' : 'text-white'}`}>{solution.title}</h2>
+                <p className={`mb-3 text-base text-center ${index % 2 === 0 ? 'text-gray-700' : 'text-purple-100'}`}>{solution.description}</p>
+                <ul className="space-y-3 w-full max-w-xs mx-auto">
+                  {solution.features.map((feature, i) => (
+                    <li key={i} className="flex items-center space-x-3">
+                      <CheckCircle className={`w-6 h-6 ${index % 2 === 0 ? 'text-fuchsia-500' : 'text-white'}`} />
+                      <span className={`text-lg ${index % 2 === 0 ? 'text-gray-800' : 'text-white'}`}>{feature}</span>
+                    </li>
+                  ))}
+                </ul>
               </div>
             ))}
           </div>
