@@ -52,7 +52,7 @@ const ComparisonSection = () => {
     }
   ];
 
-  const getStatusIcon = (status: string) => {
+  const getStatusIcon = (status) => {
     switch (status) {
       case "included":
         return <Check className="w-5 h-5 text-purple-600" />;
@@ -67,54 +67,63 @@ const ComparisonSection = () => {
   };
 
   return (
-    <section className="py-8">
-      <div className="container mx-auto max-w-7xl px-2">
-        <div className="text-center mb-6">
-          <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-2">
+    <section className="py-12 bg-gradient-to-b from-white to-purple-50">
+      <div className="container mx-auto max-w-7xl px-4">
+        <div className="text-center mb-8">
+          <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-3">
             Compare Our <span className="text-purple-600">AI Platform</span>
           </h2>
-          <p className="text-base md:text-lg text-gray-600 max-w-3xl mx-auto">
+          <p className="text-lg text-gray-600 max-w-3xl mx-auto">
             See how TRYZENIQ stacks up against traditional automation methods and agencies. 
             Get more power, flexibility, and support.
           </p>
         </div>
-
-        <div className="bg-white rounded-2xl shadow-xl overflow-hidden">
+        <div className="rounded-3xl shadow-xl overflow-hidden border border-gray-100">
           <div className="overflow-x-auto">
-            <table className="w-full text-base">
+            <table className="w-full">
               <thead>
-                <tr className="bg-gradient-to-r from-purple-600 to-fuchsia-600 text-white">
-                  <th className="text-left p-4 font-semibold text-sm md:text-lg">Features</th>
-                  <th className="text-center p-4 font-semibold text-sm md:text-lg bg-white/10 backdrop-blur-sm border-l-2 border-r-2 border-t-2 border-purple-600">
-                    <div className="bg-gray-200 rounded-lg p-2 text-gray-800 text-sm md:text-lg font-bold">
-                      TRYZENIQ
+                <tr className="bg-gradient-to-r from-purple-600 to-fuchsia-600">
+                  <th className="text-left p-2 sm:p-3 md:p-4 font-semibold text-white text-xs sm:text-base md:text-lg w-20 md:w-auto">Features</th>
+                  <th className="text-center p-2 sm:p-3 md:p-4 font-semibold text-white text-xs sm:text-base md:text-lg relative w-20 md:w-auto">
+                    <div className="absolute inset-0 bg-white/10 backdrop-blur-sm"></div>
+                    <div className="relative">
+                      <div className="bg-purple-100 rounded-xl p-1 sm:p-2 text-purple-600 font-bold text-xs sm:text-base md:text-lg shadow-lg">
+                        <span className="md:hidden">Us</span>
+                        <span className="hidden md:inline">TRYZENIQ</span>
+                      </div>
                     </div>
                   </th>
-                  <th className="text-center p-4 font-semibold text-sm md:text-lg">HubSpot, Apollo.io, Zapier, Reply</th>
-                  <th className="text-center p-4 font-semibold text-sm md:text-lg">Hiring InHouse, Agency</th>
+                  <th className="text-center p-2 sm:p-3 md:p-4 font-semibold text-white text-xs sm:text-base md:text-lg w-20 md:w-auto">
+                    <span className="md:hidden">Others</span>
+                    <span className="hidden md:inline">HubSpot, Apollo.io, Zapier, Reply</span>
+                  </th>
+                  <th className="text-center p-2 sm:p-3 md:p-4 font-semibold text-white text-xs sm:text-base md:text-lg w-20 md:w-auto">
+                    <span className="md:hidden">Others</span>
+                    <span className="hidden md:inline">Hiring InHouse, Agency</span>
+                  </th>
                 </tr>
               </thead>
               <tbody>
                 {features.map((feature, index) => (
-                  <tr key={index} className={`border-b border-gray-100 ${index % 2 === 0 ? 'bg-gray-50' : 'bg-white'}`}>
-                    <td className="p-4 font-medium text-gray-900">{feature.name}</td>
-                    <td className={`p-4 text-center bg-green-50 border-l-2 border-r-2 border-purple-600 ${index === 0 ? 'border-t-2' : ''} ${index === features.length - 1 ? 'border-b-2' : ''}` }>
-                      <div className="flex items-center justify-center mb-1">
+                  <tr key={index} className="bg-transparent">
+                    <td className="p-4 font-medium text-gray-900 text-base">{feature.name}</td>
+                    <td className="p-4 text-center border-l-2 border-r-2 border-purple-200 bg-purple-200">
+                      <div className="flex items-center justify-center mb-2">
                         {getStatusIcon(feature.ourPlatform.status)}
                       </div>
-                      <p className="hidden md:block text-base text-gray-700">{feature.ourPlatform.text}</p>
+                      <p className="text-gray-700 text-base hidden md:block">{feature.ourPlatform.text}</p>
                     </td>
                     <td className="p-4 text-center">
-                      <div className="flex items-center justify-center mb-1">
+                      <div className="flex items-center justify-center mb-2">
                         {getStatusIcon(feature.competitors.status)}
                       </div>
-                      <p className="hidden md:block text-base text-gray-700">{feature.competitors.text}</p>
+                      <p className="text-gray-700 text-base hidden md:block">{feature.competitors.text}</p>
                     </td>
                     <td className="p-4 text-center">
-                      <div className="flex items-center justify-center mb-1">
+                      <div className="flex items-center justify-center mb-2">
                         {getStatusIcon(feature.agencies.status)}
                       </div>
-                      <p className="hidden md:block text-base text-gray-700">{feature.agencies.text}</p>
+                      <p className="text-gray-700 text-base hidden md:block">{feature.agencies.text}</p>
                     </td>
                   </tr>
                 ))}
