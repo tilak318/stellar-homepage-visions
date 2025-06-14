@@ -60,19 +60,23 @@ const PricingSection = () => {
               className={`rounded-2xl md:rounded-3xl p-4 md:p-8 transition-all duration-300 hover:scale-105 md:hover:scale-105 ${
                 plan.highlighted
                   ? 'bg-gradient-to-br from-purple-600 to-fuchsia-600 text-white shadow-2xl md:transform md:scale-105'
-                  : 'bg-gray-50 hover:shadow-xl'
+                  : 'bg-white hover:shadow-xl border-2 border-gray-200'
               }`}
             >
-              <div className="h-32 md:h-48 bg-gray-900 rounded-xl md:rounded-2xl mb-4 md:mb-6 flex items-center justify-center">
-                <div className="text-white text-center">
-                  <div className="w-10 h-10 md:w-16 md:h-16 bg-gray-700 rounded-lg mx-auto mb-2 md:mb-4"></div>
-                  <p className="text-xs md:text-sm opacity-75">Plan Preview</p>
-                </div>
-              </div>
-
               <h3 className={`text-lg md:text-2xl font-bold mb-3 md:mb-4 ${plan.highlighted ? 'text-white' : 'text-gray-900'}`}>
                 {plan.name}
               </h3>
+
+              <div className="mb-4 md:mb-6">
+                <div className={`text-2xl md:text-4xl font-bold ${plan.highlighted ? 'text-white' : 'text-gray-900'}`}>
+                  {plan.price}
+                  {plan.period && (
+                    <span className={`text-base md:text-lg font-normal ${plan.highlighted ? 'text-white/70' : 'text-gray-500'}`}>
+                      {plan.period}
+                    </span>
+                  )}
+                </div>
+              </div>
 
               <div className="space-y-2 md:space-y-3 mb-4 md:mb-6">
                 {plan.features.map((feature, featureIndex) => (
@@ -87,17 +91,6 @@ const PricingSection = () => {
                     </span>
                   </div>
                 ))}
-              </div>
-
-              <div className="mb-4 md:mb-6">
-                <div className={`text-2xl md:text-4xl font-bold ${plan.highlighted ? 'text-white' : 'text-gray-900'}`}>
-                  {plan.price}
-                  {plan.period && (
-                    <span className={`text-base md:text-lg font-normal ${plan.highlighted ? 'text-white/70' : 'text-gray-500'}`}>
-                      {plan.period}
-                    </span>
-                  )}
-                </div>
               </div>
 
               <Button
