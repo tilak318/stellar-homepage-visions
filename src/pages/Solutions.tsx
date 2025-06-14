@@ -10,7 +10,7 @@ const solutions = [
     image: 'https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'
   },
   {
-    title: 'Automated Patient Communication',
+    title: 'AI Patient Communication',
     description: 'Our system automates appointment reminders, follow-ups, and patient queries, freeing up your staff to focus on providing care.',
     features: ['24/7 AI chatbot', 'Personalized messaging', 'Multi-channel support (SMS, email)', 'Reduces no-shows by 40%'],
     image: 'https://images.unsplash.com/photo-1584515933487-779824d27bfb?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'
@@ -41,19 +41,18 @@ const Solutions = () => {
           <p className="text-xl text-center text-gray-600 mb-16 max-w-3xl mx-auto">
             We offer a suite of AI-powered tools designed to revolutionize your clinic's efficiency and patient care.
           </p>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 justify-center">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 justify-center">
             {solutions.map((solution, index) => (
               <div
                 key={index}
-                className={`flex flex-col items-center rounded-2xl shadow-lg border border-gray-200 p-6 ${index % 2 === 0 ? 'bg-purple-100' : 'bg-purple-600'}`}
+                className="flex flex-col items-center rounded-2xl shadow-lg border border-gray-200 p-6 bg-purple-200"
               >
-                <h2 className={`text-2xl font-bold mb-2 text-center ${index % 2 === 0 ? 'text-gray-900' : 'text-white'}`}>{solution.title}</h2>
-                <p className={`mb-3 text-base text-center ${index % 2 === 0 ? 'text-gray-700' : 'text-purple-100'}`}>{solution.description}</p>
-                <ul className="space-y-3 w-full max-w-xs mx-auto">
+                <h2 className="text-2xl font-bold mb-2 text-center text-gray-900 mt-0">{solution.title}</h2>
+                <ul className="space-y-2 w-full mx-auto text-left">
                   {solution.features.map((feature, i) => (
                     <li key={i} className="flex items-center space-x-3">
-                      <CheckCircle className={`w-6 h-6 ${index % 2 === 0 ? 'text-fuchsia-500' : 'text-white'}`} />
-                      <span className={`text-lg ${index % 2 === 0 ? 'text-gray-800' : 'text-white'}`}>{feature}</span>
+                      <CheckCircle className="w-6 h-6 text-fuchsia-500" />
+                      <span className="text-lg text-gray-800">{feature}</span>
                     </li>
                   ))}
                 </ul>
