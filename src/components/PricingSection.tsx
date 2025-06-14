@@ -18,7 +18,7 @@ const PricingSection = () => {
     {
       name: "Life Time Access",
       price: "$1959",
-      period: "/ Month",
+      period: "",
       features: [
         "1,000+ React components",
         "Built with Tailwind CSS and Shadcn UI",
