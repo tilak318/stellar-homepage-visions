@@ -60,7 +60,7 @@ const PricingSection = () => {
               className={`rounded-xl sm:rounded-2xl md:rounded-3xl p-3 sm:p-4 md:p-8 transition-all duration-300 hover:scale-105 md:hover:scale-105 ${
                 plan.highlighted
                   ? 'bg-gradient-to-br from-purple-600 to-fuchsia-600 text-white shadow-2xl md:transform md:scale-105'
-                  : 'hover:shadow-xl border border-gray-200'
+                  : 'bg-white shadow-2xl hover:shadow-2xl hover:-translate-y-2 border border-gray-200 transition-transform duration-300'
               }`}
             >
               <h3 className={`text-base sm:text-lg md:text-2xl font-bold mb-2 sm:mb-3 md:mb-4 ${plan.highlighted ? 'text-white' : 'text-gray-900'}`}>
