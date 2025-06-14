@@ -81,7 +81,7 @@ const DashboardSection = () => {
               <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8 items-center">
                 {/* Image Section - Now centered in mobile */}
                 <div className="flex justify-center lg:justify-end order-1 lg:order-2 mb-6 lg:mb-0">
-                  <div className="bg-white rounded-xl sm:rounded-2xl p-2 sm:p-4 shadow-lg w-full max-w-[320px] sm:max-w-[400px]">
+                  <div className="rounded-xl sm:rounded-2xl p-2 sm:p-4 shadow-lg w-full max-w-[320px] sm:max-w-[400px]">
                     <div className="aspect-[4/3] w-full">
                       <img
                         src={dashboards[currentDashboard].image}

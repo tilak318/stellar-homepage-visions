@@ -41,13 +41,7 @@ const ResultsSection = () => {
   ];
 
   return (
-    <section ref={ref} className="py-20 bg-white relative">
-      <motion.div 
-        className="absolute inset-0 bg-gradient-to-b from-purple-100 via-fuchsia-50 to-white"
-        initial={isMobile ? false : { opacity: 0 }}
-        animate={isMobile ? false : { opacity: inView ? 1 : 0 }}
-        transition={isMobile ? undefined : { duration: 1.5, ease: 'easeOut' }}
-      />
+    <section ref={ref} className="py-20 relative">
       <div className="container mx-auto max-w-7xl px-8 relative">
         <motion.div 
           className="text-center mb-16"

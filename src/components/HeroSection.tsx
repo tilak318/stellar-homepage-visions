@@ -14,7 +14,7 @@ const FloatingIcon = ({ imgSrc, className, delay = 0, alt }) => (
 
 const HeroSection = () => {
   return (
-    <div className="relative bg-gradient-to-br from-purple-100 via-fuchsia-50 to-blue-50">
+    <div className="relative">
       <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
         <div className="container mx-auto max-w-7xl px-8 text-center relative z-10">
           <p className="text-xl font-semibold text-gray-700 mb-2">Get 24/7 Smart Website To</p>
@@ -40,34 +40,39 @@ const HeroSection = () => {
       </section>
       {/* 3-Step Journey Section - Seamless Background */}
       <section className="relative min-h-screen flex flex-col items-center justify-center pt-20 pb-20">
-        <h2 className="text-3xl sm:text-4xl md:text-7xl font-bold text-gray-900 mb-12 text-center leading-tight md:leading-[1.1]">
-          How We Help You <span className="bg-gradient-to-br from-blue-600 via-fuchsia-500 to-purple-600 bg-clip-text text-transparent">Succeed</span>
-        </h2>
+        <div className="text-center mb-16">
+          <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
+            How We Help You <span className="text-purple-600">Succeed</span>
+          </h2>
+          <p className="text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed">
+            We automate your business journey from lead generation to reminders, saving your clinic time and boosting revenue.
+          </p>
+        </div>
         <div className="flex flex-col md:flex-row items-center justify-center gap-8 w-full max-w-5xl mb-12">
           {/* Step 1 */}
-          <div className="flex flex-col items-center rounded-2xl shadow-md p-8 w-72 h-64 bg-gradient-to-br from-purple-50 via-blue-50 to-fuchsia-100 border border-gray-100">
-            <span className="text-4xl mb-3">🤖</span>
-            <h3 className="text-xl font-semibold mb-1 text-gray-900">AI Automation</h3>
-            <p className="text-gray-600 text-center text-base">Let AI handle bookings and tasks, freeing you to focus on growth.</p>
+          <div className="bg-purple-50 p-4 md:p-8 rounded-2xl md:rounded-3xl hover:shadow-xl shadow-lg border border-gray-200 transition-all duration-300 flex flex-col items-center w-72 h-64">
+            <div className="w-12 h-12 md:w-16 md:h-16 bg-gradient-to-r from-purple-400 to-fuchsia-500 rounded-xl md:rounded-2xl flex items-center justify-center mb-4 md:mb-6 shadow-lg">
+              <span className="text-3xl md:text-4xl">🤖</span>
+            </div>
+            <h3 className="text-lg md:text-xl font-bold text-gray-800 mb-2 md:mb-4">AI Automation</h3>
+            <p className="text-gray-600 text-center text-sm md:text-base leading-relaxed flex-grow">Let AI handle bookings and tasks, freeing you to focus on growth.</p>
           </div>
           {/* Step 2 */}
-          <div className="flex flex-col items-center rounded-2xl shadow-md p-8 w-72 h-64 bg-gradient-to-br from-pink-50 via-fuchsia-50 to-blue-100 border border-gray-100">
-            <span className="text-4xl mb-3">🎯</span>
-            <h3 className="text-xl font-semibold mb-1 text-gray-900">AI Outreach</h3>
-            <p className="text-gray-600 text-center text-base">Reach more clients automatically and expand your business.</p>
+          <div className="bg-fuchsia-50 p-4 md:p-8 rounded-2xl md:rounded-3xl hover:shadow-xl shadow-lg border border-gray-200 transition-all duration-300 flex flex-col items-center w-72 h-64">
+            <div className="w-12 h-12 md:w-16 md:h-16 bg-gradient-to-r from-fuchsia-500 to-purple-500 rounded-xl md:rounded-2xl flex items-center justify-center mb-4 md:mb-6 shadow-lg">
+              <span className="text-3xl md:text-4xl">🎯</span>
+            </div>
+            <h3 className="text-lg md:text-xl font-bold text-gray-800 mb-2 md:mb-4">AI Outreach</h3>
+            <p className="text-gray-600 text-center text-sm md:text-base leading-relaxed flex-grow">Reach more clients automatically and expand your business.</p>
           </div>
           {/* Step 3 */}
-          <div className="flex flex-col items-center rounded-2xl shadow-md p-8 w-72 h-64 bg-gradient-to-br from-blue-50 via-purple-50 to-pink-100 border border-gray-100">
-            <span className="text-4xl mb-3">⏰</span>
-            <h3 className="text-xl font-semibold mb-1 text-gray-900">Automated Reminders</h3>
-            <p className="text-gray-600 text-center text-base">Never miss an appointment—reminders keep everyone on track.</p>
+          <div className="bg-fuchsia-50 p-4 md:p-8 rounded-2xl md:rounded-3xl hover:shadow-xl shadow-lg border border-gray-200 transition-all duration-300 flex flex-col items-center w-72 h-64">
+            <div className="w-12 h-12 md:w-16 md:h-16 bg-gradient-to-r from-fuchsia-500 to-purple-400 rounded-xl md:rounded-2xl flex items-center justify-center mb-4 md:mb-6 shadow-lg">
+              <span className="text-3xl md:text-4xl">⏰</span>
+            </div>
+            <h3 className="text-lg md:text-xl font-bold text-gray-800 mb-2 md:mb-4">Automated Reminders</h3>
+            <p className="text-gray-600 text-center text-sm md:text-base leading-relaxed flex-grow">Never miss an appointment—reminders keep everyone on track.</p>
           </div>
-        </div>
-        {/* Profit/Success Message - No Card, Just Text */}
-        <div className="flex flex-col items-center mt-2">
-          <span className="text-4xl md:text-5xl mb-2">🚀</span>
-          <h3 className="text-2xl md:text-3xl font-bold text-blue-700 mb-2 text-center">Profit & Success</h3>
-          <p className="text-lg md:text-xl font-semibold text-gray-800 text-center max-w-2xl">Celebrate your growth as our system brings you more revenue, effortlessly.</p>
         </div>
       </section>
     </div>
