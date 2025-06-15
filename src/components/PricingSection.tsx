@@ -44,7 +44,7 @@ const PricingSection = () => {
   return (
     <section>
       <div className="container mx-auto max-w-7xl px-4 sm:px-6 md:px-8">
-        <div className="text-center mt-0 sm:mt-0 md:mt-0 mb-6 sm:mb-8">
+        <div className="text-center pt-8 mb-6 sm:mb-8">
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 mb-2 sm:mb-4">
             Our <span className="text-purple-600">Price</span>
           </h2>
