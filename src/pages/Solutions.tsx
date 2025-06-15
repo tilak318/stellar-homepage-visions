@@ -31,7 +31,7 @@ const solutions = [
 
 const Solutions = () => {
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen bg-gradient-to-r from-purple-600 via-white to-purple-600">
       <Header />
       <main className="pt-32 pb-16">
         <div className="container mx-auto px-6 sm:px-12 md:px-20">
@@ -49,13 +49,13 @@ const Solutions = () => {
               >
                 <h2 className="text-2xl font-bold mb-2 text-center text-gray-900 mt-0">{solution.title}</h2>
                 <ul className="space-y-2 w-full mx-auto text-left">
-                  {solution.features.map((feature, i) => (
-                    <li key={i} className="flex items-center space-x-3">
-                      <CheckCircle className="w-6 h-6 text-fuchsia-500" />
+                    {solution.features.map((feature, i) => (
+                      <li key={i} className="flex items-center space-x-3">
+                        <CheckCircle className="w-6 h-6 text-fuchsia-500" />
                       <span className="text-lg text-gray-800">{feature}</span>
-                    </li>
-                  ))}
-                </ul>
+                      </li>
+                    ))}
+                  </ul>
               </div>
             ))}
           </div>
