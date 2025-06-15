@@ -42,7 +42,7 @@ const TestimonialsSection = () => {
 
   return (
     <section className="py-20">
-      <div className="container mx-auto max-w-7xl px-8">
+      <div className="container mx-auto max-w-7xl px-8 pt-12">
         <div className="text-center mb-16">
           <div className="text-sm text-gray-600 mb-4">700k+ Designers & developers trust Relume</div>
           <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
