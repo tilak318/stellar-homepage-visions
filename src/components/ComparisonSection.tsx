@@ -78,7 +78,7 @@ const ComparisonSection = () => {
             Get more power, flexibility, and support.
           </p>
         </div>
-        <div className="rounded-3xl shadow-xl overflow-hidden border border-gray-100 bg-gradient-to-b from-white to-purple-50">
+        <div className="rounded-3xl shadow-xl overflow-hidden border border-gray-100 bg-gradient-to-b from-white to-purple-200">
           <div className="overflow-x-auto">
             <table className="w-full">
               <thead>

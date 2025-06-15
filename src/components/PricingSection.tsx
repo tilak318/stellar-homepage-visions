@@ -44,7 +44,7 @@ const PricingSection = () => {
   return (
     <section>
       <div className="container mx-auto max-w-7xl px-4 sm:px-6 md:px-8">
-        <div className="text-center mt-2 sm:mt-3 md:mt-4 mb-6 sm:mb-8">
+        <div className="text-center mt-0 sm:mt-0 md:mt-0 mb-6 sm:mb-8">
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 mb-2 sm:mb-4">
             Our <span className="text-purple-600">Price</span>
           </h2>
@@ -53,14 +53,14 @@ const PricingSection = () => {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 sm:gap-6 md:gap-8 max-w-6xl mx-auto">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 sm:gap-6 md:gap-8 max-w-6xl mx-auto mt-0">
           {plans.map((plan, index) => (
             <div
               key={index}
               className={`rounded-xl sm:rounded-2xl md:rounded-3xl p-3 sm:p-4 md:p-8 transition-all duration-300 hover:scale-105 md:hover:scale-105 ${
                 plan.highlighted
                   ? 'bg-gradient-to-br from-purple-600 to-fuchsia-600 text-white shadow-2xl md:transform md:scale-105'
-                  : 'bg-white shadow-2xl hover:shadow-2xl hover:-translate-y-2 border border-gray-200 transition-transform duration-300'
+                  : 'bg-white shadow-lg hover:shadow-xl hover:-translate-y-2 border border-gray-200 transition-transform duration-300'
               }`}
             >
               <h3 className={`text-base sm:text-lg md:text-2xl font-bold mb-2 sm:mb-3 md:mb-4 ${plan.highlighted ? 'text-white' : 'text-gray-900'}`}>
