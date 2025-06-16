@@ -1,32 +1,75 @@
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import AnimatedGradientBackground from '@/components/AnimatedGradientBackground';
-import { CheckCircle } from 'lucide-react';
+import { Zap, Users, Send, Shield, BarChart, Clock, MessageSquare, Settings } from 'lucide-react';
+import { Button } from '@/components/ui/button';
 
 const solutions = [
   {
-    title: 'AI-Powered Diagnostics',
-    description: 'Leverage our advanced AI to analyze medical images and data with incredible accuracy, providing faster and more reliable diagnostics.',
-    features: ['Real-time analysis', '99% accuracy rate', 'Supports various imaging formats', 'Integrates with existing systems'],
-    image: 'https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'
+    title: "AI-Powered Automation",
+    description: "Streamline your operations with intelligent automation that learns and adapts to your business needs.",
+    icon: <Zap className="w-8 h-8 text-purple-600" />,
+    features: [
+      "Smart workflow automation",
+      "Customizable automation rules",
+      "Real-time process optimization",
+      "Automated task scheduling"
+    ]
   },
   {
-    title: 'AI Patient Communication',
-    description: 'Our system automates appointment reminders, follow-ups, and patient queries, freeing up your staff to focus on providing care.',
-    features: ['24/7 AI chatbot', 'Personalized messaging', 'Multi-channel support (SMS, email)', 'Reduces no-shows by 40%'],
-    image: 'https://images.unsplash.com/photo-1584515933487-779824d27bfb?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'
+    title: "Client Management",
+    description: "Build stronger relationships with your clients through personalized engagement and automated follow-ups.",
+    icon: <Users className="w-8 h-8 text-purple-600" />,
+    features: [
+      "Client profile management",
+      "Automated follow-up system",
+      "Client feedback collection",
+      "Loyalty program integration"
+    ]
   },
   {
-    title: 'Intelligent Clinic Management',
-    description: 'Streamline your daily operations, from staff scheduling to inventory management, with our all-in-one AI-powered platform.',
-    features: ['Optimized scheduling', 'Automated inventory tracking', 'Performance analytics', 'HIPAA compliant'],
-    image: 'https://images.unsplash.com/photo-1551884856-0c933999965b?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'
+    title: "Smart Communication",
+    description: "Enhance your communication with AI-driven messaging and automated response systems.",
+    icon: <MessageSquare className="w-8 h-8 text-purple-600" />,
+    features: [
+      "AI chatbot integration",
+      "Multi-channel messaging",
+      "Automated response templates",
+      "Communication analytics"
+    ]
   },
   {
-    title: 'Personalized Treatment Plans',
-    description: 'Our AI analyzes patient data to help you create personalized and more effective treatment plans, improving patient outcomes.',
-    features: ['Data-driven recommendations', 'Tracks patient progress', 'Predictive modeling', 'Enhances patient satisfaction'],
-    image: 'https://images.unsplash.com/photo-1532938911079-1b06ac7ceec7?q=80&w=1932&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'
+    title: "Analytics & Insights",
+    description: "Make data-driven decisions with comprehensive analytics and real-time insights.",
+    icon: <BarChart className="w-8 h-8 text-purple-600" />,
+    features: [
+      "Real-time performance metrics",
+      "Custom reporting dashboards",
+      "Predictive analytics",
+      "Business intelligence tools"
+    ]
+  },
+  {
+    title: "Security & Compliance",
+    description: "Keep your business secure and compliant with enterprise-grade security features.",
+    icon: <Shield className="w-8 h-8 text-purple-600" />,
+    features: [
+      "End-to-end encryption",
+      "Compliance monitoring",
+      "Data protection tools",
+      "Security analytics"
+    ]
+  },
+  {
+    title: "Time Management",
+    description: "Optimize your schedule and boost productivity with smart time management tools.",
+    icon: <Clock className="w-8 h-8 text-purple-600" />,
+    features: [
+      "Smart scheduling system",
+      "Resource optimization",
+      "Time tracking analytics",
+      "Automated reminders"
+    ]
   }
 ];
 
@@ -36,30 +79,60 @@ const Solutions = () => {
       <AnimatedGradientBackground />
       <Header />
       <main className="pt-32 pb-16">
-        <div className="container mx-auto px-6 sm:px-12 md:px-20">
-          <h1 className="text-5xl font-bold text-center text-gray-900 mb-8">
-            Our <span className="text-purple-600">Solutions</span>
-          </h1>
-          <p className="text-xl text-center text-gray-600 mb-16 max-w-3xl mx-auto">
-            We offer a suite of AI-powered tools designed to revolutionize your clinic's efficiency and patient care.
-          </p>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 justify-center">
+        {/* Hero Section */}
+        <div className="container mx-auto px-6 mb-20">
+          <div className="text-center max-w-4xl mx-auto">
+            <h1 className="text-5xl md:text-6xl font-bold text-gray-900 mb-6">
+              Transform Your Business with <span className="text-purple-600">Smart Solutions</span>
+            </h1>
+            <p className="text-xl text-gray-600 mb-8">
+              Discover our comprehensive suite of AI-powered tools designed to streamline your operations, 
+              enhance client relationships, and drive growth.
+            </p>
+            <Button size="lg" className="text-lg px-8 py-6">
+              Start Your Journey
+            </Button>
+          </div>
+        </div>
+
+        {/* Solutions Grid */}
+        <div className="container mx-auto px-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {solutions.map((solution, index) => (
               <div
                 key={index}
-                className="flex flex-col items-center rounded-2xl shadow-lg border border-gray-200 p-6 bg-purple-200 max-w-md w-full mx-auto min-h-[260px]"
+                className="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-2"
               >
-                <h2 className="text-2xl font-bold mb-2 text-center text-gray-900 mt-0">{solution.title}</h2>
-                <ul className="space-y-2 w-full mx-auto text-left">
-                    {solution.features.map((feature, i) => (
-                      <li key={i} className="flex items-center space-x-3">
-                        <CheckCircle className="w-6 h-6 text-fuchsia-500" />
-                      <span className="text-lg text-gray-800">{feature}</span>
-                      </li>
-                    ))}
-                  </ul>
+                <div className="mb-6">
+                  {solution.icon}
+                </div>
+                <h3 className="text-2xl font-bold text-gray-900 mb-4">{solution.title}</h3>
+                <p className="text-gray-600 mb-6">{solution.description}</p>
+                <ul className="space-y-3">
+                  {solution.features.map((feature, featureIndex) => (
+                    <li key={featureIndex} className="flex items-center text-gray-700">
+                      <div className="w-2 h-2 bg-purple-600 rounded-full mr-3"></div>
+                      {feature}
+                    </li>
+                  ))}
+                </ul>
               </div>
             ))}
+          </div>
+        </div>
+
+        {/* CTA Section */}
+        <div className="container mx-auto px-6 mt-20">
+          <div className="bg-gradient-to-r from-purple-600 to-fuchsia-600 rounded-3xl p-12 text-center text-white">
+            <h2 className="text-3xl md:text-4xl font-bold mb-6">
+              Ready to Transform Your Business?
+            </h2>
+            <p className="text-xl mb-8 text-white/90">
+              Join thousands of businesses already using our solutions to drive growth and efficiency.
+            </p>
+            <Button size="lg" className="bg-white text-purple-600 hover:bg-gray-100 text-lg px-8 py-6">
+              Get Started Today
+            </Button>
           </div>
         </div>
       </main>
