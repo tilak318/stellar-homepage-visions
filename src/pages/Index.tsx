@@ -9,34 +9,22 @@ import ComparisonSection from '@/components/ComparisonSection';
 import PricingSection from '@/components/PricingSection';
 import TestimonialsSection from '@/components/TestimonialsSection';
 import Footer from '@/components/Footer';
+import AnimatedGradientBackground from '@/components/AnimatedGradientBackground';
 
 const Index = () => {
   return (
     <div className="min-h-screen">
+      <AnimatedGradientBackground />
       <Header />
-      <div className="bg-gradient-to-r from-purple-600 via-white to-purple-600">
-        <HeroSection />
-      </div>
+      <HeroSection />
       {/* <AISolutionsSection /> */}
       {/* <NewAISolutionsSection /> */}
-      <div className="bg-gradient-to-r from-purple-600 via-white to-purple-600">
-        <ResultsSection />
-      </div>
-      <div className="bg-gradient-to-r from-purple-600 via-white to-purple-600">
-        <DashboardSection />
-      </div>
-      <div className="bg-gradient-to-r from-purple-600 via-white to-purple-600">
-        <NicheSection />
-      </div>
-      <div className="bg-gradient-to-r from-purple-600 via-white to-purple-600">
-        <ComparisonSection />
-      </div>
-      <div className="bg-gradient-to-r from-purple-600 via-white to-purple-600">
-        <PricingSection />
-      </div>
-      <div className="bg-gradient-to-r from-purple-600 via-white to-purple-600">
-        <TestimonialsSection />
-      </div>
+      <ResultsSection />
+      <DashboardSection />
+      <NicheSection />
+      <ComparisonSection />
+      <PricingSection />
+      <TestimonialsSection />
       <Footer />
     </div>
   );

@@ -1,5 +1,6 @@
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
+import AnimatedGradientBackground from '@/components/AnimatedGradientBackground';
 import { CheckCircle } from 'lucide-react';
 
 const solutions = [
@@ -31,7 +32,8 @@ const solutions = [
 
 const Solutions = () => {
   return (
-    <div className="min-h-screen bg-gradient-to-r from-purple-600 via-white to-purple-600">
+    <div className="min-h-screen">
+      <AnimatedGradientBackground />
       <Header />
       <main className="pt-32 pb-16">
         <div className="container mx-auto px-6 sm:px-12 md:px-20">

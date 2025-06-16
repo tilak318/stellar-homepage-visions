@@ -95,8 +95,19 @@
 
   body {
     @apply font-serif text-gray-800;
-    @apply bg-gradient-to-br from-purple-100 via-fuchsia-50 to-blue-50;
     min-height: 100vh;
+  }
+}
+
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
   }
 }
 
