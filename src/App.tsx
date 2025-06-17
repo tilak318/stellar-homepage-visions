@@ -18,7 +18,22 @@ const ScrollToTop = () => {
   const { pathname } = useLocation();
 
   useEffect(() => {
-    window.scrollTo(0, 0);
+    // Scroll both the window and the overflow container
+    window.scrollTo({
+      top: 0,
+      left: 0,
+      behavior: "instant"
+    });
+    
+    // Also scroll the overflow container
+    const container = document.querySelector('.overflow-auto');
+    if (container) {
+      container.scrollTo({
+        top: 0,
+        left: 0,
+        behavior: "instant"
+      });
+    }
   }, [pathname]);
 
   return null;
@@ -29,10 +44,8 @@ const App = () => (
     <TooltipProvider>
       <Toaster />
       <Sonner />
-      <div className="fixed inset-0 z-0">
-        <AnimatedGradientBackground />
-      </div>
-      <div className="relative z-10">
+      <AnimatedGradientBackground />
+      <div className="relative h-screen overflow-auto">
         <BrowserRouter>
           <ScrollToTop />
           <Routes>

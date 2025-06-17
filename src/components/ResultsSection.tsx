@@ -57,7 +57,7 @@ const ResultsSection = () => {
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8 relative min-h-[1200px] md:min-h-0">
           {results.map((result, index) => (
             <motion.div
               key={index}
@@ -66,10 +66,10 @@ const ResultsSection = () => {
               transition={isMobile ? undefined : (typeof window !== 'undefined' && window.innerWidth < 768 ? undefined : { duration: 0.6, ease: 'easeOut', delay: 0.4 + index * 0.2 })}
               className={
                 index === 0
-                  ? 'md:static sticky top-24 z-10'
+                  ? 'md:static sticky top-4 z-10'
                   : index === 1
-                  ? 'md:static sticky top-24 z-20'
-                  : 'md:static sticky top-24 z-30'
+                  ? 'md:static sticky top-8 z-20'
+                  : 'md:static sticky top-12 z-30'
               }
             >
               <div

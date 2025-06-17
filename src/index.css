@@ -93,15 +93,11 @@
     @apply border-border;
   }
 
-  html, body {
+  body {
     @apply font-serif text-gray-800;
     min-height: 100vh;
     background: transparent !important;
-    overscroll-behavior-y: auto;
-    overflow-y: auto !important;
-    overflow-x: hidden !important;
-    margin: 0;
-    padding: 0;
+    overscroll-behavior-y: contain;
   }
 
   body::after {
@@ -113,12 +109,6 @@
     background: linear-gradient(90deg, #c084fc 0%, #ffffff 50%, #c084fc 100%);
     background-size: 400% 400%;
     animation: gradient 15s ease infinite;
-    min-height: 100vh;
-  }
-
-  #root {
-    min-height: 100vh;
-    background: transparent;
   }
 }
 
@@ -266,4 +256,15 @@
 }
 .scale-x-100 {
   transform: scaleX(1);
+}
+
+html, body {
+  overscroll-behavior: none !important;
+  height: 100%;
+  background: transparent !important;
+}
+
+#root {
+  min-height: 100vh;
+  min-height: 100dvh;
 }

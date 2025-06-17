@@ -12,15 +12,13 @@ const AnimatedGradientBackground = () => {
 
   return (
     <div
-      className="fixed inset-0 -z-10 h-screen"
+      className="fixed inset-0 -z-10"
       style={{
         background: `linear-gradient(${angle}deg, #c084fc 0%, #ffffff 50%, #c084fc 100%)`,
         backgroundSize: '400% 400%',
         animation: 'gradient 15s ease infinite',
         willChange: 'transform',
         transform: 'translateZ(0)',
-        height: '100vh',
-        overflow: 'hidden'
       }}
     />
   );
