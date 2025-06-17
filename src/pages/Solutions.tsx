@@ -108,14 +108,14 @@ const Solutions = () => {
                 </div>
                 <h3 className="text-2xl font-bold text-gray-900 mb-4">{solution.title}</h3>
                 <p className="text-gray-600 mb-6">{solution.description}</p>
-                <ul className="space-y-3">
+                  <ul className="space-y-3">
                   {solution.features.map((feature, featureIndex) => (
                     <li key={featureIndex} className="flex items-center text-gray-700">
                       <div className="w-2 h-2 bg-purple-600 rounded-full mr-3"></div>
                       {feature}
-                    </li>
-                  ))}
-                </ul>
+                      </li>
+                    ))}
+                  </ul>
               </div>
             ))}
           </div>

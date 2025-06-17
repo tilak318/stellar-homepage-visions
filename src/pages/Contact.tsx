@@ -62,8 +62,8 @@ const Contact = () => {
                     <div>
                       <h3 className="font-medium text-gray-900">Address</h3>
                       <p className="text-gray-600">123 Healthcare Ave, NY</p>
-                    </div>
-                  </div>
+                </div>
+              </div>
               </div>
             </div>
           </div>
