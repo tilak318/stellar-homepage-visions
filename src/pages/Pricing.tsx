@@ -10,7 +10,7 @@ const Pricing = () => {
       <Header />
       <main className="pt-20 pb-16">
         <PricingSection />
-      </main>
+      </main>,,,,,,,,,,,,,h,,,,,,
       <Footer />
     </div>
   );

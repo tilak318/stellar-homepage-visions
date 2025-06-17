@@ -80,11 +80,11 @@ const Solutions = () => {
       <Header />
       <main className="pt-32 pb-16">
         {/* Hero Section */}
-        <div className="container mx-auto px-6 mb-20">
+        <div className="container mx-auto max-w-7xl px-6 mb-20">
           <div className="text-center max-w-4xl mx-auto">
             <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 mb-2 sm:mb-4">
               Transform Your Business with <span className="text-purple-600">Smart Solutions</span>
-            </h1>
+          </h1>
             <p className="text-xl text-gray-600 mb-8">
               Discover our comprehensive suite of AI-powered tools designed to streamline your operations, 
               enhance client relationships, and drive growth.
@@ -96,7 +96,7 @@ const Solutions = () => {
         </div>
 
         {/* Solutions Grid */}
-        <div className="container mx-auto px-6">
+        <div className="container mx-auto max-w-7xl px-6">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {solutions.map((solution, index) => (
               <div
@@ -122,7 +122,7 @@ const Solutions = () => {
         </div>
 
         {/* CTA Section */}
-        <div className="container mx-auto px-6 mt-20">
+        <div className="container mx-auto max-w-7xl px-6 mt-20">
           <div className="bg-gradient-to-r from-purple-600 to-fuchsia-600 rounded-3xl p-12 text-center text-white">
             <h2 className="text-3xl md:text-4xl font-bold mb-6">
               Ready to Transform Your Business?
