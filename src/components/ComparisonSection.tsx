@@ -62,7 +62,7 @@ const ComparisonSection = () => {
         );
       case "limited":
         return (
-          <span className="text-2xl font-extrabold text-yellow-500">~</span>
+          <span className="text-3xl font-extrabold text-yellow-500">~</span>
         );
       case "manual":
       case "expensive":
