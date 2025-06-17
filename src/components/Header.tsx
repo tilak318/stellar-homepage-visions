@@ -69,13 +69,13 @@ const Header = () => {
                     </Link>
                   ))}
                 </nav>
-                <Button className="mt-8 w-full bg-gradient-to-r from-purple-500 to-blue-600 hover:shadow-lg text-white font-bold py-3 px-6 rounded-lg">
+                <Button className="mt-8 w-full bg-gradient-to-r from-purple-500 to-pink-400 hover:shadow-lg text-white font-bold py-3 px-6 rounded-lg">
                   BOOK DEMO
                 </Button>
               </SheetContent>
             </Sheet>
           </div>
-          <Button className="bg-gradient-to-r from-purple-500 to-blue-600 hover:shadow-lg text-white font-bold py-3 px-6 rounded-lg hidden sm:inline-block">
+          <Button className="bg-gradient-to-r from-purple-500 to-pink-400 hover:shadow-lg text-white font-bold py-3 px-6 rounded-lg hidden sm:inline-block">
             BOOK DEMO
           </Button>
         </div>
