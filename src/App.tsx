@@ -24,8 +24,8 @@ const App = () => (
     <TooltipProvider>
       <Toaster />
       <Sonner />
-      <div style={{ position: 'relative', height: '100vh', overflow: 'auto' }}>
-        <AnimatedGradientBackground />
+      <AnimatedGradientBackground />
+      <div className="relative h-screen overflow-auto">
         <BrowserRouter>
           <ScrollToTop />
           <Routes>
