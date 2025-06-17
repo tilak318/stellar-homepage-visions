@@ -6,7 +6,7 @@ const ComparisonSection = () => {
       name: "Website + Automation",
       ourPlatform: { status: "included", text: "Built-in, no extra setup" },
       competitors: { status: "limited", text: "Needs external website + integrations" },
-      agencies: { status: "expensive", text: "Custom build possible, but time + costly" }
+      agencies: { status: "included", text: "Custom build possible, but time + costly" }
     },
     {
       name: "24/7 Lead and Booking",
@@ -29,7 +29,7 @@ const ComparisonSection = () => {
     {
       name: "Smart Review Reply System",
       ourPlatform: { status: "included", text: "AI replies to reviews smartly without spend time" },
-      competitors: { status: "limited", text: "Not included natively, needs manual or extra tools" },
+      competitors: { status: "manual", text: "Not included natively, needs manual or extra tools" },
       agencies: { status: "manual", text: "Managed manually, slower but personalized" }
     },
     {
@@ -39,7 +39,7 @@ const ComparisonSection = () => {
       agencies: { status: "manual", text: "Handled manually by staff or agency" }
     },
     {
-      name: "Request for Customisation?",
+      name: "Request for Customisation ?",
       ourPlatform: { status: "included", text: "Flexible and customizable" },
       competitors: { status: "limited", text: "Mostly fixed features, low flexibility" },
       agencies: { status: "included", text: "Fully customizable, but higher cost" }
@@ -55,15 +55,41 @@ const ComparisonSection = () => {
   const getStatusIcon = (status) => {
     switch (status) {
       case "included":
-        return <Check className="w-5 h-5 text-purple-600" />;
+        return (
+          <span className="inline-flex items-center justify-center w-7 h-7 rounded-lg bg-green-500">
+            <Check className="w-5 h-5 text-white" />
+          </span>
+        );
       case "limited":
-        return <div className="w-5 h-5 bg-yellow-400 rounded-full" />;
+        return (
+          <span className="text-2xl font-extrabold text-yellow-500">~</span>
+        );
       case "manual":
       case "expensive":
-        return <X className="w-5 h-5 text-red-500" />;
+        return (
+          <span className="inline-flex items-center justify-center w-7 h-7 rounded-lg bg-red-500 bg-opacity-70">
+            <X className="w-4 h-4 text-white" />
+          </span>
+        );
       default:
         return null;
     }
+  };
+
+  // Helper to break text after every 4 words
+  const breakAfterFourWords = (text) => {
+    if (!text) return '';
+    const words = text.split(' ');
+    let result = '';
+    for (let i = 0; i < words.length; i++) {
+      result += words[i];
+      if ((i + 1) % 4 === 0 && i !== words.length - 1) {
+        result += '<br />';
+      } else if (i !== words.length - 1) {
+        result += ' ';
+      }
+    }
+    return result;
   };
 
   return (
@@ -80,10 +106,10 @@ const ComparisonSection = () => {
         </div>
         <div className="rounded-3xl shadow-xl overflow-hidden border border-gray-100 bg-white">
           <div className="overflow-x-auto">
-            <table className="w-full">
+            <table className="w-full md:min-w-[900px]">
               <thead>
                 <tr className="bg-gradient-to-r from-purple-600 to-fuchsia-600">
-                  <th className="text-left p-2 sm:p-3 md:p-4 font-semibold text-white text-xs sm:text-base md:text-lg w-20 md:w-auto">Features</th>
+                  <th className="text-left p-2 sm:p-3 md:p-4 font-semibold text-white text-xs sm:text-base md:text-lg md:min-w-[220px] md:whitespace-nowrap">Features</th>
                   <th className="text-center p-2 sm:p-3 md:p-4 font-semibold text-white text-xs sm:text-base md:text-lg relative w-20 md:w-auto">
                     <div className="absolute inset-0 bg-white/10 backdrop-blur-sm"></div>
                     <div className="relative">
@@ -106,24 +132,24 @@ const ComparisonSection = () => {
               <tbody>
                 {features.map((feature, index) => (
                   <tr key={index} className="bg-transparent">
-                    <td className="p-4 font-medium text-gray-900 text-base">{feature.name}</td>
+                    <td className="p-4 font-medium text-gray-900 text-base md:whitespace-nowrap">{feature.name}</td>
                     <td className="p-4 text-center bg-gradient-to-b from-purple-100 to-purple-200">
                       <div className="flex items-center justify-center mb-2">
                         {getStatusIcon(feature.ourPlatform.status)}
                       </div>
-                      <p className="text-gray-700 text-base hidden md:block">{feature.ourPlatform.text}</p>
+                      <p className="text-gray-700 text-base hidden md:block" dangerouslySetInnerHTML={{ __html: breakAfterFourWords(feature.ourPlatform.text) }} />
                     </td>
                     <td className="p-4 text-center bg-white">
                       <div className="flex items-center justify-center mb-2">
                         {getStatusIcon(feature.competitors.status)}
                       </div>
-                      <p className="text-gray-700 text-base hidden md:block">{feature.competitors.text}</p>
+                      <p className="text-gray-700 text-base hidden md:block" dangerouslySetInnerHTML={{ __html: breakAfterFourWords(feature.competitors.text) }} />
                     </td>
                     <td className="p-4 text-center bg-white">
                       <div className="flex items-center justify-center mb-2">
                         {getStatusIcon(feature.agencies.status)}
                       </div>
-                      <p className="text-gray-700 text-base hidden md:block">{feature.agencies.text}</p>
+                      <p className="text-gray-700 text-base hidden md:block" dangerouslySetInnerHTML={{ __html: breakAfterFourWords(feature.agencies.text) }} />
                     </td>
                   </tr>
                 ))}
