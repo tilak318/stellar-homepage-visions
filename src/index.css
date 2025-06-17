@@ -98,6 +98,7 @@
     min-height: 100vh;
     background: transparent !important;
     overscroll-behavior-y: contain;
+    overflow: hidden !important;
   }
 
   body::after {
