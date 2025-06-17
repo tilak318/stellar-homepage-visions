@@ -33,7 +33,7 @@ const HeroSection = () => {
           </div>
 
           {/* Mobile Content */}
-          <div className="md:hidden flex flex-col items-center justify-center flex-1">
+          <div className="md:hidden flex flex-col items-center justify-start flex-1 mt-4">
             <p className="text-xl font-semibold text-gray-700 mb-2 mt-8">Lead to Loyal Client</p>
             <h1 className="text-5xl font-extrabold text-gray-900 mb-4 leading-tight">
               Automate<br />
@@ -47,11 +47,19 @@ const HeroSection = () => {
         </div>
 
         {/* Icons positioned after content (original absolute positioning) */}
-        <div className="absolute inset-0 z-0">
-          <FloatingIcon imgSrc="/homeicons/1.png" alt="Followup" className="top-[60%] md:top-1/2 left-[5%] md:left-[10%]" />
-          <FloatingIcon imgSrc="/homeicons/2.png" alt="Website" className="bottom-16 left-[20%] md:left-[30%]" delay={1} />
-          <FloatingIcon imgSrc="/homeicons/3.png" alt="Lead Gen" className="top-[60%] md:top-1/2 right-[5%] md:right-[10%]" delay={0.5} />
-          <FloatingIcon imgSrc="/homeicons/4.png" alt="Outreach" className="bottom-16 right-[20%] md:right-[30%]" delay={1.5} />
+        {/* Mobile floating icons in custom higher positions as per user request */}
+        <div className="absolute inset-0 z-0 md:hidden">
+          <FloatingIcon imgSrc="/homeicons/1.png" alt="Followup" className="bottom-[220px] left-4" />
+          <FloatingIcon imgSrc="/homeicons/2.png" alt="Website" className="bottom-[140px] left-1/4" delay={1} />
+          <FloatingIcon imgSrc="/homeicons/3.png" alt="Lead Gen" className="bottom-[140px] right-1/4" delay={0.5} />
+          <FloatingIcon imgSrc="/homeicons/4.png" alt="Outreach" className="bottom-[220px] right-4" delay={1.5} />
+        </div>
+        {/* Desktop floating icons (unchanged) */}
+        <div className="absolute inset-0 z-0 hidden md:block">
+          <FloatingIcon imgSrc="/homeicons/1.png" alt="Followup" className="top-1/2 left-[10%]" />
+          <FloatingIcon imgSrc="/homeicons/2.png" alt="Website" className="bottom-16 left-[30%]" delay={1} />
+          <FloatingIcon imgSrc="/homeicons/3.png" alt="Lead Gen" className="top-1/2 right-[10%]" delay={0.5} />
+          <FloatingIcon imgSrc="/homeicons/4.png" alt="Outreach" className="bottom-16 right-[30%]" delay={1.5} />
         </div>
       </section>
       {/* 3-Step Journey Section - Seamless Background */}
