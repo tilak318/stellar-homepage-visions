@@ -55,7 +55,7 @@ const HeroSection = () => {
         </div>
       </section>
       {/* 3-Step Journey Section - Seamless Background */}
-      <section className="relative min-h-screen flex flex-col items-center justify-center pt-20 pb-20">
+      {/* <section className="relative min-h-screen flex flex-col items-center justify-center pt-20 pb-20">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
             How We Help You <span className="text-purple-600">Succeed</span>
@@ -65,7 +65,7 @@ const HeroSection = () => {
           </p>
         </div>
         <div className="flex flex-col md:flex-row items-center justify-center gap-8 w-full max-w-5xl mb-12">
-          {/* Step 1 */}
+        
           <div className="bg-purple-50 p-4 md:p-8 rounded-2xl md:rounded-3xl hover:shadow-xl shadow-lg border border-gray-200 transition-all duration-300 flex flex-col items-center w-72 h-64">
             <div className="w-12 h-12 md:w-16 md:h-16 bg-gradient-to-r from-purple-400 to-fuchsia-500 rounded-xl md:rounded-2xl flex items-center justify-center mb-4 md:mb-6 shadow-lg">
               <span className="text-3xl md:text-4xl">🤖</span>
@@ -73,7 +73,7 @@ const HeroSection = () => {
             <h3 className="text-lg md:text-xl font-bold text-gray-800 mb-2 md:mb-4">AI Automation</h3>
             <p className="text-gray-600 text-center text-sm md:text-base leading-relaxed flex-grow">Let AI handle bookings and tasks, freeing you to focus on growth.</p>
           </div>
-          {/* Step 2 */}
+          
           <div className="bg-fuchsia-50 p-4 md:p-8 rounded-2xl md:rounded-3xl hover:shadow-xl shadow-lg border border-gray-200 transition-all duration-300 flex flex-col items-center w-72 h-64">
             <div className="w-12 h-12 md:w-16 md:h-16 bg-gradient-to-r from-fuchsia-500 to-purple-500 rounded-xl md:rounded-2xl flex items-center justify-center mb-4 md:mb-6 shadow-lg">
               <span className="text-3xl md:text-4xl">🎯</span>
@@ -81,7 +81,7 @@ const HeroSection = () => {
             <h3 className="text-lg md:text-xl font-bold text-gray-800 mb-2 md:mb-4">AI Outreach</h3>
             <p className="text-gray-600 text-center text-sm md:text-base leading-relaxed flex-grow">Reach more clients automatically and expand your business.</p>
           </div>
-          {/* Step 3 */}
+        
           <div className="bg-fuchsia-50 p-4 md:p-8 rounded-2xl md:rounded-3xl hover:shadow-xl shadow-lg border border-gray-200 transition-all duration-300 flex flex-col items-center w-72 h-64">
             <div className="w-12 h-12 md:w-16 md:h-16 bg-gradient-to-r from-fuchsia-500 to-purple-400 rounded-xl md:rounded-2xl flex items-center justify-center mb-4 md:mb-6 shadow-lg">
               <span className="text-3xl md:text-4xl">⏰</span>
@@ -90,7 +90,7 @@ const HeroSection = () => {
             <p className="text-gray-600 text-center text-sm md:text-base leading-relaxed flex-grow">Never miss an appointment—reminders keep everyone on track.</p>
           </div>
         </div>
-      </section>
+      </section> */}
     </div>
   );
 };
