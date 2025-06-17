@@ -95,11 +95,11 @@ const ComparisonSection = () => {
   return (
     <section className="py-12">
       <div className="container mx-auto max-w-7xl px-4">
-        <div className="text-center mb-8">
+        <div className="text-center mb-8 max-w-4xl mx-auto">
           <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-3">
             Compare Our <span className="text-purple-600">AI Platform</span>
           </h2>
-          <p className="text-lg text-gray-600 max-w-3xl mx-auto">
+          <p className="text-lg text-gray-600">
             See how TRYZENIQ stacks up against traditional automation methods and agencies. 
             Get more power, flexibility, and support.
           </p>
@@ -109,7 +109,7 @@ const ComparisonSection = () => {
             <table className="w-full md:min-w-[900px]">
               <thead>
                 <tr className="bg-gradient-to-r from-purple-600 to-fuchsia-600">
-                  <th className="text-left p-2 sm:p-3 md:p-4 font-semibold text-white text-xs sm:text-base md:text-lg md:min-w-[220px] md:whitespace-nowrap">Features</th>
+                  <th className="text-center p-2 sm:p-3 md:p-4 font-semibold text-white text-xs sm:text-base md:text-lg md:min-w-[220px] md:whitespace-nowrap">Features</th>
                   <th className="text-center p-2 sm:p-3 md:p-4 font-semibold text-white text-xs sm:text-base md:text-lg relative w-20 md:w-auto">
                     <div className="absolute inset-0 bg-white/10 backdrop-blur-sm"></div>
                     <div className="relative">
@@ -121,18 +121,20 @@ const ComparisonSection = () => {
                   </th>
                   <th className="text-center p-2 sm:p-3 md:p-4 font-semibold text-white text-[10px] sm:text-base md:text-lg w-20 md:w-auto">
                     <span className="md:hidden">Zapier, Apollo</span>
-                    <span className="hidden md:inline">HubSpot, Apollo.io, Zapier, Reply</span>
+                    <span className="hidden md:inline">
+                      HubSpot, Apollo.io,<br />Zapier, Reply
+                    </span>
                   </th>
                   <th className="text-center p-2 sm:p-3 md:p-4 font-semibold text-white text-[10px] sm:text-base md:text-lg w-20 md:w-auto">
                     <span className="md:hidden">Agency, InHouse</span>
-                    <span className="hidden md:inline">Hiring InHouse, Agency</span>
+                    <span className="hidden md:inline">Hiring InHouse,<br />Agency</span>
                   </th>
                 </tr>
               </thead>
               <tbody>
                 {features.map((feature, index) => (
                   <tr key={index} className="bg-transparent">
-                    <td className="p-4 font-medium text-gray-900 text-base md:whitespace-nowrap">{feature.name}</td>
+                    <td className="p-4 font-medium text-gray-900 text-base md:whitespace-nowrap text-center">{feature.name}</td>
                     <td className="p-4 text-center bg-gradient-to-b from-purple-100 to-purple-200">
                       <div className="flex items-center justify-center mb-2">
                         {getStatusIcon(feature.ourPlatform.status)}
