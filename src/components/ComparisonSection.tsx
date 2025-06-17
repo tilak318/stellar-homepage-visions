@@ -78,7 +78,7 @@ const ComparisonSection = () => {
             Get more power, flexibility, and support.
           </p>
         </div>
-        <div className="rounded-3xl shadow-xl overflow-hidden border border-gray-100 bg-gradient-to-b from-white to-purple-200">
+        <div className="rounded-3xl shadow-xl overflow-hidden border border-gray-100 bg-white">
           <div className="overflow-x-auto">
             <table className="w-full">
               <thead>
@@ -93,12 +93,12 @@ const ComparisonSection = () => {
                       </div>
                     </div>
                   </th>
-                  <th className="text-center p-2 sm:p-3 md:p-4 font-semibold text-white text-xs sm:text-base md:text-lg w-20 md:w-auto">
-                    <span className="md:hidden">Others</span>
+                  <th className="text-center p-2 sm:p-3 md:p-4 font-semibold text-white text-[10px] sm:text-base md:text-lg w-20 md:w-auto">
+                    <span className="md:hidden">Zapier, Apollo</span>
                     <span className="hidden md:inline">HubSpot, Apollo.io, Zapier, Reply</span>
                   </th>
-                  <th className="text-center p-2 sm:p-3 md:p-4 font-semibold text-white text-xs sm:text-base md:text-lg w-20 md:w-auto">
-                    <span className="md:hidden">Others</span>
+                  <th className="text-center p-2 sm:p-3 md:p-4 font-semibold text-white text-[10px] sm:text-base md:text-lg w-20 md:w-auto">
+                    <span className="md:hidden">Agency, InHouse</span>
                     <span className="hidden md:inline">Hiring InHouse, Agency</span>
                   </th>
                 </tr>
@@ -107,19 +107,19 @@ const ComparisonSection = () => {
                 {features.map((feature, index) => (
                   <tr key={index} className="bg-transparent">
                     <td className="p-4 font-medium text-gray-900 text-base">{feature.name}</td>
-                    <td className="p-4 text-center border-l-2 border-r-2 border-purple-200 bg-purple-200">
+                    <td className="p-4 text-center bg-gradient-to-b from-purple-100 to-purple-200">
                       <div className="flex items-center justify-center mb-2">
                         {getStatusIcon(feature.ourPlatform.status)}
                       </div>
                       <p className="text-gray-700 text-base hidden md:block">{feature.ourPlatform.text}</p>
                     </td>
-                    <td className="p-4 text-center">
+                    <td className="p-4 text-center bg-white">
                       <div className="flex items-center justify-center mb-2">
                         {getStatusIcon(feature.competitors.status)}
                       </div>
                       <p className="text-gray-700 text-base hidden md:block">{feature.competitors.text}</p>
                     </td>
-                    <td className="p-4 text-center">
+                    <td className="p-4 text-center bg-white">
                       <div className="flex items-center justify-center mb-2">
                         {getStatusIcon(feature.agencies.status)}
                       </div>
