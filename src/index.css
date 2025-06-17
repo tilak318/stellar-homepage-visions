@@ -96,6 +96,19 @@
   body {
     @apply font-serif text-gray-800;
     min-height: 100vh;
+    background: transparent !important;
+    overscroll-behavior-y: contain;
+  }
+
+  body::after {
+    content: "";
+    position: fixed;
+    inset: 0;
+    z-index: -20;
+    pointer-events: none;
+    background: linear-gradient(90deg, #c084fc 0%, #ffffff 50%, #c084fc 100%);
+    background-size: 400% 400%;
+    animation: gradient 15s ease infinite;
   }
 }
 
@@ -243,4 +256,15 @@
 }
 .scale-x-100 {
   transform: scaleX(1);
+}
+
+html, body {
+  overscroll-behavior: none !important;
+  height: 100%;
+  background: transparent !important;
+}
+
+#root {
+  min-height: 100vh;
+  min-height: 100dvh;
 }
