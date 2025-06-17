@@ -57,37 +57,29 @@ const ResultsSection = () => {
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8 relative min-h-[1200px] md:min-h-0">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8 relative">
           {results.map((result, index) => (
             <motion.div
               key={index}
               initial={isMobile ? false : (typeof window !== 'undefined' && window.innerWidth < 768 ? false : { opacity: 0, y: 20 })}
               animate={isMobile ? false : (typeof window !== 'undefined' && window.innerWidth < 768 ? false : { opacity: inView ? 1 : 0, y: inView ? 0 : 20 })}
-              transition={isMobile ? undefined : (typeof window !== 'undefined' && window.innerWidth < 768 ? undefined : { duration: 0.6, ease: 'easeOut', delay: 0.4 + index * 0.2 })}
+              transition={isMobile ? undefined : (typeof window !== 'undefined' && window.innerWidth < 768 ? undefined : { duration: 1.2, ease: 'easeOut', delay: 0.4 + index * 0.2 })}
               className={
-                index === 0
-                  ? 'md:static sticky top-4 z-10'
-                  : index === 1
-                  ? 'md:static sticky top-8 z-20'
-                  : 'md:static sticky top-12 z-30'
+                `sticky top-24 z-${10 + index * 10}`
               }
             >
               <div
-                className={`${result.bgColor} p-4 md:p-8 rounded-2xl md:rounded-3xl hover:shadow-xl shadow-lg border border-gray-200 transition-all duration-300 transform hover:-translate-y-2 h-full flex flex-col`}
+                className={`${result.bgColor} p-4 md:p-8 rounded-2xl md:rounded-3xl hover:shadow-xl shadow-lg border border-gray-200 transition-all duration-300 transform hover:-translate-y-2 h-96 md:h-auto flex flex-col justify-between`}
               >
-                <div className={`w-12 h-12 md:w-16 md:h-16 bg-gradient-to-r ${result.color} rounded-xl md:rounded-2xl flex items-center justify-center mb-4 md:mb-6 shadow-lg flex-shrink-0`}>
+                <div className={`w-12 h-12 md:w-16 md:h-16 bg-gradient-to-r ${result.color} rounded-xl md:rounded-2xl flex items-center justify-center mb-5 md:mb-6 shadow-lg flex-shrink-0`}>
                   <result.icon className="w-6 h-6 md:w-8 md:h-8 text-white" />
                 </div>
-                
-                <h3 className="text-lg md:text-xl font-bold text-gray-800 mb-2 md:mb-4">{result.title}</h3>
-                
-                <div className={`text-3xl md:text-5xl font-bold bg-gradient-to-r ${result.color} bg-clip-text text-transparent mb-2 md:mb-4`}>
+                <h3 className="text-xl md:text-xl font-bold text-gray-800 mb-3 md:mb-4">{result.title}</h3>
+                <div className={`text-4xl md:text-5xl font-bold bg-gradient-to-r ${result.color} bg-clip-text text-transparent mb-3 md:mb-4`}>
                   {result.number}
                 </div>
-                
-                <p className="text-gray-600 mb-4 md:mb-6 leading-relaxed flex-grow text-sm md:text-base">{result.description}</p>
-                
-                <div className="border-t border-gray-200 pt-3 md:pt-4">
+                <p className="text-gray-600 mb-4 md:mb-6 leading-relaxed text-base md:text-base">{result.description}</p>
+                <div className="border-t border-gray-200 pt-3 md:pt-4 mt-auto">
                   <div className="text-xs md:text-sm font-semibold text-fuchsia-600 mb-1">{result.increase}</div>
                   <div className="text-xs md:text-sm text-gray-500">{result.subtext}</div>
                 </div>

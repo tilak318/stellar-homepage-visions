@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+console.log('Header mounted');
 import { Button } from '@/components/ui/button';
 import { Link, useLocation } from 'react-router-dom';
 import { Sheet, SheetTrigger, SheetContent } from '@/components/ui/sheet';
@@ -16,15 +17,24 @@ const Header = () => {
   ];
 
   useEffect(() => {
-    const handleScroll = () => {
-      setScrolled(window.scrollY > 10);
-    };
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
+    const sentinel = document.getElementById('header-sentinel');
+    if (!sentinel) return;
+    const observer = new window.IntersectionObserver(
+      ([entry]) => {
+        setScrolled(!entry.isIntersecting);
+      },
+      { rootMargin: '0px', threshold: 0 }
+    );
+    observer.observe(sentinel);
+    return () => observer.disconnect();
   }, []);
 
   return (
-    <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${scrolled ? 'bg-white/80 backdrop-blur shadow' : ''}`}>
+    <header className={`fixed top-0 left-0 right-0 z-[100] transition-all duration-300 ${
+      scrolled
+        ? 'bg-white/40 backdrop-blur-2xl shadow-lg'
+        : 'bg-transparent border-none shadow-none backdrop-blur-0'
+    }`}>
       <div className="container mx-auto max-w-7xl px-6 py-3">
         <div className="flex items-center justify-between">
           <Link to="/" className="text-2xl font-bold font-serif text-gray-900 tracking-wider">
@@ -57,7 +67,7 @@ const Header = () => {
                   <Menu className="w-7 h-7 text-gray-900" />
                 </button>
               </SheetTrigger>
-              <SheetContent side="right">
+              <SheetContent side="right" className="z-[200]">
                 <nav className="flex flex-col gap-6 mt-8">
                   {navLinks.map((link) => (
                     <Link

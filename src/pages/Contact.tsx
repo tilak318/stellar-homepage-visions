@@ -9,6 +9,7 @@ import AnimatedGradientBackground from '@/components/AnimatedGradientBackground'
 const Contact = () => {
   return (
     <div className="min-h-screen">
+      <div id="header-sentinel" style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '1px', pointerEvents: 'none' }}></div>
       <AnimatedGradientBackground />
       <Header />
       <main className="pt-32 pb-16">

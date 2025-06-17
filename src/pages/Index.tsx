@@ -9,12 +9,11 @@ import ComparisonSection from '@/components/ComparisonSection';
 import PricingSection from '@/components/PricingSection';
 import TestimonialsSection from '@/components/TestimonialsSection';
 import Footer from '@/components/Footer';
-import AnimatedGradientBackground from '@/components/AnimatedGradientBackground';
 
 const Index = () => {
   return (
     <div className="min-h-screen">
-      <AnimatedGradientBackground />
+      <div id="header-sentinel" style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '1px', pointerEvents: 'none' }}></div>
       <Header />
       <HeroSection />
       {/* <AISolutionsSection /> */}
