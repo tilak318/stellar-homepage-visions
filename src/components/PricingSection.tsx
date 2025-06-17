@@ -57,17 +57,17 @@ const PricingSection = () => {
           {plans.map((plan, index) => (
             <div
               key={index}
-              className={`md:static sticky top-24 z-[${10 + index * 10}] mx-auto w-full max-w-sm ${
+              className={`md:static sticky top-24 z-[${10 + index * 10}] mx-auto w-full max-w-[280px] sm:max-w-sm ${
                 plan.highlighted
                   ? 'bg-gradient-to-br from-purple-600 to-fuchsia-600 text-white shadow-2xl md:transform md:scale-105'
                   : 'bg-white shadow-lg hover:shadow-xl hover:-translate-y-2 border border-gray-200 transition-transform duration-300'
-              } rounded-3xl p-8 transition-all duration-300`}
+              } rounded-3xl p-4 sm:p-8 transition-all duration-300`}
             >
-              <h3 className={`text-2xl font-bold mb-4 ${plan.highlighted ? 'text-white' : 'text-gray-900'}`}>
+              <h3 className={`text-2xl font-bold mb-3 sm:mb-4 ${plan.highlighted ? 'text-white' : 'text-gray-900'}`}>
                 {plan.name}
               </h3>
 
-              <div className="mb-6">
+              <div className="mb-4 sm:mb-6">
                 <div className={`text-4xl font-bold ${plan.highlighted ? 'text-white' : 'text-gray-900'}`}> 
                   {plan.price}
                   {plan.period && (
@@ -78,7 +78,7 @@ const PricingSection = () => {
                 </div>
               </div>
 
-              <div className="space-y-3 mb-6">
+              <div className="space-y-2 sm:space-y-3 mb-4 sm:mb-6">
                 {plan.features.map((feature, featureIndex) => (
                   <div key={featureIndex} className="flex items-center space-x-3">
                     <div className={`w-5 h-5 rounded-full flex items-center justify-center ${
