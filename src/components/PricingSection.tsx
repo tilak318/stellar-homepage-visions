@@ -57,42 +57,41 @@ const PricingSection = () => {
           {plans.map((plan, index) => (
             <div
               key={index}
-              className={`md:static sticky top-24 z-[${10 + index * 10}] mx-auto w-full max-w-[280px] sm:max-w-sm ${
+              className={`md:static sticky top-24 z-[${10 + index * 10}] mx-auto w-full max-w-[340px] sm:max-w-sm min-h-[420px] flex flex-col justify-between ${
                 plan.highlighted
                   ? 'bg-gradient-to-br from-purple-600 to-fuchsia-600 text-white shadow-2xl md:transform md:scale-105'
                   : 'bg-white shadow-lg hover:shadow-xl hover:-translate-y-2 border border-gray-200 transition-transform duration-300'
-              } rounded-3xl p-5 sm:p-8 transition-all duration-300`}
+              } rounded-3xl p-6 sm:p-8 transition-all duration-300`}
             >
-              <h3 className={`text-lg sm:text-2xl font-bold mb-3 sm:mb-4 ${plan.highlighted ? 'text-white' : 'text-gray-900'}`}>
-                {plan.name}
-              </h3>
-
-              <div className="mb-4 sm:mb-6">
-                <div className={`text-3xl sm:text-4xl font-bold ${plan.highlighted ? 'text-white' : 'text-gray-900'}`}> 
-                  {plan.price}
-                  {plan.period && (
-                    <span className={`text-sm sm:text-lg font-normal ${plan.highlighted ? 'text-white/70' : 'text-gray-500'}`}>
-                      {plan.period}
-                    </span>
-                  )}
+              <div className="flex-1 flex flex-col">
+                <h3 className={`text-2xl sm:text-3xl font-bold mb-4 sm:mb-6 ${plan.highlighted ? 'text-white' : 'text-gray-900'}`}>
+                  {plan.name}
+                </h3>
+                <div className="mb-4 sm:mb-6">
+                  <div className={`text-5xl sm:text-6xl font-extrabold ${plan.highlighted ? 'text-white' : 'text-gray-900'}`}> 
+                    {plan.price}
+                    {plan.period && (
+                      <span className={`text-lg sm:text-xl font-normal ${plan.highlighted ? 'text-white/70' : 'text-gray-500'}`}>
+                        {plan.period}
+                      </span>
+                    )}
+                  </div>
+                </div>
+                <div className="space-y-3 sm:space-y-4 mb-4 sm:mb-8">
+                  {plan.features.map((feature, featureIndex) => (
+                    <div key={featureIndex} className="flex items-center space-x-3">
+                      <div className={`w-5 h-5 sm:w-6 sm:h-6 rounded-full flex items-center justify-center ${
+                        plan.highlighted ? 'bg-white/20' : 'bg-purple-100'
+                      }`}>
+                        <Check className={`w-3.5 h-3.5 sm:w-4 sm:h-4 ${plan.highlighted ? 'text-white' : 'text-purple-600'}`} />
+                      </div>
+                      <span className={`text-lg sm:text-xl ${plan.highlighted ? 'text-white/90' : 'text-gray-700'}`}>
+                        {feature}
+                      </span>
+                    </div>
+                  ))}
                 </div>
               </div>
-
-              <div className="space-y-2 sm:space-y-3 mb-4 sm:mb-6">
-                {plan.features.map((feature, featureIndex) => (
-                  <div key={featureIndex} className="flex items-center space-x-3">
-                    <div className={`w-4 h-4 sm:w-5 sm:h-5 rounded-full flex items-center justify-center ${
-                      plan.highlighted ? 'bg-white/20' : 'bg-purple-100'
-                    }`}>
-                      <Check className={`w-2.5 h-2.5 sm:w-3 sm:h-3 ${plan.highlighted ? 'text-white' : 'text-purple-600'}`} />
-                    </div>
-                    <span className={`text-sm sm:text-base ${plan.highlighted ? 'text-white/90' : 'text-gray-700'}`}>
-                      {feature}
-                    </span>
-                  </div>
-                ))}
-              </div>
-
               <Button
                 className={`w-full py-3 rounded-xl font-medium transition-all ${
                   plan.highlighted
