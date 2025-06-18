@@ -10,6 +10,7 @@ const Header = () => {
   const [scrolled, setScrolled] = useState(false);
   const navLinks = [
     { name: 'Home', path: '/' },
+    { name: 'Services', path: '/services' },
     { name: 'Pricing', path: '/pricing' },
     { name: 'Solutions', path: '/solutions' },
     { name: 'About', path: '/about' },

@@ -7,6 +7,7 @@ import { useEffect } from "react";
 import Index from "./pages/Index";
 import Pricing from "./pages/Pricing";
 import Solutions from "./pages/Solutions";
+import Services from "./pages/Services";
 import About from "./pages/About";
 import Contact from "./pages/Contact";
 import NotFound from "./pages/NotFound";
@@ -50,6 +51,7 @@ const App = () => (
           <ScrollToTop />
           <Routes>
             <Route path="/" element={<Index />} />
+            <Route path="/services" element={<Services />} />
             <Route path="/pricing" element={<Pricing />} />
             <Route path="/solutions" element={<Solutions />} />
             <Route path="/about" element={<About />} />
