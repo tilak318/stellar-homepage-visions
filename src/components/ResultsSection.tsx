@@ -63,7 +63,7 @@ const ResultsSection = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: inView ? 1 : 0, y: inView ? 0 : 20 }}
               transition={{ duration: 1.2, ease: 'easeOut', delay: 0.4 + index * 0.2 }}
-              className={`${result.bgColor} text-gray-900 rounded-2xl p-6 md:p-4 shadow-lg transform hover:-translate-y-2 transition-transform duration-300 md:static sticky top-24 z-[${10 + index * 10}] mx-auto lg:max-w-xs xl:max-w-sm w-full`}
+              className={`${result.bgColor} text-gray-900 rounded-2xl p-6 md:p-6 shadow-lg transform hover:-translate-y-2 transition-transform duration-300 md:static sticky top-24 z-[${10 + index * 10}] mx-auto lg:max-w-xs xl:max-w-sm w-full md:min-h-[320px]`}
             >
               <div className={`w-12 h-12 bg-gradient-to-r ${result.color} rounded-xl flex items-center justify-center mb-4 shadow-lg`}>
                 <result.icon className="w-6 h-6 text-white" />
@@ -74,8 +74,8 @@ const ResultsSection = () => {
               </div>
               <p className="text-gray-600 mb-4 leading-relaxed text-sm">{result.description}</p>
               <div className="border-t border-gray-200 pt-3">
-                <div className="text-sm font-semibold text-fuchsia-600 mb-1">{result.increase}</div>
-                <div className="text-sm text-gray-500">{result.subtext}</div>
+                <div className="text-sm md:text-lg font-semibold text-fuchsia-600 mb-1">{result.increase}</div>
+                <div className="text-sm md:text-base text-gray-500">{result.subtext}</div>
               </div>
             </motion.div>
           ))}

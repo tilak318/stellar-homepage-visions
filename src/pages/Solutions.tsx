@@ -73,6 +73,15 @@ const solutions = [
   }
 ];
 
+const cardColors = [
+  'bg-purple-100',
+  'bg-purple-200',
+  'bg-purple-100',
+  'bg-purple-200',
+  'bg-purple-100',
+  'bg-purple-200',
+];
+
 const Solutions = () => {
   return (
     <div className="min-h-screen">
@@ -102,7 +111,7 @@ const Solutions = () => {
             {solutions.map((solution, index) => (
               <div
                 key={index}
-                className="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-2"
+                className={`${cardColors[index]} rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-2`}
               >
                 <div className="mb-6">
                   {solution.icon}
