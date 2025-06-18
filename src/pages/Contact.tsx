@@ -213,158 +213,80 @@ const Contact = () => {
         <div className="container mx-auto max-w-7xl px-6 mb-20">
           <div className="text-center max-w-4xl mx-auto">
             <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 mb-2 sm:mb-4">
-              Get in <span className="text-purple-600">Touch</span>
+              Contact <span className="text-purple-600">Us</span>
             </h1>
             <p className="text-xl text-gray-600 mb-8">
-              Have questions or want to schedule a demo? We'd love to hear from you and help transform your business.
+              We'd love to hear from you! Fill out the form and our team will get back to you soon.
             </p>
           </div>
         </div>
 
-        {/* Contact Cards Section */}
-        <div className="container mx-auto max-w-7xl px-6 mb-20">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-start">
-            {/* Contact Form Card - Light Purple */}
-            <div className="bg-purple-100 rounded-3xl p-8 shadow-xl hover:shadow-2xl transition-all duration-300 flex items-center">
-              <div className="w-full max-w-2xl mx-auto">
-                <div className="flex items-center mb-6">
-                  <Send className="w-8 h-8 text-purple-600 mr-3" />
-                  <h2 className="text-2xl font-bold text-gray-900">Send us a message</h2>
+        {/* Contact Section */}
+        <div className="max-w-5xl mx-auto px-4">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {/* Contact Form Card */}
+            <div className="md:col-span-2 bg-purple-200 rounded-3xl shadow-2xl p-8 flex flex-col justify-center">
+              <form className="w-full max-w-2xl mx-auto space-y-6">
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                  <div>
+                    <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-2">Full Name *</label>
+                    <Input id="name" type="text" placeholder="Your full name" className="bg-purple-100 border-gray-300 focus:border-purple-500 focus:ring-purple-500" required />
+                  </div>
+                  <div>
+                    <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-2">Email Address *</label>
+                    <Input id="email" type="email" placeholder="your@email.com" className="bg-purple-100 border-gray-300 focus:border-purple-500 focus:ring-purple-500" required />
+                  </div>
+                  <div>
+                    <label htmlFor="phone" className="block text-sm font-medium text-gray-700 mb-2">Phone Number</label>
+                    <Input id="phone" type="tel" placeholder="+1 (555) 123-4567" className="bg-purple-100 border-gray-300 focus:border-purple-500 focus:ring-purple-500" />
+                  </div>
+                  <div>
+                    <label htmlFor="country" className="block text-sm font-medium text-gray-700 mb-2">Country *</label>
+                    <Select>
+                      <SelectTrigger className="bg-purple-100 border-gray-300 focus:border-purple-500 focus:ring-purple-500">
+                        <SelectValue placeholder="Select your country" />
+                      </SelectTrigger>
+                      <SelectContent className="max-h-60">
+                        {countries.map((country) => (
+                          <SelectItem key={country.code} value={country.code}>{country.name}</SelectItem>
+                        ))}
+                      </SelectContent>
+                    </Select>
+                  </div>
                 </div>
-                <form className="space-y-6">
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                    <div>
-                      <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-2">Full Name *</label>
-                      <Input 
-                        id="name" 
-                        type="text" 
-                        placeholder="Your full name" 
-                        className="bg-white border-gray-300 focus:border-purple-500 focus:ring-purple-500"
-                        required
-                      />
-                    </div>
-                    <div>
-                      <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-2">Email Address *</label>
-                      <Input 
-                        id="email" 
-                        type="email" 
-                        placeholder="your@email.com" 
-                        className="bg-white border-gray-300 focus:border-purple-500 focus:ring-purple-500"
-                        required
-                      />
-                    </div>
-                    <div>
-                      <label htmlFor="phone" className="block text-sm font-medium text-gray-700 mb-2">Phone Number</label>
-                      <Input 
-                        id="phone" 
-                        type="tel" 
-                        placeholder="+1 (555) 123-4567" 
-                        className="bg-white border-gray-300 focus:border-purple-500 focus:ring-purple-500"
-                      />
-                    </div>
-                    <div>
-                      <label htmlFor="country" className="block text-sm font-medium text-gray-700 mb-2">Country *</label>
-                      <Select>
-                        <SelectTrigger className="bg-white border-gray-300 focus:border-purple-500 focus:ring-purple-500">
-                          <SelectValue placeholder="Select your country" />
-                        </SelectTrigger>
-                        <SelectContent className="max-h-60">
-                          {countries.map((country) => (
-                            <SelectItem key={country.code} value={country.code}>
-                              {country.name}
-                            </SelectItem>
-                          ))}
-                        </SelectContent>
-                      </Select>
-                    </div>
-                  </div>
-                  <div>
-                    <label htmlFor="subject" className="block text-sm font-medium text-gray-700 mb-2">Subject *</label>
-                    <Input 
-                      id="subject" 
-                      type="text" 
-                      placeholder="What is this regarding?" 
-                      className="bg-white border-gray-300 focus:border-purple-500 focus:ring-purple-500"
-                      required
-                    />
-                  </div>
-                  <div>
-                    <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-2">Message *</label>
-                    <Textarea 
-                      id="message" 
-                      placeholder="Tell us about your business needs and how we can help..." 
-                      className="min-h-[150px] bg-white border-gray-300 focus:border-purple-500 focus:ring-purple-500"
-                      required
-                    />
-                  </div>
-                  <div>
-                    <Button className="bg-gradient-to-r from-purple-600 to-fuchsia-600 hover:from-purple-700 hover:to-fuchsia-700 text-white font-bold py-3 px-8 rounded-xl transition-all duration-300" type="submit">
-                      Send Message
-                    </Button>
-                  </div>
-                </form>
-              </div>
+                <div>
+                  <label htmlFor="subject" className="block text-sm font-medium text-gray-700 mb-2">Subject *</label>
+                  <Input id="subject" type="text" placeholder="What is this regarding?" className="bg-purple-100 border-gray-300 focus:border-purple-500 focus:ring-purple-500" required />
+                </div>
+                <div>
+                  <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-2">Message *</label>
+                  <Textarea id="message" placeholder="Tell us about your business needs and how we can help..." className="min-h-[120px] bg-purple-100 border-gray-300 focus:border-purple-500 focus:ring-purple-500" required />
+                </div>
+                <div>
+                  <Button className="bg-gradient-to-r from-purple-600 to-fuchsia-600 hover:from-purple-700 hover:to-fuchsia-700 text-white font-bold py-3 px-8 rounded-xl transition-all duration-300 w-full sm:w-auto" type="submit">
+                    Send Message
+                  </Button>
+                </div>
+              </form>
             </div>
-
-            {/* Contact Information Card - Darker Light Purple */}
-            <div className="bg-purple-200 rounded-3xl p-8 shadow-xl hover:shadow-2xl transition-all duration-300">
-              <div className="flex items-center mb-6">
-                <MessageSquare className="w-8 h-8 text-purple-600 mr-3" />
-                <h2 className="text-2xl font-bold text-gray-900">Contact Information</h2>
+            {/* Contact Info Card */}
+            <div className="bg-purple-100 rounded-3xl shadow-xl p-8 flex flex-col items-center max-w-sm w-full mx-auto h-full justify-between py-12">
+              <div className="flex flex-col items-center mb-6">
+                <Mail className="w-10 h-10 text-purple-500 mb-2" />
+                <h2 className="text-xl font-bold text-gray-900 mb-1">Email</h2>
+                <p className="text-gray-700 text-center">tryzeniq@gmail.com</p>
               </div>
-              <div className="space-y-8">
-                <div className="flex items-start space-x-4">
-                  <div className="bg-purple-300 p-3 rounded-xl">
-                    <Mail className="w-6 h-6 text-purple-600" />
-                  </div>
-                  <div>
-                    <h3 className="font-bold text-gray-900 mb-1">Email</h3>
-                    <p className="text-gray-600">hello@tryzeniq.com</p>
-                    <p className="text-sm text-gray-500 mt-1">We'll respond within 24 hours</p>
-                  </div>
-                </div>
-                <div className="flex items-start space-x-4">
-                  <div className="bg-purple-300 p-3 rounded-xl">
-                    <Phone className="w-6 h-6 text-purple-600" />
-                  </div>
-                  <div>
-                    <h3 className="font-bold text-gray-900 mb-1">Phone</h3>
-                    <p className="text-gray-600">+1 (555) 123-4567</p>
-                    <p className="text-sm text-gray-500 mt-1">Mon-Fri 9AM-6PM EST</p>
-                  </div>
-                </div>
-                <div className="flex items-start space-x-4">
-                  <div className="bg-purple-300 p-3 rounded-xl">
-                    <MapPin className="w-6 h-6 text-purple-600" />
-                  </div>
-                  <div>
-                    <h3 className="font-bold text-gray-900 mb-1">Address</h3>
-                    <p className="text-gray-600">123 Healthcare Ave, NY</p>
-                    <p className="text-sm text-gray-500 mt-1">Available for in-person meetings</p>
-                  </div>
-                </div>
+              <div className="flex flex-col items-center mb-6">
+                <Phone className="w-10 h-10 text-purple-500 mb-2" />
+                <h2 className="text-xl font-bold text-gray-900 mb-1">Phone</h2>
+                <p className="text-gray-700 text-center">6359185945</p>
+                <p className="text-gray-500 text-center text-sm">Mon-Fri 9AM-6PM IST</p>
               </div>
-            </div>
-          </div>
-        </div>
-
-        {/* Additional Info Section */}
-        <div className="container mx-auto max-w-7xl px-6 mb-20">
-          <div className="bg-gradient-to-r from-purple-600 to-fuchsia-600 rounded-3xl p-12 text-center text-white">
-            <div className="flex items-center justify-center mb-6">
-              <Clock className="w-12 h-12 mr-4" />
-              <h2 className="text-3xl md:text-4xl font-bold">Ready to Get Started?</h2>
-            </div>
-            <p className="text-xl mb-8 text-white/90 max-w-3xl mx-auto">
-              Schedule a free consultation call to discuss how our automation platform can transform your business operations and boost your revenue.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button size="lg" className="bg-white text-purple-600 hover:bg-gray-100 text-lg px-8 py-6">
-                Schedule Demo
-              </Button>
-              <Button size="lg" variant="outline" className="border-white text-white hover:bg-white hover:text-purple-600 text-lg px-8 py-6">
-                Download Brochure
-              </Button>
+              <div className="flex flex-col items-center">
+                <MapPin className="w-10 h-10 text-purple-500 mb-2" />
+                <h2 className="text-xl font-bold text-gray-900 mb-1">Address</h2>
+                <p className="text-gray-700 text-center">317, Shivalik, Dabholi<br/> Surat, Gujarat 395004</p>
+              </div>
             </div>
           </div>
         </div>
