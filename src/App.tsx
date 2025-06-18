@@ -11,6 +11,14 @@ import Services from "./pages/Services";
 import About from "./pages/About";
 import Contact from "./pages/Contact";
 import NotFound from "./pages/NotFound";
+import BotoxSkinCare from "./pages/BotoxSkinCare";
+import ClinicsDentist from "./pages/ClinicsDentist";
+import GymHealthCoach from "./pages/GymHealthCoach";
+import BusinessConsultation from "./pages/BusinessConsultation";
+import ITSaaS from "./pages/ITSaaS";
+import SalonsSpa from "./pages/SalonsSpa";
+import RealEstateAgents from "./pages/RealEstateAgents";
+import TherapistsCounselors from "./pages/TherapistsCounselors";
 import AnimatedGradientBackground from "@/components/AnimatedGradientBackground";
 
 const queryClient = new QueryClient();
@@ -56,6 +64,14 @@ const App = () => (
             <Route path="/solutions" element={<Solutions />} />
             <Route path="/about" element={<About />} />
             <Route path="/contact" element={<Contact />} />
+            <Route path="/botox-skin-care" element={<BotoxSkinCare />} />
+            <Route path="/clinics-dentist" element={<ClinicsDentist />} />
+            <Route path="/gym-health-coach" element={<GymHealthCoach />} />
+            <Route path="/business-consultation" element={<BusinessConsultation />} />
+            <Route path="/it-saas" element={<ITSaaS />} />
+            <Route path="/salons-spa" element={<SalonsSpa />} />
+            <Route path="/real-estate-agents" element={<RealEstateAgents />} />
+            <Route path="/therapists-counselors" element={<TherapistsCounselors />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
         </BrowserRouter>

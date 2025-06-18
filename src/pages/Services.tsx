@@ -1,8 +1,9 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import AnimatedGradientBackground from '@/components/AnimatedGradientBackground';
-import { Check, Sparkles, Users, Calendar, Star, MessageSquare, TrendingUp, Shield } from 'lucide-react';
+import { Check, Sparkles, Users, Calendar, Star, MessageSquare, TrendingUp, Shield, ArrowRight } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { motion, useInView } from 'framer-motion';
 
@@ -18,7 +19,8 @@ const services = [
       "Before/After Tracking",
       "Client Loyalty"
     ],
-    image: "https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+    image: "https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    route: "/botox-skin-care"
   },
   {
     title: "Clinics and Dentist",
@@ -31,7 +33,8 @@ const services = [
       "Referrals Tracking",
       "AI Chatbot"
     ],
-    image: "https://images.unsplash.com/photo-1516321497487-e288fb19713f?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+    image: "https://images.unsplash.com/photo-1516321497487-e288fb19713f?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    route: "/clinics-dentist"
   },
   {
     title: "Gym & Health Coach",
@@ -44,7 +47,8 @@ const services = [
       "Referral Tracking",
       "Client Loyalty"
     ],
-    image: "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+    image: "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    route: "/gym-health-coach"
   },
   {
     title: "Business Consultation",
@@ -57,7 +61,8 @@ const services = [
       "Referral Tracking",
       "Client Loyalty"
     ],
-    image: "https://images.unsplash.com/photo-1516321497487-e288fb19713f?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+    image: "https://images.unsplash.com/photo-1516321497487-e288fb19713f?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    route: "/business-consultation"
   },
   {
     title: "IT & SAAS Services",
@@ -70,7 +75,8 @@ const services = [
       "Referral Tracking",
       "Client Loyalty"
     ],
-    image: "https://images.unsplash.com/photo-1556740758-90de374c12ad?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+    image: "https://images.unsplash.com/photo-1556740758-90de374c12ad?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    route: "/it-saas"
   },
   {
     title: "Salons and Spa",
@@ -83,7 +89,8 @@ const services = [
       "Referral Tracking",
       "Client Loyalty"
     ],
-    image: "https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+    image: "https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    route: "/salons-spa"
   },
   {
     title: "Real Estate Agents",
@@ -96,7 +103,8 @@ const services = [
       "Referral Tracking",
       "Client Loyalty"
     ],
-    image: "https://images.unsplash.com/photo-1560518883-ce09059eeffa?q=80&w=1973&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+    image: "https://images.unsplash.com/photo-1560518883-ce09059eeffa?q=80&w=1973&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    route: "/real-estate-agents"
   },
   {
     title: "Therapists and Counselors",
@@ -109,7 +117,8 @@ const services = [
       "Referral Tracking",
       "Client Loyalty"
     ],
-    image: "https://images.unsplash.com/photo-1544006659-f0b21884ce1d?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+    image: "https://images.unsplash.com/photo-1544006659-f0b21884ce1d?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    route: "/therapists-counselors"
   }
 ];
 
@@ -127,6 +136,12 @@ const cardColors = [
 const Services = () => {
   const ref = React.useRef(null);
   const inView = useInView(ref, { once: true, amount: 0.3 });
+  const navigate = useNavigate();
+
+  const handleServiceClick = (route: string) => {
+    navigate(route);
+  };
+
   return (
     <div className="min-h-screen">
       <div id="header-sentinel" style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '1px', pointerEvents: 'none' }}></div>
@@ -154,7 +169,7 @@ const Services = () => {
             {services.map((service, index) => (
               <div
                 key={index}
-                className={`${cardColors[index]} rounded-2xl p-5 shadow-lg sticky top-24 z-[${10 + index * 10}] w-[90vw] max-w-sm flex flex-col mx-auto mb-6`}
+                className={`${cardColors[index]} hover:bg-white rounded-2xl p-5 shadow-lg sticky top-24 z-[${10 + index * 10}] w-[90vw] max-w-sm flex flex-col mx-auto mb-6 transition-all duration-300`}
               >
                 <h3 className="text-xl font-bold text-gray-900 mb-2 text-center">{service.title}</h3>
                 <div className="space-y-3 mb-4 flex-1">
@@ -165,9 +180,15 @@ const Services = () => {
                     </div>
                   ))}
                 </div>
-                <div className="h-24 bg-gray-200 rounded-lg overflow-hidden mt-auto">
+                <div className="h-24 bg-gray-200 rounded-lg overflow-hidden mt-auto mb-4">
                   <img src={service.image} alt={service.title} className="w-full h-full object-cover" />
                 </div>
+                <Button 
+                  onClick={() => handleServiceClick(service.route)}
+                  className="w-full bg-gradient-to-r from-purple-600 to-fuchsia-600 hover:from-purple-700 hover:to-fuchsia-700 text-white"
+                >
+                  Learn More <ArrowRight className="w-4 h-4 ml-2" />
+                </Button>
               </div>
             ))}
           </div>
@@ -179,7 +200,7 @@ const Services = () => {
             {services.map((service, index) => (
               <div
                 key={index}
-                className={`${cardColors[index]} rounded-2xl p-5 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-2 w-[380px] max-w-sm flex flex-col mx-auto`}
+                className={`${cardColors[index]} hover:bg-white rounded-2xl p-5 shadow-lg hover:shadow-xl transition-all duration-300 w-[380px] max-w-sm flex flex-col mx-auto`}
               >
                 <h3 className="text-xl font-bold text-gray-900 mb-2 text-center">{service.title}</h3>
                 <div className="space-y-3 mb-4 flex-1">
@@ -190,9 +211,15 @@ const Services = () => {
                     </div>
                   ))}
                 </div>
-                <div className="h-24 bg-gray-200 rounded-lg overflow-hidden mt-auto">
+                <div className="h-24 bg-gray-200 rounded-lg overflow-hidden mt-auto mb-4">
                   <img src={service.image} alt={service.title} className="w-full h-full object-cover" />
                 </div>
+                <Button 
+                  onClick={() => handleServiceClick(service.route)}
+                  className="w-full bg-gradient-to-r from-purple-600 to-fuchsia-600 hover:from-purple-700 hover:to-fuchsia-700 text-white"
+                >
+                  Learn More <ArrowRight className="w-4 h-4 ml-2" />
+                </Button>
               </div>
             ))}
           </div>
