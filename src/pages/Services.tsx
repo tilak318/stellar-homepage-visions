@@ -4,6 +4,7 @@ import Footer from '@/components/Footer';
 import AnimatedGradientBackground from '@/components/AnimatedGradientBackground';
 import { Check, Sparkles, Users, Calendar, Star, MessageSquare, TrendingUp, Shield } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import { motion, useInView } from 'framer-motion';
 
 const services = [
   {
@@ -124,6 +125,8 @@ const cardColors = [
 ];
 
 const Services = () => {
+  const ref = React.useRef(null);
+  const inView = useInView(ref, { once: true, amount: 0.3 });
   return (
     <div className="min-h-screen">
       <div id="header-sentinel" style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '1px', pointerEvents: 'none' }}></div>
@@ -134,7 +137,7 @@ const Services = () => {
         <div className="container mx-auto max-w-7xl px-6 mb-20">
           <div className="text-center max-w-4xl mx-auto">
             <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 mb-2 sm:mb-4">
-              All In <span className="text-purple-600">One Platform</span>
+              Discover Our Powerful <span className="block sm:inline bg-gradient-to-r from-purple-600 to-fuchsia-600 bg-clip-text text-transparent">Service Suite</span>
             </h1>
             <p className="text-xl text-gray-600 mb-8">
               Where We Help To Automate This Business - Comprehensive automation solutions for various industries and niches.
@@ -145,8 +148,33 @@ const Services = () => {
           </div>
         </div>
 
-        {/* Services Grid */}
-        <div className="container mx-auto max-w-7xl px-6">
+        {/* Mobile Sticky Stacked Cards */}
+        <div className="md:hidden" ref={ref}>
+          <div className="relative min-h-[600px] flex flex-col items-center">
+            {services.map((service, index) => (
+              <div
+                key={index}
+                className={`${cardColors[index]} rounded-2xl p-5 shadow-lg sticky top-24 z-[${10 + index * 10}] w-[90vw] max-w-sm flex flex-col mx-auto mb-6`}
+              >
+                <h3 className="text-xl font-bold text-gray-900 mb-2 text-center">{service.title}</h3>
+                <div className="space-y-3 mb-4 flex-1">
+                  {service.features.map((feature, featureIndex) => (
+                    <div key={featureIndex} className="flex items-center space-x-2">
+                      <Check className="w-5 h-5 text-purple-500" />
+                      <span className="text-gray-700 text-sm md:text-base">{feature}</span>
+                    </div>
+                  ))}
+                </div>
+                <div className="h-24 bg-gray-200 rounded-lg overflow-hidden mt-auto">
+                  <img src={service.image} alt={service.title} className="w-full h-full object-cover" />
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        {/* Desktop/Tablet Grid */}
+        <div className="container mx-auto max-w-7xl px-6 hidden md:block">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6 lg:gap-8 justify-center">
             {services.map((service, index) => (
               <div
