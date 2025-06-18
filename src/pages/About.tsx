@@ -114,7 +114,7 @@ const About = () => {
       <Header />
       <main className="pt-32 pb-16">
         {/* Hero Section */}
-        <div className="container mx-auto px-6 mb-20">
+        <div className="container mx-auto max-w-7xl px-6 mb-20">
           <div className="text-center max-w-4xl mx-auto">
             <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 mb-2 sm:mb-4">
               About <span className="text-purple-600">TRYZENIQ</span>
@@ -128,7 +128,7 @@ const About = () => {
         </div>
 
         {/* Features Grid */}
-        <div className="container mx-auto px-6 mb-20">
+        <div className="container mx-auto max-w-7xl px-6 mb-20">
           <h2 className="text-3xl md:text-4xl font-bold text-center text-gray-900 mb-12">
             Why Choose <span className="text-purple-600">Our Platform</span>
           </h2>
@@ -146,7 +146,7 @@ const About = () => {
         </div>
 
         {/* Why Choose Us Section */}
-        <div className="container mx-auto px-6 mb-20">
+        <div className="container mx-auto max-w-7xl px-6 mb-20">
           <div className="bg-gradient-to-r from-purple-600 to-fuchsia-600 rounded-3xl p-12 text-white">
             <h2 className="text-3xl md:text-4xl font-bold mb-12 text-center">
               The Future of Business Automation
@@ -173,7 +173,7 @@ const About = () => {
 
         {/* Minimal Stats Section with CountUp Animation (moved below) */}
         <div ref={statsRef} className="py-8 mb-16">
-          <div className="container mx-auto px-6">
+          <div className="container mx-auto max-w-7xl px-6">
             <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
               {stats.map((stat, index) => {
                 const count = useCountUp(stat.number, 2500, inView);
@@ -191,7 +191,7 @@ const About = () => {
         </div>
 
         {/* CTA Section */}
-        <div className="container mx-auto px-6">
+        <div className="container mx-auto max-w-7xl px-6">
           <div className="bg-gradient-to-r from-purple-600 to-fuchsia-600 rounded-3xl p-12 text-center text-white">
             <h2 className="text-3xl md:text-4xl font-bold mb-6">
               Ready to Transform Your Business?
