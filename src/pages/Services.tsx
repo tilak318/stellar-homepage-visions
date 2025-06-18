@@ -151,10 +151,9 @@ const Services = () => {
             {services.map((service, index) => (
               <div
                 key={index}
-                className={`${cardColors[index]} rounded-2xl p-5 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-2 max-w-sm min-h-[440px] flex flex-col mx-auto`}
+                className={`${cardColors[index]} rounded-2xl p-5 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-2 w-[380px] max-w-sm flex flex-col mx-auto`}
               >
                 <h3 className="text-xl font-bold text-gray-900 mb-2 text-center">{service.title}</h3>
-                <p className="text-gray-600 mb-4 text-base">{service.description}</p>
                 <div className="space-y-3 mb-4 flex-1">
                   {service.features.map((feature, featureIndex) => (
                     <div key={featureIndex} className="flex items-center space-x-2">
