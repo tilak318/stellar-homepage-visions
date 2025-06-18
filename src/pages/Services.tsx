@@ -137,7 +137,7 @@ const Services = () => {
         <div className="container mx-auto max-w-7xl px-6 mb-20">
           <div className="text-center max-w-4xl mx-auto">
             <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 mb-2 sm:mb-4">
-              Discover Our Powerful <span className="block sm:inline bg-gradient-to-r from-purple-600 to-fuchsia-600 bg-clip-text text-transparent">Service Suite</span>
+              Discover Our Powerful <br className="hidden md:block" /><span className="bg-gradient-to-r from-purple-600 to-fuchsia-600 bg-clip-text text-transparent">Service Suite</span>
             </h1>
             <p className="text-xl text-gray-600 mb-8">
               Where We Help To Automate This Business - Comprehensive automation solutions for various industries and niches.
