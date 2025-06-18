@@ -40,14 +40,14 @@ const Footer = () => {
           <div className="w-full max-w-md">
             <h3 className="text-lg font-semibold mb-4">Contact Us</h3>
             <div className="space-y-3">
-              <div className="flex items-center space-x-3">
-                <Mail className="w-5 h-5 text-purple-400" />
-                <span className="text-gray-300">tryzeniq@gmail.com</span>
-              </div>
-              <div className="flex items-center space-x-3">
-                <Phone className="w-5 h-5 text-purple-400" />
-                <span className="text-gray-300">+91 63591 85945</span>
-              </div>
+              <a href="mailto:tryzeniq@gmail.com" target="_blank" rel="noopener noreferrer" className="flex items-center space-x-3 group">
+                <Mail className="w-5 h-5 text-purple-400 group-hover:text-purple-600 transition-colors" />
+                <span className="text-gray-300 group-hover:text-purple-600 transition-colors">tryzeniq@gmail.com</span>
+              </a>
+              <a href="tel:+916359185945" target="_blank" rel="noopener noreferrer" className="flex items-center space-x-3 group">
+                <Phone className="w-5 h-5 text-purple-400 group-hover:text-purple-600 transition-colors" />
+                <span className="text-gray-300 group-hover:text-purple-600 transition-colors">+91 63591 85945</span>
+              </a>
               <div className="flex items-center space-x-3">
                 <MapPin className="w-5 h-5 text-purple-400" />
                 <span className="text-gray-300">317, Shivalik, Dabholi, Surat, Gujarat 395004</span>

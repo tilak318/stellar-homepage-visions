@@ -272,15 +272,18 @@ const Contact = () => {
             {/* Contact Info Card */}
             <div className="bg-purple-100 rounded-3xl shadow-xl p-8 flex flex-col items-center max-w-sm w-full mx-auto h-full justify-between py-12">
               <div className="flex flex-col items-center mb-6">
-                <Mail className="w-10 h-10 text-purple-500 mb-2" />
-                <h2 className="text-xl font-bold text-gray-900 mb-1">Email</h2>
-                <p className="text-gray-700 text-center">tryzeniq@gmail.com</p>
+                <a href="mailto:tryzeniq@gmail.com" target="_blank" rel="noopener noreferrer" className="flex flex-col items-center group mb-2">
+                  <Mail className="w-10 h-10 text-purple-500 mb-2 group-hover:text-purple-700 transition-colors" />
+                  <h2 className="text-xl font-bold text-gray-900 mb-1">Email</h2>
+                  <span className="text-gray-700 text-center group-hover:text-purple-700 transition-colors">tryzeniq@gmail.com</span>
+                </a>
               </div>
               <div className="flex flex-col items-center mb-6">
-                <Phone className="w-10 h-10 text-purple-500 mb-2" />
-                <h2 className="text-xl font-bold text-gray-900 mb-1">Phone</h2>
-                <p className="text-gray-700 text-center">6359185945</p>
-                <p className="text-gray-500 text-center text-sm">Mon-Fri 9AM-6PM IST</p>
+                <a href="tel:+916359185945" target="_blank" rel="noopener noreferrer" className="flex flex-col items-center group mb-2">
+                  <Phone className="w-10 h-10 text-purple-500 mb-2 group-hover:text-purple-700 transition-colors" />
+                  <h2 className="text-xl font-bold text-gray-900 mb-1">Phone</h2>
+                  <span className="text-gray-700 text-center group-hover:text-purple-700 transition-colors">+91 63591 85945</span>
+                </a>
               </div>
               <div className="flex flex-col items-center">
                 <MapPin className="w-10 h-10 text-purple-500 mb-2" />
