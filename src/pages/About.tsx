@@ -13,7 +13,8 @@ import {
   Rocket,
   Globe,
   Building2,
-  Sparkles
+  Sparkles,
+  Check
 } from 'lucide-react';
 import { useEffect, useRef, useState } from 'react';
 
@@ -68,6 +69,13 @@ const features = [
     title: "Intelligent Booking",
     description: "Smart scheduling system that optimizes your calendar, reduces no-shows, and maximizes your revenue."
   }
+];
+
+const cardColors = [
+  'bg-purple-100',
+  'bg-purple-200',
+  'bg-purple-100',
+  'bg-purple-200'
 ];
 
 function useCountUp(target, duration, inView) {
@@ -134,12 +142,23 @@ const About = () => {
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {features.map((feature, index) => (
-              <div key={index} className="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-2">
-                <div className="mb-6">
+              <div
+                key={index}
+                className={`${cardColors[index]} hover:bg-white rounded-2xl p-5 shadow-lg hover:shadow-xl transition-all duration-300 w-full flex flex-col`}
+              >
+                <div className="flex items-center justify-center mb-4">
                   {feature.icon}
                 </div>
-                <h3 className="text-2xl font-bold text-gray-900 mb-4">{feature.title}</h3>
-                <p className="text-gray-600">{feature.description}</p>
+                <h3 className="text-xl font-bold text-gray-900 mb-2 text-center">{feature.title}</h3>
+                <p className="text-gray-600 mb-4 text-center">{feature.description}</p>
+                <div className="space-y-3">
+                  {feature.description.split('. ').map((point, pointIndex) => (
+                    <div key={pointIndex} className="flex items-start space-x-2">
+                      <Check className="w-5 h-5 text-purple-500 mt-1 flex-shrink-0" />
+                      <span className="text-gray-700 text-sm md:text-base">{point}</span>
+                    </div>
+                  ))}
+                </div>
               </div>
             ))}
           </div>

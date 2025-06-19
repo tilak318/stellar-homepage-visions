@@ -246,9 +246,15 @@ const Contact = () => {
                       <SelectTrigger className="bg-purple-100 border-gray-300 focus:border-purple-500 focus:ring-purple-500">
                         <SelectValue placeholder="Select your country" />
                       </SelectTrigger>
-                      <SelectContent className="max-h-60">
+                      <SelectContent className="bg-purple-100 border-purple-200">
                         {countries.map((country) => (
-                          <SelectItem key={country.code} value={country.code}>{country.name}</SelectItem>
+                          <SelectItem
+                            key={country.code}
+                            value={country.code}
+                            className="focus:bg-purple-200 hover:bg-purple-200"
+                          >
+                            {country.name}
+                          </SelectItem>
                         ))}
                       </SelectContent>
                     </Select>

@@ -1,8 +1,10 @@
+import React from 'react';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import AnimatedGradientBackground from '@/components/AnimatedGradientBackground';
-import { Zap, Users, Send, Shield, BarChart, Clock, MessageSquare, Settings } from 'lucide-react';
+import { Zap, Users, Send, Shield, BarChart, Clock, MessageSquare, Settings, Check, ArrowRight } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import { motion, useInView } from 'framer-motion';
 
 const solutions = [
   {
@@ -83,6 +85,9 @@ const cardColors = [
 ];
 
 const Solutions = () => {
+  const ref = React.useRef(null);
+  const inView = useInView(ref, { once: true, amount: 0.3 });
+
   return (
     <div className="min-h-screen">
       <div id="header-sentinel" style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '1px', pointerEvents: 'none' }}></div>
@@ -94,12 +99,12 @@ const Solutions = () => {
           <div className="text-center max-w-4xl mx-auto">
             <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 mb-2 sm:mb-4">
               Transform Your Business with <span className="text-purple-600">Smart Solutions</span>
-          </h1>
+            </h1>
             <p className="text-xl text-gray-600 mb-8">
               Discover our comprehensive suite of AI-powered tools designed to streamline your operations, 
               enhance client relationships, and drive growth.
             </p>
-            <Button size="lg" className="text-lg px-8 py-6">
+            <Button size="lg" className="text-lg px-8 py-6 bg-gradient-to-r from-purple-600 to-fuchsia-600 hover:from-purple-700 hover:to-fuchsia-700">
               Start Your Journey
             </Button>
           </div>
@@ -111,21 +116,21 @@ const Solutions = () => {
             {solutions.map((solution, index) => (
               <div
                 key={index}
-                className={`${cardColors[index]} rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-2`}
+                className={`${cardColors[index]} hover:bg-white rounded-2xl p-5 shadow-lg hover:shadow-xl transition-all duration-300 w-full max-w-sm flex flex-col mx-auto`}
               >
-                <div className="mb-6">
+                <div className="flex items-center justify-center mb-4">
                   {solution.icon}
                 </div>
-                <h3 className="text-2xl font-bold text-gray-900 mb-4">{solution.title}</h3>
-                <p className="text-gray-600 mb-6">{solution.description}</p>
-                  <ul className="space-y-3">
+                <h3 className="text-xl font-bold text-gray-900 mb-2 text-center">{solution.title}</h3>
+                <p className="text-gray-600 mb-4 text-center">{solution.description}</p>
+                <div className="space-y-3">
                   {solution.features.map((feature, featureIndex) => (
-                    <li key={featureIndex} className="flex items-center text-gray-700">
-                      <div className="w-2 h-2 bg-purple-600 rounded-full mr-3"></div>
-                      {feature}
-                      </li>
-                    ))}
-                  </ul>
+                    <div key={featureIndex} className="flex items-center space-x-2">
+                      <Check className="w-5 h-5 text-purple-500" />
+                      <span className="text-gray-700 text-sm md:text-base">{feature}</span>
+                    </div>
+                  ))}
+                </div>
               </div>
             ))}
           </div>
