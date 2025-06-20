@@ -1,10 +1,11 @@
+import { useState } from 'react';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
-import { Mail, Phone, MapPin, Send, Clock, MessageSquare } from 'lucide-react';
+import { Mail, Phone, MapPin, Send, Clock, MessageSquare, Loader2 } from 'lucide-react';
 import AnimatedGradientBackground from '@/components/AnimatedGradientBackground';
 
 const countries = [
@@ -221,6 +222,76 @@ const countries = [
 ];
 
 const Contact = () => {
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    phone: '',
+    country: 'United States of America (USA)',
+    message: '',
+  });
+
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState('');
+  const [success, setSuccess] = useState('');
+
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    const { id, value } = e.target;
+    setFormData((prevData) => ({
+      ...prevData,
+      [id]: value,
+    }));
+  };
+
+  const handleCountryChange = (value: string) => {
+    setFormData((prevData) => ({
+      ...prevData,
+      country: value,
+    }));
+  };
+
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    setLoading(true);
+    setError('');
+    setSuccess('');
+
+    // Simple validation
+    if (!formData.name || !formData.email || !formData.phone || !formData.message) {
+      setError('Please fill in all required fields.');
+      setLoading(false);
+      return;
+    }
+
+    try {
+      const response = await fetch('http://localhost:5000/api/contact', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
+      });
+
+      const result = await response.json();
+
+      if (!response.ok) {
+        throw new Error(result.message || 'Something went wrong');
+      }
+
+      setSuccess('Your message has been sent successfully!');
+      setFormData({
+        name: '',
+        email: '',
+        phone: '',
+        country: 'United States of America (USA)',
+        message: '',
+      });
+    } catch (err: any) {
+      setError(err.message || 'Failed to send message. Please try again.');
+    } finally {
+      setLoading(false);
+    }
+  };
+
   return (
     <div className="min-h-screen">
       <div id="header-sentinel" style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '1px', pointerEvents: 'none' }}></div>
@@ -244,58 +315,91 @@ const Contact = () => {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {/* Contact Form Card */}
             <div className="md:col-span-2 bg-purple-200 rounded-3xl shadow-2xl p-8 flex flex-col justify-center">
-              <form className="w-full max-w-2xl mx-auto space-y-6">
+              <form onSubmit={handleSubmit} className="w-full max-w-2xl mx-auto space-y-6">
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                   <div>
                     <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-2">Full Name *</label>
-                    <Input id="name" type="text" placeholder="Your full name" className="bg-purple-100 border-gray-300 focus:border-purple-500 focus:ring-purple-500" required />
+                    <Input
+                      type="text"
+                      id="name"
+                      placeholder="John Doe"
+                      className="bg-white"
+                      value={formData.name}
+                      onChange={handleChange}
+                      required
+                    />
                   </div>
                   <div>
-                    <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-2">Email Address *</label>
-                    <Input id="email" type="email" placeholder="your@email.com" className="bg-purple-100 border-gray-300 focus:border-purple-500 focus:ring-purple-500" required />
+                    <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-2">Email *</label>
+                    <Input
+                      type="email"
+                      id="email"
+                      placeholder="john.doe@example.com"
+                      className="bg-white"
+                      value={formData.email}
+                      onChange={handleChange}
+                      required
+                    />
+                  </div>
+                </div>
+
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                  <div>
+                    <label htmlFor="phone" className="block text-sm font-medium text-gray-700 mb-2">Phone Number *</label>
+                    <Input
+                      type="tel"
+                      id="phone"
+                      placeholder="+1 (555) 123-4567"
+                      className="bg-white"
+                      value={formData.phone}
+                      onChange={handleChange}
+                      required
+                    />
                   </div>
                   <div>
-                    <label htmlFor="phone" className="block text-sm font-medium text-gray-700 mb-2">Phone Number</label>
-                    <Input id="phone" type="tel" placeholder="+1 (555) 123-4567" className="bg-purple-100 border-gray-300 focus:border-purple-500 focus:ring-purple-500" />
-                  </div>
-                  <div>
-                    <label htmlFor="country" className="block text-sm font-medium text-gray-700 mb-2">Country *</label>
-                    <Select>
-                      <SelectTrigger className="bg-purple-100 border-gray-300 focus:border-purple-500 focus:ring-purple-500">
-                        <SelectValue placeholder="Select your country" />
+                    <label htmlFor="country" className="block text-sm font-medium text-gray-700 mb-2">Country</label>
+                    <Select value={formData.country} onValueChange={handleCountryChange}>
+                      <SelectTrigger id="country" className="bg-white">
+                        <SelectValue placeholder="Select a country" />
                       </SelectTrigger>
-                      <SelectContent className="bg-purple-100 border-purple-200">
-                        {countries.map((country) => (
-                          <SelectItem
-                            key={country.code}
-                            value={country.code}
-                            className="focus:bg-purple-200 hover:bg-purple-200"
-                          >
-                            {country.name}
-                          </SelectItem>
-                        ))}
+                      <SelectContent>
+                        {countries.map(c => <SelectItem key={c.code} value={c.name}>{c.name}</SelectItem>)}
                       </SelectContent>
                     </Select>
                   </div>
                 </div>
-                <div>
-                  <label htmlFor="subject" className="block text-sm font-medium text-gray-700 mb-2">Subject *</label>
-                  <Input id="subject" type="text" placeholder="What is this regarding?" className="bg-purple-100 border-gray-300 focus:border-purple-500 focus:ring-purple-500" required />
-                </div>
+
                 <div>
                   <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-2">Message *</label>
-                  <Textarea 
-                    id="message" 
-                    placeholder="Tell us about your business needs and how we can help..." 
-                    className="bg-purple-100 border-gray-300 focus:border-purple-500 focus:ring-purple-500 min-h-[150px]" 
-                    required 
+                  <Textarea
+                    id="message"
+                    placeholder="How can we help you?"
+                    rows={6}
+                    className="bg-white"
+                    value={formData.message}
+                    onChange={handleChange}
+                    required
                   />
                 </div>
-                <div>
-                  <Button className="bg-gradient-to-r from-purple-600 to-fuchsia-600 hover:from-purple-700 hover:to-fuchsia-700 text-white font-bold py-3 px-8 rounded-xl transition-all duration-300 w-full sm:w-auto" type="submit">
-                    Send Message
+
+                <div className="text-center">
+                  <Button type="submit" size="lg" className="w-full sm:w-auto bg-purple-600 hover:bg-purple-700 text-white font-bold" disabled={loading}>
+                    {loading ? (
+                      <>
+                        <Loader2 className="mr-2 h-4 w-4 animate-spin" />
+                        Sending...
+                      </>
+                    ) : (
+                      <>
+                        Send Message
+                        <Send className="ml-2 h-4 w-4" />
+                      </>
+                    )}
                   </Button>
                 </div>
+
+                {error && <p className="text-center text-red-500 mt-4">{error}</p>}
+                {success && <p className="text-center text-green-500 mt-4">{success}</p>}
               </form>
             </div>
             {/* Contact Info Card */}
