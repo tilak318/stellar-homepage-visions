@@ -52,7 +52,7 @@ const App = () => (
   <QueryClientProvider client={queryClient}>
     <TooltipProvider>
       <Toaster />
-      <Sonner />
+      <Sonner theme="dark" richColors />
       <AnimatedGradientBackground />
       <div className="relative h-screen overflow-auto">
         <BrowserRouter>

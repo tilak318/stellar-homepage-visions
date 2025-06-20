@@ -7,6 +7,7 @@ import { Textarea } from '@/components/ui/textarea';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
 import { Mail, Phone, MapPin, Send, Clock, MessageSquare, Loader2 } from 'lucide-react';
 import AnimatedGradientBackground from '@/components/AnimatedGradientBackground';
+import { toast } from 'sonner';
 
 const countries = [
   { code: "AF", name: "Afghanistan" },
@@ -231,8 +232,6 @@ const Contact = () => {
   });
 
   const [loading, setLoading] = useState(false);
-  const [error, setError] = useState('');
-  const [success, setSuccess] = useState('');
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { id, value } = e.target;
@@ -252,12 +251,10 @@ const Contact = () => {
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setLoading(true);
-    setError('');
-    setSuccess('');
 
     // Simple validation
     if (!formData.name || !formData.email || !formData.phone || !formData.message) {
-      setError('Please fill in all required fields.');
+      toast.error('Please fill in all required fields.');
       setLoading(false);
       return;
     }
@@ -277,7 +274,7 @@ const Contact = () => {
         throw new Error(result.message || 'Something went wrong');
       }
 
-      setSuccess('Your message has been sent successfully!');
+      toast.success('Your message has been sent successfully!');
       setFormData({
         name: '',
         email: '',
@@ -286,7 +283,7 @@ const Contact = () => {
         message: '',
       });
     } catch (err: any) {
-      setError(err.message || 'Failed to send message. Please try again.');
+      toast.error(err.message || 'Failed to send message. Please try again.');
     } finally {
       setLoading(false);
     }
@@ -397,9 +394,6 @@ const Contact = () => {
                     )}
                   </Button>
                 </div>
-
-                {error && <p className="text-center text-red-500 mt-4">{error}</p>}
-                {success && <p className="text-center text-green-500 mt-4">{success}</p>}
               </form>
             </div>
             {/* Contact Info Card */}
