@@ -228,6 +228,7 @@ const Contact = () => {
     email: '',
     phone: '',
     country: 'United States of America (USA)',
+    subject: '',
     message: '',
   });
 
@@ -253,7 +254,7 @@ const Contact = () => {
     setLoading(true);
 
     // Simple validation
-    if (!formData.name || !formData.email || !formData.phone || !formData.message) {
+    if (!formData.name || !formData.email || !formData.phone || !formData.message || !formData.subject) {
       toast.error('Please fill in all required fields.');
       setLoading(false);
       return;
@@ -280,6 +281,7 @@ const Contact = () => {
         email: '',
         phone: '',
         country: 'United States of America (USA)',
+        subject: '',
         message: '',
       });
     } catch (err: any) {
@@ -319,7 +321,7 @@ const Contact = () => {
                     <Input
                       type="text"
                       id="name"
-                      placeholder="John Doe"
+                      placeholder="Your full name"
                       className="bg-white"
                       value={formData.name}
                       onChange={handleChange}
@@ -331,7 +333,7 @@ const Contact = () => {
                     <Input
                       type="email"
                       id="email"
-                      placeholder="john.doe@example.com"
+                      placeholder="Your email address"
                       className="bg-white"
                       value={formData.email}
                       onChange={handleChange}
@@ -346,7 +348,7 @@ const Contact = () => {
                     <Input
                       type="tel"
                       id="phone"
-                      placeholder="+1 (555) 123-4567"
+                      placeholder="Your phone number"
                       className="bg-white"
                       value={formData.phone}
                       onChange={handleChange}
@@ -367,6 +369,19 @@ const Contact = () => {
                 </div>
 
                 <div>
+                  <label htmlFor="subject" className="block text-sm font-medium text-gray-700 mb-2">Subject *</label>
+                  <Input
+                    type="text"
+                    id="subject"
+                    placeholder="Message subject"
+                    className="bg-white"
+                    value={formData.subject}
+                    onChange={handleChange}
+                    required
+                  />
+                </div>
+
+                <div>
                   <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-2">Message *</label>
                   <Textarea
                     id="message"
@@ -380,7 +395,12 @@ const Contact = () => {
                 </div>
 
                 <div className="text-center">
-                  <Button type="submit" size="lg" className="w-full sm:w-auto bg-purple-600 hover:bg-purple-700 text-white font-bold" disabled={loading}>
+                  <Button
+                    type="submit"
+                    size="lg"
+                    className="w-full sm:w-auto bg-gradient-to-r from-purple-500 to-pink-400 hover:shadow-lg text-white font-bold"
+                    disabled={loading}
+                  >
                     {loading ? (
                       <>
                         <Loader2 className="mr-2 h-4 w-4 animate-spin" />
