@@ -8,15 +8,21 @@ dotenv.config();
 
 const app = express();
 
-// CORS configuration - Allow requests from frontend
+// CORS configuration - Allow requests from frontend and admin panel
 app.use(cors({
   origin: [
     'http://localhost:8080',
     'http://127.0.0.1:8080',
+    'http://localhost:8081', // Admin panel
+    'http://127.0.0.1:8081', // Admin panel
+    'http://localhost:5173', // Vite dev server
+    'http://127.0.0.1:5173', // Vite dev server
+    'http://localhost:3000', // Alternative dev server
+    'http://127.0.0.1:3000', // Alternative dev server
     'https://tryzeniqfinal.onrender.com'
   ],
   credentials: true,
-  methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
+  methods: ['GET', 'POST', 'PUT', 'PATCH', 'DELETE', 'OPTIONS'],
   allowedHeaders: ['Content-Type', 'Authorization']
 }));
 
@@ -36,7 +42,8 @@ mongoose.connect(process.env.MONGODB_URI)
 const contactRoutes = require('./routes/contact');
 
 // Use routes
-app.use('/api/contact', contactRoutes);
+app.use('/api/contacts', contactRoutes); // Changed to /api/contacts for admin panel
+app.use('/api/contact', contactRoutes); // Keep original route for website
 
 // Basic route for testing
 app.get('/', (req, res) => {

@@ -75,11 +75,7 @@ router.get('/', async (req, res) => {
       .sort({ createdAt: -1 })
       .select('-__v');
 
-    res.json({
-      success: true,
-      count: contacts.length,
-      data: contacts
-    });
+    res.json(contacts); // Return just the array for admin panel
   } catch (error) {
     console.error('Error fetching contacts:', error);
     res.status(500).json({
@@ -114,7 +110,46 @@ router.get('/:id', async (req, res) => {
   }
 });
 
-// PUT /api/contact/:id - Update contact status
+// PATCH /api/contact/:id - Update contact status
+router.patch('/:id', async (req, res) => {
+  try {
+    const { status } = req.body;
+    
+    if (!status || !['pending', 'read', 'replied'].includes(status)) {
+      return res.status(400).json({
+        success: false,
+        message: 'Valid status is required: pending, read, or replied'
+      });
+    }
+
+    const contact = await Contact.findByIdAndUpdate(
+      req.params.id,
+      { status },
+      { new: true, runValidators: true }
+    ).select('-__v');
+
+    if (!contact) {
+      return res.status(404).json({
+        success: false,
+        message: 'Contact submission not found'
+      });
+    }
+
+    res.json({
+      success: true,
+      message: 'Contact status updated successfully',
+      data: contact
+    });
+  } catch (error) {
+    console.error('Error updating contact:', error);
+    res.status(500).json({
+      success: false,
+      message: 'Internal server error'
+    });
+  }
+});
+
+// PUT /api/contact/:id - Update contact status (alternative method)
 router.put('/:id', async (req, res) => {
   try {
     const { status } = req.body;
@@ -146,6 +181,31 @@ router.put('/:id', async (req, res) => {
     });
   } catch (error) {
     console.error('Error updating contact:', error);
+    res.status(500).json({
+      success: false,
+      message: 'Internal server error'
+    });
+  }
+});
+
+// DELETE /api/contact/:id - Delete contact submission
+router.delete('/:id', async (req, res) => {
+  try {
+    const contact = await Contact.findByIdAndDelete(req.params.id);
+    
+    if (!contact) {
+      return res.status(404).json({
+        success: false,
+        message: 'Contact submission not found'
+      });
+    }
+
+    res.json({
+      success: true,
+      message: 'Contact submission deleted successfully'
+    });
+  } catch (error) {
+    console.error('Error deleting contact:', error);
     res.status(500).json({
       success: false,
       message: 'Internal server error'
