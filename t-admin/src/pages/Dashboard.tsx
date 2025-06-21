@@ -4,7 +4,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { Badge } from "@/components/ui/badge";
 import { Input } from "@/components/ui/input";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
-import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle, DialogTrigger } from "@/components/ui/dialog";
+import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle, DialogFooter } from "@/components/ui/dialog";
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table";
 import { 
   LogOut, 
@@ -23,7 +23,7 @@ interface ContactData {
   phone: string;
   message: string;
   subject: string;
-  status: 'pending' | 'read' | 'replied';
+  status: 'pending' | 'read';
   createdAt: string;
   updatedAt: string;
 }
@@ -57,7 +57,6 @@ const Dashboard = ({ currentUser, onLogout }: DashboardProps) => {
     } catch (error) {
       console.error('Error fetching contacts:', error);
       toast({
-        title: "Error",
         description: "Failed to fetch contact data",
         variant: "destructive",
       });
@@ -67,7 +66,7 @@ const Dashboard = ({ currentUser, onLogout }: DashboardProps) => {
   };
 
   // Update contact status
-  const updateContactStatus = async (id: string, status: string) => {
+  const updateContactStatus = async (id: string, status: 'pending' | 'read') => {
     try {
       const response = await fetch(`http://localhost:5000/api/contacts/${id}`, {
         method: 'PATCH',
@@ -79,17 +78,18 @@ const Dashboard = ({ currentUser, onLogout }: DashboardProps) => {
 
       if (response.ok) {
         toast({
-          title: "Success",
-          description: "Contact status updated successfully",
+          description: "Marked as seen",
         });
         fetchContacts(); // Refresh data
+        if (selectedContact && selectedContact._id === id) {
+          setSelectedContact({ ...selectedContact, status });
+        }
       } else {
         throw new Error('Failed to update status');
       }
     } catch (error) {
       console.error('Error updating status:', error);
       toast({
-        title: "Error",
         description: "Failed to update contact status",
         variant: "destructive",
       });
@@ -107,17 +107,16 @@ const Dashboard = ({ currentUser, onLogout }: DashboardProps) => {
 
       if (response.ok) {
         toast({
-          title: "Success",
           description: "Contact deleted successfully",
         });
         fetchContacts(); // Refresh data
+        setSelectedContact(null);
       } else {
         throw new Error('Failed to delete contact');
       }
     } catch (error) {
       console.error('Error deleting contact:', error);
       toast({
-        title: "Error",
         description: "Failed to delete contact",
         variant: "destructive",
       });
@@ -151,8 +150,7 @@ const Dashboard = ({ currentUser, onLogout }: DashboardProps) => {
   const getStatusBadge = (status: string) => {
     const statusConfig = {
       pending: { color: "bg-yellow-500", text: "Pending" },
-      read: { color: "bg-blue-500", text: "Read" },
-      replied: { color: "bg-green-500", text: "Replied" }
+      read: { color: "bg-green-500", text: "Read" }
     };
     const config = statusConfig[status as keyof typeof statusConfig];
     return <Badge className={`${config.color} text-white`}>{config.text}</Badge>;
@@ -185,8 +183,8 @@ const Dashboard = ({ currentUser, onLogout }: DashboardProps) => {
             </div>
             <Button
               onClick={onLogout}
-              variant="ghost"
-              className="text-white hover:bg-white/10"
+              variant="destructive"
+              className="bg-red-600 hover:bg-red-700 text-white"
             >
               <LogOut className="w-4 h-4 mr-2" />
               Logout
@@ -197,7 +195,7 @@ const Dashboard = ({ currentUser, onLogout }: DashboardProps) => {
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
         {/* Stats Cards */}
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-6 mb-8">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
           <Card className="bg-white/10 backdrop-blur-lg border-white/20">
             <CardContent className="p-6">
               <div className="flex items-center justify-between">
@@ -245,24 +243,6 @@ const Dashboard = ({ currentUser, onLogout }: DashboardProps) => {
               </div>
             </CardContent>
           </Card>
-
-          <Card className="bg-white/10 backdrop-blur-lg border-white/20">
-            <CardContent className="p-6">
-              <div className="flex items-center justify-between">
-                <div>
-                  <p className="text-sm font-medium text-gray-300">Replied</p>
-                  <p className="text-2xl font-bold text-green-400">
-                    {contacts.filter(c => c.status === 'replied').length}
-                  </p>
-                </div>
-                <div className="w-8 h-8 bg-green-500 rounded-full flex items-center justify-center">
-                  <span className="text-white text-sm font-bold">
-                    {contacts.filter(c => c.status === 'replied').length}
-                  </span>
-                </div>
-              </div>
-            </CardContent>
-          </Card>
         </div>
 
         {/* Filters and Search */}
@@ -286,13 +266,12 @@ const Dashboard = ({ currentUser, onLogout }: DashboardProps) => {
                   <SelectItem value="all">All Status</SelectItem>
                   <SelectItem value="pending">Pending</SelectItem>
                   <SelectItem value="read">Read</SelectItem>
-                  <SelectItem value="replied">Replied</SelectItem>
                 </SelectContent>
               </Select>
               <Button
                 onClick={fetchContacts}
-                variant="outline"
-                className="border-white/20 text-white hover:bg-white/10"
+                variant="default"
+                className="bg-blue-600 hover:bg-blue-500 text-white"
               >
                 <RefreshCw className="w-4 h-4 mr-2" />
                 Refresh
@@ -329,9 +308,9 @@ const Dashboard = ({ currentUser, onLogout }: DashboardProps) => {
                       <TableHead className="text-white">Email</TableHead>
                       <TableHead className="text-white">Phone</TableHead>
                       <TableHead className="text-white">Subject</TableHead>
+                      <TableHead className="text-white">Details</TableHead>
                       <TableHead className="text-white">Status</TableHead>
                       <TableHead className="text-white">Date</TableHead>
-                      <TableHead className="text-white">Actions</TableHead>
                     </TableRow>
                   </TableHeader>
                   <TableBody>
@@ -341,88 +320,18 @@ const Dashboard = ({ currentUser, onLogout }: DashboardProps) => {
                         <TableCell className="text-gray-300">{contact.email}</TableCell>
                         <TableCell className="text-gray-300">{contact.phone}</TableCell>
                         <TableCell className="text-gray-300">{contact.subject}</TableCell>
+                        <TableCell>
+                          <Button
+                            variant="outline"
+                            size="sm"
+                            onClick={() => setSelectedContact(contact)}
+                            className="text-blue-400 border-blue-400 hover:bg-blue-400 hover:text-white"
+                          >
+                            View Details
+                          </Button>
+                        </TableCell>
                         <TableCell>{getStatusBadge(contact.status)}</TableCell>
                         <TableCell className="text-gray-300">{formatDate(contact.createdAt)}</TableCell>
-                        <TableCell>
-                          <div className="flex items-center space-x-2">
-                            <Dialog>
-                              <DialogTrigger asChild>
-                                <Button
-                                  variant="ghost"
-                                  size="sm"
-                                  onClick={() => setSelectedContact(contact)}
-                                  className="text-blue-400 hover:text-blue-300"
-                                >
-                                  <Eye className="w-4 h-4" />
-                                </Button>
-                              </DialogTrigger>
-                              <DialogContent className="bg-gray-900 border-white/20">
-                                <DialogHeader>
-                                  <DialogTitle className="text-white">Contact Details</DialogTitle>
-                                  <DialogDescription className="text-gray-300">
-                                    View and manage contact information
-                                  </DialogDescription>
-                                </DialogHeader>
-                                {selectedContact && (
-                                  <div className="space-y-4">
-                                    <div className="grid grid-cols-2 gap-4">
-                                      <div>
-                                        <label className="text-sm font-medium text-gray-300">Name</label>
-                                        <p className="text-white">{selectedContact.name}</p>
-                                      </div>
-                                      <div>
-                                        <label className="text-sm font-medium text-gray-300">Email</label>
-                                        <p className="text-white">{selectedContact.email}</p>
-                                      </div>
-                                      <div>
-                                        <label className="text-sm font-medium text-gray-300">Phone</label>
-                                        <p className="text-white">{selectedContact.phone}</p>
-                                      </div>
-                                      <div>
-                                        <label className="text-sm font-medium text-gray-300">Subject</label>
-                                        <p className="text-white">{selectedContact.subject}</p>
-                                      </div>
-                                    </div>
-                                    <div>
-                                      <label className="text-sm font-medium text-gray-300">Message</label>
-                                      <p className="text-white mt-1 p-3 bg-white/5 rounded-lg">
-                                        {selectedContact.message}
-                                      </p>
-                                    </div>
-                                    <div className="flex items-center justify-between">
-                                      <div>
-                                        <label className="text-sm font-medium text-gray-300">Status</label>
-                                        <div className="mt-1">{getStatusBadge(selectedContact.status)}</div>
-                                      </div>
-                                      <div className="flex space-x-2">
-                                        <Select
-                                          value={selectedContact.status}
-                                          onValueChange={(value) => updateContactStatus(selectedContact._id, value)}
-                                        >
-                                          <SelectTrigger className="w-32 bg-white/10 border-white/20 text-white">
-                                            <SelectValue />
-                                          </SelectTrigger>
-                                          <SelectContent>
-                                            <SelectItem value="pending">Pending</SelectItem>
-                                            <SelectItem value="read">Read</SelectItem>
-                                            <SelectItem value="replied">Replied</SelectItem>
-                                          </SelectContent>
-                                        </Select>
-                                        <Button
-                                          variant="destructive"
-                                          size="sm"
-                                          onClick={() => deleteContact(selectedContact._id)}
-                                        >
-                                          <Trash2 className="w-4 h-4" />
-                                        </Button>
-                                      </div>
-                                    </div>
-                                  </div>
-                                )}
-                              </DialogContent>
-                            </Dialog>
-                          </div>
-                        </TableCell>
                       </TableRow>
                     ))}
                   </TableBody>
@@ -432,6 +341,60 @@ const Dashboard = ({ currentUser, onLogout }: DashboardProps) => {
           </CardContent>
         </Card>
       </div>
+
+      {selectedContact && (
+        <Dialog open={!!selectedContact} onOpenChange={(isOpen) => !isOpen && setSelectedContact(null)}>
+          <DialogContent className="bg-gray-900 border-white/20">
+            <DialogHeader>
+              <DialogTitle className="text-white">Contact Details</DialogTitle>
+              <DialogDescription className="text-gray-300">
+                From: {selectedContact.name} ({selectedContact.email})
+              </DialogDescription>
+            </DialogHeader>
+            <div className="space-y-4 pt-4">
+              <div>
+                <label className="text-sm font-medium text-gray-400">Subject</label>
+                <p className="text-white mt-1">{selectedContact.subject}</p>
+              </div>
+              <div>
+                <label className="text-sm font-medium text-gray-400">Message</label>
+                <p className="text-white mt-1 p-3 bg-white/5 rounded-lg max-h-60 overflow-y-auto">
+                  {selectedContact.message}
+                </p>
+              </div>
+              <div className="flex justify-between items-center">
+                <div>
+                  <label className="text-sm font-medium text-gray-400">Status</label>
+                  <div className="mt-1">{getStatusBadge(selectedContact.status)}</div>
+                </div>
+                <div>
+                  <label className="text-sm font-medium text-gray-400">Received</label>
+                  <p className="text-white mt-1">{formatDate(selectedContact.createdAt)}</p>
+                </div>
+              </div>
+            </div>
+            <DialogFooter>
+              {selectedContact.status === 'pending' && (
+                <Button
+                  variant="default"
+                  onClick={() => updateContactStatus(selectedContact._id, 'read')}
+                  className="bg-blue-600 hover:bg-blue-500 text-white"
+                >
+                  <Eye className="w-4 h-4 mr-2" />
+                   Mark as Read
+                </Button>
+              )}
+              <Button
+                variant="destructive"
+                onClick={() => deleteContact(selectedContact._id)}
+              >
+                <Trash2 className="w-4 h-4 mr-2" />
+                 Delete
+              </Button>
+            </DialogFooter>
+          </DialogContent>
+        </Dialog>
+      )}
     </div>
   );
 };

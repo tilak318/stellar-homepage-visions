@@ -63,17 +63,17 @@ const LoginPage = ({ onLogin }: LoginPageProps) => {
             <div className="mx-auto w-16 h-16 bg-gradient-to-r from-blue-600 to-purple-600 rounded-full flex items-center justify-center mb-4">
               <Lock className="w-8 h-8 text-white" />
             </div>
-            <CardTitle className="text-2xl font-bold text-white">
+            <CardTitle className="text-2xl font-bold text-gray-800">
               Admin Panel
             </CardTitle>
-            <CardDescription className="text-gray-300">
+            <CardDescription className="text-gray-500">
               Enter your credentials to access the admin dashboard
             </CardDescription>
           </CardHeader>
           <CardContent>
             <form onSubmit={handleSubmit} className="space-y-4">
               <div className="space-y-2">
-                <Label htmlFor="username" className="text-white">
+                <Label htmlFor="username" className="text-gray-700">
                   Username
                 </Label>
                 <div className="relative">
@@ -84,14 +84,14 @@ const LoginPage = ({ onLogin }: LoginPageProps) => {
                     placeholder="Enter username"
                     value={username}
                     onChange={(e) => setUsername(e.target.value)}
-                    className="pl-10 bg-white/10 border-white/20 text-white placeholder:text-gray-400 focus:border-blue-500"
+                    className="pl-10 bg-white/10 border-gray-300 text-gray-800 placeholder:text-gray-400 focus:border-blue-500"
                     required
                   />
                 </div>
               </div>
               
               <div className="space-y-2">
-                <Label htmlFor="password" className="text-white">
+                <Label htmlFor="password" className="text-gray-700">
                   Password
                 </Label>
                 <div className="relative">
@@ -102,7 +102,7 @@ const LoginPage = ({ onLogin }: LoginPageProps) => {
                     placeholder="Enter password"
                     value={password}
                     onChange={(e) => setPassword(e.target.value)}
-                    className="pl-10 pr-10 bg-white/10 border-white/20 text-white placeholder:text-gray-400 focus:border-blue-500"
+                    className="pl-10 pr-10 bg-white/10 border-gray-300 text-gray-800 placeholder:text-gray-400 focus:border-blue-500"
                     required
                   />
                   <Button
@@ -135,18 +135,6 @@ const LoginPage = ({ onLogin }: LoginPageProps) => {
                 {isLoading ? "Signing in..." : "Sign In"}
               </Button>
             </form>
-
-            <div className="mt-6 p-4 bg-white/5 rounded-lg">
-              <h4 className="text-sm font-medium text-white mb-2">Admin Credentials:</h4>
-              <div className="space-y-1 text-xs text-gray-300">
-                {adminUsers.map((user) => (
-                  <div key={user.username} className="flex justify-between">
-                    <span>{user.name}:</span>
-                    <span className="font-mono">{user.username}</span>
-                  </div>
-                ))}
-              </div>
-            </div>
           </CardContent>
         </Card>
       </div>
