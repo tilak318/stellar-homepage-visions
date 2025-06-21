@@ -16,6 +16,10 @@ import {
 } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
 
+const API_BASE_URL = window.location.hostname === 'localhost'
+  ? 'http://localhost:5000'
+  : 'https://tryzeniqfinal-server.onrender.com';
+
 interface ContactData {
   _id: string;
   name: string;
@@ -46,7 +50,7 @@ const Dashboard = ({ currentUser, onLogout }: DashboardProps) => {
   const fetchContacts = async () => {
     try {
       setLoading(true);
-      const response = await fetch('http://localhost:5000/api/contacts');
+      const response = await fetch(`${API_BASE_URL}/api/contacts`);
       if (response.ok) {
         const data = await response.json();
         setContacts(data);
@@ -68,7 +72,7 @@ const Dashboard = ({ currentUser, onLogout }: DashboardProps) => {
   // Update contact status
   const updateContactStatus = async (id: string, status: 'pending' | 'read') => {
     try {
-      const response = await fetch(`http://localhost:5000/api/contacts/${id}`, {
+      const response = await fetch(`${API_BASE_URL}/api/contacts/${id}`, {
         method: 'PATCH',
         headers: {
           'Content-Type': 'application/json',
@@ -101,7 +105,7 @@ const Dashboard = ({ currentUser, onLogout }: DashboardProps) => {
     if (!confirm('Are you sure you want to delete this contact?')) return;
 
     try {
-      const response = await fetch(`http://localhost:5000/api/contacts/${id}`, {
+      const response = await fetch(`${API_BASE_URL}/api/contacts/${id}`, {
         method: 'DELETE',
       });
 

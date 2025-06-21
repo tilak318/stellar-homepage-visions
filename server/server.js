@@ -19,7 +19,8 @@ app.use(cors({
     'http://127.0.0.1:5173', // Vite dev server
     'http://localhost:3000', // Alternative dev server
     'http://127.0.0.1:3000', // Alternative dev server
-    'https://tryzeniqfinal.onrender.com'
+    'https://tryzeniqfinal.onrender.com',
+    'https://admintryzeniq.onrender.com'
   ],
   credentials: true,
   methods: ['GET', 'POST', 'PUT', 'PATCH', 'DELETE', 'OPTIONS'],
