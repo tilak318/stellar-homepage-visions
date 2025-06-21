@@ -322,7 +322,7 @@ const Contact = () => {
                       type="text"
                       id="name"
                       placeholder="Your full name"
-                      className="bg-white"
+                      className="bg-purple-100"
                       value={formData.name}
                       onChange={handleChange}
                       required
@@ -334,7 +334,7 @@ const Contact = () => {
                       type="email"
                       id="email"
                       placeholder="Your email address"
-                      className="bg-white"
+                      className="bg-purple-100"
                       value={formData.email}
                       onChange={handleChange}
                       required
@@ -349,7 +349,7 @@ const Contact = () => {
                       type="tel"
                       id="phone"
                       placeholder="Your phone number"
-                      className="bg-white"
+                      className="bg-purple-100"
                       value={formData.phone}
                       onChange={handleChange}
                       required
@@ -358,11 +358,11 @@ const Contact = () => {
                   <div>
                     <label htmlFor="country" className="block text-sm font-medium text-gray-700 mb-2">Country</label>
                     <Select value={formData.country} onValueChange={handleCountryChange}>
-                      <SelectTrigger id="country" className="bg-white">
+                      <SelectTrigger id="country" className="bg-purple-100">
                         <SelectValue placeholder="Select a country" />
                       </SelectTrigger>
-                      <SelectContent>
-                        {countries.map(c => <SelectItem key={c.code} value={c.name}>{c.name}</SelectItem>)}
+                      <SelectContent className="bg-purple-100">
+                        {countries.map(c => <SelectItem key={c.code} value={c.name} className="focus:bg-purple-200">{c.name}</SelectItem>)}
                       </SelectContent>
                     </Select>
                   </div>
@@ -374,7 +374,7 @@ const Contact = () => {
                     type="text"
                     id="subject"
                     placeholder="Message subject"
-                    className="bg-white"
+                    className="bg-purple-100"
                     value={formData.subject}
                     onChange={handleChange}
                     required
@@ -387,7 +387,7 @@ const Contact = () => {
                     id="message"
                     placeholder="How can we help you?"
                     rows={6}
-                    className="bg-white"
+                    className="bg-purple-100"
                     value={formData.message}
                     onChange={handleChange}
                     required
