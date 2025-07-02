@@ -110,7 +110,7 @@ const ComparisonSection = () => {
               <thead>
                 <tr className="bg-gradient-to-r from-purple-600 to-fuchsia-600">
                   <th className="text-center p-2 sm:p-3 md:p-4 font-semibold text-white text-xs sm:text-base md:text-lg md:min-w-[220px] md:whitespace-nowrap">Features</th>
-                  <th className="text-center p-2 sm:p-3 md:p-4 font-semibold bg-[#d1b3ff] border-l-2 border-r-2 border-t-2 border-[#b9a6f6] text-purple-700 text-xs sm:text-base md:text-lg relative w-20 md:w-auto">
+                  <th className="text-center p-2 sm:p-3 md:p-4 font-semibold bg-gradient-to-r from-purple-600 to-fuchsia-600 text-white border-l-2 border-r-2 border-t-2 border-[#8b5cf6] text-xs sm:text-base md:text-lg relative w-20 md:w-auto">
                     <span className="md:hidden">Us</span>
                     <span className="hidden md:inline">TRYZENIQ</span>
                   </th>
@@ -130,11 +130,11 @@ const ComparisonSection = () => {
                 {features.map((feature, index) => (
                   <tr key={index} className="bg-transparent">
                     <td className="p-4 font-medium text-gray-900 text-base md:whitespace-nowrap text-center">{feature.name}</td>
-                    <td className={`p-4 text-center bg-[#ede4ff] border-l-2 border-r-2 border-[#b9a6f6]${index === features.length - 1 ? ' border-b-2' : ''}`}>
+                    <td className={`p-4 text-center bg-[#ede4ff] border-l-2 border-r-2 border-[#8b5cf6]${index === features.length - 1 ? ' border-b-2' : ''}`}>
                       <div className="flex items-center justify-center mb-2">
                         {getStatusIcon(feature.ourPlatform.status)}
                       </div>
-                      <p className="text-purple-700 text-base hidden md:block" dangerouslySetInnerHTML={{ __html: breakAfterFourWords(feature.ourPlatform.text) }} />
+                      <p className="text-base hidden md:block" dangerouslySetInnerHTML={{ __html: breakAfterFourWords(feature.ourPlatform.text) }} />
                     </td>
                     <td className="p-4 text-center bg-white">
                       <div className="flex items-center justify-center mb-2">
