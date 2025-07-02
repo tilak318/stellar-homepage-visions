@@ -96,7 +96,7 @@ const NicheSection = () => {
           {niches.map((niche, index) => (
             <div
               key={index}
-              className={`${cardColors[index]} hover:bg-white text-gray-900 rounded-2xl p-6 md:p-4 shadow-lg hover:shadow-xl transition-all duration-300 md:static sticky top-24 z-[${10 + index * 10}] mx-auto lg:max-w-xs xl:max-w-sm w-full`}
+              className={"bg-[#f6f3ff] border-2 border-[#b9a6f6] rounded-2xl p-6 md:p-4 shadow-lg hover:shadow-xl transition-all duration-300 md:static sticky top-24 mx-auto lg:max-w-xs xl:max-w-sm w-full"}
             >
               <h3 className="text-xl md:text-lg font-bold text-gray-900 mb-4 md:mb-2 text-center">{niche.title}</h3>
               <div className="space-y-3 md:space-y-2 mb-6 md:mb-3">
