@@ -110,14 +110,9 @@ const ComparisonSection = () => {
               <thead>
                 <tr className="bg-gradient-to-r from-purple-600 to-fuchsia-600">
                   <th className="text-center p-2 sm:p-3 md:p-4 font-semibold text-white text-xs sm:text-base md:text-lg md:min-w-[220px] md:whitespace-nowrap">Features</th>
-                  <th className="text-center p-2 sm:p-3 md:p-4 font-semibold text-white text-xs sm:text-base md:text-lg relative w-20 md:w-auto">
-                    <div className="absolute inset-0 bg-white/10 backdrop-blur-sm"></div>
-                    <div className="relative">
-                      <div className="bg-purple-100 rounded-xl p-1 sm:p-2 text-purple-600 font-bold text-xs sm:text-base md:text-lg shadow-lg">
-                        <span className="md:hidden">Us</span>
-                        <span className="hidden md:inline">TRYZENIQ</span>
-                      </div>
-                    </div>
+                  <th className="text-center p-2 sm:p-3 md:p-4 font-semibold bg-[#d1b3ff] border-l-2 border-r-2 border-t-2 border-[#b9a6f6] text-purple-700 text-xs sm:text-base md:text-lg relative w-20 md:w-auto">
+                    <span className="md:hidden">Us</span>
+                    <span className="hidden md:inline">TRYZENIQ</span>
                   </th>
                   <th className="text-center p-2 sm:p-3 md:p-4 font-semibold text-white text-[10px] sm:text-base md:text-lg w-20 md:w-auto">
                     <span className="md:hidden">Zapier, Apollo</span>
@@ -135,11 +130,11 @@ const ComparisonSection = () => {
                 {features.map((feature, index) => (
                   <tr key={index} className="bg-transparent">
                     <td className="p-4 font-medium text-gray-900 text-base md:whitespace-nowrap text-center">{feature.name}</td>
-                    <td className="p-4 text-center bg-gradient-to-b from-purple-100 to-purple-200">
+                    <td className={`p-4 text-center bg-[#ede4ff] border-l-2 border-r-2 border-[#b9a6f6]${index === features.length - 1 ? ' border-b-2' : ''}`}>
                       <div className="flex items-center justify-center mb-2">
                         {getStatusIcon(feature.ourPlatform.status)}
                       </div>
-                      <p className="text-gray-700 text-base hidden md:block" dangerouslySetInnerHTML={{ __html: breakAfterFourWords(feature.ourPlatform.text) }} />
+                      <p className="text-purple-700 text-base hidden md:block" dangerouslySetInnerHTML={{ __html: breakAfterFourWords(feature.ourPlatform.text) }} />
                     </td>
                     <td className="p-4 text-center bg-white">
                       <div className="flex items-center justify-center mb-2">
