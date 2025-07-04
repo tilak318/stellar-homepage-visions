@@ -110,7 +110,7 @@ const ComparisonSection = () => {
               <thead>
                 <tr className="bg-gradient-to-r from-purple-600 to-fuchsia-600">
                   <th className="text-center p-2 sm:p-3 md:p-4 font-semibold text-white text-xs sm:text-base md:text-lg md:min-w-[220px] md:whitespace-nowrap">Features</th>
-                  <th className="text-center p-2 sm:p-3 md:p-4 font-semibold bg-gradient-to-r from-purple-600 to-fuchsia-600 text-white border-l-2 border-r-2 border-t-2 border-[#8b5cf6] text-xs sm:text-base md:text-lg relative w-20 md:w-auto">
+                  <th className="text-center p-2 sm:p-3 md:p-4 font-semibold bg-gradient-to-r from-purple-600 to-fuchsia-600 text-white border-l-2 border-r-2 border-t-2 border-[#8b5cf6] text-xs sm:text-base md:text-lg relative w-32 md:w-auto md:min-w-[300px]">
                     <span className="md:hidden">Us</span>
                     <span className="hidden md:inline">TRYZENIQ</span>
                   </th>
