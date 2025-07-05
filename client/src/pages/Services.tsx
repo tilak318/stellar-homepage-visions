@@ -21,7 +21,7 @@ const services = [
       "Commission Tracking"
     ],
     image: "https://images.unsplash.com/photo-1450101499163-c8848c66ca85?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-    route: "/insurance"
+    route: "/services/insurance"
   },
   {
     title: "Botox & Skin Care",
@@ -35,7 +35,7 @@ const services = [
       "Client Loyalty"
     ],
     image: "https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-    route: "/botox-skin-care"
+    route: "/services/botox-skin-care"
   },
   {
     title: "Clinics and Dentist",
@@ -49,7 +49,7 @@ const services = [
       "AI Chatbot"
     ],
     image: "https://images.unsplash.com/photo-1516321497487-e288fb19713f?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-    route: "/clinics-dentist"
+    route: "/services/clinics-dentist"
   },
   {
     title: "Gym & Health Coach",
@@ -63,7 +63,7 @@ const services = [
       "Client Loyalty"
     ],
     image: "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-    route: "/gym-health-coach"
+    route: "/services/gym-health-coach"
   },
   {
     title: "Business Consultation",
@@ -77,7 +77,7 @@ const services = [
       "Client Loyalty"
     ],
     image: "https://images.unsplash.com/photo-1516321497487-e288fb19713f?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-    route: "/business-consultation"
+    route: "/services/business-consultation"
   },
   {
     title: "IT & SAAS Services",
@@ -91,7 +91,7 @@ const services = [
       "Client Loyalty"
     ],
     image: "https://images.unsplash.com/photo-1556740758-90de374c12ad?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-    route: "/it-saas"
+    route: "/services/it-saas"
   },
   {
     title: "Salons and Spa",
@@ -105,7 +105,7 @@ const services = [
       "Client Loyalty"
     ],
     image: "https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-    route: "/salons-spa"
+    route: "/services/salons-spa"
   },
   {
     title: "Real Estate Agents",
@@ -119,7 +119,7 @@ const services = [
       "Client Loyalty"
     ],
     image: "https://images.unsplash.com/photo-1560518883-ce09059eeffa?q=80&w=1973&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-    route: "/real-estate-agents"
+    route: "/services/real-estate-agents"
   },
   {
     title: "Therapists and Counselors",
@@ -133,7 +133,7 @@ const services = [
       "Client Loyalty"
     ],
     image: "https://images.unsplash.com/photo-1544006659-f0b21884ce1d?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-    route: "/therapists-counselors"
+    route: "/services/therapists-counselors"
   }
 ];
 

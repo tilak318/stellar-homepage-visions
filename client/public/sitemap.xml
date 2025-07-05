@@ -45,65 +45,65 @@
     <priority>0.7</priority>
   </url>
   
-  <!-- Industry-specific pages - Medium priority -->
+  <!-- Industry-specific service pages - Medium priority -->
   <url>
-    <loc>https://tryzeniq.com/insurance</loc>
+    <loc>https://tryzeniq.com/services/insurance</loc>
     <lastmod>2024-12-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
-    <loc>https://tryzeniq.com/botox-skin-care</loc>
+    <loc>https://tryzeniq.com/services/botox-skin-care</loc>
     <lastmod>2024-12-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
-    <loc>https://tryzeniq.com/clinics-dentist</loc>
+    <loc>https://tryzeniq.com/services/clinics-dentist</loc>
     <lastmod>2024-12-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
-    <loc>https://tryzeniq.com/gym-health-coach</loc>
+    <loc>https://tryzeniq.com/services/gym-health-coach</loc>
     <lastmod>2024-12-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
-    <loc>https://tryzeniq.com/business-consultation</loc>
+    <loc>https://tryzeniq.com/services/business-consultation</loc>
     <lastmod>2024-12-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
-    <loc>https://tryzeniq.com/it-saas</loc>
+    <loc>https://tryzeniq.com/services/it-saas</loc>
     <lastmod>2024-12-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
-    <loc>https://tryzeniq.com/salons-spa</loc>
+    <loc>https://tryzeniq.com/services/salons-spa</loc>
     <lastmod>2024-12-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
-    <loc>https://tryzeniq.com/real-estate-agents</loc>
+    <loc>https://tryzeniq.com/services/real-estate-agents</loc>
     <lastmod>2024-12-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
-    <loc>https://tryzeniq.com/therapists-counselors</loc>
+    <loc>https://tryzeniq.com/services/therapists-counselors</loc>
     <lastmod>2024-12-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>

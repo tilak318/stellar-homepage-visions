@@ -71,15 +71,15 @@ const App = () => {
             <Route path="/solutions" element={<Solutions />} />
             <Route path="/about" element={<About />} />
             <Route path="/contact" element={<Contact />} />
-            <Route path="/insurance" element={<Insurance />} />
-            <Route path="/botox-skin-care" element={<BotoxSkinCare />} />
-            <Route path="/clinics-dentist" element={<ClinicsDentist />} />
-            <Route path="/gym-health-coach" element={<GymHealthCoach />} />
-            <Route path="/business-consultation" element={<BusinessConsultation />} />
-            <Route path="/it-saas" element={<ITSaaS />} />
-            <Route path="/salons-spa" element={<SalonsSpa />} />
-            <Route path="/real-estate-agents" element={<RealEstateAgents />} />
-            <Route path="/therapists-counselors" element={<TherapistsCounselors />} />
+            <Route path="/services/insurance" element={<Insurance />} />
+            <Route path="/services/botox-skin-care" element={<BotoxSkinCare />} />
+            <Route path="/services/clinics-dentist" element={<ClinicsDentist />} />
+            <Route path="/services/gym-health-coach" element={<GymHealthCoach />} />
+            <Route path="/services/business-consultation" element={<BusinessConsultation />} />
+            <Route path="/services/it-saas" element={<ITSaaS />} />
+            <Route path="/services/salons-spa" element={<SalonsSpa />} />
+            <Route path="/services/real-estate-agents" element={<RealEstateAgents />} />
+            <Route path="/services/therapists-counselors" element={<TherapistsCounselors />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
         </BrowserRouter>
