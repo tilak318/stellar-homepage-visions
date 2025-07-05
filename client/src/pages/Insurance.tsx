@@ -3,16 +3,16 @@ import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import AnimatedGradientBackground from '@/components/AnimatedGradientBackground';
 import ThemeSelector from '@/components/ThemeSelector';
-import { commonThemes } from '@/data/commonThemes';
-import { Check, Calendar, Users, Star, MessageSquare, Phone, Mail, MapPin, Home } from 'lucide-react';
+import { Check, Sparkles, Calendar, Users, Star, TrendingUp, Shield, MessageSquare, Phone, Mail, MapPin, FileText, DollarSign, Clock, Award } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { motion, useInView } from 'framer-motion';
 
-const RealEstateAgents = () => {
+const Insurance = () => {
   const heroRef = React.useRef(null);
   const featuresRef = React.useRef(null);
   const benefitsRef = React.useRef(null);
   const testimonialsRef = React.useRef(null);
+  const themesRef = React.useRef(null);
   
   const heroInView = useInView(heroRef, { once: true, amount: 0.3 });
   const featuresInView = useInView(featuresRef, { once: true, amount: 0.3 });
@@ -21,58 +21,98 @@ const RealEstateAgents = () => {
 
   const features = [
     {
-      icon: <Home className="w-8 h-8 text-purple-600" />,
-      title: "Smart Website + Auto Lead Gen",
-      description: "Professional real estate website with automated lead generation that attracts qualified buyers and sellers 24/7."
+      icon: <Sparkles className="w-8 h-8 text-purple-600" />,
+      title: "Smart Lead Generation",
+      description: "Automated lead generation system that identifies and qualifies potential insurance clients 24/7."
     },
     {
-      icon: <MessageSquare className="w-8 h-8 text-purple-600" />,
-      title: "Smart Follow-ups & Reminders",
-      description: "Automated follow-up system that nurtures prospects and converts them into clients."
+      icon: <FileText className="w-8 h-8 text-purple-600" />,
+      title: "Policy Management",
+      description: "Comprehensive policy tracking and management system for all client insurance products."
     },
     {
       icon: <Calendar className="w-8 h-8 text-purple-600" />,
-      title: "Appointment Scheduling",
-      description: "Seamless booking system that allows clients to schedule property viewings anytime, anywhere."
+      title: "Renewal Reminders",
+      description: "Automated renewal notifications and follow-up system to retain clients and increase revenue."
     },
     {
       icon: <Users className="w-8 h-8 text-purple-600" />,
-      title: "Referral Tracking",
-      description: "Comprehensive referral management system to track and reward client referrals."
+      title: "Client Portal",
+      description: "Professional client portal for policy access, claims filing, and document management."
     },
     {
-      icon: <Star className="w-8 h-8 text-purple-600" />,
-      title: "Client Loyalty Program",
-      description: "Automated loyalty rewards system to increase client retention and repeat business."
+      icon: <TrendingUp className="w-8 h-8 text-purple-600" />,
+      title: "Commission Tracking",
+      description: "Advanced commission tracking and reporting system for multiple insurance carriers."
     }
   ];
 
   const benefits = [
-    "Increase property listings by 280%",
-    "Reduce client response time by 80%",
+    "Increase policy sales by 250%",
+    "Reduce client churn by 60%",
+    "Streamline claims processing",
     "Improve client satisfaction scores",
-    "Generate consistent commission revenue",
-    "Scale your real estate business efficiently"
+    "Scale your agency without additional staff"
   ];
 
   const testimonials = [
     {
-      name: "David Johnson",
-      role: "Real Estate Agent",
-      content: "This platform has transformed my real estate business. I'm now closing 60% more deals with better client relationships.",
+      name: "Sarah Mitchell",
+      role: "Independent Insurance Agent",
+      content: "This platform revolutionized my insurance business. I'm now managing 3x more clients with better organization and higher retention rates.",
       rating: 5
     },
     {
-      name: "Maria Rodriguez",
-      role: "Property Manager",
-      content: "The automated follow-ups are incredible. My clients stay engaged throughout the buying/selling process, leading to faster closings.",
+      name: "Michael Rodriguez",
+      role: "Insurance Agency Owner",
+      content: "The automated renewal system alone has increased my revenue by 40%. My clients love the easy access to their policies.",
       rating: 5
     },
     {
-      name: "James Wilson",
-      role: "Real Estate Broker",
-      content: "Finally, a solution that understands the real estate industry. My agency's revenue has increased by 65% since implementing this.",
+      name: "Jennifer Thompson",
+      role: "Insurance Broker",
+      content: "Finally, a solution designed for insurance professionals. The commission tracking and client management features are game-changers.",
       rating: 5
+    }
+  ];
+
+  const insuranceThemes = [
+    {
+      id: "professional-classic",
+      name: "Professional Classic",
+      description: "A sophisticated, traditional design perfect for established insurance agencies looking to convey trust and reliability.",
+      image: "https://images.unsplash.com/photo-1554224155-6726b3ff858f?q=80&w=2071&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      demoUrl: "https://demo-insurance-classic.tryzeniq.com",
+      features: ["Professional Header Design", "Trust-focused Layout", "Clear Policy Information", "Contact Forms"],
+      color: "bg-blue-600",
+      popular: true
+    },
+    {
+      id: "modern-minimal",
+      name: "Modern Minimal",
+      description: "Clean, contemporary design with focus on user experience and modern insurance solutions.",
+      image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=2015&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      demoUrl: "https://demo-insurance-modern.tryzeniq.com",
+      features: ["Minimalist Design", "Fast Loading", "Mobile-First", "Easy Navigation"],
+      color: "bg-purple-600"
+    },
+    {
+      id: "tech-savvy",
+      name: "Tech Savvy",
+      description: "Innovative design showcasing cutting-edge technology and digital insurance solutions.",
+      image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      demoUrl: "https://demo-insurance-tech.tryzeniq.com",
+      features: ["Interactive Elements", "Data Visualization", "AI Integration", "Real-time Updates"],
+      color: "bg-green-600"
+    },
+    {
+      id: "family-friendly",
+      name: "Family Friendly",
+      description: "Warm, approachable design perfect for family insurance and personal coverage needs.",
+      image: "https://images.unsplash.com/photo-1557804506-669a67965ba0?q=80&w=2074&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      demoUrl: "https://demo-insurance-family.tryzeniq.com",
+      features: ["Warm Color Palette", "Family-Focused Content", "Easy Quote Process", "Trust Indicators"],
+      color: "bg-orange-600"
     }
   ];
 
@@ -92,9 +132,9 @@ const RealEstateAgents = () => {
             className="text-center max-w-4xl mx-auto"
           >
             <div className="mb-6">
-              <Calendar className="w-16 h-16 text-purple-600 mx-auto mb-4" />
+              <Shield className="w-16 h-16 text-purple-600 mx-auto mb-4" />
               <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold text-gray-900 mb-4">
-                Real Estate Agents
+                Insurance Agency
                 <br />
                 <span className="bg-gradient-to-r from-purple-600 to-fuchsia-600 bg-clip-text text-transparent">
                   Automation Platform
@@ -102,7 +142,7 @@ const RealEstateAgents = () => {
               </h1>
             </div>
             <p className="text-xl md:text-2xl text-gray-600 mb-8 leading-relaxed">
-              Scale your real estate business with our comprehensive automation solution designed specifically for property professionals and agencies.
+              Transform your insurance business with our comprehensive automation solution designed specifically for insurance agents, brokers, and agencies.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button size="lg" className="text-lg px-8 py-6 bg-gradient-to-r from-purple-600 to-fuchsia-600 hover:from-purple-700 hover:to-fuchsia-700">
@@ -124,10 +164,10 @@ const RealEstateAgents = () => {
           >
             <div className="text-center mb-16">
               <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-                Property Business Management
+                Everything You Need to Scale Your Insurance Business
               </h2>
               <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-                Our platform combines cutting-edge technology with real estate-specific features to help you grow your property business efficiently.
+                Our platform combines cutting-edge technology with insurance-specific features to help you grow your agency efficiently.
               </p>
             </div>
             
@@ -161,10 +201,10 @@ const RealEstateAgents = () => {
           >
             <div className="text-center mb-12">
               <h2 className="text-3xl md:text-4xl font-bold mb-4">
-                Proven Results for Real Estate Professionals
+                Proven Results for Insurance Professionals
               </h2>
               <p className="text-xl text-white/90">
-                Join hundreds of successful real estate professionals who have transformed their businesses with our platform.
+                Join hundreds of successful insurance agents and agencies who have transformed their businesses.
               </p>
             </div>
             
@@ -194,10 +234,10 @@ const RealEstateAgents = () => {
           >
             <div className="text-center mb-16">
               <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-                What Our Real Estate Partners Say
+                What Our Insurance Clients Say
               </h2>
               <p className="text-xl text-gray-600">
-                Real feedback from property professionals who have transformed their businesses.
+                Real feedback from insurance professionals who have transformed their businesses.
               </p>
             </div>
             
@@ -208,7 +248,7 @@ const RealEstateAgents = () => {
                   initial={{ opacity: 0, y: 30 }}
                   animate={testimonialsInView ? { opacity: 1, y: 0 } : {}}
                   transition={{ duration: 0.6, delay: index * 0.1 }}
-                  className="bg-white rounded-2xl p-8 shadow-lg"
+                  className="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300"
                 >
                   <div className="flex items-center mb-4">
                     {[...Array(testimonial.rating)].map((_, i) => (
@@ -217,8 +257,8 @@ const RealEstateAgents = () => {
                   </div>
                   <p className="text-gray-600 mb-6 italic">"{testimonial.content}"</p>
                   <div>
-                    <p className="font-semibold text-gray-900">{testimonial.name}</p>
-                    <p className="text-purple-600">{testimonial.role}</p>
+                    <h4 className="font-bold text-gray-900">{testimonial.name}</h4>
+                    <p className="text-gray-500">{testimonial.role}</p>
                   </div>
                 </motion.div>
               ))}
@@ -228,32 +268,31 @@ const RealEstateAgents = () => {
 
         {/* Theme Selector Section */}
         <ThemeSelector 
-          themes={commonThemes}
-          title="Choose Your Real Estate Website Theme"
-          subtitle="Select from our professionally designed themes tailored for real estate agents and property professionals"
+          themes={insuranceThemes}
+          title="Choose Your Insurance Website Theme"
+          subtitle="Select from our professionally designed themes tailored for insurance agencies and brokers"
         />
 
         {/* CTA Section */}
-        <section className="container mx-auto max-w-7xl px-6">
+        <section className="container mx-auto max-w-7xl px-6 mb-20">
           <motion.div
             initial={{ opacity: 0, y: 50 }}
-            whileInView={{ opacity: 1, y: 0 }}
+            animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
-            viewport={{ once: true }}
-            className="bg-gradient-to-r from-gray-900 to-gray-800 rounded-3xl p-12 text-center text-white"
+            className="bg-gradient-to-r from-gray-900 to-gray-800 rounded-3xl p-12 text-white text-center"
           >
-            <h2 className="text-3xl md:text-4xl font-bold mb-6">
-              Ready to Transform Your Real Estate Business?
+            <h2 className="text-3xl md:text-4xl font-bold mb-4">
+              Ready to Transform Your Insurance Business?
             </h2>
-            <p className="text-xl mb-8 text-gray-300">
-              Join the revolution in real estate business automation. Start your free trial today and see the difference.
+            <p className="text-xl text-gray-300 mb-8 max-w-2xl mx-auto">
+              Join thousands of insurance professionals who have already automated their businesses and increased their revenue.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button size="lg" className="text-lg px-8 py-6 bg-gradient-to-r from-purple-600 to-fuchsia-600 hover:from-purple-700 hover:to-fuchsia-700">
-                Start Free Trial
+                Start Your Free Trial
               </Button>
               <Button size="lg" variant="outline" className="text-lg px-8 py-6 text-black border-white hover:bg-white hover:text-gray-900">
-                Schedule Demo
+                Schedule a Demo
               </Button>
             </div>
           </motion.div>
@@ -265,4 +304,4 @@ const RealEstateAgents = () => {
   );
 };
 
-export default RealEstateAgents; 
+export default Insurance; 

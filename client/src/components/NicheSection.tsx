@@ -4,6 +4,12 @@ import { Button } from '@/components/ui/button';
 
 const niches = [
   {
+    title: "Insurance",
+    features: ["Smart Lead Generation", "Policy Management", "Renewal Reminders", "Client Portal", "Commission Tracking"],
+    image: "https://images.unsplash.com/photo-1450101499163-c8848c66ca85?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    route: "/insurance"
+  },
+  {
     title: "Botox & Skin Care",
     features: ["Smart Website + Auto Lead Gen", "Smart follow-ups & reminders", "Appointment scheduling", "Before/After Tracking", "Client Loyalty"],
     image: "https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
@@ -62,6 +68,7 @@ const cardColors = [
   'bg-purple-200',
   'bg-purple-100',
   'bg-purple-200',
+  'bg-purple-100',
 ];
 
 // Fixed random arrangement of colors

@@ -2,6 +2,8 @@ import React from 'react';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import AnimatedGradientBackground from '@/components/AnimatedGradientBackground';
+import ThemeSelector from '@/components/ThemeSelector';
+import { commonThemes } from '@/data/commonThemes';
 import { Check, Shield, Calendar, Users, Star, TrendingUp, MessageSquare, Phone, Mail, MapPin, Heart } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { motion, useInView } from 'framer-motion';
@@ -223,6 +225,13 @@ const ClinicsDentist = () => {
             </div>
           </motion.div>
         </section>
+
+        {/* Theme Selector Section */}
+        <ThemeSelector 
+          themes={commonThemes}
+          title="Choose Your Healthcare Website Theme"
+          subtitle="Select from our professionally designed themes tailored for medical clinics and dental practices"
+        />
 
         {/* CTA Section */}
         <section className="container mx-auto max-w-7xl px-6">

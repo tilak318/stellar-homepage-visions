@@ -2,6 +2,7 @@ import React from 'react';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import AnimatedGradientBackground from '@/components/AnimatedGradientBackground';
+import ThemeSelector from '@/components/ThemeSelector';
 import { Check, Sparkles, Calendar, Users, Star, TrendingUp, Shield, MessageSquare, Phone, Mail, MapPin } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { motion, useInView } from 'framer-motion';
@@ -71,6 +72,46 @@ const BotoxSkinCare = () => {
       role: "Plastic Surgeon",
       content: "Finally, a solution that understands the aesthetic industry. My practice has never been more efficient or profitable.",
       rating: 5
+    }
+  ];
+
+  const aestheticThemes = [
+    {
+      id: "luxury-spa",
+      name: "Luxury Spa",
+      description: "Elegant, premium design perfect for high-end aesthetic clinics and luxury skincare practices.",
+      image: "https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      demoUrl: "https://demo-aesthetic-luxury.tryzeniq.com",
+      features: ["Luxury Branding", "Before/After Gallery", "Appointment Booking", "Treatment Showcase"],
+      color: "bg-pink-600",
+      popular: true
+    },
+    {
+      id: "medical-modern",
+      name: "Medical Modern",
+      description: "Clean, professional design focused on medical credibility and patient trust.",
+      image: "https://images.unsplash.com/photo-1559757148-5c350d0d3c56?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      demoUrl: "https://demo-aesthetic-medical.tryzeniq.com",
+      features: ["Medical Credibility", "Patient Education", "Secure Forms", "HIPAA Compliant"],
+      color: "bg-blue-600"
+    },
+    {
+      id: "beauty-glam",
+      name: "Beauty Glam",
+      description: "Vibrant, glamorous design perfect for beauty-focused aesthetic practices.",
+      image: "https://images.unsplash.com/photo-1594736797933-d0401ba2fe65?q=80&w=2074&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      demoUrl: "https://demo-aesthetic-beauty.tryzeniq.com",
+      features: ["Glamorous Design", "Social Media Integration", "Client Reviews", "Treatment Videos"],
+      color: "bg-purple-600"
+    },
+    {
+      id: "wellness-natural",
+      name: "Wellness Natural",
+      description: "Organic, natural design perfect for holistic skincare and wellness practices.",
+      image: "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      demoUrl: "https://demo-aesthetic-wellness.tryzeniq.com",
+      features: ["Natural Aesthetics", "Wellness Focus", "Organic Branding", "Holistic Approach"],
+      color: "bg-green-600"
     }
   ];
 
@@ -223,6 +264,13 @@ const BotoxSkinCare = () => {
             </div>
           </motion.div>
         </section>
+
+        {/* Theme Selector Section */}
+        <ThemeSelector 
+          themes={aestheticThemes}
+          title="Choose Your Aesthetic Website Theme"
+          subtitle="Select from our professionally designed themes tailored for aesthetic clinics and skincare practices"
+        />
 
         {/* CTA Section */}
         <section className="container mx-auto max-w-7xl px-6">

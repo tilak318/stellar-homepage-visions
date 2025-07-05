@@ -11,6 +11,7 @@ import Services from "./pages/Services";
 import About from "./pages/About";
 import Contact from "./pages/Contact";
 import NotFound from "./pages/NotFound";
+import Insurance from "./pages/Insurance";
 import BotoxSkinCare from "./pages/BotoxSkinCare";
 import ClinicsDentist from "./pages/ClinicsDentist";
 import GymHealthCoach from "./pages/GymHealthCoach";
@@ -64,6 +65,7 @@ const App = () => (
             <Route path="/solutions" element={<Solutions />} />
             <Route path="/about" element={<About />} />
             <Route path="/contact" element={<Contact />} />
+            <Route path="/insurance" element={<Insurance />} />
             <Route path="/botox-skin-care" element={<BotoxSkinCare />} />
             <Route path="/clinics-dentist" element={<ClinicsDentist />} />
             <Route path="/gym-health-coach" element={<GymHealthCoach />} />

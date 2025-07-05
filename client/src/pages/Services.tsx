@@ -9,6 +9,20 @@ import { motion, useInView } from 'framer-motion';
 
 const services = [
   {
+    title: "Insurance",
+    description: "Comprehensive automation solutions for insurance agents, brokers, and agencies.",
+    icon: <Shield className="w-8 h-8 text-purple-600" />,
+    features: [
+      "Smart Lead Generation",
+      "Policy Management",
+      "Renewal Reminders",
+      "Client Portal",
+      "Commission Tracking"
+    ],
+    image: "https://images.unsplash.com/photo-1450101499163-c8848c66ca85?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    route: "/insurance"
+  },
+  {
     title: "Botox & Skin Care",
     description: "Comprehensive automation solutions for aesthetic clinics and skincare practices.",
     icon: <Sparkles className="w-8 h-8 text-purple-600" />,
@@ -131,6 +145,7 @@ const cardColors = [
   'bg-purple-200',
   'bg-purple-100',
   'bg-purple-200',
+  'bg-purple-100',
 ];
 
 const Services = () => {

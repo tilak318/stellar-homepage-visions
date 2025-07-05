@@ -2,6 +2,8 @@ import React from 'react';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import AnimatedGradientBackground from '@/components/AnimatedGradientBackground';
+import ThemeSelector from '@/components/ThemeSelector';
+import { commonThemes } from '@/data/commonThemes';
 import { Check, Users, Calendar, Star, MessageSquare, Phone, Mail, MapPin, Briefcase } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { motion, useInView } from 'framer-motion';
@@ -223,6 +225,13 @@ const BusinessConsultation = () => {
             </div>
           </motion.div>
         </section>
+
+        {/* Theme Selector Section */}
+        <ThemeSelector 
+          themes={commonThemes}
+          title="Choose Your Consulting Website Theme"
+          subtitle="Select from our professionally designed themes tailored for business consultants and advisors"
+        />
 
         {/* CTA Section */}
         <section className="container mx-auto max-w-7xl px-6">
