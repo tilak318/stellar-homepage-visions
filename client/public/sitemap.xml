@@ -1,48 +1,111 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <!-- Homepage - Highest priority -->
   <url>
-    <loc>https://yourdomain.com/</loc>
+    <loc>https://tryzeniq.com/</loc>
+    <lastmod>2024-12-19</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
   </url>
+  
+  <!-- Main service pages - High priority -->
   <url>
-    <loc>https://yourdomain.com/services</loc>
+    <loc>https://tryzeniq.com/services</loc>
+    <lastmod>2024-12-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
   </url>
+  
   <url>
-    <loc>https://yourdomain.com/pricing</loc>
+    <loc>https://tryzeniq.com/solutions</loc>
+    <lastmod>2024-12-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
   </url>
+  
   <url>
-    <loc>https://yourdomain.com/solutions</loc>
+    <loc>https://tryzeniq.com/pricing</loc>
+    <lastmod>2024-12-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
   </url>
+  
+  <!-- About and Contact - Medium-high priority -->
   <url>
-    <loc>https://yourdomain.com/about</loc>
+    <loc>https://tryzeniq.com/about</loc>
+    <lastmod>2024-12-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
   </url>
+  
   <url>
-    <loc>https://yourdomain.com/contact</loc>
+    <loc>https://tryzeniq.com/contact</loc>
+    <lastmod>2024-12-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
   </url>
+  
+  <!-- Industry-specific pages - Medium priority -->
   <url>
-    <loc>https://yourdomain.com/insurance</loc>
+    <loc>https://tryzeniq.com/insurance</loc>
+    <lastmod>2024-12-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
   </url>
+  
   <url>
-    <loc>https://yourdomain.com/botox-skin-care</loc>
+    <loc>https://tryzeniq.com/botox-skin-care</loc>
+    <lastmod>2024-12-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
   </url>
+  
   <url>
-    <loc>https://yourdomain.com/clinics-dentist</loc>
+    <loc>https://tryzeniq.com/clinics-dentist</loc>
+    <lastmod>2024-12-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
   </url>
+  
   <url>
-    <loc>https://yourdomain.com/gym-health-coach</loc>
+    <loc>https://tryzeniq.com/gym-health-coach</loc>
+    <lastmod>2024-12-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
   </url>
+  
   <url>
-    <loc>https://yourdomain.com/business-consultation</loc>
+    <loc>https://tryzeniq.com/business-consultation</loc>
+    <lastmod>2024-12-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
   </url>
+  
   <url>
-    <loc>https://yourdomain.com/it-saas</loc>
+    <loc>https://tryzeniq.com/it-saas</loc>
+    <lastmod>2024-12-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
   </url>
+  
   <url>
-    <loc>https://yourdomain.com/salons-spa</loc>
+    <loc>https://tryzeniq.com/salons-spa</loc>
+    <lastmod>2024-12-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
   </url>
+  
   <url>
-    <loc>https://yourdomain.com/real-estate-agents</loc>
+    <loc>https://tryzeniq.com/real-estate-agents</loc>
+    <lastmod>2024-12-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
   </url>
+  
   <url>
-    <loc>https://yourdomain.com/therapists-counselors</loc>
+    <loc>https://tryzeniq.com/therapists-counselors</loc>
+    <lastmod>2024-12-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
   </url>
 </urlset> 
