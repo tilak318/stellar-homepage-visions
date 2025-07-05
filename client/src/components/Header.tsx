@@ -38,8 +38,8 @@ const Header = () => {
     }`}>
       <div className="container mx-auto max-w-7xl px-6 py-3">
         <div className="flex items-center justify-between">
-          <Link to="/" className="text-2xl font-bold font-serif text-gray-900 tracking-wider">
-            TRYZENIQ
+          <Link to="/" className="flex items-center">
+            <img src="/logodark.svg" alt="TryzenIQ Logo" className="h-8 w-auto" />
           </Link>
           <div className="flex-1 flex justify-center">
             <nav className="hidden md:flex items-center space-x-8">
