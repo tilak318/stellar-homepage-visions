@@ -7,6 +7,7 @@ import { commonThemes } from '@/data/commonThemes';
 import { Check, TrendingUp, Calendar, Users, Star, MessageSquare, Phone, Mail, MapPin, Target } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { motion, useInView } from 'framer-motion';
+import { Helmet } from 'react-helmet-async';
 
 const GymHealthCoach = () => {
   const heroRef = React.useRef(null);
@@ -78,6 +79,10 @@ const GymHealthCoach = () => {
 
   return (
     <div className="min-h-screen">
+      <Helmet>
+        <title>Gym & Health Coach Automation | TryzenIQ</title>
+        <meta name="description" content="Gym and health coach automation: AI scheduling, client retention, and more. TryzenIQ." />
+      </Helmet>
       <div id="header-sentinel" style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '1px', pointerEvents: 'none' }}></div>
       <AnimatedGradientBackground />
       <Header />

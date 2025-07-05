@@ -7,6 +7,7 @@ import { commonThemes } from '@/data/commonThemes';
 import { Check, Calendar, Users, Star, MessageSquare, Phone, Mail, MapPin, Home } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { motion, useInView } from 'framer-motion';
+import { Helmet } from 'react-helmet-async';
 
 const RealEstateAgents = () => {
   const heroRef = React.useRef(null);
@@ -78,6 +79,10 @@ const RealEstateAgents = () => {
 
   return (
     <div className="min-h-screen">
+      <Helmet>
+        <title>Real Estate Agent Automation | TryzenIQ</title>
+        <meta name="description" content="Real estate agent automation: lead management, scheduling, and more. TryzenIQ." />
+      </Helmet>
       <div id="header-sentinel" style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '1px', pointerEvents: 'none' }}></div>
       <AnimatedGradientBackground />
       <Header />

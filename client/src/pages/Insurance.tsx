@@ -6,6 +6,7 @@ import ThemeSelector from '@/components/ThemeSelector';
 import { Check, Sparkles, Calendar, Users, Star, TrendingUp, Shield, MessageSquare, Phone, Mail, MapPin, FileText, DollarSign, Clock, Award } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { motion, useInView } from 'framer-motion';
+import { Helmet } from 'react-helmet-async';
 
 const Insurance = () => {
   const heroRef = React.useRef(null);
@@ -118,6 +119,10 @@ const Insurance = () => {
 
   return (
     <div className="min-h-screen">
+      <Helmet>
+        <title>Insurance Automation Services | TryzenIQ</title>
+        <meta name="description" content="Insurance automation services: lead generation, policy management, and more for agencies. TryzenIQ." />
+      </Helmet>
       <div id="header-sentinel" style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '1px', pointerEvents: 'none' }}></div>
       <AnimatedGradientBackground />
       <Header />

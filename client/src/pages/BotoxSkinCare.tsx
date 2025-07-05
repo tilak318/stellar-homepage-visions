@@ -6,6 +6,7 @@ import ThemeSelector from '@/components/ThemeSelector';
 import { Check, Sparkles, Calendar, Users, Star, TrendingUp, Shield, MessageSquare, Phone, Mail, MapPin } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { motion, useInView } from 'framer-motion';
+import { Helmet } from 'react-helmet-async';
 
 const BotoxSkinCare = () => {
   const heroRef = React.useRef(null);
@@ -117,6 +118,10 @@ const BotoxSkinCare = () => {
 
   return (
     <div className="min-h-screen">
+      <Helmet>
+        <title>Botox & Skin Care Automation | TryzenIQ</title>
+        <meta name="description" content="Botox and skin care automation: AI bookings, client engagement, and more. TryzenIQ." />
+      </Helmet>
       <div id="header-sentinel" style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '1px', pointerEvents: 'none' }}></div>
       <AnimatedGradientBackground />
       <Header />

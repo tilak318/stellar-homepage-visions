@@ -7,6 +7,7 @@ import { commonThemes } from '@/data/commonThemes';
 import { Check, MessageSquare, Calendar, Users, Star, Phone, Mail, MapPin, Code, Zap } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { motion, useInView } from 'framer-motion';
+import { Helmet } from 'react-helmet-async';
 
 const ITSaaS = () => {
   const heroRef = React.useRef(null);
@@ -78,6 +79,10 @@ const ITSaaS = () => {
 
   return (
     <div className="min-h-screen">
+      <Helmet>
+        <title>IT & SaaS Automation | TryzenIQ</title>
+        <meta name="description" content="IT and SaaS automation: client onboarding, analytics, and more. TryzenIQ." />
+      </Helmet>
       <div id="header-sentinel" style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '1px', pointerEvents: 'none' }}></div>
       <AnimatedGradientBackground />
       <Header />

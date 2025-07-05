@@ -9,10 +9,15 @@ import ComparisonSection from '@/components/ComparisonSection';
 import PricingSection from '@/components/PricingSection';
 import TestimonialsSection from '@/components/TestimonialsSection';
 import Footer from '@/components/Footer';
+import { Helmet } from 'react-helmet-async';
 
 const Index = () => {
   return (
     <div className="min-h-screen">
+      <Helmet>
+        <title>AI Automation for Clinics & Businesses | TryzenIQ</title>
+        <meta name="description" content="TryzenIQ offers AI automation for clinics and businesses to maximize bookings and streamline operations." />
+      </Helmet>
       <div id="header-sentinel" style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '1px', pointerEvents: 'none' }}></div>
       <Header />
       <HeroSection />

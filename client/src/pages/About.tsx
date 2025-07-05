@@ -17,6 +17,7 @@ import {
   Check
 } from 'lucide-react';
 import { useEffect, useRef, useState } from 'react';
+import { Helmet } from 'react-helmet-async';
 
 const stats = [
   { number: 1000, label: "Businesses Empowered", suffix: "+" },
@@ -117,6 +118,10 @@ const About = () => {
 
   return (
     <div className="min-h-screen">
+      <Helmet>
+        <title>About TryzenIQ | AI Business Automation</title>
+        <meta name="description" content="Learn about TryzenIQ and our mission to revolutionize business automation with AI." />
+      </Helmet>
       <div id="header-sentinel" style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '1px', pointerEvents: 'none' }}></div>
       <AnimatedGradientBackground />
       <Header />

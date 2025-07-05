@@ -8,6 +8,7 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@
 import { Mail, Phone, MapPin, Send, Clock, MessageSquare, Loader2 } from 'lucide-react';
 import AnimatedGradientBackground from '@/components/AnimatedGradientBackground';
 import { toast } from 'sonner';
+import { Helmet } from 'react-helmet-async';
 
 const countries = [
   { code: "AF", name: "Afghanistan" },
@@ -293,6 +294,10 @@ const Contact = () => {
 
   return (
     <div className="min-h-screen">
+      <Helmet>
+        <title>Contact TryzenIQ | AI Automation Experts</title>
+        <meta name="description" content="Contact TryzenIQ for expert help with AI automation for your clinic or business." />
+      </Helmet>
       <div id="header-sentinel" style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '1px', pointerEvents: 'none' }}></div>
       <AnimatedGradientBackground />
       <Header />

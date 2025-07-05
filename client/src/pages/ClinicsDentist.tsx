@@ -7,6 +7,7 @@ import { commonThemes } from '@/data/commonThemes';
 import { Check, Shield, Calendar, Users, Star, TrendingUp, MessageSquare, Phone, Mail, MapPin, Heart } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { motion, useInView } from 'framer-motion';
+import { Helmet } from 'react-helmet-async';
 
 const ClinicsDentist = () => {
   const heroRef = React.useRef(null);
@@ -78,6 +79,10 @@ const ClinicsDentist = () => {
 
   return (
     <div className="min-h-screen">
+      <Helmet>
+        <title>Clinic & Dentist Automation | TryzenIQ</title>
+        <meta name="description" content="Clinic and dentist automation: patient management, reviews, and more. TryzenIQ." />
+      </Helmet>
       <div id="header-sentinel" style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '1px', pointerEvents: 'none' }}></div>
       <AnimatedGradientBackground />
       <Header />

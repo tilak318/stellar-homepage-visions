@@ -5,6 +5,7 @@ import AnimatedGradientBackground from '@/components/AnimatedGradientBackground'
 import { Zap, Users, Send, Shield, BarChart, Clock, MessageSquare, Settings, Check, ArrowRight } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { motion, useInView } from 'framer-motion';
+import { Helmet } from 'react-helmet-async';
 
 const solutions = [
   {
@@ -90,6 +91,10 @@ const Solutions = () => {
 
   return (
     <div className="min-h-screen">
+      <Helmet>
+        <title>AI Solutions for Business Growth | TryzenIQ</title>
+        <meta name="description" content="Discover AI solutions for business growth, automation, and efficiency with TryzenIQ." />
+      </Helmet>
       <div id="header-sentinel" style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '1px', pointerEvents: 'none' }}></div>
       <AnimatedGradientBackground />
       <Header />
