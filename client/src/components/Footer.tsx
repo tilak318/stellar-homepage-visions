@@ -4,17 +4,17 @@ import { Link } from 'react-router-dom';
 const Footer = () => {
   return (
     <footer className="bg-gray-900 text-white py-12">
-      <div className="container mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+      <div className="container mx-auto max-w-7xl px-6">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 mb-8">
           {/* Company Info */}
-          <div className="text-center lg:text-left">
-            <div className="flex items-center justify-center lg:justify-start mb-4">
+          <div className="flex flex-col items-start mb-4 pl-[22px]">
+            <div className="flex items-center h-16" style={{minHeight: '4rem'}}>
+              <span className="mr-[1px] font-sans font-bold text-3xl tracking-wide text-white">tryzen</span>
               <img 
-                src="/lovable-uploads/cb926fe6-418f-46ac-b33c-3175bab09138.png" 
-                alt="TryZeniq Logo" 
-                className="w-10 h-10 object-contain"
+                src="/logolight.svg" 
+                alt="TryzenIQ Logo" 
+                className="h-12 w-auto -my-1" 
               />
-              <span className="ml-3 text-2xl font-bold">TryzenIQ</span>
             </div>
             <p className="text-gray-300 mb-6 text-base leading-relaxed max-w-md mx-auto lg:mx-0">
               Automate your clinic and maximize your bookings with our cutting-edge AI solutions. 
