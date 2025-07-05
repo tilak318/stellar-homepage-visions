@@ -31,15 +31,15 @@ const Header = () => {
   }, []);
 
   return (
-    <header className={`fixed top-0 left-0 right-0 z-[100] transition-all duration-300 ${
+    <header className={`fixed top-0 left-0 right-0 z-[100] transition-all duration-300 h-16 overflow-visible ${
       scrolled
         ? 'bg-white/40 backdrop-blur-2xl shadow-lg'
         : 'bg-transparent border-none shadow-none backdrop-blur-0'
     }`}>
-      <div className="container mx-auto max-w-7xl px-6 py-3">
-        <div className="flex items-center justify-between">
-          <Link to="/" className="flex items-center">
-            <img src="/logodark.svg" alt="TryzenIQ Logo" className="h-8 w-auto" />
+      <div className="container mx-auto max-w-7xl px-6 py-3 h-full flex items-center">
+        <div className="flex items-center justify-between w-full h-full">
+          <Link to="/" className="flex items-center h-full">
+            <img src="/logodark.svg" alt="TryzenIQ Logo" className="h-full w-auto -my-1" />
           </Link>
           <div className="flex-1 flex justify-center">
             <nav className="hidden md:flex items-center space-x-8">
