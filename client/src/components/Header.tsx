@@ -39,6 +39,7 @@ const Header = () => {
       <div className="container mx-auto max-w-7xl px-6 py-3 h-full flex items-center">
         <div className="flex items-center justify-between w-full h-full">
           <Link to="/" className="flex items-center h-full">
+            <span className="mr-[1px] font-sans font-bold text-3xl tracking-wide text-gray-900">tryzen</span>
             <img src="/logodark.svg" alt="TryzenIQ Logo" className="h-full w-auto -my-1" />
           </Link>
           <div className="flex-1 flex justify-center">
