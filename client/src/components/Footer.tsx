@@ -7,7 +7,7 @@ const Footer = () => {
       <div className="container mx-auto max-w-7xl px-6">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 mb-8">
           {/* Company Info */}
-          <div className="flex flex-col items-start mb-4 pl-[22px]">
+          <div className="flex flex-col items-start mb-4">
             <div className="flex items-center h-16" style={{minHeight: '4rem'}}>
               <img 
                 src="/logol.svg" 
@@ -15,11 +15,11 @@ const Footer = () => {
                 className="h-32 w-auto -my-1" 
               />
             </div>
-            <p className="text-gray-300 mb-6 text-base leading-relaxed max-w-md mx-auto lg:mx-0">
+            <p className="text-gray-300 mb-6 text-base leading-relaxed max-w-md">
               Automate your clinic and maximize your bookings with our cutting-edge AI solutions. 
               Streamline your entire journey from lead generation to loyal customers.
             </p>
-            <div className="flex space-x-4 justify-center lg:justify-start">
+            <div className="flex space-x-4">
               <a href="https://facebook.com/yourpage" target="_blank" rel="noopener noreferrer" className="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-purple-600 transition-colors">
                 <Facebook className="w-5 h-5" />
               </a>
@@ -36,18 +36,18 @@ const Footer = () => {
           </div>
 
           {/* Contact Info */}
-          <div className="text-center lg:text-left">
+          <div className="text-left flex flex-col justify-start">
             <h3 className="text-lg font-semibold mb-4">Contact Us</h3>
-            <div className="space-y-3 max-w-sm mx-auto lg:mx-0">
-              <a href="mailto:tryzeniq@gmail.com" target="_blank" rel="noopener noreferrer" className="flex items-center space-x-3 group justify-center lg:justify-start">
+            <div className="space-y-3 max-w-sm">
+              <a href="mailto:tryzeniq@gmail.com" target="_blank" rel="noopener noreferrer" className="flex items-center space-x-3 group justify-start">
                 <Mail className="w-5 h-5 text-purple-400 group-hover:text-purple-600 transition-colors flex-shrink-0" />
                 <span className="text-gray-300 text-base group-hover:text-purple-600 transition-colors">tryzeniq@gmail.com</span>
               </a>
-              <a href="tel:+916359185945" target="_blank" rel="noopener noreferrer" className="flex items-center space-x-3 group justify-center lg:justify-start">
+              <a href="tel:+916359185945" target="_blank" rel="noopener noreferrer" className="flex items-center space-x-3 group justify-start">
                 <Phone className="w-5 h-5 text-purple-400 group-hover:text-purple-600 transition-colors flex-shrink-0" />
                 <span className="text-gray-300 text-base group-hover:text-purple-600 transition-colors">+91 63591 85945</span>
               </a>
-              <div className="flex items-start space-x-3 justify-center lg:justify-start">
+              <div className="flex items-start space-x-3 justify-start">
                 <MapPin className="w-5 h-5 text-purple-400 mt-0.5 flex-shrink-0" />
                 <span className="text-gray-300 text-base">317, Shivalik, Dabholi, Surat, Gujarat 395004</span>
               </div>
@@ -57,8 +57,8 @@ const Footer = () => {
 
         {/* Bottom Bar */}
         <div className="border-t border-gray-700 pt-6">
-          <div className="flex justify-center items-center">
-            <p className="text-gray-400 text-sm text-center w-full">
+          <div className="flex items-center">
+            <p className="text-gray-400 text-sm text-left w-full">
               © 2025 TryzenIQ. All rights reserved.
             </p>
           </div>
