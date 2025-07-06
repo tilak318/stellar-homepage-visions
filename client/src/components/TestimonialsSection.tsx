@@ -108,19 +108,11 @@ const TestimonialsSection = () => {
     <section className="relative py-20 font-sans overflow-hidden">
       <div className="container mx-auto max-w-7xl px-8 pt-12">
         <div className="text-center mb-16">
-          <div className="text-sm text-gray-600 mb-4">700k+ Designers & developers trust Relume</div>
+          <div className="text-sm text-gray-600 mb-4">700k+ Designers & developers trust TryzenIQ</div>
           <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
             Helping Lumers streamline their<br />
             workflow and <span className="text-purple-600">deliver faster</span>
           </h2>
-          <div className="flex justify-center space-x-4 mt-8">
-            <button className="flex items-center space-x-2 px-6 py-3 border border-gray-300 rounded-lg hover:bg-gray-50 transition-colors">
-              <span className="text-sm font-medium">🔗 Join our community</span>
-            </button>
-            <button className="px-6 py-3 bg-gray-900 text-white rounded-lg hover:bg-gray-800 transition-colors">
-              Read more reviews
-            </button>
-          </div>
         </div>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {/* Column 1: Down */}
