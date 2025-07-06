@@ -108,7 +108,7 @@ const TestimonialsSection = () => {
     <section className="relative py-20 font-sans overflow-hidden">
       <div className="container mx-auto max-w-7xl px-8 pt-12">
         <div className="text-center mb-16">
-          <div className="text-sm text-gray-600 mb-4">700k+ Designers & developers trust TryzenIQ</div>
+          <div className="text-sm text-gray-600 mb-4">100+ Designers & developers trust TryzenIQ</div>
           <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
             Helping Lumers streamline their<br />
             workflow and <span className="text-purple-600">deliver faster</span>
