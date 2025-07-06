@@ -44,7 +44,7 @@ const Header = () => {
       <div className="container mx-auto max-w-7xl px-6 py-3 h-full flex items-center">
         <div className="flex items-center justify-between w-full h-full">
           <Link to="/" className="flex items-center h-full">
-            <img src="/logot.svg" alt="TryzenIQ Logo" className="h-36 w-auto -my-1" />
+            <img src="/logot.svg" alt="TryzenIQ Logo" className="h-36 w-auto -my-1 scale-125" />
           </Link>
           <div className="flex-1 flex justify-center">
             <nav className="hidden md:flex items-center space-x-8">

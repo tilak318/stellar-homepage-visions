@@ -2,6 +2,7 @@ import { Button } from "@/components/ui/button";
 import { FaGlobe, FaBullseye, FaRobot } from "react-icons/fa";
 import ThreeLevelPyramid from "./ThreeLevelPyramid";
 import React from "react";
+import { Link } from "react-router-dom";
 
 const HeroSection = () => {
   return (
@@ -19,7 +20,9 @@ const HeroSection = () => {
               We automate the entire business journey from <span className="font-bold text-gray-800">lead generation</span> <br /> to <span className="font-bold text-gray-800">reminders</span> saving your clinic time, boosting revenue.
             </p>
             <div className="mt-8 flex justify-center">
-              <Button size="lg" className="text-lg px-8 py-6 bg-gradient-to-r from-purple-500 to-pink-400 text-white font-bold">SCHEDULE FREE MEETING</Button>
+              <Link to="/contact">
+                <Button size="lg" className="text-lg px-8 py-6 bg-gradient-to-r from-purple-500 to-pink-400 text-white font-bold">SCHEDULE FREE MEETING</Button>
+              </Link>
             </div>
           </div>
 
@@ -32,7 +35,9 @@ const HeroSection = () => {
               <span className="bg-gradient-to-br from-blue-600 via-fuchsia-500 to-purple-600 bg-clip-text text-transparent">Profits</span>
             </h1>
             <div className="mt-4 w-full flex justify-center">
-              <Button size="lg" className="text-lg px-8 py-6 bg-gradient-to-r from-purple-500 to-pink-400 text-white font-bold">FREE MEETING</Button>
+              <Link to="/contact" className="w-full flex justify-center">
+                <Button size="lg" className="text-lg px-8 py-6 bg-gradient-to-r from-purple-500 to-pink-400 text-white font-bold w-full">FREE MEETING</Button>
+              </Link>
             </div>
           </div>
         </div>
