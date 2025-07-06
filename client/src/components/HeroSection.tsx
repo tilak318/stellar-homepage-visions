@@ -3,15 +3,6 @@ import { FaGlobe, FaBullseye, FaRobot } from "react-icons/fa";
 import ThreeLevelPyramid from "./ThreeLevelPyramid";
 import React from "react";
 
-const FloatingIcon = ({ imgSrc, className, delay = 0, alt }) => (
-  <div
-    className={`absolute block md:animate-float ${className}`}
-    style={{ animationDelay: `${delay}s` }}
-  >
-    <img src={imgSrc} alt={alt} className="w-16 h-16 sm:w-24 sm:h-24 md:w-32 md:h-32 object-contain" />
-  </div>
-);
-
 const HeroSection = () => {
   return (
     <div className="relative">
@@ -46,21 +37,7 @@ const HeroSection = () => {
           </div>
         </div>
 
-        {/* Icons positioned after content (original absolute positioning) */}
-        {/* Mobile floating icons in custom higher positions as per user request */}
-        <div className="absolute inset-0 z-0 md:hidden">
-          <FloatingIcon imgSrc="/homeicons/1.png" alt="Followup" className="bottom-[220px] left-4" />
-          <FloatingIcon imgSrc="/homeicons/2.png" alt="Website" className="bottom-[140px] left-1/4" delay={1} />
-          <FloatingIcon imgSrc="/homeicons/3.png" alt="Lead Gen" className="bottom-[140px] right-1/4" delay={0.5} />
-          <FloatingIcon imgSrc="/homeicons/4.png" alt="Outreach" className="bottom-[220px] right-4" delay={1.5} />
-        </div>
-        {/* Desktop floating icons (unchanged) */}
-        <div className="absolute inset-0 z-0 hidden md:block">
-          <FloatingIcon imgSrc="/homeicons/1.png" alt="Followup" className="top-1/2 left-[10%]" />
-          <FloatingIcon imgSrc="/homeicons/2.png" alt="Website" className="bottom-16 left-[30%]" delay={1} />
-          <FloatingIcon imgSrc="/homeicons/3.png" alt="Lead Gen" className="top-1/2 right-[10%]" delay={0.5} />
-          <FloatingIcon imgSrc="/homeicons/4.png" alt="Outreach" className="bottom-16 right-[30%]" delay={1.5} />
-        </div>
+
       </section>
       {/* 3-Step Journey Section - Seamless Background */}
       {/* <section className="relative min-h-screen flex flex-col items-center justify-center pt-20 pb-20">
