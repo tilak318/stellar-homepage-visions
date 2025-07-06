@@ -76,14 +76,7 @@ const solutions = [
   }
 ];
 
-const cardColors = [
-  'bg-purple-100',
-  'bg-purple-200',
-  'bg-purple-100',
-  'bg-purple-200',
-  'bg-purple-100',
-  'bg-purple-200',
-];
+
 
 const Solutions = () => {
   const ref = React.useRef(null);
@@ -117,22 +110,22 @@ const Solutions = () => {
 
         {/* Solutions Grid */}
         <div className="container mx-auto max-w-7xl px-6">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6 lg:gap-8 justify-center">
             {solutions.map((solution, index) => (
               <div
                 key={index}
-                className={`${cardColors[index]} hover:bg-white rounded-2xl p-5 shadow-lg hover:shadow-xl transition-all duration-300 w-full max-w-sm flex flex-col mx-auto`}
+                className={"bg-[#f6f3ff] border-2 border-[#b9a6f6] rounded-2xl p-6 md:p-4 shadow-lg hover:shadow-xl hover:bg-purple-200 hover:border-purple-400 transition-all duration-300 ease-in-out w-full max-w-sm flex flex-col mx-auto group"}
               >
                 <div className="flex items-center justify-center mb-4">
                   {solution.icon}
                 </div>
-                <h3 className="text-xl font-bold text-gray-900 mb-2 text-center">{solution.title}</h3>
-                <p className="text-gray-600 mb-4 text-center">{solution.description}</p>
-                <div className="space-y-3">
+                <h3 className="text-xl md:text-lg font-bold text-gray-900 group-hover:text-purple-800 mb-4 md:mb-2 text-center transition-all duration-300 ease-in-out">{solution.title}</h3>
+                <p className="text-gray-600 mb-4 text-center group-hover:text-gray-800 transition-all duration-300 ease-in-out">{solution.description}</p>
+                <div className="space-y-3 md:space-y-2 mb-6 md:mb-3">
                   {solution.features.map((feature, featureIndex) => (
-                    <div key={featureIndex} className="flex items-center space-x-2">
-                      <Check className="w-5 h-5 text-purple-500" />
-                      <span className="text-gray-700 text-sm md:text-base">{feature}</span>
+                    <div key={featureIndex} className="flex items-center space-x-2 md:space-x-3 xl:space-x-4">
+                      <Check className="w-4 h-4 md:w-5 md:h-5 xl:w-6 xl:h-6 text-purple-500 group-hover:text-purple-700 transition-all duration-300 ease-in-out" />
+                      <span className="text-gray-700 group-hover:text-gray-800 text-xs md:text-sm xl:text-base transition-all duration-300 ease-in-out">{feature}</span>
                     </div>
                   ))}
                 </div>

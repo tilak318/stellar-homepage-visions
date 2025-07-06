@@ -1,12 +1,13 @@
 import { useEffect, useState } from 'react';
 console.log('Header mounted');
 import { Button } from '@/components/ui/button';
-import { Link, useLocation } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { Sheet, SheetTrigger, SheetContent } from '@/components/ui/sheet';
 import { Menu } from 'lucide-react';
 
 const Header = () => {
   const location = useLocation();
+  const navigate = useNavigate();
   const [scrolled, setScrolled] = useState(false);
   const navLinks = [
     { name: 'Home', path: '/' },
@@ -16,6 +17,10 @@ const Header = () => {
     { name: 'About', path: '/about' },
     { name: 'Contact', path: '/contact' },
   ];
+
+  const handleBookDemo = () => {
+    navigate('/contact');
+  };
 
   useEffect(() => {
     const sentinel = document.getElementById('header-sentinel');
@@ -39,8 +44,7 @@ const Header = () => {
       <div className="container mx-auto max-w-7xl px-6 py-3 h-full flex items-center">
         <div className="flex items-center justify-between w-full h-full">
           <Link to="/" className="flex items-center h-full">
-            <span className="mr-[1px] font-sans font-bold text-3xl tracking-wide text-gray-900">tryzen</span>
-            <img src="/logodark.svg" alt="TryzenIQ Logo" className="h-full w-auto -my-1" />
+            <img src="/logot.svg" alt="TryzenIQ Logo" className="h-36 w-auto -my-1" />
           </Link>
           <div className="flex-1 flex justify-center">
             <nav className="hidden md:flex items-center space-x-8">
@@ -81,13 +85,19 @@ const Header = () => {
                     </Link>
                   ))}
                 </nav>
-                <Button className="mt-8 w-full bg-gradient-to-r from-purple-500 to-pink-400 hover:shadow-lg text-white font-bold py-3 px-6 rounded-lg">
+                <Button 
+                  onClick={handleBookDemo}
+                  className="mt-8 w-full bg-gradient-to-r from-purple-500 to-pink-400 hover:shadow-lg text-white font-bold py-3 px-6 rounded-lg"
+                >
                   BOOK DEMO
                 </Button>
               </SheetContent>
             </Sheet>
           </div>
-          <Button className="bg-gradient-to-r from-purple-500 to-pink-400 hover:shadow-lg text-white font-bold py-3 px-6 rounded-lg hidden sm:inline-block">
+          <Button 
+            onClick={handleBookDemo}
+            className="bg-gradient-to-r from-purple-500 to-pink-400 hover:shadow-lg text-white font-bold py-3 px-6 rounded-lg hidden sm:inline-block"
+          >
             BOOK DEMO
           </Button>
         </div>
