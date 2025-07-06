@@ -27,8 +27,8 @@ const HeroSection = () => {
           </div>
 
           {/* Mobile Content */}
-          <div className="md:hidden flex flex-col items-center justify-start flex-1 mt-4">
-            <p className="text-xl font-semibold text-gray-700 mb-2 mt-8">Lead to Loyal Client</p>
+          <div className="md:hidden flex flex-col items-center justify-center flex-1 mt-4">
+            <p className="text-xl font-semibold text-gray-700 mb-2 mt-8">Get 24/7 Smart Website To</p>
             <h1 className="text-5xl font-extrabold text-gray-900 mb-4 leading-tight">
               Automate<br />
               <span className="whitespace-nowrap">Your Business</span><br />
