@@ -11,49 +11,97 @@ const niches = [
   },
   {
     title: "Botox & Skin Care",
-    features: ["Smart Website + Auto Lead Gen", "Smart follow-ups & reminders", "Appointment scheduling", "Before/After Tracking", "Client Loyalty"],
+    features: [
+      "AI-Powered Appointment Booking",
+      "Automated Post-Treatment Follow-ups",
+      "Before/After Photo Management",
+      "Loyalty & Referral Program Automation",
+      "Smart Review Requests"
+    ],
     image: "https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     route: "/services/botox-skin-care"
   },
   {
     title: "Clinics and Dentist",
-    features: ["Smart Website + Auto Lead Gen", "Automated Survey & Feedback", "Google/Yelp Review Requests", "Referrals Tracking", "AI Chatbot"],
+    features: [
+      "Online Patient Registration",
+      "Automated Appointment Reminders",
+      "Treatment Plan Tracking",
+      "Review & Feedback Automation",
+      "Recall & Recare Scheduling"
+    ],
     image: "https://images.unsplash.com/photo-1516321497487-e288fb19713f?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     route: "/services/clinics-dentist"
   },
   {
     title: "Gym & Health Coach",
-    features: ["Smart Website + Auto Lead Gen", "Smart follow-ups & reminders", "Appointment scheduling", "Referral Tracking", "Client Loyalty"],
+    features: [
+      "Membership Management Automation",
+      "Class & Session Scheduling",
+      "Progress Tracking for Clients",
+      "Automated Payment Reminders",
+      "Personalized Fitness Plan Delivery"
+    ],
     image: "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     route: "/services/gym-health-coach"
   },
   {
     title: "Business Consultation",
-    features: ["Smart Website + Auto Lead Gen", "Smart follow-ups & reminders", "Appointment scheduling", "Referral Tracking", "Client Loyalty"],
+    features: [
+      "Lead Qualification Automation",
+      "Smart Meeting Scheduling",
+      "Proposal & Contract Automation",
+      "Client Onboarding Workflows",
+      "Automated Follow-up Sequences"
+    ],
     image: "https://images.unsplash.com/photo-1516321497487-e288fb19713f?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     route: "/services/business-consultation"
   },
   {
     title: "IT & SAAS Services",
-    features: ["Smart Website + Auto Lead Gen", "Smart follow-ups & reminders", "Appointment scheduling", "Referral Tracking", "Client Loyalty"],
+    features: [
+      "Automated Demo Scheduling",
+      "Ticketing & Support Automation",
+      "Client Onboarding Flows",
+      "Usage Analytics & Reporting",
+      "Subscription Renewal Reminders"
+    ],
     image: "https://images.unsplash.com/photo-1556740758-90de374c12ad?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     route: "/services/it-saas"
   },
   {
     title: "Salons and Spa",
-    features: ["Smart Website + Auto Lead Gen", "Smart follow-ups & reminders", "Appointment scheduling", "Referral Tracking", "Client Loyalty"],
+    features: [
+      "Online Booking & Calendar Sync",
+      "Automated Birthday Offers",
+      "Inventory & Product Tracking",
+      "No-Show Reduction Reminders",
+      "Review & Testimonial Requests"
+    ],
     image: "https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     route: "/services/salons-spa"
   },
   {
     title: "Real Estate Agents",
-    features: ["Smart Website + Auto Lead Gen", "Smart follow-ups & reminders", "Appointment scheduling", "Referral Tracking", "Client Loyalty"],
+    features: [
+      "Automated Lead Capture",
+      "Property Viewing Scheduling",
+      "Follow-up with Prospects",
+      "Document & Contract Automation",
+      "Review & Referral Requests"
+    ],
     image: "https://images.unsplash.com/photo-1560518883-ce09059eeffa?q=80&w=1973&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     route: "/services/real-estate-agents"
   },
   {
     title: "Therapists and Counselors",
-    features: ["Smart Website + Auto Lead Gen", "Smart follow-ups & reminders", "Appointment scheduling", "Referral Tracking", "Client Loyalty"],
+    features: [
+      "Secure Online Intake Forms",
+      "Session Reminders & Follow-ups",
+      "Progress Notes Automation",
+      "Resource & Homework Delivery",
+      "Feedback & Testimonial Collection"
+    ],
     image: "https://images.unsplash.com/photo-1544006659-f0b21884ce1d?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     route: "/services/therapists-counselors"
   }
