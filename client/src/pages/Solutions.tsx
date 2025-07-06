@@ -102,9 +102,6 @@ const Solutions = () => {
               Discover our comprehensive suite of AI-powered tools designed to streamline your operations, 
               enhance client relationships, and drive growth.
             </p>
-            <Button size="lg" className="text-lg px-8 py-6 bg-gradient-to-r from-purple-600 to-fuchsia-600 hover:from-purple-700 hover:to-fuchsia-700">
-              Start Your Journey
-            </Button>
           </div>
         </div>
 

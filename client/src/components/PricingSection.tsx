@@ -92,15 +92,6 @@ const PricingSection = () => {
                   ))}
                 </div>
               </div>
-              <Button
-                className={`w-full py-3 rounded-xl font-medium transition-all ${
-                  plan.highlighted
-                    ? 'bg-white text-purple-600 hover:bg-gray-100'
-                    : 'bg-gradient-to-r from-purple-600 to-blue-600 text-white hover:from-purple-700 hover:to-blue-700'
-                } md:my-6`}
-              >
-                Choose Plan
-              </Button>
             </div>
           ))}
         </div>

@@ -94,7 +94,7 @@ const ComparisonSection = () => {
   };
 
   return (
-    <section className="py-12">
+    <section className="py-12 mt-16">
       <div className="container mx-auto max-w-7xl px-4">
         <div className="text-center mb-8 max-w-4xl mx-auto">
           <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-3">

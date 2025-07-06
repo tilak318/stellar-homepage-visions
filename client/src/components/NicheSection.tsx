@@ -137,7 +137,7 @@ const NicheSection = ({ hideTitle = false }) => {
   };
 
   return (
-    <section className="py-0 -mt-5">
+    <section className="py-0 -mt-5 mt-14">
       <div className="container mx-auto px-6 max-w-screen-xl">
         {!hideTitle && (
           <div className="text-center mb-16 md:mb-10 xl:mb-12">
