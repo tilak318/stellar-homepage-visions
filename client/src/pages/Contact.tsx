@@ -440,7 +440,7 @@ const Contact = () => {
               <div className="flex flex-col items-center">
                 <MapPin className="w-10 h-10 text-purple-500 mb-2" />
                 <h2 className="text-xl font-bold text-gray-900 mb-1">Address</h2>
-                <p className="text-gray-700 text-center">317, Shivalik, Dabholi<br/> Surat, Gujarat 395004</p>
+                <p className="text-gray-700 text-center">315, Shivalik, Dabholi<br/> Surat, Gujarat 395004</p>
               </div>
             </div>
           </div>

@@ -7,55 +7,55 @@ const niches = [
     title: "Insurance",
     features: ["Smart Lead Generation", "Policy Management", "Renewal Reminders", "Client Portal", "Commission Tracking"],
     image: "https://images.unsplash.com/photo-1450101499163-c8848c66ca85?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-    route: "/insurance"
+    route: "/services/insurance"
   },
   {
     title: "Botox & Skin Care",
     features: ["Smart Website + Auto Lead Gen", "Smart follow-ups & reminders", "Appointment scheduling", "Before/After Tracking", "Client Loyalty"],
     image: "https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-    route: "/botox-skin-care"
+    route: "/services/botox-skin-care"
   },
   {
     title: "Clinics and Dentist",
     features: ["Smart Website + Auto Lead Gen", "Automated Survey & Feedback", "Google/Yelp Review Requests", "Referrals Tracking", "AI Chatbot"],
     image: "https://images.unsplash.com/photo-1516321497487-e288fb19713f?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-    route: "/clinics-dentist"
+    route: "/services/clinics-dentist"
   },
   {
     title: "Gym & Health Coach",
     features: ["Smart Website + Auto Lead Gen", "Smart follow-ups & reminders", "Appointment scheduling", "Referral Tracking", "Client Loyalty"],
     image: "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-    route: "/gym-health-coach"
+    route: "/services/gym-health-coach"
   },
   {
     title: "Business Consultation",
     features: ["Smart Website + Auto Lead Gen", "Smart follow-ups & reminders", "Appointment scheduling", "Referral Tracking", "Client Loyalty"],
     image: "https://images.unsplash.com/photo-1516321497487-e288fb19713f?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-    route: "/business-consultation"
+    route: "/services/business-consultation"
   },
   {
     title: "IT & SAAS Services",
     features: ["Smart Website + Auto Lead Gen", "Smart follow-ups & reminders", "Appointment scheduling", "Referral Tracking", "Client Loyalty"],
     image: "https://images.unsplash.com/photo-1556740758-90de374c12ad?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-    route: "/it-saas"
+    route: "/services/it-saas"
   },
   {
     title: "Salons and Spa",
     features: ["Smart Website + Auto Lead Gen", "Smart follow-ups & reminders", "Appointment scheduling", "Referral Tracking", "Client Loyalty"],
     image: "https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-    route: "/salons-spa"
+    route: "/services/salons-spa"
   },
   {
     title: "Real Estate Agents",
     features: ["Smart Website + Auto Lead Gen", "Smart follow-ups & reminders", "Appointment scheduling", "Referral Tracking", "Client Loyalty"],
     image: "https://images.unsplash.com/photo-1560518883-ce09059eeffa?q=80&w=1973&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-    route: "/real-estate-agents"
+    route: "/services/real-estate-agents"
   },
   {
     title: "Therapists and Counselors",
     features: ["Smart Website + Auto Lead Gen", "Smart follow-ups & reminders", "Appointment scheduling", "Referral Tracking", "Client Loyalty"],
     image: "https://images.unsplash.com/photo-1544006659-f0b21884ce1d?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-    route: "/therapists-counselors"
+    route: "/services/therapists-counselors"
   }
 ];
 
@@ -103,14 +103,14 @@ const NicheSection = () => {
           {niches.map((niche, index) => (
             <div
               key={index}
-              className={"bg-[#f6f3ff] border-2 border-[#b9a6f6] rounded-2xl p-6 md:p-4 shadow-lg hover:shadow-xl transition-all duration-300 md:static sticky top-24 mx-auto lg:max-w-xs xl:max-w-sm w-full"}
+              className={"bg-[#f6f3ff] border-2 border-[#b9a6f6] rounded-2xl p-6 md:p-4 shadow-lg hover:shadow-xl hover:bg-gradient-to-br hover:from-purple-500 hover:to-fuchsia-600 hover:border-purple-400 transition-all duration-300 md:static sticky top-24 mx-auto lg:max-w-xs xl:max-w-sm w-full group"}
             >
-              <h3 className="text-xl md:text-lg font-bold text-gray-900 mb-4 md:mb-2 text-center">{niche.title}</h3>
+              <h3 className="text-xl md:text-lg font-bold text-gray-900 group-hover:text-white mb-4 md:mb-2 text-center transition-colors duration-300">{niche.title}</h3>
               <div className="space-y-3 md:space-y-2 mb-6 md:mb-3">
                 {niche.features.map((feature, i) => (
                   <div key={i} className="flex items-center space-x-2 md:space-x-3 xl:space-x-4">
-                    <Check className="w-4 h-4 md:w-5 md:h-5 xl:w-6 xl:h-6 text-purple-500" />
-                    <span className="text-gray-700 text-xs md:text-sm xl:text-base">{feature}</span>
+                    <Check className="w-4 h-4 md:w-5 md:h-5 xl:w-6 xl:h-6 text-purple-500 group-hover:text-white transition-colors duration-300" />
+                    <span className="text-gray-700 group-hover:text-white text-xs md:text-sm xl:text-base transition-colors duration-300">{feature}</span>
                   </div>
                 ))}
               </div>
