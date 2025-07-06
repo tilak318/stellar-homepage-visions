@@ -40,7 +40,7 @@ const ComparisonSection = () => {
       agencies: { status: "manual", text: "Handled manually by staff or agency" }
     },
     {
-      name: "Request for Customisation ?",
+      name: "Request for Customisation ",
       ourPlatform: { status: "included", text: "Flexible and customizable" },
       competitors: { status: "limited", text: "Mostly fixed features, low flexibility" },
       agencies: { status: "included", text: "Fully customizable, but higher cost" }
@@ -69,7 +69,7 @@ const ComparisonSection = () => {
       case "expensive":
         return (
           <span className="inline-flex items-center justify-center w-7 h-7 rounded-lg bg-red-500 bg-opacity-70">
-            <X className="w-4 h-4 text-white" />
+            <X className="w-3 h-3 md:w-4 md:h-4 text-white" />
           </span>
         );
       default:
@@ -111,8 +111,10 @@ const ComparisonSection = () => {
               <thead>
                 <tr className="bg-gradient-to-r from-purple-600 to-fuchsia-600">
                   <th className="text-center p-2 sm:p-3 md:p-4 font-semibold text-white text-xs sm:text-base md:text-lg md:min-w-[220px] md:whitespace-nowrap">Features</th>
-                  <th className="text-center align-middle p-2 sm:p-3 md:p-4 font-semibold bg-gradient-to-r from-purple-600 to-fuchsia-600 text-white border-l-2 border-r-2 border-t-2 border-[#8b5cf6] text-xs sm:text-base md:text-lg relative w-20 md:w-auto">
-                    <span className="md:hidden">Us</span>
+                  <th className="text-center align-middle p-2 sm:p-3 md:p-4 font-semibold bg-gradient-to-r from-purple-600 to-fuchsia-600 text-white border-l-2 border-r-2 border-t-2 border-[#8b5cf6] text-xs sm:text-base md:text-lg relative w-[30%]" style={{width: '30%'}}>
+                    <span className="md:hidden flex items-center justify-center h-full w-full">
+                      <img src={tlogo} alt="TRYZENIQ Logo" className="h-8 max-h-8 w-auto object-contain mb-1 mx-auto" />
+                    </span>
                     <span className="hidden md:flex items-center justify-center h-full w-full">
                       <img src={tlogo} alt="TRYZENIQ Logo" className="h-12 max-h-12 w-auto object-contain mb-1 mx-auto" />
                     </span>
@@ -133,7 +135,7 @@ const ComparisonSection = () => {
                 {features.map((feature, index) => (
                   <tr key={index} className="bg-transparent">
                     <td className="p-4 font-medium text-gray-900 text-base md:whitespace-nowrap text-center">{feature.name}</td>
-                    <td className={`p-4 text-center bg-[#ede4ff] border-l-2 border-r-2 border-[#8b5cf6]${index === features.length - 1 ? ' border-b-2' : ''}`}>
+                    <td className={`p-4 text-center bg-[#ede4ff] border-l-2 border-r-2 border-[#8b5cf6]${index === features.length - 1 ? ' border-b-2' : ''} w-[30%]`} style={{width: '30%'}}>
                       <div className="flex items-center justify-center mb-2">
                         {getStatusIcon(feature.ourPlatform.status)}
                       </div>
