@@ -103,14 +103,14 @@ const NicheSection = () => {
           {niches.map((niche, index) => (
             <div
               key={index}
-              className={"bg-[#f6f3ff] border-2 border-[#b9a6f6] rounded-2xl p-6 md:p-4 shadow-lg hover:shadow-xl hover:bg-gradient-to-br hover:from-purple-500 hover:to-fuchsia-600 hover:border-purple-400 transition-all duration-300 md:static sticky top-24 mx-auto lg:max-w-xs xl:max-w-sm w-full group"}
+              className={"bg-[#f6f3ff] border-2 border-[#b9a6f6] rounded-2xl p-6 md:p-4 shadow-lg hover:shadow-xl hover:bg-purple-200 hover:border-purple-400 transition-all duration-300 ease-in-out md:static sticky top-24 mx-auto lg:max-w-xs xl:max-w-sm w-full group"}
             >
-              <h3 className="text-xl md:text-lg font-bold text-gray-900 group-hover:text-white mb-4 md:mb-2 text-center transition-colors duration-300">{niche.title}</h3>
+              <h3 className="text-xl md:text-lg font-bold text-gray-900 group-hover:text-purple-800 mb-4 md:mb-2 text-center transition-all duration-300 ease-in-out">{niche.title}</h3>
               <div className="space-y-3 md:space-y-2 mb-6 md:mb-3">
                 {niche.features.map((feature, i) => (
                   <div key={i} className="flex items-center space-x-2 md:space-x-3 xl:space-x-4">
-                    <Check className="w-4 h-4 md:w-5 md:h-5 xl:w-6 xl:h-6 text-purple-500 group-hover:text-white transition-colors duration-300" />
-                    <span className="text-gray-700 group-hover:text-white text-xs md:text-sm xl:text-base transition-colors duration-300">{feature}</span>
+                    <Check className="w-4 h-4 md:w-5 md:h-5 xl:w-6 xl:h-6 text-purple-500 group-hover:text-purple-700 transition-all duration-300 ease-in-out" />
+                    <span className="text-gray-700 group-hover:text-gray-800 text-xs md:text-sm xl:text-base transition-all duration-300 ease-in-out">{feature}</span>
                   </div>
                 ))}
               </div>
