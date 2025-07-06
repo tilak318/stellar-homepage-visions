@@ -1,4 +1,5 @@
 import { Check, X } from 'lucide-react';
+import tlogo from "../../public/tlogo.png";
 
 const ComparisonSection = () => {
   const features = [
@@ -110,9 +111,11 @@ const ComparisonSection = () => {
               <thead>
                 <tr className="bg-gradient-to-r from-purple-600 to-fuchsia-600">
                   <th className="text-center p-2 sm:p-3 md:p-4 font-semibold text-white text-xs sm:text-base md:text-lg md:min-w-[220px] md:whitespace-nowrap">Features</th>
-                  <th className="text-center p-2 sm:p-3 md:p-4 font-semibold bg-gradient-to-r from-purple-600 to-fuchsia-600 text-white border-l-2 border-r-2 border-t-2 border-[#8b5cf6] text-xs sm:text-base md:text-lg relative w-20 md:w-auto">
+                  <th className="text-center align-middle p-2 sm:p-3 md:p-4 font-semibold bg-gradient-to-r from-purple-600 to-fuchsia-600 text-white border-l-2 border-r-2 border-t-2 border-[#8b5cf6] text-xs sm:text-base md:text-lg relative w-20 md:w-auto">
                     <span className="md:hidden">Us</span>
-                    <span className="hidden md:inline">TRYZENIQ</span>
+                    <span className="hidden md:flex items-center justify-center h-full w-full">
+                      <img src={tlogo} alt="TRYZENIQ Logo" className="h-12 max-h-12 w-auto object-contain mb-1 mx-auto" />
+                    </span>
                   </th>
                   <th className="text-center p-2 sm:p-3 md:p-4 font-semibold text-white text-[10px] sm:text-base md:text-lg w-20 md:w-auto">
                     <span className="md:hidden">Zapier, Apollo</span>
