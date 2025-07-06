@@ -8,28 +8,23 @@ const DashboardSection = () => {
   const dashboards = [
     {
       title: "Botox & Skin Care",
-      image: "https://plus.unsplash.com/premium_photo-1680371834671-26c3d8f0e0d8?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8bWFjJTIwc29mdHdhcmUlMjBkYXNoYm9hcmR8ZW58MHx8MHx8fDA%3D",
-      features: ["Smart Website + Auto Lead Gen", "Smart follow-ups & reminders", "Appointment scheduling", "Before/After Tracking", "Client Loyalty"]
+      image: "https://plus.unsplash.com/premium_photo-1680371834671-26c3d8f0e0d8?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8bWFjJTIwc29mdHdhcmUlMjBkYXNoYm9hcmR8ZW58MHx8MHx8fDA%3D"
     },
     {
       title: "Clinics and Detist",
-      image: "https://images.unsplash.com/photo-1691480195680-144318cfa695?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTN8fG1hYyUyMHNvZnR3YXJlJTIwZGFzaGJvYXJkfGVufDB8fDB8fHww",
-      features: ["Smart Website + Auto Lead Gen", "Automated Survey & Feedback", "Google/Yelp Review requests", "Referrals Tracking", "AI Chatbot"]
+      image: "https://images.unsplash.com/photo-1691480195680-144318cfa695?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTN8fG1hYyUyMHNvZnR3YXJlJTIwZGFzaGJvYXJkfGVufDB8fDB8fHww"
     },
     {
       title: "Gym & Health Coach",
-      image: "https://images.unsplash.com/photo-1634544333207-7c5e5fc748d9?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTh8fG1hYyUyMHNvZnR3YXJlJTIwZGFzaGJvYXJkfGVufDB8fDB8fHww",
-      features: ["Smart Website + Auto Lead Gen", "Smart follow-ups & reminders", "Appointment scheduling", "Referral Tracking", "Client Loyalty"]
+      image: "https://images.unsplash.com/photo-1634544333207-7c5e5fc748d9?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTh8fG1hYyUyMHNvZnR3YXJlJTIwZGFzaGJvYXJkfGVufDB8fDB8fHww"
     },
     {
       title: "Business Consultation",
-      image: "https://images.unsplash.com/photo-1677022725616-91e41d36db21?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjB8fG1hYyUyMHNvZnR3YXJlJTIwZGFzaGJvYXJkfGVufDB8fDB8fHww",
-      features: ["Smart Website + Auto Lead Gen", "Smart follow-ups & reminders", "Appointment scheduling", "Referral Tracking", "Client Loyalty"]
+      image: "https://images.unsplash.com/photo-1677022725616-91e41d36db21?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjB8fG1hYyUyMHNvZnR3YXJlJTIwZGFzaGJvYXJkfGVufDB8fDB8fHww"
     },
     {
       title: "IT & SAAS Services",
-      image: "https://plus.unsplash.com/premium_photo-1685086785230-2233cf5d8f28?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTl8fG1hYyUyMHNvZnR3YXJlJTIwZGFzaGJvYXJkfGVufDB8fDB8fHww",
-      features: ["Smart Website + Auto Lead Gen", "Smart follow-ups & reminders", "Appointment scheduling", "Referral Tracking", "Client Loyalty"]
+      image: "https://plus.unsplash.com/premium_photo-1685086785230-2233cf5d8f28?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTl8fG1hYyUyMHNvZnR3YXJlJTIwZGFzaGJvYXJkfGVufDB8fDB8fHww"
     }
   ];
 
@@ -98,18 +93,6 @@ const DashboardSection = () => {
                     <h3 className="text-2xl sm:text-3xl font-bold text-gray-900">
                       {dashboards[currentDashboard].title}
                     </h3>
-                    <div className="space-y-2 sm:space-y-3">
-                      {dashboards[currentDashboard].features.map((feature, index) => (
-                        <div key={index} className="flex items-center space-x-2 sm:space-x-3">
-                          <div className="w-4 h-4 sm:w-5 sm:h-5 bg-fuchsia-500 rounded-full flex items-center justify-center">
-                            <svg className="w-2.5 h-2.5 sm:w-3 sm:h-3 text-white" fill="currentColor" viewBox="0 0 20 20">
-                              <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
-                            </svg>
-                          </div>
-                          <span className="text-gray-700 font-medium text-xs sm:text-base">{feature}</span>
-                        </div>
-                      ))}
-                    </div>
                     <Button className="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 sm:px-6 sm:py-3 rounded-xl text-sm sm:text-base w-full sm:w-auto">
                       View Demo
                     </Button>

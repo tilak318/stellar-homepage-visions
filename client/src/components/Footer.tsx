@@ -9,11 +9,10 @@ const Footer = () => {
           {/* Company Info */}
           <div className="flex flex-col items-start mb-4 pl-[22px]">
             <div className="flex items-center h-16" style={{minHeight: '4rem'}}>
-              <span className="mr-[1px] font-sans font-bold text-3xl tracking-wide text-white">tryzen</span>
               <img 
-                src="/logolight.svg" 
+                src="/logol.svg" 
                 alt="TryzenIQ Logo" 
-                className="h-12 w-auto -my-1" 
+                className="h-32 w-auto -my-1" 
               />
             </div>
             <p className="text-gray-300 mb-6 text-base leading-relaxed max-w-md mx-auto lg:mx-0">
