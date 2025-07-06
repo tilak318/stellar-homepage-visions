@@ -26,14 +26,11 @@ const Services = () => {
             <p className="text-xl text-gray-600 mb-8">
               Where We Help To Automate This Business - Comprehensive automation solutions for various industries and niches.
             </p>
-            <Button size="lg" className="text-lg px-8 py-6">
-              Explore Our Services
-            </Button>
           </div>
         </div>
 
         {/* Services Section using NicheSection component */}
-        <NicheSection />
+        <NicheSection hideTitle={true} />
 
         {/* CTA Section */}
         <div className="container mx-auto max-w-7xl px-6 mt-20">

@@ -129,7 +129,7 @@ const randomColors = [
   'bg-blue-100',
 ];
 
-const NicheSection = () => {
+const NicheSection = ({ hideTitle = false }) => {
   const navigate = useNavigate();
 
   const handleNicheClick = (route: string) => {
@@ -137,16 +137,18 @@ const NicheSection = () => {
   };
 
   return (
-    <section className="py-20">
+    <section className="py-0 -mt-5">
       <div className="container mx-auto px-6 max-w-screen-xl">
-        <div className="text-center mb-16 md:mb-10 xl:mb-12">
-          <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
-            All In <span className="text-purple-600">One Platform</span>
-          </h2>
-          <p className="text-xl text-gray-600">
-            Where We Help To Automate This Business
-          </p>
-        </div>
+        {!hideTitle && (
+          <div className="text-center mb-16 md:mb-10 xl:mb-12">
+            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
+              All In <span className="text-purple-600">One Platform</span>
+            </h2>
+            <p className="text-xl text-gray-600">
+              Where We Help To Automate This Business
+            </p>
+          </div>
+        )}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6 lg:gap-8 justify-center">
           {niches.map((niche, index) => (
             <div

@@ -36,7 +36,7 @@ const Footer = () => {
           </div>
 
           {/* Contact Info */}
-          <div className="text-left flex flex-col justify-start">
+          <div className="text-left flex flex-col justify-start lg:mt-12">
             <h3 className="text-lg font-semibold mb-4">Contact Us</h3>
             <div className="space-y-3 max-w-sm">
               <a href="mailto:tryzeniq@gmail.com" target="_blank" rel="noopener noreferrer" className="flex items-center space-x-3 group justify-start">
@@ -49,7 +49,7 @@ const Footer = () => {
               </a>
               <div className="flex items-start space-x-3 justify-start">
                 <MapPin className="w-5 h-5 text-purple-400 mt-0.5 flex-shrink-0" />
-                <span className="text-gray-300 text-base">317, Shivalik, Dabholi, Surat, Gujarat 395004</span>
+                <span className="text-gray-300 text-base">315, Shivalik, Dabholi, Surat, Gujarat 395004</span>
               </div>
             </div>
           </div>
