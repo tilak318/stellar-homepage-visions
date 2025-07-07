@@ -160,7 +160,7 @@ const NicheSection = ({ hideTitle = false }) => {
           {niches.map((niche, index) => (
             <div
               key={index}
-              className={"relative bg-[#f6f3ff] border-2 border-[#b9a6f6] rounded-2xl shadow-lg hover:shadow-xl hover:bg-purple-200 hover:border-purple-400 transition-all duration-300 ease-in-out md:static sticky top-24 mx-auto lg:max-w-xs xl:max-w-sm w-full group overflow-hidden min-h-[380px] flex flex-col"}
+              className={"relative bg-gradient-to-br from-[#f6f3ff] to-[#e9d8fd] border-2 border-[#b9a6f6] rounded-2xl shadow-lg hover:shadow-xl hover:bg-purple-200 hover:border-purple-400 transition-all duration-300 ease-in-out md:static sticky top-24 mx-auto lg:max-w-xs xl:max-w-sm w-full group overflow-hidden min-h-[380px] flex flex-col"}
             >
               <div className="relative flex-1 flex flex-col justify-between h-full p-6 md:p-4">
                 {/* Absolutely positioned image at bottom right, merged with card */}
@@ -171,7 +171,7 @@ const NicheSection = ({ hideTitle = false }) => {
                   style={{opacity: 0.85}}
                 />
                 <div className="relative z-10">
-                  <h3 className="text-xl md:text-lg font-bold text-gray-900 group-hover:text-purple-800 mb-4 md:mb-2 text-center transition-all duration-300 ease-in-out drop-shadow-[0_1px_2px_rgba(255,255,255,0.7)]">{niche.title}</h3>
+                  <h3 className="text-xl md:text-lg font-bold text-gray-900 group-hover:text-purple-800 mb-4 md:mb-2 text-left transition-all duration-300 ease-in-out drop-shadow-[0_1px_2px_rgba(255,255,255,0.7)]">{niche.title}</h3>
                   <div className="space-y-3 md:space-y-2 mb-6 md:mb-3">
                     {niche.features.map((feature, i) => (
                       <div key={i} className="flex items-center space-x-2 md:space-x-3 xl:space-x-4">
