@@ -6,55 +6,57 @@ const niches = [
   {
     title: "Insurance",
     features: ["Smart Lead Generation", "Policy Management", "Renewal Reminders", "Client Portal", "Commission Tracking"],
-    image: "https://images.unsplash.com/photo-1450101499163-c8848c66ca85?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    image: "/image/insurance.png",
     route: "/services/insurance"
   },
   {
     title: "Botox & Skin Care",
     features: [
       "AI-Powered Appointment Booking",
+      "Loyalty & Referral Program Automation",
       "Automated Post-Treatment Follow-ups",
       "Before/After Photo Management",
-      "Loyalty & Referral Program Automation",
       "Smart Review Requests"
     ],
-    image: "https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    image: "/image/any.png",
     route: "/services/botox-skin-care"
   },
   {
     title: "Clinics and Dentist",
     features: [
       "Online Patient Registration",
-      "Automated Appointment Reminders",
-      "Treatment Plan Tracking",
       "Review & Feedback Automation",
-      "Recall & Recare Scheduling"
+      "Automated Appointment Reminders",
+       "Recall & Recare Scheduling",
+      "Treatment Plan Tracking"
     ],
-    image: "https://images.unsplash.com/photo-1516321497487-e288fb19713f?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    image: "/image/clinic.png",
     route: "/services/clinics-dentist"
   },
   {
     title: "Gym & Health Coach",
     features: [
       "Membership Management Automation",
+      "Personalized Fitness Plan Delivery",
+       "Automated Payment Reminders",
       "Class & Session Scheduling",
-      "Progress Tracking for Clients",
-      "Automated Payment Reminders",
-      "Personalized Fitness Plan Delivery"
+      "Progress Tracking for Clients"
+     
+      
     ],
-    image: "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    image: "/image/gym.png",
     route: "/services/gym-health-coach"
   },
   {
     title: "Business Consultation",
     features: [
       "Lead Qualification Automation",
-      "Smart Meeting Scheduling",
       "Proposal & Contract Automation",
-      "Client Onboarding Workflows",
-      "Automated Follow-up Sequences"
+       "Automated Follow-up Sequences",
+       "Client Onboarding Workflows",
+      "Smart Meeting Scheduling"
     ],
-    image: "https://images.unsplash.com/photo-1516321497487-e288fb19713f?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    image: "/image/business.png",
     route: "/services/business-consultation"
   },
   {
@@ -62,23 +64,26 @@ const niches = [
     features: [
       "Automated Demo Scheduling",
       "Ticketing & Support Automation",
-      "Client Onboarding Flows",
-      "Usage Analytics & Reporting",
-      "Subscription Renewal Reminders"
+       "Subscription Renewal Reminders",
+         "Usage Analytics & Reporting",
+      "Client Onboarding Flows"
+    
+     
     ],
-    image: "https://images.unsplash.com/photo-1556740758-90de374c12ad?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    image: "/image/it.png",
     route: "/services/it-saas"
   },
   {
     title: "Salons and Spa",
     features: [
       "Online Booking & Calendar Sync",
-      "Automated Birthday Offers",
+      
       "Inventory & Product Tracking",
       "No-Show Reduction Reminders",
-      "Review & Testimonial Requests"
+      "Review & Testimonial Requests",
+      "Automated Birthday Offers"
     ],
-    image: "https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    image: "/image/saloon.png",
     route: "/services/salons-spa"
   },
   {
@@ -86,11 +91,12 @@ const niches = [
     features: [
       "Automated Lead Capture",
       "Property Viewing Scheduling",
-      "Follow-up with Prospects",
       "Document & Contract Automation",
+      "Follow-up with Prospects",
+     
       "Review & Referral Requests"
     ],
-    image: "https://images.unsplash.com/photo-1560518883-ce09059eeffa?q=80&w=1973&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    image: "/image/roof.png",
     route: "/services/real-estate-agents"
   },
   {
@@ -98,11 +104,12 @@ const niches = [
     features: [
       "Secure Online Intake Forms",
       "Session Reminders & Follow-ups",
-      "Progress Notes Automation",
+      "Feedback & Testimonial Collection",
       "Resource & Homework Delivery",
-      "Feedback & Testimonial Collection"
+      
+      "Progress Notes Automation"
     ],
-    image: "https://images.unsplash.com/photo-1544006659-f0b21884ce1d?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    image: "/image/cleaning.png",
     route: "/services/therapists-counselors"
   }
 ];
@@ -153,26 +160,34 @@ const NicheSection = ({ hideTitle = false }) => {
           {niches.map((niche, index) => (
             <div
               key={index}
-              className={"bg-[#f6f3ff] border-2 border-[#b9a6f6] rounded-2xl p-6 md:p-4 shadow-lg hover:shadow-xl hover:bg-purple-200 hover:border-purple-400 transition-all duration-300 ease-in-out md:static sticky top-24 mx-auto lg:max-w-xs xl:max-w-sm w-full group"}
+              className={"relative bg-[#f6f3ff] border-2 border-[#b9a6f6] rounded-2xl shadow-lg hover:shadow-xl hover:bg-purple-200 hover:border-purple-400 transition-all duration-300 ease-in-out md:static sticky top-24 mx-auto lg:max-w-xs xl:max-w-sm w-full group overflow-hidden min-h-[380px] flex flex-col"}
             >
-              <h3 className="text-xl md:text-lg font-bold text-gray-900 group-hover:text-purple-800 mb-4 md:mb-2 text-center transition-all duration-300 ease-in-out">{niche.title}</h3>
-              <div className="space-y-3 md:space-y-2 mb-6 md:mb-3">
-                {niche.features.map((feature, i) => (
-                  <div key={i} className="flex items-center space-x-2 md:space-x-3 xl:space-x-4">
-                    <Check className="w-4 h-4 md:w-5 md:h-5 xl:w-6 xl:h-6 text-purple-500 group-hover:text-purple-700 transition-all duration-300 ease-in-out" />
-                    <span className="text-gray-700 group-hover:text-gray-800 text-xs md:text-sm xl:text-base transition-all duration-300 ease-in-out">{feature}</span>
+              <div className="relative flex-1 flex flex-col justify-between h-full p-6 md:p-4">
+                {/* Absolutely positioned image at bottom right, merged with card */}
+                <img 
+                  src={niche.image} 
+                  alt={niche.title} 
+                  className="absolute right-0 bottom-4 w-32 h-32 md:w-40 md:h-40 lg:w-48 lg:h-48 object-contain z-0 pointer-events-none select-none"
+                  style={{opacity: 0.85}}
+                />
+                <div className="relative z-10">
+                  <h3 className="text-xl md:text-lg font-bold text-gray-900 group-hover:text-purple-800 mb-4 md:mb-2 text-center transition-all duration-300 ease-in-out drop-shadow-[0_1px_2px_rgba(255,255,255,0.7)]">{niche.title}</h3>
+                  <div className="space-y-3 md:space-y-2 mb-6 md:mb-3">
+                    {niche.features.map((feature, i) => (
+                      <div key={i} className="flex items-center space-x-2 md:space-x-3 xl:space-x-4">
+                        <Check className="w-4 h-4 md:w-5 md:h-5 xl:w-6 xl:h-6 text-purple-500 group-hover:text-purple-700 transition-all duration-300 ease-in-out" />
+                        <span className="text-gray-700 group-hover:text-gray-800 text-xs md:text-sm xl:text-base transition-all duration-300 ease-in-out drop-shadow-[0_1px_2px_rgba(255,255,255,0.7)]">{feature}</span>
+                      </div>
+                    ))}
                   </div>
-                ))}
+                  <Button 
+                    onClick={() => handleNicheClick(niche.route)}
+                    className="bg-gradient-to-r from-purple-600 to-fuchsia-600 hover:from-purple-700 hover:to-fuchsia-700 text-white mt-2 px-4 text-sm ml-0 flex items-center"
+                  >
+                    Learn More <ArrowRight className="w-4 h-4 ml-2 inline-block align-middle" />
+                  </Button>
+                </div>
               </div>
-              <div className="h-40 md:h-28 bg-gray-200 rounded-lg mb-4">
-                <img src={niche.image} alt={niche.title} className="w-full h-full object-cover rounded-lg" />
-              </div>
-              <Button 
-                onClick={() => handleNicheClick(niche.route)}
-                className="w-full bg-gradient-to-r from-purple-600 to-fuchsia-600 hover:from-purple-700 hover:to-fuchsia-700 text-white"
-              >
-                Learn More <ArrowRight className="w-4 h-4 ml-2" />
-              </Button>
             </div>
           ))}
         </div>
