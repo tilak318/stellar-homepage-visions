@@ -160,7 +160,7 @@ const NicheSection = ({ hideTitle = false }) => {
           {niches.map((niche, index) => (
             <div
               key={index}
-              className={"relative bg-gradient-to-br from-[#f6f3ff] to-[#e9d8fd] border-2 border-[#b9a6f6] rounded-2xl shadow-lg hover:shadow-xl hover:bg-purple-200 hover:border-purple-400 transition-all duration-300 ease-in-out md:static sticky top-24 mx-auto lg:max-w-xs xl:max-w-sm w-full group overflow-hidden min-h-[380px] flex flex-col"}
+              className={"relative bg-gradient-to-br from-[#f6f3ff] to-[#e9d8fd] hover:from-purple-100 hover:to-purple-200 border-2 border-purple-400 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-700 ease-in-out md:static sticky top-24 mx-auto lg:max-w-xs xl:max-w-sm w-full group overflow-hidden min-h-[380px] flex flex-col"}
             >
               <div className="relative flex-1 flex flex-col justify-between h-full p-6 md:p-4">
                 {/* Absolutely positioned image at bottom right, merged with card */}
@@ -182,7 +182,7 @@ const NicheSection = ({ hideTitle = false }) => {
                   </div>
                   <Button 
                     onClick={() => handleNicheClick(niche.route)}
-                    className="bg-gradient-to-r from-purple-600 to-fuchsia-600 hover:from-purple-700 hover:to-fuchsia-700 text-white mt-2 px-4 text-sm ml-0 flex items-center"
+                    className="bg-gradient-to-r from-purple-500 to-pink-400 hover:shadow-lg text-white font-bold py-2 px-4 rounded-lg mt-2 flex items-center text-sm"
                   >
                     Learn More <ArrowRight className="w-4 h-4 ml-2 inline-block align-middle" />
                   </Button>
