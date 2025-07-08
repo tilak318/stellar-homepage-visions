@@ -160,7 +160,7 @@ const NicheSection = ({ hideTitle = false }) => {
           {niches.map((niche, index) => (
             <div
               key={index}
-              className={"relative bg-gradient-to-br from-[#f6f3ff] to-[#e9d8fd] hover:from-purple-200 hover:to-purple-300 border-2 border-purple-400 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-700 ease-in-out md:static sticky top-24 mx-auto lg:max-w-xs xl:max-w-sm w-full group overflow-hidden min-h-[380px] flex flex-col"}
+              className={"relative bg-gradient-to-br from-[#f6f3ff] to-[#e9d8fd] hover:from-purple-200 hover:to-purple-300 border-2 border-purple-400 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 ease-in-out md:static sticky top-24 mx-auto lg:max-w-xs xl:max-w-sm w-full group overflow-hidden min-h-[380px] flex flex-col"}
             >
               <div className="relative flex-1 flex flex-col justify-between h-full p-6 md:p-4">
                 {/* Absolutely positioned image at bottom right, merged with card */}
