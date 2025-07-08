@@ -147,7 +147,7 @@ const NicheSection = ({ hideTitle = false }) => {
 
   // Banner image mapping for each card by title
   const bannerMap = {
-    'Insurance': '/banner/1.png',
+    'Insurance & Financial Services': '/banner/1.png',
     'Botox & Skin Care': '/banner/1.png',
     'Clinics and Dentist': '/banner/1.png',
     'Gym & Health Coach': '/banner/1.png',
