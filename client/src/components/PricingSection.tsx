@@ -1,7 +1,33 @@
 import { Check } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import { useState } from 'react';
 
 const PricingSection = () => {
+  const [hoveredCard, setHoveredCard] = useState<number | null>(null);
+  const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
+
+  const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>, index: number) => {
+    const rect = e.currentTarget.getBoundingClientRect();
+    const x = e.clientX - rect.left;
+    const y = e.clientY - rect.top;
+    
+    // Calculate center of the card
+    const centerX = rect.width / 2;
+    const centerY = rect.height / 2;
+    
+    // Calculate distance from center (normalized to -1 to 1)
+    const normalizedX = (x - centerX) / centerX;
+    const normalizedY = (y - centerY) / centerY;
+    
+    setMousePosition({ x: normalizedX, y: normalizedY });
+    setHoveredCard(index);
+  };
+
+  const handleMouseLeave = () => {
+    setHoveredCard(null);
+    setMousePosition({ x: 0, y: 0 });
+  };
+
   const plans = [
     {
       name: "Basic Plan",
@@ -59,9 +85,16 @@ const PricingSection = () => {
               key={index}
               className={`md:static sticky top-24 z-[${10 + index * 10}] mx-auto w-full max-w-[340px] sm:max-w-sm min-h-[420px] md:min-h-[340px] flex flex-col md:justify-center md:h-full md:flex-col md:items-stretch justify-between ${
                 plan.highlighted
-                  ? 'bg-gradient-to-br from-purple-600 to-fuchsia-600 text-white shadow-2xl md:transform md:scale-105'
-                  : 'bg-white shadow-lg hover:shadow-xl hover:-translate-y-2 border border-gray-200 transition-transform duration-300'
-              } rounded-3xl p-8 sm:p-10 md:p-6 transition-all duration-300`}
+                  ? 'bg-gradient-to-br from-purple-600 to-fuchsia-600 text-white shadow-2xl'
+                  : 'bg-white shadow-lg border border-gray-200'
+              } rounded-3xl p-8 sm:p-10 md:p-6 transition-transform duration-300 ease-out`}
+              style={{
+                transform: hoveredCard === index 
+                  ? `perspective(1000px) rotateX(${mousePosition.y * -15}deg) rotateY(${mousePosition.x * 15}deg) scale3d(1.02, 1.02, 1.02) ${plan.highlighted ? 'scale(1.05)' : ''}`
+                  : `perspective(1000px) rotateX(0deg) rotateY(0deg) scale3d(1, 1, 1) ${plan.highlighted ? 'scale(1.05)' : ''}`
+              }}
+              onMouseMove={(e) => handleMouseMove(e, index)}
+              onMouseLeave={handleMouseLeave}
             >
               <div className="flex-1 flex flex-col">
                 <h3 className={`text-xl sm:text-2xl md:text-xl font-bold mb-6 sm:mb-8 md:mb-6 ${plan.highlighted ? 'text-white' : 'text-gray-900'}`}>
