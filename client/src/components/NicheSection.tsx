@@ -201,7 +201,7 @@ const NicheSection = ({ hideTitle = false }) => {
           {niches.map((niche, index) => (
             <div
               key={index}
-              className={"relative bg-gradient-to-br from-[#f6f3ff] to-[#e9d8fd] border-2 border-purple-400 rounded-2xl shadow-lg md:static sticky top-24 mx-auto lg:max-w-xs xl:max-w-sm w-full group overflow-hidden min-h-[380px] flex flex-col transition-transform duration-300 ease-out"}
+              className={"relative bg-gradient-to-br from-[#f6f3ff] to-[#e9d8fd] border-2 border-purple-400 rounded-2xl shadow-lg md:static sticky top-24 mx-auto lg:max-w-xs xl:max-w-sm w-full group min-h-[380px] flex flex-col transition-transform duration-300 ease-out"}
               style={{
                 transform: hoveredCard === index 
                   ? `perspective(1000px) rotateX(${mousePosition.y * -15}deg) rotateY(${mousePosition.x * 15}deg) scale3d(1.02, 1.02, 1.02)`
@@ -210,6 +210,13 @@ const NicheSection = ({ hideTitle = false }) => {
               onMouseMove={(e) => handleMouseMove(e, index)}
               onMouseLeave={handleMouseLeave}
             >
+              {/* Second banner, positioned between the first banner and the person image, not clipped */}
+              <img
+                src="/banner/2.png"
+                alt="Second Banner"
+                className="absolute right-[20px] bottom-4 w-24 md:w-28 lg:w-32 z-10 drop-shadow-xl opacity-95 pointer-events-none"
+                style={{objectFit: 'contain'}}
+              />
               <div className="relative flex-1 flex flex-col justify-between h-full p-6 md:pr-2 md:pb-2 p-2">
                 {/* Absolutely positioned image at bottom right, merged with card */}
                 <div className="absolute right-0 bottom-0 w-44 h-44 md:w-36 md:h-36 lg:w-44 lg:h-44 z-0 pointer-events-none select-none overflow-hidden">
@@ -237,12 +244,14 @@ const NicheSection = ({ hideTitle = false }) => {
                     Learn More <ArrowRight className="w-4 h-4 ml-2 inline-block align-middle" />
                   </Button>
                   {/* Banner image below the button */}
-                  <img
-                    src={bannerMap[niche.title]}
-                    alt={`Banner for ${niche.title}`}
-                    className="w-32 md:w-40 mt-4 self-start rounded-xl object-contain max-h-16 md:max-h-20 lg:max-h-24"
-                    style={{objectFit: 'contain'}}
-                  />
+                  <div className="relative w-fit">
+                    <img
+                      src={bannerMap[niche.title]}
+                      alt={`Banner for ${niche.title}`}
+                      className="w-32 md:w-40 mt-4 self-start rounded-xl object-contain max-h-16 md:max-h-20 lg:max-h-24 relative z-20"
+                      style={{objectFit: 'contain'}}
+                    />
+                  </div>
                 </div>
               </div>
             </div>
