@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import AnimatedGradientBackground from '@/components/AnimatedGradientBackground';
@@ -81,6 +81,30 @@ const solutions = [
 const Solutions = () => {
   const ref = React.useRef(null);
   const inView = useInView(ref, { once: true, amount: 0.3 });
+  const [hoveredCard, setHoveredCard] = useState<number | null>(null);
+  const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
+
+  const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>, index: number) => {
+    const rect = e.currentTarget.getBoundingClientRect();
+    const x = e.clientX - rect.left;
+    const y = e.clientY - rect.top;
+    
+    // Calculate center of the card
+    const centerX = rect.width / 2;
+    const centerY = rect.height / 2;
+    
+    // Calculate distance from center (normalized to -1 to 1)
+    const normalizedX = (x - centerX) / centerX;
+    const normalizedY = (y - centerY) / centerY;
+    
+    setMousePosition({ x: normalizedX, y: normalizedY });
+    setHoveredCard(index);
+  };
+
+  const handleMouseLeave = () => {
+    setHoveredCard(null);
+    setMousePosition({ x: 0, y: 0 });
+  };
 
   return (
     <div className="min-h-screen">
@@ -111,7 +135,14 @@ const Solutions = () => {
             {solutions.map((solution, index) => (
               <div
                 key={index}
-                className={"bg-[#f6f3ff] border-2 border-[#b9a6f6] rounded-2xl p-6 md:p-4 shadow-lg hover:shadow-xl hover:bg-purple-200 hover:border-purple-400 transition-all duration-300 ease-in-out w-full max-w-sm flex flex-col mx-auto group"}
+                className={"bg-gradient-to-br from-[#f6f3ff] to-[#e9d8fd] border-2 border-purple-400 rounded-2xl p-6 md:p-4 shadow-lg w-full max-w-sm flex flex-col mx-auto group transition-transform duration-300 ease-out"}
+                style={{
+                  transform: hoveredCard === index 
+                    ? `perspective(1000px) rotateX(${mousePosition.y * -15}deg) rotateY(${mousePosition.x * 15}deg) scale3d(1.02, 1.02, 1.02)`
+                    : 'perspective(1000px) rotateX(0deg) rotateY(0deg) scale3d(1, 1, 1)'
+                }}
+                onMouseMove={(e) => handleMouseMove(e, index)}
+                onMouseLeave={handleMouseLeave}
               >
                 <div className="flex items-center justify-center mb-4">
                   {solution.icon}
