@@ -194,15 +194,17 @@ const NicheSection = ({ hideTitle = false }) => {
               onMouseMove={(e) => handleMouseMove(e, index)}
               onMouseLeave={handleMouseLeave}
             >
-              <div className="relative flex-1 flex flex-col justify-between h-full p-6 md:p-4">
+              <div className="relative flex-1 flex flex-col justify-between h-full p-6 md:pr-2 md:pb-2 p-2">
                 {/* Absolutely positioned image at bottom right, merged with card */}
-                <img 
-                  src={niche.image} 
-                  alt={niche.title} 
-                  className="absolute right-0 bottom-4 w-32 h-32 md:w-40 md:h-40 lg:w-48 lg:h-48 object-contain z-0 pointer-events-none select-none"
-                  style={{opacity: 0.85}}
-                />
-                <div className="relative z-10">
+                <div className="absolute right-0 bottom-0 w-44 h-44 md:w-36 md:h-36 lg:w-44 lg:h-44 z-0 pointer-events-none select-none overflow-hidden">
+                  <img 
+                    src={niche.image} 
+                    alt={niche.title} 
+                    className="w-full h-full object-contain object-right-bottom"
+                    style={{opacity: 0.85}}
+                  />
+                </div>
+                <div className="relative z-10 pr-0">
                   <h3 className="text-xl md:text-lg font-bold text-gray-900 group-hover:text-purple-800 mb-4 md:mb-2 text-left transition-all duration-300 ease-in-out drop-shadow-[0_1px_2px_rgba(255,255,255,0.7)]">{niche.title}</h3>
                   <div className="space-y-3 md:space-y-2 mb-6 md:mb-3">
                     {niche.features.map((feature, i) => (

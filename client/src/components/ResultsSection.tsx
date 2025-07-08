@@ -82,11 +82,8 @@ const ResultsSection = () => {
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6 lg:gap-8 justify-center">
           {results.map((result, index) => (
-            <motion.div
+            <div
               key={index}
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: inView ? 1 : 0, y: inView ? 0 : 20 }}
-              transition={{ duration: 1.2, ease: 'easeOut', delay: 0.4 + index * 0.2 }}
               className={`${result.bgColor} text-gray-900 rounded-2xl p-6 md:p-6 shadow-lg md:static sticky top-24 z-[${10 + index * 10}] mx-auto lg:max-w-xs xl:max-w-sm w-full md:min-h-[320px] transition-transform duration-300 ease-out`}
               style={{
                 transform: hoveredCard === index 
@@ -108,7 +105,7 @@ const ResultsSection = () => {
                 <div className="text-sm md:text-lg font-semibold text-fuchsia-600 mb-1">{result.increase}</div>
                 <div className="text-sm md:text-base text-gray-500">{result.subtext}</div>
               </div>
-            </motion.div>
+            </div>
           ))}
         </div>
       </div>
