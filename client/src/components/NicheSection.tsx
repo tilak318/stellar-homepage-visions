@@ -5,7 +5,7 @@ import { useState, useRef } from 'react';
 
 const niches = [
   {
-    title: "Insurance",
+    title: "Insurance & Financial Services",
     features: ["Smart Lead Generation", "Policy Management", "Renewal Reminders", "Client Portal", "Commission Tracking"],
     image: "/image/insurance.png",
     route: "/services/insurance"
