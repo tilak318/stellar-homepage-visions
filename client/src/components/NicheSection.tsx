@@ -214,7 +214,7 @@ const NicheSection = ({ hideTitle = false }) => {
               <img
                 src="/banner/2.png"
                 alt="Second Banner"
-                className="absolute right-[20px] bottom-4 w-24 md:w-28 lg:w-32 z-10 drop-shadow-xl opacity-95 pointer-events-none"
+                className="absolute right-[60px] bottom-4 w-24 md:w-28 lg:w-32 z-10 drop-shadow-xl opacity-95 pointer-events-none"
                 style={{objectFit: 'contain'}}
               />
               <div className="relative flex-1 flex flex-col justify-between h-full p-6 md:pr-2 md:pb-2 p-2">
