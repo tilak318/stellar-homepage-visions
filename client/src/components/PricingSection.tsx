@@ -85,7 +85,7 @@ const PricingSection = () => {
               key={index}
               className={`md:static sticky top-24 z-[${10 + index * 10}] mx-auto w-full max-w-[340px] sm:max-w-sm min-h-[420px] md:min-h-[340px] flex flex-col md:justify-center md:h-full md:flex-col md:items-stretch justify-between ${
                 plan.highlighted
-                  ? 'bg-gradient-to-br from-purple-600 to-fuchsia-600 text-white shadow-2xl'
+                  ? 'bg-gradient-to-br from-purple-400 to-fuchsia-400 text-white shadow-2xl'
                   : 'bg-gradient-to-br from-[#f6f3ff] to-[#e9d8fd] shadow-lg border-2 border-purple-400'
               } rounded-3xl p-8 sm:p-10 md:p-6 transition-transform duration-300 ease-out`}
               style={{
