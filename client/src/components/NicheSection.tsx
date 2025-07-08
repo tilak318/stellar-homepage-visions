@@ -149,7 +149,7 @@ const NicheSection = ({ hideTitle = false }) => {
   const bannerMap = {
     'Insurance': '/banner/1.png',
     'Botox & Skin Care': '/banner/1.png',
-    'Clinics and Dentist': '/banner/2.png',
+    'Clinics and Dentist': '/banner/1.png',
     'Gym & Health Coach': '/banner/1.png',
     'Business Consultation': '/banner/1.png',
     'IT & SAAS Services': '/banner/1.png',
