@@ -147,15 +147,15 @@ const NicheSection = ({ hideTitle = false }) => {
 
   // Banner image mapping for each card by title
   const bannerMap = {
-    'Insurance': '/banner/insurance.png',
-    'Botox & Skin Care': '/banner/anybusiness.png',
-    'Clinics and Dentist': '/banner/clinic.png',
-    'Gym & Health Coach': '/banner/gym.png',
-    'Business Consultation': '/banner/business.png',
-    'IT & SAAS Services': '/banner/it.png',
-    'Salons and Spa': '/banner/saloon.png',
-    'Real Estate Agents': '/banner/roof.png',
-    'Therapists and Counselors': '/banner/cleaning.png',
+    'Insurance': '/banner/1.png',
+    'Botox & Skin Care': '/banner/1.png',
+    'Clinics and Dentist': '/banner/2.png',
+    'Gym & Health Coach': '/banner/1.png',
+    'Business Consultation': '/banner/2.png',
+    'IT & SAAS Services': '/banner/1.png',
+    'Salons and Spa': '/banner/2.png',
+    'Real Estate Agents': '/banner/1.png',
+    'Therapists and Counselors': '/banner/1.png',
   };
 
   const handleNicheClick = (route: string) => {
