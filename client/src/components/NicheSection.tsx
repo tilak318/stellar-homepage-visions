@@ -151,9 +151,9 @@ const NicheSection = ({ hideTitle = false }) => {
     'Botox & Skin Care': '/banner/1.png',
     'Clinics and Dentist': '/banner/2.png',
     'Gym & Health Coach': '/banner/1.png',
-    'Business Consultation': '/banner/2.png',
+    'Business Consultation': '/banner/1.png',
     'IT & SAAS Services': '/banner/1.png',
-    'Salons and Spa': '/banner/2.png',
+    'Salons and Spa': '/banner/1.png',
     'Real Estate Agents': '/banner/1.png',
     'Therapists and Counselors': '/banner/1.png',
   };
