@@ -143,17 +143,7 @@ const NicheSection = ({ hideTitle = false }) => {
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
 
   // Banner image paths for each card
-  const bannerImages = [
-    '/banner/1.png',
-    '/banner/2.png',
-    '/banner/3.png',
-    '/banner/4.png',
-    '/banner/5.png',
-    '/banner/6.png',
-    '/banner/7.png',
-    '/banner/8.png',
-    '/banner/9.png',
-  ];
+ 
 
   // Banner image mapping for each card by title
   const bannerMap = {
