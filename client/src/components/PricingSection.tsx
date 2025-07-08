@@ -85,7 +85,7 @@ const PricingSection = () => {
               key={index}
               className={`md:static sticky top-24 z-[${10 + index * 10}] mx-auto w-full max-w-[340px] sm:max-w-sm min-h-[420px] md:min-h-[340px] flex flex-col md:justify-center md:h-full md:flex-col md:items-stretch justify-between ${
                 plan.highlighted
-                  ? 'bg-gradient-to-br from-purple-400 to-fuchsia-400 text-white shadow-2xl'
+                  ? 'bg-gradient-to-br from-[#f6f3ff] to-[#e9d8fd] shadow-lg border-2 border-purple-400'
                   : 'bg-gradient-to-br from-[#f6f3ff] to-[#e9d8fd] shadow-lg border-2 border-purple-400'
               } rounded-3xl p-8 sm:p-10 md:p-6 transition-transform duration-300 ease-out`}
               style={{
@@ -97,14 +97,14 @@ const PricingSection = () => {
               onMouseLeave={handleMouseLeave}
             >
               <div className="flex-1 flex flex-col">
-                <h3 className={`text-xl sm:text-2xl md:text-xl font-bold mb-6 sm:mb-8 md:mb-6 ${plan.highlighted ? 'text-white' : 'text-gray-900'}`}>
+                <h3 className={`text-xl sm:text-2xl md:text-xl font-bold mb-6 sm:mb-8 md:mb-6 text-gray-900`}>
                   {plan.name}
                 </h3>
                 <div className="mb-6 sm:mb-8 md:mb-6">
-                  <div className={`text-4xl sm:text-5xl md:text-3xl font-extrabold ${plan.highlighted ? 'text-white' : 'text-gray-900'}`}> 
+                  <div className={`text-4xl sm:text-5xl md:text-3xl font-extrabold text-gray-900`}> 
                     {plan.price}
                     {plan.period && (
-                      <span className={`text-base sm:text-lg md:text-base font-normal ${plan.highlighted ? 'text-white/70' : 'text-gray-500'}`}>
+                      <span className={`text-base sm:text-lg md:text-base font-normal text-gray-500`}>
                         {plan.period}
                       </span>
                     )}
@@ -113,12 +113,10 @@ const PricingSection = () => {
                 <div className="space-y-4 sm:space-y-5 md:space-y-4 mb-6 sm:mb-10 md:mb-4">
                   {plan.features.map((feature, featureIndex) => (
                     <div key={featureIndex} className="flex items-center space-x-3 md:space-x-2">
-                      <div className={`w-6 h-6 sm:w-7 sm:h-7 md:w-6 md:h-6 rounded-full flex items-center justify-center ${
-                        plan.highlighted ? 'bg-white/20' : 'bg-purple-100'
-                      }`}>
-                        <Check className={`w-4 h-4 sm:w-5 sm:h-5 md:w-4 md:h-4 ${plan.highlighted ? 'text-white' : 'text-purple-600'}`} />
+                      <div className="w-6 h-6 sm:w-7 sm:h-7 md:w-6 md:h-6 rounded-full flex items-center justify-center bg-purple-100">
+                        <Check className="w-4 h-4 sm:w-5 sm:h-5 md:w-4 md:h-4 text-purple-600" />
                       </div>
-                      <span className={`text-base sm:text-lg md:text-base ${plan.highlighted ? 'text-white/90' : 'text-gray-700'}`}>
+                      <span className="text-base sm:text-lg md:text-base text-gray-700">
                         {feature}
                       </span>
                     </div>
