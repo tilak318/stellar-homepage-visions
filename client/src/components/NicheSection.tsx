@@ -142,6 +142,32 @@ const NicheSection = ({ hideTitle = false }) => {
   const [hoveredCard, setHoveredCard] = useState<number | null>(null);
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
 
+  // Banner image paths for each card
+  const bannerImages = [
+    '/banner/1.png',
+    '/banner/2.png',
+    '/banner/3.png',
+    '/banner/4.png',
+    '/banner/5.png',
+    '/banner/6.png',
+    '/banner/7.png',
+    '/banner/8.png',
+    '/banner/9.png',
+  ];
+
+  // Banner image mapping for each card by title
+  const bannerMap = {
+    'Insurance': '/banner/insurance.png',
+    'Botox & Skin Care': '/banner/anybusiness.png',
+    'Clinics and Dentist': '/banner/clinic.png',
+    'Gym & Health Coach': '/banner/gym.png',
+    'Business Consultation': '/banner/business.png',
+    'IT & SAAS Services': '/banner/it.png',
+    'Salons and Spa': '/banner/saloon.png',
+    'Real Estate Agents': '/banner/roof.png',
+    'Therapists and Counselors': '/banner/cleaning.png',
+  };
+
   const handleNicheClick = (route: string) => {
     navigate(route);
   };
@@ -220,6 +246,13 @@ const NicheSection = ({ hideTitle = false }) => {
                   >
                     Learn More <ArrowRight className="w-4 h-4 ml-2 inline-block align-middle" />
                   </Button>
+                  {/* Banner image below the button */}
+                  <img
+                    src={bannerMap[niche.title]}
+                    alt={`Banner for ${niche.title}`}
+                    className="w-32 md:w-40 mt-4 self-start rounded-xl object-contain max-h-16 md:max-h-20 lg:max-h-24"
+                    style={{objectFit: 'contain'}}
+                  />
                 </div>
               </div>
             </div>
