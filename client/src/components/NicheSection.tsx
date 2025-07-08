@@ -1,6 +1,7 @@
 import { Check, ArrowRight } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
+import { useState, useRef } from 'react';
 
 const niches = [
   {
@@ -138,9 +139,33 @@ const randomColors = [
 
 const NicheSection = ({ hideTitle = false }) => {
   const navigate = useNavigate();
+  const [hoveredCard, setHoveredCard] = useState<number | null>(null);
+  const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
 
   const handleNicheClick = (route: string) => {
     navigate(route);
+  };
+
+  const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>, index: number) => {
+    const rect = e.currentTarget.getBoundingClientRect();
+    const x = e.clientX - rect.left;
+    const y = e.clientY - rect.top;
+    
+    // Calculate center of the card
+    const centerX = rect.width / 2;
+    const centerY = rect.height / 2;
+    
+    // Calculate distance from center (normalized to -1 to 1)
+    const normalizedX = (x - centerX) / centerX;
+    const normalizedY = (y - centerY) / centerY;
+    
+    setMousePosition({ x: normalizedX, y: normalizedY });
+    setHoveredCard(index);
+  };
+
+  const handleMouseLeave = () => {
+    setHoveredCard(null);
+    setMousePosition({ x: 0, y: 0 });
   };
 
   return (
@@ -160,7 +185,14 @@ const NicheSection = ({ hideTitle = false }) => {
           {niches.map((niche, index) => (
             <div
               key={index}
-              className={"relative bg-gradient-to-br from-[#f6f3ff] to-[#e9d8fd] hover:from-purple-200 hover:to-purple-300 border-2 border-purple-400 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 ease-in-out md:static sticky top-24 mx-auto lg:max-w-xs xl:max-w-sm w-full group overflow-hidden min-h-[380px] flex flex-col"}
+              className={"relative bg-gradient-to-br from-[#f6f3ff] to-[#e9d8fd] border-2 border-purple-400 rounded-2xl shadow-lg md:static sticky top-24 mx-auto lg:max-w-xs xl:max-w-sm w-full group overflow-hidden min-h-[380px] flex flex-col transition-transform duration-300 ease-out"}
+              style={{
+                transform: hoveredCard === index 
+                  ? `perspective(1000px) rotateX(${mousePosition.y * -15}deg) rotateY(${mousePosition.x * 15}deg) scale3d(1.02, 1.02, 1.02)`
+                  : 'perspective(1000px) rotateX(0deg) rotateY(0deg) scale3d(1, 1, 1)'
+              }}
+              onMouseMove={(e) => handleMouseMove(e, index)}
+              onMouseLeave={handleMouseLeave}
             >
               <div className="relative flex-1 flex flex-col justify-between h-full p-6 md:p-4">
                 {/* Absolutely positioned image at bottom right, merged with card */}
